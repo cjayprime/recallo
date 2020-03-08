@@ -1,19 +1,11 @@
 import React from 'react';
 import './main.css';
-
+import MainRoutes from "./routes/mainRoutes"
 
 function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "#000",
-        
-      }}
-    >
-      Welcome to Recallo Home
+    <div>
+      <MainRoutes />
     </div>
   );
 }

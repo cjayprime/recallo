@@ -1,0 +1,25 @@
+.logo {
+  width: 156px;
+  height: 59px;
+}
+
+.notification {
+  position: relative;
+}
+
+.bell {
+  width: 20px;
+  height: 20px;
+}
+
+.notification .message {
+  position: absolute;
+  padding: 5px 8px;
+  background-color: #ff6501;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 9px;
+  font-family: Barlow;
+  top: -10px;
+  right: -10px;
+}
