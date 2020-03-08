@@ -1,5 +1,10 @@
 import React from 'react';
+<<<<<<< Updated upstream
 import './main.css';
+=======
+import './assets/styles/main.css';
+import Calls from "./routes/Calls";
+>>>>>>> Stashed changes
 
 
 function App() {
