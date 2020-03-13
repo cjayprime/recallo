@@ -1,24 +1,12 @@
 import React from 'react';
-<<<<<<< Updated upstream
-import './main.css';
-=======
-import './assets/styles/main.css';
-import Calls from "./routes/Calls";
->>>>>>> Stashed changes
+import '../src/assets/styles/main.css';
+import MainRoutes from "./routes/mainRoutes"
 
 
 function App() {
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "#000",
-        
-      }}
-    >
-      Welcome to Recallo Home
+    <div>
+      <MainRoutes />
     </div>
   );
 }

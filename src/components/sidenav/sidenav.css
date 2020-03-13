@@ -1,0 +1,97 @@
+.sidenav-body {
+  padding: 80px 32.5px 0;
+  background-color: red;
+}
+
+.sidenav-body hr {
+  border: 1px solid #dddddd;
+  height: 0px;
+  margin: 80px 0 38.5px;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.business-logo {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #336799;
+}
+
+.logo-text {
+  font: Bold 31px/80px Barlow;
+  color: #fff;
+  text-align: center;
+}
+
+.business-name {
+  font: Bold 20px/0 SF Pro Display;
+  color: #336799;
+  margin-top: 23px;
+}
+
+.license {
+  color: #777777;
+  font: 14px/52px SF Pro Display;
+  margin-top: 13px;
+}
+
+.account-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 228px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  border-radius: 30px;
+  margin-top: 24px;
+}
+
+.account-button p {
+  font: Bold 14px/52px SF Pro Display;
+  color: #333333;
+}
+
+.sidenav-list {
+  margin-top: 41px;
+}
+
+.sidenav-list-item {
+  padding: 11px 20px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: #384364;
+  letter-spacing: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 16px;
+  font: Bold 16px/48px SF Pro Display;
+}
+
+.sidenav-list-link {
+  text-decoration: none;
+}
+
+.sidenav-list-icon {
+  font-size: 18px;
+  line-height: 18px;
+  margin-right: 36px;
+}
+
+.logout {
+  margin-bottom: 54px;
+  font: Regular 14px/52px SF Pro Display;
+  letter-spacing: 0;
+  color: #336799;
+  text-align: center;
+}
