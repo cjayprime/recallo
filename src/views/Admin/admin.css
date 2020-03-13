@@ -16,6 +16,7 @@ hr {
   /* grid-template-rows: 0px 1fr 50px; */
   grid-template-areas:
     "header"
+    "footer"
     "main";
   height: 100vh;
 }
@@ -60,7 +61,8 @@ hr {
     grid-template-columns: 339px 1fr;
     grid-template-areas:
       "sidenav header"
-      "sidenav main";
+      "sidenav main"
+      "sidenav footer";
   }
 
   .sidenav {
