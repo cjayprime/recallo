@@ -49,7 +49,7 @@ class Admin extends Component {
         return (
             <>
                 <div className="grid-container">
-                    {/* <Header className="main-header" /> */}
+                    <Header className="main-header" />
                     <Sidenav
                         {...this.props}
                         routes={routes}
