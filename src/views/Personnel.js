@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Titlebar from "../components/titlebar/titlebar";
+import Titlebar from "../components/TitleBar/titlebar";
 
 class Personnel extends Component {
     render() {

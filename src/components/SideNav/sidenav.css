@@ -1,7 +1,11 @@
 .sidenav-body {
   padding: 80px 32.5px 0;
-  background-color: red;
+  overflow-y: scroll;
 }
+.sidenav-body::-webkit-scrollbar {
+  display: none;
+}
+
 
 .sidenav-body hr {
   border: 1px solid #dddddd;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './menuItem.css';
-import MenuCard from "../menuCard/menuCard";
+import MenuCard from "../MenuCard/menuCard";
 
 class MenuItem extends Component {
 
@@ -20,8 +20,10 @@ class MenuItem extends Component {
 
     render() {
         return (
-            <div className="menu-item">
-                <h6 className="text-blue hover cursor" onClick={()=>this.show()}>{this.props.item.title}<i/></h6>
+            <div className="menu-item mr-25">
+                <h6 className="text-blue hover cursor" onClick={()=>this.show()}>{this.props.item.title}
+                    <span className="arrow-down"/>
+                </h6>
                 {
                     this.state.showMenuCard ?
                         <MenuCard>{this.props.item.values}</MenuCard>

@@ -1,8 +1,7 @@
 .menu-item{
     display: inline-block;
-    margin-right: 25px;
 }
-i {
+.arrow-down{
     border: solid;
     border-width: 0 2px 2px 0;
     display: inline-block;
@@ -25,3 +24,4 @@ i {
 .menu-card h6{
     padding: 10px 20px;
 }
+
