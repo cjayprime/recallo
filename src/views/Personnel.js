@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
 import Titlebar from "../components/titlebar/titlebar";
 
 class Personnel extends Component {

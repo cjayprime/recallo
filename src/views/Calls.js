@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 
 import Titlebar from "../components/titlebar/titlebar";
 import MenuBar from "../components/menuBar/menuBar";
+import Table from "../components/Table/table";
+
 
 
 
 class Calls extends Component {
     render() {
-
-
         return (
             <div>
                 <Titlebar
@@ -19,7 +19,8 @@ class Calls extends Component {
                         right: "Profile Category"
                     }}
                 />
-                <MenuBar/>
+                <MenuBar />
+                <Table />
             </div>
         )
     }

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
+
 import './titlebar.css';
 import Button from "../button/button";
 
 class Titlebar extends Component{
 
     render() {
-
-
         return(
             <div className="title-bar">
                 <div className="title">
