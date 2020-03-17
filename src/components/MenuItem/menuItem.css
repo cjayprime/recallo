@@ -9,8 +9,7 @@
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transition: .3s;
-    margin-left: 5px;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 .menu-card{
     background-color: white;

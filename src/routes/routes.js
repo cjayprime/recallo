@@ -1,5 +1,5 @@
 import Admin from "../views/Admin/admin";
-import Home from "../views/home";
+import Home from "../views/Home/home";
 import Calls from "../views/Calls";
 import Personnel from "../views/Personnel";
 import Analytics from "../views/Analytics";

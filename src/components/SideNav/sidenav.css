@@ -33,15 +33,10 @@
 }
 
 .business-name {
-  font: Bold 20px/0 SF Pro Display;
+  font-weight: bold;
+  font-size: 20px;
   color: #336799;
   margin-top: 23px;
-}
-
-.license {
-  color: #777777;
-  font: 14px/52px SF Pro Display;
-  margin-top: 13px;
 }
 
 .account-button {
@@ -58,7 +53,9 @@
 }
 
 .account-button p {
-  font: Bold 14px/52px SF Pro Display;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 52px;
   color: #333333;
 }
 
@@ -77,9 +74,9 @@
   color: #384364;
   letter-spacing: 0;
   margin: 0;
+  font-weight: bold;
   font-size: 16px;
-  line-height: 16px;
-  font: Bold 16px/48px SF Pro Display;
+  line-height: 48px;
 }
 
 .sidenav-list-link {
@@ -94,7 +91,9 @@
 
 .logout {
   margin-bottom: 54px;
-  font: Regular 14px/52px SF Pro Display;
+  font-size: 14;
+  line-height: 52px;
+  font-family: "Regular SF Pro Display";
   letter-spacing: 0;
   color: #336799;
   text-align: center;

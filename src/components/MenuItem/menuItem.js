@@ -22,7 +22,7 @@ class MenuItem extends Component {
         return (
             <div className="menu-item mr-25">
                 <h6 className="text-blue hover cursor" onClick={()=>this.show()}>{this.props.item.title}
-                    <span className="arrow-down"/>
+                    <span className="arrow-down ml-5"/>
                 </h6>
                 {
                     this.state.showMenuCard ?
