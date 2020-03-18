@@ -27,7 +27,7 @@ class Sidenav extends Component {
                                 <Link className="sidenav-list-link" to={prop.layout + prop.path}>
                                     <li key={key} className="sidenav-list-item">
                                         <img src={prop.icon} className="sidenav-list-icon" />
-                                        <p>{prop.name}</p>
+                                        <h5>{prop.name}</h5>
                                     </li>
                                 </Link>
                             )
