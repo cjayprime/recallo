@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './menuItem.css';
 import MenuCard from "../menuCard/menuCard";
 
@@ -6,12 +7,12 @@ class MenuItem extends Component {
 
     constructor() {
         super();
-        this.state={
-            showMenuCard:false
+        this.state = {
+            showMenuCard: false
         }
     }
 
-    show(){
+    show() {
         this.setState({
             showMenuCard: !this.state.showMenuCard
         })
@@ -20,8 +21,10 @@ class MenuItem extends Component {
 
     render() {
         return (
-            <div className="menu-item">
-                <h6 className="text-blue hover cursor" onClick={()=>this.show()}>{this.props.item.title}<i/></h6>
+            <div className="menu-item mr-25">
+                <h6 className="text-blue hover cursor" onClick={() => this.show()}>{this.props.item.title}
+                    <span className="arrow-down ml-5" />
+                </h6>
                 {
                     this.state.showMenuCard ?
                         <MenuCard>{this.props.item.values}</MenuCard>

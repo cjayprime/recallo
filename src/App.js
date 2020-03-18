@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./main.css"
+import "../src/assets/styles/main.css"
 import MainRoutes from "./routes/mainRoutes"
 
 

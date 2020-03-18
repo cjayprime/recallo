@@ -10,7 +10,7 @@ class Sidenav extends Component {
         console.log(routes, "Hey routes");
         return (
             <aside className="sidenav">
-                {/* <Header className="sidenav-header" /> */}
+                {/* <Header className="SideNav-header" /> */}
                 <div className="sidenav-body">
                     <div className="details">
                         <div className="business-logo">
