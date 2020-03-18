@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './menuItem.css';
-import MenuCard from "../menuCard/menuCard";
+import MenuCard from "../MenuCard/menuCard";
 
 class MenuItem extends Component {
 

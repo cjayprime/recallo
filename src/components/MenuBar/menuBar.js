@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './menuBar.css';
-import MenuItem from "../menuItem/menuItem";
+import MenuItem from "../MenuItem/menuItem";
 
 // import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 

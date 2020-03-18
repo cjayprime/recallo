@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 
-import Titlebar from "../components/titlebar/titlebar";
-import MenuBar from "../components/menuBar/menuBar";
+import Titlebar from "../components/TitleBar/titlebar";
+import MenuBar from "../components/MenuBar/menuBar";
 import Table from "../components/Table/table";
 
 

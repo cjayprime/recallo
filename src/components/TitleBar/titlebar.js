@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import './titlebar.css';
-import Button from "../button/button";
+import Button from "../Button/button";
 
 class Titlebar extends Component{
 

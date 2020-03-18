@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
 
-import Sidenav from "../../components/sidenav/sidenav";
+import Sidenav from "../../components/SideNav/sidenav";
 import Header from "../../components/Header/header";
 
 import routes from "../../routes/routes";
