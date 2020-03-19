@@ -15,9 +15,8 @@
 
 .main {
   grid-area: main;
-  padding: 50px 40px 0;
   height: 100%;
-  background-color: #f9f9f9;
+  background-color: #fff;
 }
 
 .main-header {
@@ -88,19 +87,13 @@
   }
 }
 
-
 /* Home style */
+
 .overview {
-  display: flex;
-  flex-direction: row;
-  padding: 24px;
   height: 100%;
   background: #ffffff;
   box-shadow: 0 0 6px #00000014;
-  border-radius: 30px;
 }
-
-
 
 .overview__action-button button {
   font-size: 14px;
@@ -135,15 +128,12 @@
   /*margin: 32px 0 68px;*/
 }
 
-
-
 .min-overview {
   background: #fff;
   box-shadow: 0 0 6px #00000014;
-  border-radius: 15px;
   padding: 24px;
 }
-.overview-call{
+.overview-call {
   display: flex;
   align-items: baseline;
   margin-bottom: 15px;
@@ -172,7 +162,6 @@
   color: #333333;
 }
 
-
 .myProgress {
   height: fit-content;
   border-radius: 50px;
@@ -199,3 +188,50 @@
 }
 
 /* End Home style */
+
+/* Profile styles */
+
+.profile_tab {
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  height: 79px;
+  width: 100%;
+  z-index: 101;
+  position: fixed;
+  padding-left: 40px;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px #00000014;
+}
+
+.profile_tablinks {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 38px 40px 14px;
+  line-height: 25px;
+  display: block;
+}
+
+.profile-input {
+  border: 1px solid #dddddd;
+  height: 40px;
+  width: 100%;
+}
+
+.profile-label {
+  color: #777;
+}
+
+.upload-button {
+  box-shadow: 0px 0px 6px #33679914;
+  background-color: var(--text-white);
+  color: var(--text-color);
+}
+
+.upload-button:hover {
+  background-color: var(--text-color);
+  color: var(--text-white);
+}
+/* End Profile styles */

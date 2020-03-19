@@ -16,7 +16,23 @@ class Admin extends Component {
     // }
 
     getRoutes = routes => {
-        return routes.privateRoutes.map((prop, key) => {
+        return routes.privateRoutes.sidebar.map((prop, key) => {
+            if (prop.layout === "/admin") {
+                return (
+                    <Route
+                        path={prop.layout + prop.path}
+                        component={prop.component}
+                        key={key}
+                    />
+                )
+            } else {
+                return null;
+            }
+        })
+    }
+
+    getSettings = routes => {
+        return routes.privateRoutes.route.map((prop, key) => {
             if (prop.layout === "/admin") {
                 return (
                     <Route
@@ -55,7 +71,10 @@ class Admin extends Component {
                         routes={routes}
                     />
                     <main className="main">
-                        <Switch>{this.getRoutes(routes)}</Switch>
+                        <Switch>
+                            {this.getRoutes(routes)}
+                            {this.getSettings(routes)}
+                        </Switch>
                     </main>
                 </div>
             </>

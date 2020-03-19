@@ -5,7 +5,7 @@ import Titlebar from "../components/TitleBar/titlebar";
 class Personnel extends Component {
     render() {
         return (
-            <div>
+            <div className="screen-padding">
                 <Titlebar
                     heading={"Personnel"}
                     buttons={{
