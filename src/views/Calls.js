@@ -11,7 +11,7 @@ import Table from "../components/Table/table";
 class Calls extends Component {
     render() {
         return (
-            <div>
+            <div className="screen-padding">
                 <Titlebar
                     heading={"Calls"}
                     buttons={{

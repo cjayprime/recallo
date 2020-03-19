@@ -21,11 +21,19 @@ class MainRoutes extends Component {
                             component={el.component}
                         />
                     ))}
-                    {routes.privateRoutes.map(el => (
+                    {routes.privateRoutes.sidebar.map(el => (
                         <PrivateRoute
                             key={el.path}
                             path={el.path}
                             exact={el.exact}
+                            component={el.component}
+                        />
+                    ))}
+                    {routes.privateRoutes.route.map(el => (
+                        <PrivateRoute
+                            key={el.path}
+                            path={el.path}
+                            exact={el.path}
                             component={el.component}
                         />
                     ))}

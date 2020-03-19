@@ -32,10 +32,10 @@ class Home extends Component {
 
         return (
             <>
-                <div className="home container">
+                <div className="screen-padding container">
                     <div className="row mb-32">
                         <div className="col-12">
-                            <div className="overview">
+                            <div className="overview br-30 row-direction p-24">
                                 <div className="overview__action-button">
                                     {tabs.map(tab => (
                                         <div style={styles.tabs(this.state.active === tab.tab)}
@@ -80,7 +80,7 @@ class Home extends Component {
                     </div>
                     <div className="row">
                         <div className="custom-col-3">
-                            <div className="min-overview ">
+                            <div className="min-overview br-15">
                                 <h4 className="text-main bold mb-24">License info</h4>
                                 <span className="bold text-light">Type</span>
                                 <h6 className="light text-main mt-4">2 agents license</h6>
