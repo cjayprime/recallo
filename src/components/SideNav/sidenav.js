@@ -18,10 +18,15 @@ class Sidenav extends Component {
                         </div>
                         <p className="business-name">AutoMedics Africa Limited</p>
                         <p className="license">2 agents license</p>
-                        <Link to="/" className="account-button"><p>Manage your Recallo Account</p></Link>
+                        {routes.privateRoutes.route.map((prop, key) => {
+                            if (prop.redirect) return null;
+                            return (
+                                <Link key={key} to={prop.layout + prop.path} className="account-button"><p>Manage your Recallo Account</p></Link>
+                            )
+                        })}
                     </div>
                     <ul className="sidenav-list">
-                        {routes.privateRoutes.map((prop, key) => {
+                        {routes.privateRoutes.sidebar.map((prop, key) => {
                             if (prop.redirect) return null;
                             return (
                                 <Link className="sidenav-list-link" to={prop.layout + prop.path}>

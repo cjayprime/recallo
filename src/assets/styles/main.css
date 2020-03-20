@@ -12,6 +12,7 @@ html{
     --text-color: #336799;
     --background-color: #F9F9F9;
     --text-light: #777;
+    --text-white: #fff;
 }
 @font-face {
     font-family: 'SF Pro Display Regular';
@@ -25,6 +26,7 @@ input{
     outline: none;
     cursor: pointer;
     border: 2px solid;
+    width: 100%;
 }
 table{
     width: 100%;
@@ -67,7 +69,7 @@ hr {
 ul {
     list-style: none;
 }
-.screen-padding{
+.screen-padding {
     padding: 32px 32px 0;
 }
 
@@ -137,14 +139,6 @@ ul {
 .plr-20{
     padding: 0 20px;
 }
-.ptb-50{
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-.plr-40{
-    padding-left: 40px;
-    padding-right: 40px;
-}
 .mtb-15{
     margin: 15px 0;
 }
@@ -157,14 +151,32 @@ ul {
 .mr-10{
     margin-right: 10px;
 }
+.mr-24 {
+    margin-right: 24px;
+}
 .mr-20{
     margin-right: 20px;
 }
 .mr-25{
     margin-right: 25px;
 }
+.p-12 {
+    padding: 12px;
+}
+.p-24 {
+    padding: 24px;
+}
+.plr-32 {
+    padding: 0 32px;
+}
+.pb-32 {
+    padding-bottom: 32px;
+}
 .pt-23 {
     padding-top: 23px;
+}
+.pt-32 {
+    padding-top: 32px;
 }
 .ml-35 {
     margin-left: 35px;
@@ -172,8 +184,17 @@ ul {
 .pl-38 {
     padding-left: 38px;
 }
+.mb-8 {
+    margin-bottom: 8px;
+}
 .mb-12{
     margin-bottom: 12px;
+}
+.mb-16 {
+    margin-bottom: 16px;
+}
+.mb-23 {
+    margin-bottom: 23px;
 }
 .mb-24 {
     margin-bottom: 24px;
@@ -187,6 +208,27 @@ ul {
 /* End of margin and padding style */
 
 
+/* border radius */
+
+.br-8 {
+    border-radius: 8px;
+}
+
+.br-15 {
+    border-radius: 15px;
+}
+
+.br-16 {
+    border-radius: 16px;
+}
+
+.br-30 {
+    border-radius: 30px;
+}
+
+/* End of border radius */
+
+
 
 .row-direction {
     display: flex;
@@ -195,7 +237,9 @@ ul {
 .align-center{
     align-items: center;
 }
-
+.justify-center {
+    justify-content: center;
+}
 .column-direction {
     display: flex;
     flex-direction: column;
@@ -215,10 +259,18 @@ ul {
 .custom-col-6 {
     width: 46%;
 }
+.col-7 {
+    width: 48%;
+}
+.col-8 {
+    width: 50%;
+}
+.col-9 {
+    width: 40%;
+}
 .col-12{
     width: 100%;
 }
-
 
 
 .arrow{
