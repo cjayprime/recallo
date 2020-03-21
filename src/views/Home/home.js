@@ -80,7 +80,7 @@ class Home extends Component {
                     </div>
                     <div className="row">
                         <div className="custom-col-3">
-                            <div className="min-overview br-15">
+                            <div className="overview p-24 br-15">
                                 <h4 className="text-main bold mb-24">License info</h4>
                                 <span className="bold text-light">Type</span>
                                 <h6 className="light text-main mt-4">2 agents license</h6>
@@ -94,7 +94,7 @@ class Home extends Component {
                             </div>
                         </div>
                         <div className="custom-col-3">
-                            <div className="min-overview">
+                            <div className="overview p-24">
                                 <div className="row-direction mb-24 align-center">
                                     <h4 className="text-main bold mr-5">Average time:</h4>
                                     <h4 className="text-blue bold hover cursor">call <span className="arrow-down ml-3" /></h4>
@@ -109,7 +109,7 @@ class Home extends Component {
                             </div>
                         </div>
                         <div className="custom-col-6">
-                            <div className="min-overview">
+                            <div className="overview p-24">
                                 <div className="row">
                                     <div className="custom-col-6">
                                         <h4 className="text-main bold mb-24">Personnel</h4>
