@@ -124,15 +124,6 @@
   letter-spacing: 0;
 }
 
-.min-overview--body {
-  /*margin: 32px 0 68px;*/
-}
-
-.min-overview {
-  background: #fff;
-  box-shadow: 0 0 6px #00000014;
-  padding: 24px;
-}
 .overview-call {
   display: flex;
   align-items: baseline;
@@ -236,3 +227,15 @@
 }
 
 /* End Profile styles */
+
+/* Account plan styles */
+
+.price {
+  font-size: 4rem;
+}
+
+.subcription-details p {
+  font-size: 1rem;
+}
+
+/* End Account plan styles */
