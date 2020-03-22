@@ -1,4 +1,4 @@
-.modal {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,21 +7,34 @@
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1000;
 }
-
-.modal .modal-main {
+.overlay .overlay-main {
     position:fixed;
     background: white;
-    width: 80%;
-    height: auto;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    top: 0;
+    right: 0;
+    width: 57rem;
+    padding: 40px;
 }
-
 .display-block {
     display: block;
 }
-
 .display-none {
     display: none;
+}
+.circle{
+    background: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    right: 35px;
+    top: 35px;
+}
+.circle:hover{
+    background: #00000029;
+}
+.close {
+    position: absolute;
+    top: 30%;
+    left: 30%;
 }

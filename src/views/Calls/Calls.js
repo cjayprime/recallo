@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 
 
-import Titlebar from "../components/TitleBar/titlebar";
-import Table from "../components/Table/table";
-import MenuItem from "../components/MenuItem/menuItem";
-import {ReactComponent as SearchIcon} from "../assets/img/search.svg";
+import Titlebar from "../../components/TitleBar/titlebar";
+import Table from "../../components/Table/table";
+import MenuItem from "../../components/MenuItem/menuItem";
+import {ReactComponent as SearchIcon} from "../../assets/img/search.svg";
+
 
 
 
 
 
 class Calls extends Component {
+
+
     render() {
         return (
             <div className="screen-padding">
