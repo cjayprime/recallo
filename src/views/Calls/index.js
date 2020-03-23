@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 
 
-import Titlebar from "../../components/TitleBar/titlebar";
+import Titlebar from "../../components/TitleBar";
 import Table from "../../components/Table/table";
 import MenuItem from "../../components/MenuItem/menuItem";
+import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
+
+
 import {ReactComponent as SearchIcon} from "../../assets/img/search.svg";
-
-
-
-
 
 
 class Calls extends Component {
 
+    state = { open: false };
+
+    toggle = () => {
+        this.setState({ open: ! this.state.open });
+        console.log("Toggled")
+    };
 
     render() {
         return (
@@ -20,8 +25,8 @@ class Calls extends Component {
                 <Titlebar
                     heading={"Calls"}
                     buttons={{
-                        left: "View voicenotes",
-                        right: "Profile Category",
+                        left: { title: "View voicenotes", action: this.toggle },
+                        right: { title: "Profile Category", action: this.toggle }
                     }}
                 />
                 <div className="menu-bar ptb-20">
@@ -44,10 +49,12 @@ class Calls extends Component {
                         </div>
                     </div>
                 </div>
+                <ProfileCategoryOverlay open={this.state.open} toggle={this.toggle} />
                 <Table />
             </div>
         )
     }
+
 }
 
 export default Calls;

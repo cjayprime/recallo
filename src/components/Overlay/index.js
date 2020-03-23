@@ -7,17 +7,17 @@ class Overlay extends Component{
 
     render() {
 
-        const { handleClose, show, children } = this.props;
+        const { toggle, open, children } = this.props;
 
-        const showHideClassName = show ? 'overlay display-block' : 'overlay display-none';
+        const showHideClassName = open ? 'overlay display-block' : 'overlay display-none';
 
         return(
-            <div className={showHideClassName}>
+            <div className={showHideClassName} onClick={toggle}>
                 <section className='overlay-main'>
                     {children}
                     <div className="circle cursor">
                         <CloseIcon
-                            onClick={handleClose}
+                            onClick={toggle}
                             className="close"
                         />
                     </div>

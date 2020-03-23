@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
-import Titlebar from "../components/TitleBar/titlebar";
+import Titlebar from "../components/TitleBar";
 import MenuItem from "../components/MenuItem/menuItem";
 import {ReactComponent as SearchIcon} from "../assets/img/search.svg";
 import Table from "../components/Table/table";
-import Modal from "../components/Overlay/overlay";
 
 class Personnel extends Component {
-
 
     render() {
 
@@ -16,8 +14,8 @@ class Personnel extends Component {
                 <Titlebar
                     heading={"Personnel"}
                     buttons={{
-                        left: "Departments",
-                        right: "Add personnel",
+                        left: {title: "Departments", action: () => {}},
+                        right: {title: "Add personnel", action: () => {}}
                     }}
                 />
                 <div className="menu-bar ptb-20">
