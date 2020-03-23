@@ -33,7 +33,7 @@ class MainRoutes extends Component {
                         <PrivateRoute
                             key={el.path}
                             path={el.path}
-                            exact={el.path}
+                            exact={el.exact}
                             component={el.component}
                         />
                     ))}
@@ -45,8 +45,9 @@ class MainRoutes extends Component {
                         alignItems: "center",
                         fontSize: 200
                     }}>404</div>} />
-                    <Redirect from="/admin" to="/admin/home" />
-                    <Redirect to="/404" />
+                    <Redirect from="/" to="admin/home" />
+                    {/* <Redirect from="/admin" to="/admin/home" />
+                    <Redirect to="/404" /> */}
                 </Switch>
             </Router>
         )
