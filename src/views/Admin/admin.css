@@ -124,15 +124,6 @@
   letter-spacing: 0;
 }
 
-.min-overview--body {
-  /*margin: 32px 0 68px;*/
-}
-
-.min-overview {
-  background: #fff;
-  box-shadow: 0 0 6px #00000014;
-  padding: 24px;
-}
 .overview-call {
   display: flex;
   align-items: baseline;
@@ -265,6 +256,17 @@
 
 /* End Profile styles */
 
+/* Account plan styles */
+
+.price {
+  font-size: 4rem;
+}
+
+.subcription-details p {
+  font-size: 1rem;
+}
+
+/* End Account plan styles */
 
 /* Profile Category Overlay */
 .existing-category-card{
@@ -272,5 +274,50 @@
   border-radius: 8px;
   height: 10.3rem;
 }
-
 /* End Profile Category Overlay */
+
+/* Add Personnel Overlay */
+.personnel-checkbox h5{
+  display: inline-block;
+}
+.checkbox-label{
+  display: block;
+  position: relative;
+  padding-left: 24px;
+}
+.check-mark{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.7rem;
+  width: 1.7rem;
+  border-radius: .4rem;
+  border: 1px solid #336799;
+}
+.personnel-checkbox input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.check-mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox-label input:checked ~ .check-mark:after {
+  display: block;
+}
+.checkbox-label .check-mark:after {
+  left: 6px;
+  top: 3px;
+  width: 3px;
+  height: 7px;
+  border: solid #336799;
+  border-width: 0 1px 1px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* Add Personnel Overlay */

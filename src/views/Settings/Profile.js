@@ -108,7 +108,7 @@ const Profile = (props) => {
                                     <p className="logo-text">AM</p>
                                 </div>
                                 <h6 className="text-light mb-16">Upload business logo</h6>
-                                <Button padding={"12px"} className="text-blue br-8 upload-button">Upload image</Button>
+                                <Button padding={"12px"} className="text-blue bc-blue br-8 upload-button">Upload image</Button>
                             </div>
                         </div>
                     </form>

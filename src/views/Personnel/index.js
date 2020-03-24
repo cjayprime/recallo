@@ -10,12 +10,19 @@ import PersonnelOverlay from "./AddPersonnelOverlay";
 
 class Personnel extends Component {
 
-    state = { open: false };
+    state = { open: false, open2: false };
 
     toggle = () => {
         this.setState({ open: ! this.state.open });
         console.log("Toggled")
     };
+
+
+    toggle2 = () => {
+        this.setState({ open2: ! this.state.open2 });
+        console.log("Toggled")
+    };
+
 
 
     render() {
@@ -26,7 +33,7 @@ class Personnel extends Component {
                     heading={"Personnel"}
                     buttons={{
                         left: {title: "Departments", action: this.toggle},
-                        right: {title: "Add personnel", action: this.toggle}
+                        right: {title: "Add personnel", action: this.toggle2}
                     }}
                 />
                 <div className="menu-bar ptb-20">
@@ -47,7 +54,7 @@ class Personnel extends Component {
                     </div>
                 </div>
                 <DepartmentOverlay open={this.state.open} toggle={this.toggle}/>
-                <PersonnelOverlay open={this.state.open} toggle={this.toggle}/>
+                <PersonnelOverlay open={this.state.open2} toggle={this.toggle2}/>
                 <Table/>
             </div>
         )
