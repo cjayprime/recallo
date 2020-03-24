@@ -12,12 +12,11 @@ class Overlay extends Component{
         const showHideClassName = open ? 'overlay display-block' : 'overlay display-none';
 
         return(
-            <div className={showHideClassName} onClick={toggle}>
-                <section className='overlay-main'>
+            <div className={showHideClassName}>
+                <section className='overlay-main slideInRight'>
                     {children}
-                    <div className="circle cursor">
+                    <div className="circle cursor"  onClick={toggle}>
                         <CloseIcon
-                            onClick={toggle}
                             className="close"
                         />
                     </div>

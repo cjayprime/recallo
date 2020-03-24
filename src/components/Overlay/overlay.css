@@ -12,8 +12,17 @@
     background: white;
     top: 0;
     right: 0;
+    height: 100%;
+    overflow: scroll;
     width: 57rem;
     padding: 40px;
+    -webkit-animation-duration: .7s;
+    animation-duration: .7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.overlay .overlay-main::-webkit-scrollbar {
+    display: none;
 }
 .display-block {
     display: block;
@@ -37,4 +46,19 @@
     position: absolute;
     top: 30%;
     left: 30%;
+}
+@keyframes slideInRight {
+    from {
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(20%, 0, 0);
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+.slideInRight {
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
 }

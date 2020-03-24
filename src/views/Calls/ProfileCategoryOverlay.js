@@ -34,6 +34,50 @@ class ProfileCategoryOverlay extends Component{
                 <div>
                     <h4 className="mb-8">Edit existing categories</h4>
                     <h6 className="light text-light mb-32">You can rename, add to description or delete previous categories</h6>
+                    <div className="row-direction existing-category-card mb-16">
+                        <div className="flex-3 p-16 background-darkgrey">
+                            <h5 className="mb-8">Enquiry</h5>
+                            <h6 className="light text-light">Caller wanted to know more about our product and services</h6>
+                        </div>
+                        <div className="flex-1 p-16">
+                            <p>No of calls </p>
+                            <p className="mb-8">profiled with</p>
+                            <h3>13</h3>
+                        </div>
+                    </div>
+                    <div className="row-direction existing-category-card mb-16">
+                        <div className="flex-3 p-16 background-darkgrey">
+                            <h5 className="mb-8">Complaint</h5>
+                            <h6 className="light text-light">Caller raised an issue or two regarding our services</h6>
+                        </div>
+                        <div className="flex-1 p-16">
+                            <p>No of calls </p>
+                            <p className="mb-8">profiled with</p>
+                            <h3>34</h3>
+                        </div>
+                    </div>
+                    <div className="row-direction existing-category-card mb-16">
+                        <div className="flex-3 p-16 background-darkgrey">
+                            <h5 className="mb-8">Request</h5>
+                            <h6 className="light text-light">Caller expressed a desire or a need for somethings</h6>
+                        </div>
+                        <div className="flex-1 p-16">
+                            <p>No of calls </p>
+                            <p className="mb-8">profiled with</p>
+                            <h3>23</h3>
+                        </div>
+                    </div>
+                    <div className="row-direction existing-category-card mb-16">
+                        <div className="flex-3 p-16 background-darkgrey">
+                            <h5 className="mb-8">Engine fault</h5>
+                            <h6 className="light text-light">Caller raised an issue about engine</h6>
+                        </div>
+                        <div className="flex-1 p-16">
+                            <p>No of calls </p>
+                            <p className="mb-8">profiled with</p>
+                            <h3>17</h3>
+                        </div>
+                    </div>
                 </div>
             </Overlay>
         )

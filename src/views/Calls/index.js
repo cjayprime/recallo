@@ -25,7 +25,7 @@ class Calls extends Component {
                 <Titlebar
                     heading={"Calls"}
                     buttons={{
-                        left: { title: "View voicenotes", action: this.toggle },
+                        left: { title: "View voicenotes"},
                         right: { title: "Profile Category", action: this.toggle }
                     }}
                 />

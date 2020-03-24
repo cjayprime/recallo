@@ -4,8 +4,19 @@ import Titlebar from "../../components/TitleBar";
 import MenuItem from "../../components/MenuItem/menuItem";
 import {ReactComponent as SearchIcon} from "../../assets/img/search.svg";
 import Table from "../../components/Table/table";
+import DepartmentOverlay from "./DepartmentOverlay";
+import PersonnelOverlay from "./AddPersonnelOverlay";
+
 
 class Personnel extends Component {
+
+    state = { open: false };
+
+    toggle = () => {
+        this.setState({ open: ! this.state.open });
+        console.log("Toggled")
+    };
+
 
     render() {
 
@@ -14,8 +25,8 @@ class Personnel extends Component {
                 <Titlebar
                     heading={"Personnel"}
                     buttons={{
-                        left: {title: "Departments", action: () => {}},
-                        right: {title: "Add personnel", action: () => {}}
+                        left: {title: "Departments", action: this.toggle},
+                        right: {title: "Add personnel", action: this.toggle}
                     }}
                 />
                 <div className="menu-bar ptb-20">
@@ -35,6 +46,8 @@ class Personnel extends Component {
                         </div>
                     </div>
                 </div>
+                <DepartmentOverlay open={this.state.open} toggle={this.toggle}/>
+                <PersonnelOverlay open={this.state.open} toggle={this.toggle}/>
                 <Table/>
             </div>
         )

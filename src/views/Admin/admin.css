@@ -264,3 +264,13 @@
 }
 
 /* End Profile styles */
+
+
+/* Profile Category Overlay */
+.existing-category-card{
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: 10.3rem;
+}
+
+/* End Profile Category Overlay */

@@ -114,6 +114,9 @@ textarea{
 .background-grey{
     background-color: var(--background-color);
 }
+.background-darkgrey{
+    background-color: #eee;
+}
 .hover-grey:hover{
     background-color: var(--background-color);
 }
@@ -174,6 +177,9 @@ textarea{
 }
 .p-12 {
     padding: 12px;
+}
+.p-16{
+    padding: 16px;
 }
 .p-24 {
     padding: 24px;
@@ -260,8 +266,12 @@ textarea{
     display: flex;
     justify-content: space-between;
 }
-
-
+.flex-3{
+    flex: 3;
+}
+.flex-1{
+    flex: 1;
+}
 .custom-col-3 {
     width: 24%;
 }
