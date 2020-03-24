@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Titlebar from "../components/TitleBar";
-import MenuItem from "../components/MenuItem/menuItem";
-import {ReactComponent as SearchIcon} from "../assets/img/search.svg";
-import Table from "../components/Table/table";
+import Titlebar from "../../components/TitleBar";
+import MenuItem from "../../components/MenuItem/menuItem";
+import {ReactComponent as SearchIcon} from "../../assets/img/search.svg";
+import Table from "../../components/Table/table";
 
 class Personnel extends Component {
 
