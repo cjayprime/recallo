@@ -24,8 +24,8 @@ const FormField = (props) => {
     return (
         <div>
             <div>
-                <h5 className={classNames("mb-8", labelClass)}><label>{labelTitle}</label></h5>
-        </div>
+                <h6 className={classNames("mb-8", "light", labelClass)}><label>{labelTitle}</label></h6>
+            </div>
         <input
             id={id}
             value={value}

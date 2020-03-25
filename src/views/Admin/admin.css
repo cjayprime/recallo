@@ -180,6 +180,34 @@
 
 /* End Home style */
 
+
+/*Calls css*/
+.menu-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search{
+  height: 32px;
+  width: 196px;
+}
+.search-form{
+  position: relative;
+  display: inline-block;
+}
+.search-icon{
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
+  stroke: var(--text-color);
+}
+.menu-bar-right{
+  display: flex;
+}
+
+/*End calls css*/
+
 /* Profile styles */
 
 .profile_tab {
@@ -239,3 +267,57 @@
 }
 
 /* End Account plan styles */
+
+/* Profile Category Overlay */
+.existing-category-card{
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: 10.3rem;
+}
+/* End Profile Category Overlay */
+
+/* Add Personnel Overlay */
+.personnel-checkbox h5{
+  display: inline-block;
+}
+.checkbox-label{
+  display: block;
+  position: relative;
+  padding-left: 24px;
+}
+.check-mark{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.7rem;
+  width: 1.7rem;
+  border-radius: .4rem;
+  border: 1px solid #336799;
+}
+.personnel-checkbox input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.check-mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox-label input:checked ~ .check-mark:after {
+  display: block;
+}
+.checkbox-label .check-mark:after {
+  left: 6px;
+  top: 3px;
+  width: 3px;
+  height: 7px;
+  border: solid #336799;
+  border-width: 0 1px 1px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* Add Personnel Overlay */

@@ -124,7 +124,7 @@ class Home extends Component {
                                     <div className="custom-col-6 pl-38">
                                         <h5 className="text-blue bold hover cursor mb-12">Mondays<span className="arrow-down ml-5" /></h5>
                                         <span className="bold text-light">On duty</span>
-                                        <ul className="mt-5">
+                                        <ul>
                                             <li>Kehinde Yusuf</li>
                                             <li>Tokunbo Popoola</li>
                                             <li>Tracy Badmus</li>

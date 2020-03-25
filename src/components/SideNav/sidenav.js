@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 import "./sidenav.css"
-import Header from "../Header/header";
 
 class Sidenav extends Component {
     render() {
         const { routes } = this.props;
-        console.log(routes, "Hey routes");
+        //console.log(routes, "Hey routes");
         return (
             <aside className="sidenav">
                 {/* <Header className="SideNav-header" /> */}
@@ -29,9 +28,9 @@ class Sidenav extends Component {
                         {routes.privateRoutes.sidebar.map((prop, key) => {
                             if (prop.redirect) return null;
                             return (
-                                <Link className="sidenav-list-link" to={prop.layout + prop.path}>
-                                    <li key={key} className="sidenav-list-item">
-                                        <img src={prop.icon} className="sidenav-list-icon" />
+                                <Link key={key} className="sidenav-list-link" to={prop.layout + prop.path}>
+                                    <li className="sidenav-list-item">
+                                        <img src={prop.icon} className="sidenav-list-icon" alt="" />
                                         <h5>{prop.name}</h5>
                                     </li>
                                 </Link>

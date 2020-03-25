@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 html{
     font-size: 62.5%;
@@ -34,6 +38,8 @@ table{
 }
 button{
     outline: none;
+    border: 1px solid transparent;
+    cursor: pointer;
 }
 h1{
     font-size: 3rem;
@@ -74,7 +80,11 @@ ul {
 .screen-padding {
     padding: 32px;
 }
-
+textarea{
+    resize: none;
+    outline: none;
+    overflow: auto;
+}
 
 
 
@@ -113,6 +123,9 @@ ul {
 .background-grey{
     background-color: var(--background-color);
 }
+.background-darkgrey{
+    background-color: #eee;
+}
 .hover-grey:hover{
     background-color: var(--background-color);
 }
@@ -131,6 +144,9 @@ ul {
 /* margin and padding style */
 .mr-5{
     margin-right: 5px;
+}
+.mr-16{
+    margin-right: 16px;
 }
 .ml-3{
     margin-left: 3px;
@@ -165,8 +181,14 @@ ul {
 .mr-25{
     margin-right: 25px;
 }
+.mt-40{
+    margin-top: 40px;
+}
 .p-12 {
     padding: 12px;
+}
+.p-16{
+    padding: 16px;
 }
 .p-24 {
     padding: 24px;
@@ -270,8 +292,12 @@ ul {
     display: flex;
     justify-content: space-between;
 }
-
-
+.flex-3{
+    flex: 3;
+}
+.flex-1{
+    flex: 1;
+}
 .custom-col-3 {
     width: 24%;
 }
