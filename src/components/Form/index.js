@@ -10,7 +10,7 @@ const FormField = (props) => {
         onChange,
         onKeyUp,
         type,
-        // options,
+        options,
         // form,
         // maxlength,
         // cols,
@@ -19,24 +19,47 @@ const FormField = (props) => {
         defaultValue,
         placeholder,
         labelTitle,
-        labelClass
+        labelClass,
+        selectClass
     } = props;
+
+    if (type === "select") {
+        return (
+            <div>
+                <div>
+                    <h6 className={classNames("mb-8", "light", labelClass)}><label>{labelTitle}</label></h6>
+                </div>
+                <div className={className}>
+                    <select
+                        className={classNames("light text-main", selectClass, className)}
+                        name={name}
+                        value={value}
+                        onChange={onChange}
+                    >
+                        {/* <option value="">{`Select ${labelTitle.toLowerCase()}`}</option> */}
+                        {options}
+                    </select>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div>
             <div>
                 <h6 className={classNames("mb-8", "light", labelClass)}><label>{labelTitle}</label></h6>
             </div>
-        <input
-            id={id}
-            value={value}
-            name={name}
-            className={className}
-            type={type || "text"}
-            onChange={onChange}
-            onKeyUp={onKeyUp}
-            placeholder={placeholder}
-            defaultValue={defaultValue}
-        />
+            <input
+                id={id}
+                value={value}
+                name={name}
+                className={className}
+                type={type || "text"}
+                onChange={onChange}
+                onKeyUp={onKeyUp}
+                placeholder={placeholder}
+                defaultValue={defaultValue}
+            />
         </div >
     )
 }

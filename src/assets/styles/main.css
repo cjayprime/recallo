@@ -31,6 +31,14 @@ input{
     border: 2px solid;
     width: 100%;
 }
+select{
+    outline: none;
+    border-radius: 8px;
+    width: 100%;
+}
+.custom-select{
+    font-size: 1.6rem;
+}
 table{
     width: 100%;
     font-size: 1.2rem;
@@ -150,6 +158,9 @@ textarea{
 }
 .ml-3{
     margin-left: 3px;
+}
+.ml-10 {
+    margin-left: 10px;
 }
 .ml-5{
     margin-left: 5px;
