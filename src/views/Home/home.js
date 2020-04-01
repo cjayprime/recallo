@@ -32,7 +32,7 @@ class Home extends Component {
 
         return (
             <>
-                <div className="screen-padding container">
+                <div className="screen-padding container background-grey height">
                     <div className="row mb-32">
                         <div className="col-12">
                             <div className="overview br-30 row-direction p-24">
