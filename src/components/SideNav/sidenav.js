@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
+import Button from "../../components/Button/button";
+import Header from "../../components/Header/header"
+
 import "./sidenav.css"
 
 class Sidenav extends Component {
     render() {
-        const { routes } = this.props;
+        const { routes, header } = this.props;
         //console.log(routes, "Hey routes");
+
         return (
             <aside className="sidenav">
-                {/* <Header className="SideNav-header" /> */}
+                {header && <Header className="sidenav-header" />}
                 <div className="sidenav-body">
                     <div className="details">
                         <div className="business-logo">
@@ -20,7 +24,11 @@ class Sidenav extends Component {
                         {routes.privateRoutes.route.map((prop, key) => {
                             if (prop.redirect) return null;
                             return (
-                                <Link key={key} to={prop.layout + prop.path} className="account-button"><p>Manage your Recallo Account</p></Link>
+                                <Link key={key} to={prop.layout + prop.path} className="mt-24"><Button className="br-30 bd-grey account-button"
+                                    padding={"12px 20px"} background={"#fff"} text={"#333"}
+                                >
+                                    <h6 className="bold text-main">Manage your Recallo Account</h6>
+                                </Button></Link>
                             )
                         })}
                     </div>
@@ -38,7 +46,7 @@ class Sidenav extends Component {
                         })}
                     </ul>
                     <hr />
-                    <p className="logout">Logout</p>
+                    <h6 className="logout text-blue light">Logout</h6>
                 </div>
             </aside>
         )

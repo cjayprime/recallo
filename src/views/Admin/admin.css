@@ -1,7 +1,7 @@
-.grid-container {
+.grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 79px 1fr 79px;
+  grid-template-rows: 0px 1fr 79px;
   grid-template-areas:
     "header"
     "main";
@@ -28,8 +28,23 @@
   width: 100%;
   z-index: 101;
   position: fixed;
-  padding: 0 16px;
+  padding: 0 129px 0 28px;
   background-color: #fff;
+  box-shadow: 0px 0px 6px #00000014;
+}
+
+.sidenav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  height: 79px;
+  width: 100%;
+  z-index: 101;
+  position: fixed;
+  padding: 0 20px 0 28px;
+  background-color: #fff;
+  box-shadow: 0px 0px 6px #00000014;
 }
 
 .sidenav-list {
@@ -42,7 +57,7 @@
 }
 
 @media only screen and (min-width: 46.875em) {
-  .grid-container {
+  .grid {
     grid-template-columns: 339px 1fr;
     grid-template-areas:
       "sidenav header"

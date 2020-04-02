@@ -6,7 +6,7 @@ import FormField from "../../components/Form";
 const Profile = (props) => {
     return (
         <>
-            <div className="screen-padding">
+            <div className="screen-padding mt-80">
                 <div className="overview br-16 plr-32 pb-32 mb-32">
                     <form>
                         <div className="row mb-23">

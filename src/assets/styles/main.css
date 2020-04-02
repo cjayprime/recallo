@@ -93,6 +93,9 @@ textarea{
     outline: none;
     overflow: auto;
 }
+.height {
+    min-height: calc(100vh - 70px);
+}
 
 
 
@@ -146,7 +149,9 @@ textarea{
 .bc-blue{
    border-color: var(--text-color);
 }
-
+.bd-grey {
+    border: 1px solid #dddddd;
+}
 
 
 /* margin and padding style */
@@ -192,8 +197,14 @@ textarea{
 .mr-25{
     margin-right: 25px;
 }
+.mt-24{
+    margin-top: 24px;
+}
 .mt-40{
     margin-top: 40px;
+}
+.mt-80 {
+    margin-top: 80px;
 }
 .p-12 {
     padding: 12px;
@@ -215,6 +226,9 @@ textarea{
 }
 .pt-23 {
     padding-top: 23px;
+}
+.pt-30 {
+    padding-top: 30px;
 }
 .pt-32 {
     padding-top: 32px;

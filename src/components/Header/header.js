@@ -7,8 +7,12 @@ import "./header.css"
 class Header extends Component {
     render() {
         const {
-            className
+            className,
+            header
         } = this.props;
+
+        if (header === false) return null;
+
         return (
             <div className={className}>
                 <div>
