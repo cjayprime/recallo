@@ -12,7 +12,7 @@ import "./admin.css";
 
 class Admin extends Component {
     // state = {
-    //     visible: true
+    //     header: false
     // }
 
     getRoutes = routes => {
@@ -34,6 +34,8 @@ class Admin extends Component {
     getSettings = routes => {
         return routes.privateRoutes.route.map((prop, key) => {
             if (prop.layout === "/admin") {
+                // from and to props of the Redirect component from react-router-dom npm library 
+                // will aid you redirect if props.match.url === "/"
                 return (
                     <Route
                         path={prop.layout + prop.path}
@@ -47,37 +49,41 @@ class Admin extends Component {
         })
     }
 
-    // changeHeader = () => {
-    //     for (let i = 0; i < routes.privateRoutes.length; i++) {
-    //         if (
-    //             this.props.location.pathname.indexOf(
-    //                 routes.privateRoutes[i].layout + routes.privateRoutes[i].path
-    //             ) !== "/admin/home"
-    //         ) {
-    //             return showHeader
-    //         } else {
-    //             return hideHeader
-    //         }
-    //     }
-    // }
+    header = (isSideNav) => {
+        if (isSideNav === false) {
+
+            if (this.props.location.pathname === "/admin/home")
+                return true;
+
+            return false;
+
+        } else {
+
+            if (this.props.location.pathname === "/admin/calls" || this.props.location.pathname === "/admin/personnel" || this.props.location.pathname === "/admin/analytics" || this.props.location.pathname === "/admin/settings")
+                return true;
+
+            return false;
+
+        }
+    }
 
     render() {
+        console.log("hey", this.props.location)
         return (
-            <>
-                <div className="grid-container">
-                    <Header className="main-header" />
-                    <Sidenav
-                        {...this.props}
-                        routes={routes}
-                    />
-                    <main className="main">
-                        <Switch>
-                            {this.getRoutes(routes)}
-                            {this.getSettings(routes)}
-                        </Switch>
-                    </main>
-                </div>
-            </>
+            <div className="grid">
+                <Header header={this.header(false)} className="main-header" />
+                <Sidenav
+                    header={this.header(true)}
+                    {...this.props}
+                    routes={routes}
+                />
+                <main className="main">
+                    <Switch>
+                        {this.getRoutes(routes)}
+                        {this.getSettings(routes)}
+                    </Switch>
+                </main>
+            </div>
         )
     }
 }

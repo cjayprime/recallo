@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 import Button from "../../components/Button/button";
+import Header from "../../components/Header/header"
 
 import "./sidenav.css"
 
 class Sidenav extends Component {
     render() {
-        const { routes } = this.props;
+        const { routes, header } = this.props;
         //console.log(routes, "Hey routes");
+
         return (
             <aside className="sidenav">
-                {/* <Header className="SideNav-header" /> */}
+                {header && <Header className="sidenav-header" />}
                 <div className="sidenav-body">
                     <div className="details">
                         <div className="business-logo">

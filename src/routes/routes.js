@@ -52,7 +52,7 @@ var routes = {
         ],
         route: [
             {
-                path: "/manage-account",
+                path: "/settings",
                 exact: true,
                 component: ManageAccount,
                 layout: "/admin"

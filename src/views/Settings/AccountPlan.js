@@ -5,7 +5,7 @@ import Button from "../../components/Button/button";
 const AccountPlan = (props) => {
     return (
         <>
-            <div className="screen-padding">
+            <div className="screen-padding mt-80">
                 <div className="row mb-24">
                     <div className="col-28">
                         <div className="overview text-center br-8">
