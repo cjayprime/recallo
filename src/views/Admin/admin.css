@@ -195,29 +195,28 @@
 
 /* End Home style */
 
-
 /*Calls css*/
-.menu-bar{
+.menu-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.search{
+.search {
   height: 32px;
   width: 196px;
 }
-.search-form{
+.search-form {
   position: relative;
   display: inline-block;
 }
-.search-icon{
+.search-icon {
   position: absolute;
   z-index: 2;
   top: 10px;
   left: 10px;
   stroke: var(--text-color);
 }
-.menu-bar-right{
+.menu-bar-right {
   display: flex;
 }
 
@@ -285,7 +284,7 @@
 /* End Account plan styles */
 
 /* Profile Category Overlay */
-.existing-category-card{
+.existing-category-card {
   border: 1px solid #ddd;
   border-radius: 8px;
   height: 10.3rem;
@@ -293,24 +292,24 @@
 /* End Profile Category Overlay */
 
 /* Add Personnel Overlay */
-.personnel-checkbox h5{
+.personnel-checkbox h5 {
   display: inline-block;
 }
-.checkbox-label{
+.checkbox-label {
   display: block;
   position: relative;
   padding-left: 24px;
 }
-.check-mark{
+.check-mark {
   position: absolute;
   top: 0;
   left: 0;
   height: 1.7rem;
   width: 1.7rem;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   border: 1px solid #336799;
 }
-.personnel-checkbox input{
+.personnel-checkbox input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -337,3 +336,38 @@
   transform: rotate(45deg);
 }
 /* Add Personnel Overlay */
+
+/* Previous call style */
+
+.previous-header {
+  height: 118px;
+  background: var(--text-white);
+  box-shadow: 0px 3px 6px #0000000a;
+  padding: 0 32px 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.previous-header a {
+  text-decoration: none;
+  margin-top: 23px;
+}
+
+.callID {
+  margin-top: 35px;
+}
+
+.callID-history {
+  margin-top: 44px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.callID-history > div {
+  padding: 0 0 0 40px;
+}
+
+.previous {
+}
+
+/* End previous call style */
