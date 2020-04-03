@@ -10,3 +10,8 @@ tr:first-child td:last-child { border-bottom-right-radius: 8px; }
     padding: 20px;
     border-bottom: 1px solid #dddddd;
 }
+
+.table-body a {
+    text-decoration: none;
+    color: var(--text-blue);
+}

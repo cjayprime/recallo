@@ -6,6 +6,7 @@ import Analytics from "../views/Analytics";
 
 import homeIcon from "../assets/img/homeIcon.svg";
 import ManageAccount from "../views/Settings";
+import PreviousCall from "../views/PreviousCall";
 
 var routes = {
     publicRoutes: [
@@ -55,6 +56,12 @@ var routes = {
                 path: "/settings",
                 exact: true,
                 component: ManageAccount,
+                layout: "/admin"
+            },
+            {
+                path: "/previous",
+                exact: true,
+                component: PreviousCall,
                 layout: "/admin"
             }
         ]

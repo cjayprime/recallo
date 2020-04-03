@@ -16,7 +16,6 @@ class Calls extends Component {
 
     toggle = () => {
         this.setState({ open: ! this.state.open });
-        console.log("Toggled")
     };
 
     render() {
@@ -32,7 +31,7 @@ class Calls extends Component {
                 <div className="menu-bar ptb-20">
                     <div>
                         <MenuItem item={{ title: "Personnel", values: ["Yesterday", "Today", "monday"] }} />
-                        <MenuItem item={{ title: "Calls", values: ["Today", "Yesterday", "Last 7 days", "Select range"] }} />
+                        <MenuItem item={{ title: "Call date", values: ["Today", "Yesterday", "Last 7 days", "Select range"] }} />
                         <MenuItem item={{ title: "Profile category", values: ["Not yet profited", "Engine fault", "Break fault"] }} />
                         <MenuItem item={{ title: "Call status", values: ["Answered", "Voicenotes", "Dropped", "Missed"] }} />
                         <div className="search-form">

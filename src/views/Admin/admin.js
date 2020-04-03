@@ -59,7 +59,7 @@ class Admin extends Component {
 
         } else {
 
-            if (this.props.location.pathname === "/admin/calls" || this.props.location.pathname === "/admin/personnel" || this.props.location.pathname === "/admin/analytics" || this.props.location.pathname === "/admin/settings")
+            if (this.props.location.pathname === "/admin/calls" || this.props.location.pathname === "/admin/personnel" || this.props.location.pathname === "/admin/analytics" || this.props.location.pathname === "/admin/settings" || this.props.location.pathname === "/admin/previous")
                 return true;
 
             return false;
@@ -68,7 +68,6 @@ class Admin extends Component {
     }
 
     render() {
-        console.log("hey", this.props.location)
         return (
             <div className="grid">
                 <Header header={this.header(false)} className="main-header" />
