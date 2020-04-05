@@ -7,6 +7,7 @@ import Analytics from "../views/Analytics";
 import homeIcon from "../assets/img/homeIcon.svg";
 import ManageAccount from "../views/Settings";
 import PreviousCall from "../views/PreviousCall";
+import VoiceNotes from "../views/Voicenotes";
 
 var routes = {
     publicRoutes: [
@@ -62,6 +63,11 @@ var routes = {
                 path: "/previous",
                 exact: true,
                 component: PreviousCall,
+                layout: "/admin"
+            }, {
+                path: "/voicenotes",
+                exact: true,
+                component: VoiceNotes,
                 layout: "/admin"
             }
         ]

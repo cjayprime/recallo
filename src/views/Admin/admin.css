@@ -348,8 +348,7 @@
   justify-content: space-between;
 }
 
-.previous-header a {
-  text-decoration: none;
+.goback {
   margin-top: 23px;
 }
 
@@ -367,7 +366,14 @@
   padding: 0 0 0 40px;
 }
 
-.previous {
+/* End previous call style */
+
+/* voicenotes style */
+
+.audioPlayer {
+  display: block;
+  border-radius: 20px;
+  margin: 0 auto;
 }
 
-/* End previous call style */
+/* End voicenotes style */

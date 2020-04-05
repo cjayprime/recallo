@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 
 import MenuItem from "../../components/MenuItem/menuItem";
 import arrowLeft from "../../assets/img/arrow-left.png";
@@ -7,6 +6,11 @@ import arrowLeft from "../../assets/img/arrow-left.png";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 
 class PreviousCall extends Component {
+
+    goBack = () => {
+        this.props.history.goBack();
+    }
+
     render() {
         return (
             <>
@@ -32,8 +36,11 @@ class PreviousCall extends Component {
                             <p className="light text-light">Average wait time</p>
                         </div>
                         <div>
-                            <Link className="row-direction align-center cursor" to="/admin/calls"> <img src={arrowLeft} alt="arrow left" />
-                                <h5 className="bold text-blue ml-8">Go back</h5></Link>
+                            <p className="row-direction align-center cursor goback" onClick={this.goBack}>
+
+                                <img src={arrowLeft} alt="arrow left" />
+                                <h5 className="bold text-blue ml-8">Go back</h5>
+                            </p>
                         </div>
                     </div>
                 </div>
