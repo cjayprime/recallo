@@ -47,6 +47,7 @@ class Admin extends Component {
         })
     }
 
+<<<<<<< Updated upstream
     // changeHeader = () => {
     //     for (let i = 0; i < routes.privateRoutes.length; i++) {
     //         if (
@@ -60,6 +61,25 @@ class Admin extends Component {
     //         }
     //     }
     // }
+=======
+    header = (isSideNav) => {
+        if (isSideNav === false) {
+
+            if (this.props.location.pathname === "/admin/home")
+                return true;
+
+            return false;
+
+        } else {
+
+            if (this.props.location.pathname === "/admin/calls" || this.props.location.pathname === "/admin/personnel" || this.props.location.pathname === "/admin/analytics" || this.props.location.pathname === "/admin/settings" || this.props.location.pathname === "/admin/previous" || this.props.location.pathname === "/admin/voicenotes")
+                return true;
+
+            return false;
+
+        }
+    }
+>>>>>>> Stashed changes
 
     render() {
         return (

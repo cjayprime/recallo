@@ -2,25 +2,16 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 import Button from "../../components/Button/button";
-import Table from "../../components/Table/table";
 import MenuItem from "../../components/MenuItem/menuItem";
-import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
-
 
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 
-
-class Calls extends Component {
+class VoiceNotes extends Component {
 
     state = { open: false };
 
     toggle = () => {
-<<<<<<< Updated upstream
-        this.setState({ open: ! this.state.open });
-        console.log("Toggled")
-=======
         this.setState({ open: !this.state.open });
->>>>>>> Stashed changes
     };
 
     render() {
@@ -28,15 +19,15 @@ class Calls extends Component {
             <div className="screen-padding">
                 <div className="title-bar">
                     <div className="title">
-                        <h2>Calls</h2>
+                        <h2>Voicenotes</h2>
                     </div>
                     <div>
-                        <Link to="/admin/voicenotes">
+                        <Link to="/admin/calls">
                             <Button
                                 background={"#F5F6FA"} text={"var(--text-color)"} padding={"12px 25px"}
                                 className="mr-16 br-30"
                             >
-                                View voicenotes
+                                View calls
                         </Button>
                         </Link>
                         <Button
@@ -51,9 +42,8 @@ class Calls extends Component {
                 <div className="menu-bar ptb-20">
                     <div>
                         <MenuItem item={{ title: "Personnel", values: ["Yesterday", "Today", "monday"] }} />
-                        <MenuItem item={{ title: "Calls", values: ["Today", "Yesterday", "Last 7 days", "Select range"] }} />
+                        <MenuItem item={{ title: "Call date", values: ["Today", "Yesterday", "Last 7 days", "Select range"] }} />
                         <MenuItem item={{ title: "Profile category", values: ["Not yet profited", "Engine fault", "Break fault"] }} />
-                        <MenuItem item={{ title: "Call status", values: ["Answered", "Voicenotes", "Dropped", "Missed"] }} />
                         <div className="search-form">
                             <SearchIcon className="search-icon" />
                             <input className="br-3 search bc-blue hover" />
@@ -61,19 +51,44 @@ class Calls extends Component {
                     </div>
                     <div className="menu-bar-right">
                         <p className="text-light mr-5">Viewing results</p>
-                        <p className="text-main bold mr-20">1-10 <span className="text-light ml-5 mr-5">of</span>36</p>
+                        <p className="text-main bold mr-20">5<span className="text-light ml-5 mr-5">of</span>5</p>
                         <div className="arrow-icons">
                             <span className="arrow arrow-left mr-10 op-4 hover" />
                             <span className="arrow arrow-right" />
                         </div>
                     </div>
                 </div>
-                <ProfileCategoryOverlay open={this.state.open} toggle={this.toggle} />
-                <Table />
+                <table className="mtb-15">
+                    <tbody>
+                        <tr className="background-grey text-light table-head hover-grey">
+                            <td>CallID</td>
+                            <td>Call date & time</td>
+                            <td>Personnel</td>
+                            <td>Note duration</td>
+                            <td>Recording</td>
+                            <td>Profile category</td>
+                            <td>Action</td>
+                        </tr>
+                        {Array.apply(null, Array(6)).map((a, i) => (
+                            <tr className="table-body text-main hover-grey">
+                                <td className="text-blue bold"><Link to="/admin/previous">+2348103153845</Link></td>
+                                <td>Today<p className="text-light mt-5">12:03pm</p></td>
+                                <td>Grace Audu</td>
+                                <td>03:20</td>
+                                <td>
+                                    <audio className='audioPlayer' autoplay controls loop>
+                                        <source src='#' type='audio/mpeg' />
+                                    </audio>
+                                </td>
+                                <td>Not yet profiled</td>
+                                <td className="text-blue bold">Profile call</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         )
     }
-
 }
 
-export default Calls;
+export default VoiceNotes;
