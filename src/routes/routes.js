@@ -6,11 +6,8 @@ import Analytics from "../views/Analytics";
 
 import homeIcon from "../assets/img/homeIcon.svg";
 import ManageAccount from "../views/Settings";
-<<<<<<< Updated upstream
-=======
 import PreviousCall from "../views/PreviousCall";
 import VoiceNotes from "../views/Voicenotes";
->>>>>>> Stashed changes
 
 var routes = {
     publicRoutes: [
@@ -57,12 +54,10 @@ var routes = {
         ],
         route: [
             {
-                path: "/manage-account",
+                path: "/settings",
                 exact: true,
                 component: ManageAccount,
                 layout: "/admin"
-<<<<<<< Updated upstream
-=======
             },
             {
                 path: "/previous",
@@ -74,7 +69,6 @@ var routes = {
                 exact: true,
                 component: VoiceNotes,
                 layout: "/admin"
->>>>>>> Stashed changes
             }
         ]
     }

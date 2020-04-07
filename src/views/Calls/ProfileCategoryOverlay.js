@@ -11,7 +11,7 @@ class ProfileCategoryOverlay extends Component{
         const { open, toggle } = this.props;
 
         return(
-            <Overlay open={open} toggle={toggle}>
+            <Overlay open={open} toggle={toggle} >
                 <div>
                     <h4 className="mb-8">Add new profile category</h4>
                     <h6 className="light text-light mb-32">You can enter a name to categorise calls you profile</h6>

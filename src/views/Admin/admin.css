@@ -1,7 +1,7 @@
-.grid-container {
+.grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 79px 1fr 79px;
+  grid-template-rows: 0px 1fr 79px;
   grid-template-areas:
     "header"
     "main";
@@ -28,8 +28,23 @@
   width: 100%;
   z-index: 101;
   position: fixed;
-  padding: 0 16px;
+  padding: 0 129px 0 28px;
   background-color: #fff;
+  box-shadow: 0px 0px 6px #00000014;
+}
+
+.sidenav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  height: 79px;
+  width: 100%;
+  z-index: 101;
+  position: fixed;
+  padding: 0 20px 0 28px;
+  background-color: #fff;
+  box-shadow: 0px 0px 6px #00000014;
 }
 
 .sidenav-list {
@@ -42,7 +57,7 @@
 }
 
 @media only screen and (min-width: 46.875em) {
-  .grid-container {
+  .grid {
     grid-template-columns: 339px 1fr;
     grid-template-areas:
       "sidenav header"
@@ -180,36 +195,33 @@
 
 /* End Home style */
 
-
 /*Calls css*/
-.menu-bar{
+.menu-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.search{
+.search {
   height: 32px;
   width: 196px;
 }
-.search-form{
+.search-form {
   position: relative;
   display: inline-block;
 }
-.search-icon{
+.search-icon {
   position: absolute;
   z-index: 2;
   top: 10px;
   left: 10px;
   stroke: var(--text-color);
 }
-.menu-bar-right{
+.menu-bar-right {
   display: flex;
 }
-
 /*End calls css*/
 
 /* Profile styles */
-
 .profile_tab {
   display: flex;
   flex-direction: row;
@@ -237,6 +249,7 @@
   border: 1px solid #dddddd;
   height: 40px;
   width: 100%;
+  background: #fff;
 }
 
 .profile-label {
@@ -253,11 +266,9 @@
   background-color: var(--text-color);
   color: var(--text-white);
 }
-
 /* End Profile styles */
 
 /* Account plan styles */
-
 .price {
   font-size: 4rem;
 }
@@ -269,32 +280,93 @@
 /* End Account plan styles */
 
 /* Profile Category Overlay */
-.existing-category-card{
+.existing-category-card {
   border: 1px solid #ddd;
   border-radius: 8px;
   height: 10.3rem;
 }
 /* End Profile Category Overlay */
 
+/* Add View Profile Overlay */
+.view-profile-table{
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+.profile-category-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  height: 13.5rem;
+}
+/* End View Profile Overlay */
+
+/*  Profile Call Overlay */
+.profile-call-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  padding-top: 3px;
+  font-size: 14px;
+  color: var(--text-color);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.profile-call-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.profile-call-label .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #fff;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+}
+.profile-call-label input:checked ~ .checkmark {
+  background-color: #fff;
+}
+.profile-call-label .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.profile-call-label input:checked ~ .checkmark:after {
+  display: block;
+}
+.profile-call-label .checkmark:after {
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--text-color);
+}
+/*  End Profile Call Overlay */
+
 /* Add Personnel Overlay */
-.personnel-checkbox h5{
+.personnel-checkbox h5 {
   display: inline-block;
 }
-.checkbox-label{
+.checkbox-label {
   display: block;
   position: relative;
   padding-left: 24px;
 }
-.check-mark{
+.check-mark {
   position: absolute;
   top: 0;
   left: 0;
   height: 1.7rem;
   width: 1.7rem;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   border: 1px solid #336799;
 }
-.personnel-checkbox input{
+.personnel-checkbox input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -320,13 +392,9 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-<<<<<<< Updated upstream
-/* Add Personnel Overlay */
-=======
 /* Add Personnel Overlay */
 
 /* Previous call style */
-
 .previous-header {
   height: 118px;
   background: var(--text-white);
@@ -365,4 +433,26 @@
 }
 
 /* End voicenotes style */
->>>>>>> Stashed changes
+
+
+/* tables style */
+
+.table-head td{
+  padding: 10px 20px;
+}
+tr:first-child td:first-child { border-top-left-radius: 8px; }
+tr:first-child td:last-child { border-top-right-radius: 8px; }
+tr:first-child td:first-child { border-bottom-left-radius: 8px; }
+tr:first-child td:last-child { border-bottom-right-radius: 8px; }
+
+.table-body td{
+  padding: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.table-body a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* End tables style */

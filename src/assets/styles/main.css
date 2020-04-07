@@ -31,6 +31,14 @@ input{
     border: 2px solid;
     width: 100%;
 }
+select{
+    outline: none;
+    border-radius: 8px;
+    width: 100%;
+}
+.custom-select{
+    font-size: 1.6rem;
+}
 table{
     width: 100%;
     font-size: 1.2rem;
@@ -85,6 +93,9 @@ textarea{
     outline: none;
     overflow: auto;
 }
+.height {
+    min-height: calc(100vh - 70px);
+}
 
 
 
@@ -138,7 +149,9 @@ textarea{
 .bc-blue{
    border-color: var(--text-color);
 }
-
+.bd-grey {
+    border: 1px solid #dddddd;
+}
 
 
 /* margin and padding style */
@@ -150,6 +163,9 @@ textarea{
 }
 .ml-3{
     margin-left: 3px;
+}
+.ml-10 {
+    margin-left: 10px;
 }
 .ml-5{
     margin-left: 5px;
@@ -169,6 +185,12 @@ textarea{
 .mt-5{
     margin-top: 5px;
 }
+.ml-8 {
+    margin-left: 8px;
+}
+.mr-8{
+    margin-right: 8px;
+}
 .mr-10{
     margin-right: 10px;
 }
@@ -181,8 +203,17 @@ textarea{
 .mr-25{
     margin-right: 25px;
 }
+.mt-16{
+    margin-top: 16px;
+}
+.mt-24{
+    margin-top: 24px;
+}
 .mt-40{
     margin-top: 40px;
+}
+.mt-80 {
+    margin-top: 80px;
 }
 .p-12 {
     padding: 12px;
@@ -205,6 +236,9 @@ textarea{
 .pt-23 {
     padding-top: 23px;
 }
+.pt-30 {
+    padding-top: 30px;
+}
 .pt-32 {
     padding-top: 32px;
 }
@@ -216,6 +250,9 @@ textarea{
 }
 .pl-38 {
     padding-left: 38px;
+}
+.mb-4{
+    margin-bottom: 4px;
 }
 .mb-8 {
     margin-bottom: 8px;
@@ -270,7 +307,9 @@ textarea{
 
 /* End of border radius */
 
-
+.flex{
+    display: flex;
+}
 .row-direction {
     display: flex;
     flex-direction: row;

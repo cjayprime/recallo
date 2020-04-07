@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-
+import {  Link} from "react-router-dom";
 import Button from "../../components/Button/button";
-import Table from "../../components/Table/table";
+import Table from "./table";
 import MenuItem from "../../components/MenuItem/menuItem";
 import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
 
@@ -15,12 +14,7 @@ class Calls extends Component {
     state = { open: false };
 
     toggle = () => {
-<<<<<<< Updated upstream
-        this.setState({ open: ! this.state.open });
-        console.log("Toggled")
-=======
         this.setState({ open: !this.state.open });
->>>>>>> Stashed changes
     };
 
     render() {
@@ -51,7 +45,7 @@ class Calls extends Component {
                 <div className="menu-bar ptb-20">
                     <div>
                         <MenuItem item={{ title: "Personnel", values: ["Yesterday", "Today", "monday"] }} />
-                        <MenuItem item={{ title: "Calls", values: ["Today", "Yesterday", "Last 7 days", "Select range"] }} />
+                        <MenuItem item={{ title: "Call date", values: ["Today", "Yesterday", "Last 7 days", "Select range"] }} />
                         <MenuItem item={{ title: "Profile category", values: ["Not yet profited", "Engine fault", "Break fault"] }} />
                         <MenuItem item={{ title: "Call status", values: ["Answered", "Voicenotes", "Dropped", "Missed"] }} />
                         <div className="search-form">
