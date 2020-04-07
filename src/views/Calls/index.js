@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-
+import {  Link} from "react-router-dom";
 import Button from "../../components/Button/button";
-import Table from "../../components/Table/table";
+import Table from "./table";
 import MenuItem from "../../components/MenuItem/menuItem";
 import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
 
