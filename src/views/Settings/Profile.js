@@ -12,7 +12,7 @@ const Profile = (props) => {
                         <div className="row mb-23">
                             <h4 className="bold pt-32">Personal information</h4>
                             <div className="pt-23">
-                                <Button className="br-30" padding={"12px 32px"} background={"var(--text-color)"} text={"#fff"}><h6>Save</h6></Button>
+                                <Button className="br-30 save orange-hover" padding={"12px 32px"}><h6>Save</h6></Button>
                             </div>
                         </div>
                         <div className="column-direction col-8">
@@ -48,7 +48,7 @@ const Profile = (props) => {
                         <div className="row mb-23">
                             <h4 className="bold pt-32">Business information</h4>
                             <div className="pt-23">
-                                <Button className="br-30" padding={"12px 30px"} background={"var(--text-color)"} text={"#fff"}><h6>Save</h6></Button>
+                                <Button className="br-30 save orange-hover" padding={"12px 30px"}><h6>Save</h6></Button>
                             </div>
                         </div>
                         <div className="row">

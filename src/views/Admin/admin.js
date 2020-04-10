@@ -52,14 +52,14 @@ class Admin extends Component {
     header = (isSideNav) => {
         if (isSideNav === false) {
 
-            if (this.props.location.pathname === "/admin/home")
+            if (this.props.location.pathname === "/admin/home" || this.props.location.pathname === "/admin/analytics")
                 return true;
 
             return false;
 
         } else {
 
-            if (this.props.location.pathname === "/admin/calls" || this.props.location.pathname === "/admin/personnel" || this.props.location.pathname === "/admin/analytics" || this.props.location.pathname === "/admin/settings" || this.props.location.pathname === "/admin/previous" || this.props.location.pathname === "/admin/voicenotes")
+            if (this.props.location.pathname === "/admin/calls" || this.props.location.pathname === "/admin/personnel" || this.props.location.pathname === "/admin/settings" || this.props.location.pathname === "/admin/previous" || this.props.location.pathname === "/admin/voicenotes")
                 return true;
 
             return false;

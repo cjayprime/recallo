@@ -58,7 +58,7 @@
 
 @media only screen and (min-width: 46.875em) {
   .grid {
-    grid-template-columns: 339px 1fr;
+    grid-template-columns: 319px 1fr;
     grid-template-areas:
       "sidenav header"
       "sidenav main";
@@ -76,7 +76,7 @@
 .sidenav {
   grid-area: sidenav;
   background-color: #f9f9f9;
-  width: 339px;
+  width: 319px;
   height: 100%;
   border-right: 1px solid #dddddd;
   display: flex;
