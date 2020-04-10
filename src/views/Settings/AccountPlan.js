@@ -8,9 +8,9 @@ const AccountPlan = (props) => {
             <div className="screen-padding mt-80">
                 <div className="row mb-24">
                     <div className="col-28">
-                        <div className="overview text-center br-8">
+                        <div className="overview blue-hover text-center br-8">
                             <div className="pt-40 mb-40">
-                                <h6 className="bold pb-32">BASIC</h6>
+                                <h6 className="bold pb-32 deep-blue">BASIC</h6>
                                 <p className="price text-main pb-8">
                                     ₦2000<sub className="text-main light">/month</sub>
                                 </p>
@@ -24,9 +24,9 @@ const AccountPlan = (props) => {
                         </div>
                     </div>
                     <div className="col-28">
-                        <div className="overview text-center br-8">
+                        <div className="overview blue-hover text-center br-8">
                             <div className="pt-40 mb-40">
-                                <h6 className="bold pb-32">STANDARD</h6>
+                                <h6 className="bold pb-32 deep-blue">STANDARD</h6>
                                 <p className="price text-main pb-8">
                                     ₦5000<sub className="text-main light">/month</sub>
                                 </p>
@@ -40,9 +40,9 @@ const AccountPlan = (props) => {
                         </div>
                     </div>
                     <div className="col-28">
-                        <div className="overview text-center br-8">
+                        <div className="overview blue-hover text-center br-8">
                             <div className="pt-40 mb-40">
-                                <h6 className="bold pb-32">PREMIUM</h6>
+                                <h6 className="bold pb-32 deep-blue">PREMIUM</h6>
                                 <p className="price text-main pb-8">
                                     ₦10000<sub className="text-main light">/month</sub>
                                 </p>
@@ -94,7 +94,7 @@ const AccountPlan = (props) => {
                         </div>
                         <div>
                             <h5 className="light text-light mb-12">Your subscription will automatically renew on 10th Mar, 2020 and you will be charged ₦2000</h5>
-                            <Button padding={"12px 30px"} background={"#eeeeee"} className="text-blue br-30 bn"><h4>Proceed to cancel now</h4></Button>
+                            <Button padding={"12px 30px"} background={"#eeeeee"} className="text-blue br-30 bn"><h6>Proceed to cancel now</h6></Button>
                         </div>
                     </div>
                 </div>

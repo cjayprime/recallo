@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import MenuItem from "../../components/MenuItem/menuItem";
+
 import TotalCalls from "./TotalCalls";
 import TotalCallsAnswered from "./TotalCallsAnswered";
 import ProfileVoiceNotes from "./ProfileVoicenotes";
@@ -94,10 +96,10 @@ class Home extends Component {
                             </div>
                         </div>
                         <div className="custom-col-3">
-                            <div className="overview p-24">
+                            <div className="overview p-24 br-15">
                                 <div className="row-direction mb-24 align-center">
                                     <h4 className="text-main bold mr-5">Average time:</h4>
-                                    <h4 className="text-blue bold hover cursor">call <span className="arrow-down ml-3" /></h4>
+                                    <h4><MenuItem item={{ title: "call", values: ["Call", "Wait"] }} /></h4>
                                 </div>
                                 <span className="bold text-light">Call</span>
                                 <div className="overview-call">
@@ -109,7 +111,7 @@ class Home extends Component {
                             </div>
                         </div>
                         <div className="custom-col-6">
-                            <div className="overview p-24">
+                            <div className="overview p-24 br-15">
                                 <div className="row">
                                     <div className="custom-col-6">
                                         <h4 className="text-main bold mb-24">Personnel</h4>

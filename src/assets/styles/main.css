@@ -104,6 +104,12 @@ textarea{
 .text-blue{
     color: var(--text-color);
 }
+.deep-blue{
+    color: #384364;
+}
+.text-white{
+    color: var(--text-white);
+}
 .text-light{
     color: var(--text-light);
 }
@@ -148,6 +154,13 @@ textarea{
 }
 .bc-blue{
    border-color: var(--text-color);
+}
+.blue-hover{
+    border: 1px solid var(--text-white);
+    transition: .3s all ease-in-out;
+}
+.blue-hover:hover{
+    border: 1px solid  var(--text-color);
 }
 .bd-grey {
     border: 1px solid #dddddd;
@@ -394,4 +407,14 @@ textarea{
 .green{
     background-color: #DAF7E8;
     color: #0B6437;
+}
+.orange-hover:hover{
+    background-color: var(--hover-color);
+    color: var(--text-white);
+    border: 1px solid var(--hover-color);
+}
+.save{
+    background: var(--text-color);
+    color: var(--text-white);
+    transition: .3s all ease-in-out;
 }

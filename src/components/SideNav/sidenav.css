@@ -31,20 +31,11 @@
   text-align: center;
 }
 
-.business-name {
-  font-weight: bold;
-  font-size: 20px;
-  color: #336799;
-  margin-top: 23px;
-}
-
 .account-button {
   transition: 0.3s all ease-in-out;
-}
-
-.account-button:hover {
-  background-color: var(--hover-color);
-  color: var(--text-white);
+  color: var(--main-color);
+  background: var(--text-white);
+  border: 1px solid #dddddd;
 }
 
 .sidenav-list {
@@ -65,6 +56,10 @@
   font-weight: bold;
   font-size: 16px;
   line-height: 48px;
+}
+
+.sidenav-list-item:hover {
+  color: var(--hover-color);
 }
 
 .sidenav-list-link {

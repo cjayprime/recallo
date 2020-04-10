@@ -9,22 +9,21 @@ import "./sidenav.css"
 class Sidenav extends Component {
     render() {
         const { routes, header } = this.props;
-        //console.log(routes, "Hey routes");
 
         return (
             <aside className="sidenav">
                 {header && <Header className="sidenav-header" />}
                 <div className="sidenav-body">
                     <div className="details">
-                        <div className="business-logo">
-                            <p className="logo-text">AM</p>
+                        <div className="business-logo mb-23">
+                            <h1 className="logo-text">AM</h1>
                         </div>
-                        <p className="business-name">AutoMedics Africa Limited</p>
-                        <p className="license">2 agents license</p>
-                        <Link to="/admin/settings" className="mt-24"><Button className="br-30 bd-grey account-button"
-                            padding={"12px 20px"} background={"#fff"} text={"#333"}
+                        <h3 className="text-blue bold mb-8">AutoMedics Africa Limited</h3>
+                        <p className="light text-light">2 agents license</p>
+                        <Link to="/admin/settings" className="mt-24"><Button className="br-30 account-button orange-hover"
+                            padding={"12px 20px"}
                         >
-                            <h6 className="bold text-main">Manage your Recallo Account</h6>
+                            <h6 className="bold">Manage your Recallo Account</h6>
                         </Button></Link>
                     </div>
                     <ul className="sidenav-list">

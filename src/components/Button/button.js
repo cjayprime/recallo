@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import classNames from "classnames";
 
 
-class Button extends Component{
+class Button extends Component {
 
     render() {
         const { children, background, text, className, padding } = this.props;
 
-        return(
+        return (
             <button
                 className={classNames("button", "bold", className)}
                 style={{ backgroundColor: background, color: text, padding: padding }}
