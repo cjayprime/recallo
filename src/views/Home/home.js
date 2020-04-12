@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import MenuItem from "../../components/MenuItem/menuItem";
+
 import TotalCalls from "./TotalCalls";
 import TotalCallsAnswered from "./TotalCallsAnswered";
 import ProfileVoiceNotes from "./ProfileVoicenotes";
@@ -32,10 +34,10 @@ class Home extends Component {
 
         return (
             <>
-                <div className="home container">
+                <div className="screen-padding container background-grey height mt-80">
                     <div className="row mb-32">
                         <div className="col-12">
-                            <div className="overview">
+                            <div className="overview br-30 row-direction p-24">
                                 <div className="overview__action-button">
                                     {tabs.map(tab => (
                                         <div style={styles.tabs(this.state.active === tab.tab)}
@@ -80,7 +82,7 @@ class Home extends Component {
                     </div>
                     <div className="row">
                         <div className="custom-col-3">
-                            <div className="min-overview ">
+                            <div className="overview p-24 br-15">
                                 <h4 className="text-main bold mb-24">License info</h4>
                                 <span className="bold text-light">Type</span>
                                 <h6 className="light text-main mt-4">2 agents license</h6>
@@ -94,10 +96,10 @@ class Home extends Component {
                             </div>
                         </div>
                         <div className="custom-col-3">
-                            <div className="min-overview">
+                            <div className="overview p-24 br-15">
                                 <div className="row-direction mb-24 align-center">
                                     <h4 className="text-main bold mr-5">Average time:</h4>
-                                    <h4 className="text-blue bold hover cursor">call <span className="arrow-down ml-3" /></h4>
+                                    <h4><MenuItem item={{ title: "call", values: ["Call", "Wait"] }} /></h4>
                                 </div>
                                 <span className="bold text-light">Call</span>
                                 <div className="overview-call">
@@ -109,7 +111,7 @@ class Home extends Component {
                             </div>
                         </div>
                         <div className="custom-col-6">
-                            <div className="min-overview">
+                            <div className="overview p-24 br-15">
                                 <div className="row">
                                     <div className="custom-col-6">
                                         <h4 className="text-main bold mb-24">Personnel</h4>
@@ -124,7 +126,7 @@ class Home extends Component {
                                     <div className="custom-col-6 pl-38">
                                         <h5 className="text-blue bold hover cursor mb-12">Mondays<span className="arrow-down ml-5" /></h5>
                                         <span className="bold text-light">On duty</span>
-                                        <ul className="mt-5">
+                                        <ul>
                                             <li>Kehinde Yusuf</li>
                                             <li>Tokunbo Popoola</li>
                                             <li>Tracy Badmus</li>

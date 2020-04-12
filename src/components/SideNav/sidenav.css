@@ -1,11 +1,10 @@
 .sidenav-body {
-  padding: 80px 32.5px 0;
+  padding: 104px 32.5px 0;
   overflow-y: scroll;
 }
 .sidenav-body::-webkit-scrollbar {
   display: none;
 }
-
 
 .sidenav-body hr {
   border: 1px solid #dddddd;
@@ -32,31 +31,11 @@
   text-align: center;
 }
 
-.business-name {
-  font-weight: bold;
-  font-size: 20px;
-  color: #336799;
-  margin-top: 23px;
-}
-
 .account-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  width: 228px;
-  height: 40px;
-  background-color: #fff;
+  transition: 0.3s all ease-in-out;
+  color: var(--main-color);
+  background: var(--text-white);
   border: 1px solid #dddddd;
-  border-radius: 30px;
-  margin-top: 24px;
-}
-
-.account-button p {
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 52px;
-  color: #333333;
 }
 
 .sidenav-list {
@@ -79,6 +58,10 @@
   line-height: 48px;
 }
 
+.sidenav-list-item:hover {
+  color: var(--hover-color);
+}
+
 .sidenav-list-link {
   text-decoration: none;
 }
@@ -91,10 +74,6 @@
 
 .logout {
   margin-bottom: 54px;
-  font-size: 14;
-  line-height: 52px;
-  font-family: "Regular SF Pro Display";
-  letter-spacing: 0;
-  color: #336799;
   text-align: center;
+  cursor: pointer;
 }

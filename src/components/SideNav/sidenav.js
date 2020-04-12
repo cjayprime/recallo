@@ -1,32 +1,38 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
+import Button from "../../components/Button/button";
+import Header from "../../components/Header/header"
+
 import "./sidenav.css"
-import Header from "../Header/header";
 
 class Sidenav extends Component {
     render() {
-        const { routes } = this.props;
-        console.log(routes, "Hey routes");
+        const { routes, header } = this.props;
+
         return (
             <aside className="sidenav">
-                {/* <Header className="SideNav-header" /> */}
+                {header && <Header className="sidenav-header" />}
                 <div className="sidenav-body">
                     <div className="details">
-                        <div className="business-logo">
-                            <p className="logo-text">AM</p>
+                        <div className="business-logo mb-23">
+                            <h1 className="logo-text">AM</h1>
                         </div>
-                        <p className="business-name">AutoMedics Africa Limited</p>
-                        <p className="license">2 agents license</p>
-                        <Link to="/" className="account-button"><p>Manage your Recallo Account</p></Link>
+                        <h3 className="text-blue bold mb-8">AutoMedics Africa Limited</h3>
+                        <p className="light text-light">2 agents license</p>
+                        <Link to="/admin/settings" className="mt-24"><Button className="br-30 account-button orange-hover"
+                            padding={"12px 20px"}
+                        >
+                            <h6 className="bold">Manage your Recallo Account</h6>
+                        </Button></Link>
                     </div>
                     <ul className="sidenav-list">
-                        {routes.privateRoutes.map((prop, key) => {
+                        {routes.privateRoutes.sidebar.map((prop, key) => {
                             if (prop.redirect) return null;
                             return (
-                                <Link className="sidenav-list-link" to={prop.layout + prop.path}>
-                                    <li key={key} className="sidenav-list-item">
-                                        <img src={prop.icon} className="sidenav-list-icon" />
+                                <Link key={key} className="sidenav-list-link" to={prop.layout + prop.path}>
+                                    <li className="sidenav-list-item">
+                                        <img src={prop.icon} className="sidenav-list-icon" alt="" />
                                         <h5>{prop.name}</h5>
                                     </li>
                                 </Link>
@@ -34,7 +40,7 @@ class Sidenav extends Component {
                         })}
                     </ul>
                     <hr />
-                    <p className="logout">Logout</p>
+                    <h6 className="logout text-blue light">Logout</h6>
                 </div>
             </aside>
         )

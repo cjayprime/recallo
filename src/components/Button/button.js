@@ -1,11 +1,27 @@
-import React from "react";
-import './button.css';
+import React, { Component } from "react";
+import classNames from "classnames";
 
 
-const Button = ({children, background, text}) => (
-    <button className="button" style={{backgroundColor: background, color: text}}>
-        {children}
-    </button>
-);
+class Button extends Component {
+
+    render() {
+        const { children, background, text, className, padding } = this.props;
+
+        return (
+            <button
+                className={classNames("button", "bold", className)}
+                style={{ backgroundColor: background, color: text, padding: padding }}
+                onClick={this.props.click}
+            >
+                {children}
+            </button>
+        )
+    }
+}
+
+
+
+
+
 
 export default Button;

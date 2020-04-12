@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 import routes from "./routes";
@@ -21,7 +21,15 @@ class MainRoutes extends Component {
                             component={el.component}
                         />
                     ))}
-                    {routes.privateRoutes.map(el => (
+                    {routes.privateRoutes.sidebar.map(el => (
+                        <PrivateRoute
+                            key={el.path}
+                            path={el.path}
+                            exact={el.exact}
+                            component={el.component}
+                        />
+                    ))}
+                    {routes.privateRoutes.route.map(el => (
                         <PrivateRoute
                             key={el.path}
                             path={el.path}
@@ -37,8 +45,9 @@ class MainRoutes extends Component {
                         alignItems: "center",
                         fontSize: 200
                     }}>404</div>} />
-                    <Redirect from="/admin" to="/admin/home" />
-                    <Redirect to="/404" />
+                    <Redirect from="/" to="admin/home" />
+                    {/* <Redirect from="/admin" to="/admin/home" />
+                    <Redirect to="/404" /> */}
                 </Switch>
             </Router>
         )

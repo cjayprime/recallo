@@ -12,11 +12,11 @@ import "./admin.css";
 
 class Admin extends Component {
     // state = {
-    //     visible: true
+    //     header: false
     // }
 
     getRoutes = routes => {
-        return routes.privateRoutes.map((prop, key) => {
+        return routes.privateRoutes.sidebar.map((prop, key) => {
             if (prop.layout === "/admin") {
                 return (
                     <Route
@@ -31,34 +31,58 @@ class Admin extends Component {
         })
     }
 
-    // changeHeader = () => {
-    //     for (let i = 0; i < routes.privateRoutes.length; i++) {
-    //         if (
-    //             this.props.location.pathname.indexOf(
-    //                 routes.privateRoutes[i].layout + routes.privateRoutes[i].path
-    //             ) !== "/admin/home"
-    //         ) {
-    //             return showHeader
-    //         } else {
-    //             return hideHeader
-    //         }
-    //     }
-    // }
+    getSettings = routes => {
+        return routes.privateRoutes.route.map((prop, key) => {
+            if (prop.layout === "/admin") {
+                // from and to props of the Redirect component from react-router-dom npm library
+                // will aid you redirect if props.match.url === "/"
+                return (
+                    <Route
+                        path={prop.layout + prop.path}
+                        component={prop.component}
+                        key={key}
+                    />
+                )
+            } else {
+                return null;
+            }
+        })
+    }
+
+    header = (isSideNav) => {
+        if (isSideNav === false) {
+
+            if (this.props.location.pathname === "/admin/home" || this.props.location.pathname === "/admin/analytics")
+                return true;
+
+            return false;
+
+        } else {
+
+            if (this.props.location.pathname === "/admin/calls" || this.props.location.pathname === "/admin/personnel" || this.props.location.pathname === "/admin/settings" || this.props.location.pathname === "/admin/previous" || this.props.location.pathname === "/admin/voicenotes")
+                return true;
+
+            return false;
+
+        }
+    }
 
     render() {
         return (
-            <>
-                <div className="grid-container">
-                    <Header className="main-header" />
-                    <Sidenav
-                        {...this.props}
-                        routes={routes}
-                    />
-                    <main className="main">
-                        <Switch>{this.getRoutes(routes)}</Switch>
-                    </main>
-                </div>
-            </>
+            <div className="grid">
+                <Header header={this.header(false)} className="main-header" />
+                <Sidenav
+                    header={this.header(true)}
+                    {...this.props}
+                    routes={routes}
+                />
+                <main className="main">
+                    <Switch>
+                        {this.getRoutes(routes)}
+                        {this.getSettings(routes)}
+                    </Switch>
+                </main>
+            </div>
         )
     }
 }
