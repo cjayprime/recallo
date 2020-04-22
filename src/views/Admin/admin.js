@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Sidenav from "../../components/SideNav/sidenav";
 import Header from "../../components/Header/header";
 
-import routes from "../../routes/routes";
+import routes from "../../Routes";
 
 import "./admin.css";
 
