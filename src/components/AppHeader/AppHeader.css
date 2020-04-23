@@ -3,11 +3,12 @@
   align-items: center;
   justify-content: space-between;
   top: 0;
-  height: 77px;
+  height: 73px;
   width: 100%;
   z-index: 101;
   position: fixed;
   padding: 0 95px 0 92px;
+  border-bottom: 1px solid #e5e5e5;
   background: var(--background-color);
 }
 
