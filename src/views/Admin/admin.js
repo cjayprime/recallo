@@ -11,6 +11,12 @@ import "./admin.css";
 //core components
 
 class Admin extends Component {
+
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     // state = {
     //     header: false
     // }
