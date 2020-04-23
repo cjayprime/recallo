@@ -15,7 +15,7 @@ class AppHeader extends Component {
     render() {
         const { routes } = this.props;
         return (
-            <div>
+            <header>
                 <div className="app-header">
                     <div>
                         <img className="logo" src={logo} alt="Recallo logo" />
@@ -33,7 +33,7 @@ class AppHeader extends Component {
                         })}
                     </div>
                 </div>
-            </div>
+            </header>
         )
     }
 }

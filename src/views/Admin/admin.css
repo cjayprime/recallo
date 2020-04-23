@@ -1,3 +1,77 @@
+/* Create account screen */
+
+.signup {
+  margin-top: 159px;
+  margin-left: 94px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.signup-form {
+  width: 32%;
+}
+
+.signup-form hr {
+  margin-top: 32px;
+  margin-bottom: 50px;
+  border: 1px solid #e5e5e5;
+}
+
+.signup-benefits {
+  width: 50%;
+}
+
+/* .benefits-image {
+  margin-left: 219px;
+  top: 400px;
+  position: absolute;
+} */
+
+.benefits-image {
+  position: absolute;
+  background-image: url(../../assets/img/createacntIcon.png);
+  height: 383px;
+  width: 465.68px;
+  margin-top: -200px;
+  right: 0px;
+  background-repeat: no-repeat;
+}
+
+.benefits-image img {
+  width: 465.68px;
+  height: 383.5px;
+}
+
+.benefits-card {
+  margin-right: 95px;
+  background: #f5f6fa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 33px 24px;
+}
+
+.benefits-card hr {
+  margin: 32px 0;
+}
+
+.benefits-body {
+  margin-bottom: 32.6px;
+}
+
+.auth-password {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40.5px;
+}
+
+.signup-button {
+  background: var(--text-color);
+  color: var(--text-white);
+  padding: 14px 128px;
+}
+
+/* Create account screen */
+
 /* Signin Screen */
 
 .signin {
@@ -11,7 +85,7 @@
   margin-left: 95px;
 }
 
-.signin-form h1 {
+.form h1 {
   font-size: 4rem;
   color: #2e384d;
 }
@@ -20,10 +94,13 @@
   margin-bottom: 76.5px;
 }
 
-.signin-icon img {
+.signin-icon {
+  position: absolute;
+  right: 0px;
   width: 891px;
   height: 660.92px;
-  margin-right: -102px;
+  background-repeat: no-repeat;
+  background-image: url(../../assets/img/ladyCall.png);
 }
 
 .field:nth-child(2) {
@@ -31,37 +108,26 @@
   margin-bottom: 23px;
 }
 
-.login-input {
+.auth-input {
   border: 0;
   outline: 0;
   border-bottom: 1px solid #dddddd;
   -webkit-appearance: none;
   border-radius: 0;
-  padding: 0;
 }
 
-.login-input:focus {
+.auth-input:focus {
   outline: 0;
   border-bottom: 1px solid var(--hover-color);
 }
 
-.login-input:placeholder-shown + .login-label {
-  cursor: text;
-  max-width: 66.66%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transform-origin: left bottom;
-  transform: translate(0, 2.125rem) scale(1.5);
-}
-
-.login-label {
+.auth-label {
   font-size: 1.6rem;
   color: var(--main-color);
 }
 
-.login-label,
-.login-input {
+.auth-label,
+.auth-input {
   transition: all 0.2s;
   touch-action: manipulation;
 }
@@ -84,6 +150,15 @@
   width: 20px;
   height: 20px;
   margin-right: 39px;
+}
+
+.signin-hr {
+  border: 1px solid #e5e5e5;
+  margin-top: 40px;
+}
+
+.bk-2-web {
+  margin-top: 86px;
 }
 
 /* End Signin Screen */

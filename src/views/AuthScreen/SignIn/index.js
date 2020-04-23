@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
 import SignIn from "./Signin";
-import AppHeader from "../../../components/AppHeader";
-
-import routes from "../../../Routes";
+import Layout from "../../../components/AppHeader/Layout";
 
 class SignInComponent extends Component {
     render() {
         return (
             <>
-                <AppHeader {...this.props} routes={routes} />
-                <SignIn />
+                <Layout {...this.props}>
+                    <SignIn />
+                </Layout>
             </>
         )
     }

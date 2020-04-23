@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
-import ladyIcon from "../../../assets/img/ladyCall.png"
 import FormField from '../../../components/Form';
 import Button from "../../../components/Button/button";
 
@@ -10,23 +10,23 @@ class SignIn extends Component {
     render() {
         return (
             <div className="signin">
-                <div className="signin-form">
+                <div className="signin-form form">
                     <h1 className="bold mb-16">Log in</h1>
                     <h3 className="light text-light">Please enter your email address and password</h3>
                     <form>
                         <div className="field">
                             <FormField
-                                className="login-input"
-                                labelClass="login-label"
+                                className="auth-input"
+                                labelClass="auth-label"
                                 labelTitle="Email address"
                             />
                         </div>
                         <div className="field">
                             <FormField
                                 type="password"
-                                className="login-input"
+                                className="auth-input"
                                 labelTitle="Password"
-                                labelClass="login-label"
+                                labelClass="auth-label"
                             />
                         </div>
                         <div className="row">
@@ -41,16 +41,19 @@ class SignIn extends Component {
                             </div>
                         </div>
                         <div className="mt-34">
-                            <Button className="login-button br-8">
-                                <h5 className="bold">login</h5>
-                                <img src={arrowright} alt="arrow right icon" />
-                            </Button>
+                            <Link to="/admin/home">
+                                <Button className="login-button br-8">
+                                    <h5 className="bold">login</h5>
+                                    <img src={arrowright} alt="arrow right icon" />
+                                </Button></Link>
                         </div>
                     </form>
+                    <hr className="signin-hr" />
+                    <div>
+                        <h5 className="light text-light bk-2-web">Back to website</h5>
+                    </div>
                 </div>
-                <div className="signin-icon">
-                    <img src={ladyIcon} alt="lady making call" />
-                </div>
+                <div className="signin-icon"></div>
             </div>
         )
     }
