@@ -11,25 +11,28 @@ const FormField = (props) => {
         onKeyUp,
         type,
         options,
-        // form,
-        // maxlength,
-        // cols,
-        // rows,
-        // style
+        form,
+        maxlength,
+        cols,
+        rows,
+        style,
         defaultValue,
         placeholder,
         labelTitle,
         labelClass,
+        labelClassRight,
+        labelTitleRight,
         selectClass
     } = props;
 
     if (type === "select") {
         return (
             <div>
-                <div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <h6 className={classNames("mb-8", "light", labelClass)}><label>{labelTitle}</label></h6>
+                    <h6 className={classNames("mb-8", "light", labelClassRight)}><label>{labelTitleRight}</label></h6>
                 </div>
-                <div className={className}>
+                <div>
                     <select
                         className={classNames("light text-main", selectClass, className)}
                         name={name}
@@ -39,6 +42,28 @@ const FormField = (props) => {
                         {/* <option value="">{`Select ${labelTitle.toLowerCase()}`}</option> */}
                         {options}
                     </select>
+                </div>
+            </div>
+        )
+    } else if (type === "textarea") {
+        return (
+            <div>
+                <div>
+                    <h6 className={classNames("mb-8", "light", labelClass)}><label>{labelTitle}</label></h6>
+                </div>
+                <div className={classNames}>
+                    <textarea
+                        maxLength={maxlength}
+                        cols={cols}
+                        rows={rows}
+                        style={style}
+                        className={className}
+                        name={name}
+                        value={value}
+                        onChange={onChange}
+                        onKeyUp={onKeyUp}
+                        defaultValue={defaultValue}
+                    ></textarea>
                 </div>
             </div>
         )

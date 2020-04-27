@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import { connect } from "react-redux";
-
-import * as mapDispatchToProps from "../store/AllActions";
 
 import routes from "./index"
 
@@ -29,7 +26,8 @@ class MainRoutes extends Component {
                             key={el.path}
                             path={el.path}
                             exact={el.exact}
-                            component={connect(state => state, mapDispatchToProps)(props => <el.component {...props} />)}
+                            // component={connect(state => state, mapDispatchToProps)(props => <el.component {...props} />)}
+                            component={el.component}
                         />
                     ))}
                     {routes.privateRoutes.route.map(el => (

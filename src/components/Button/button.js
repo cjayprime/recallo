@@ -5,13 +5,14 @@ import classNames from "classnames";
 class Button extends Component {
 
     render() {
-        const { children, background, text, className, padding } = this.props;
+        const { children, type, background, text, className, padding, onClick } = this.props;
 
         return (
             <button
+                type={type}
                 className={classNames("button", "bold", className)}
                 style={{ backgroundColor: background, color: text, padding: padding }}
-                onClick={this.props.click}
+                onClick={onClick}
             >
                 {children}
             </button>
