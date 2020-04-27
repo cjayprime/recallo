@@ -70,6 +70,263 @@
   padding: 14px 128px;
 }
 
+.onboard {
+  display: flex;
+  justify-content: space-between;
+  margin: 132px 195px 0px 95px;
+}
+
+.onboard-welcome {
+  width: 22%;
+}
+
+.onboard-info {
+  width: 70%;
+}
+
+.onboard-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.onboard-info hr {
+  margin-top: 24px;
+  margin-bottom: 32.5px;
+}
+
+.onboard-form {
+  width: 50%;
+}
+
+.onboard-input {
+  border: 1px solid #dddddd;
+  font-size: 14px;
+  font-weight: 400;
+  color: #777;
+  padding: 12px 0px 12px 16px;
+}
+
+.onboard-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  background: #fff;
+}
+
+.onboard-textarea {
+  border: 1px solid #dddddd;
+  font-size: 14px;
+  font-weight: 400;
+  color: #777;
+  padding: 12px 0px 12px 16px;
+  height: 139px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.p-bar-1 {
+  border-radius: 16px 1px 1px 16px;
+  width: 24px;
+  height: 10px;
+  background: var(--hover-color);
+  margin-right: 2px;
+}
+
+.p-bar-2 {
+  border-radius: 1px;
+  background: #ddd;
+  width: 24px;
+  height: 10px;
+  margin-right: 2px;
+}
+
+.p-bar-3 {
+  border-radius: 1px 16px 16px 1px;
+  background: #ddd;
+  width: 24px;
+  height: 10px;
+}
+
+.b-bar-1 {
+  border-radius: 16px 1px 1px 16px;
+  width: 24px;
+  height: 10px;
+  background: var(--hover-color);
+  margin-right: 2px;
+}
+
+.b-bar-2 {
+  border-radius: 1px;
+  background: var(--hover-color);
+  width: 24px;
+  height: 10px;
+  margin-right: 2px;
+}
+
+.b-bar-3 {
+  border-radius: 1px 16px 16px 1px;
+  background: #ddd;
+  width: 24px;
+  height: 10px;
+}
+
+.plan-bar-1 {
+  border-radius: 16px 1px 1px 16px;
+  width: 24px;
+  height: 10px;
+  background: var(--hover-color);
+  margin-right: 2px;
+}
+
+.plan-bar-2 {
+  border-radius: 1px;
+  background: var(--hover-color);
+  width: 24px;
+  height: 10px;
+  margin-right: 2px;
+}
+
+.plan-bar-3 {
+  border-radius: 1px 16px 16px 1px;
+  background: var(--hover-color);
+  width: 24px;
+  height: 10px;
+}
+
+.business-info button {
+  margin-top: 32px;
+}
+
+.business-info-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.business-info-2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.business-rc {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.business-rc span {
+  font-weight: 400;
+  font-style: italic;
+  color: #333;
+  font-size: 14px;
+}
+
+.plan {
+  background: #f5f6fa;
+  border-radius: 8px;
+  padding: 24px;
+  margin-right: 80px;
+}
+
+.plan h3 {
+  color: #2e384d;
+}
+
+.plan-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plan-card {
+  background: var(--text-white);
+  box-shadow: 0px 0px 6px #00000014;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding-bottom: 24px;
+}
+
+.plan-card .radio {
+  padding: 16px 0px 10px 16px;
+}
+
+.plan-details {
+  margin-left: 31px;
+  margin-right: 31px;
+}
+
+.plan-details h5 > span {
+  font-size: 12px;
+}
+
+.plan-details hr {
+  margin-top: 26px;
+  margin-bottom: 16px;
+  border: 1px solid #e9e9f0;
+}
+
+.plan-amount {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.plan-amount-text {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.amount-box {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 12px 10px;
+  width: 166px;
+}
+
+.amount-box h5 {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.plan-did {
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
+.did-label-left {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+.did-label-right {
+  font-size: 14px;
+  font-weight: bold;
+  color: #336799;
+}
+
+.plan-payment h3 {
+  color: #2e384d;
+  margin-bottom: 17px;
+}
+
+.payment-label {
+  font-size: 1.6rem;
+  color: #333;
+  font-size: bold;
+}
+
 /* Create account screen */
 
 /* Signin Screen */

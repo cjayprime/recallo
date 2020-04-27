@@ -8,11 +8,15 @@ class SignInComponent extends Component {
         return (
             <>
                 <Layout {...this.props}>
-                    <SignIn />
+                    <SignIn
+                        {...this.props}
+                    />
                 </Layout>
             </>
         )
     }
 }
+
+
 
 export default SignInComponent;

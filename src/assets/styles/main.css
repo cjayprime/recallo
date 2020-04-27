@@ -50,7 +50,7 @@ button {
   cursor: pointer;
 }
 header {
-    display: block;
+  display: block;
 }
 h1 {
   font-size: 3rem;
@@ -79,6 +79,9 @@ hr {
 }
 sub {
   font-size: 2rem;
+}
+.uppercase {
+  text-transform: uppercase;
 }
 .vertical-hr {
   height: auto;
@@ -165,6 +168,10 @@ textarea {
   border: 1px solid #dddddd;
 }
 
+.blue-button {
+  background: var(--text-color);
+}
+
 /* line height */
 
 .lh-24 {
@@ -176,6 +183,9 @@ textarea {
 /* margin and padding style */
 .mr-5 {
   margin-right: 5px;
+}
+.mr-12 {
+  margin-right: 12px;
 }
 .mr-16 {
   margin-right: 16px;
@@ -316,6 +326,10 @@ textarea {
 
 /* border radius */
 
+.br-4 {
+  border-radius: 4px;
+}
+
 .br-8 {
   border-radius: 8px;
 }
@@ -378,6 +392,9 @@ textarea {
 }
 .col-8 {
   width: 50%;
+}
+.col-10 {
+  width: 53%;
 }
 .col-9 {
   width: 40%;
