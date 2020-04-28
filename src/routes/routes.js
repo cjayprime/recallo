@@ -1,77 +1,58 @@
-import Admin from "../views/Admin/admin";
-import Home from "../views/Home/home";
-import Calls from "../views/Calls";
-import Personnel from "../views/Personnel";
-import Analytics from "../views/Analytics";
+import React, { Component } from 'react';
+import { Router, Route, Switch, Redirect } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
-import homeIcon from "../assets/img/homeIcon.svg";
-import ManageAccount from "../views/Settings";
-import PreviousCall from "../views/PreviousCall";
-import VoiceNotes from "../views/Voicenotes";
+import routes from "./index"
 
-var routes = {
-    publicRoutes: [
+import PrivateRoute from "../components/PrivateRoute";
 
-    ],
-    privateRoutes: {
-        sidebar: [
-            {
-                path: "/admin",
-                component: Admin
-            },
-            {
-                path: "/home",
-                exact: true,
-                component: Home,
-                name: "Home",
-                layout: "/admin",
-                icon: homeIcon
-            },
-            {
-                path: "/calls",
-                exact: true,
-                component: Calls,
-                name: "Calls",
-                layout: "/admin",
-                icon: homeIcon
-            },
-            {
-                path: "/personnel",
-                exact: true,
-                component: Personnel,
-                name: "Personnel",
-                layout: "/admin",
-                icon: homeIcon
-            },
-            {
-                path: "/analytics",
-                exact: true,
-                component: Analytics,
-                name: "Analytics",
-                layout: "/admin",
-                icon: homeIcon
-            }
-        ],
-        route: [
-            {
-                path: "/settings",
-                exact: true,
-                component: ManageAccount,
-                layout: "/admin"
-            },
-            {
-                path: "/previous",
-                exact: true,
-                component: PreviousCall,
-                layout: "/admin"
-            }, {
-                path: "/voicenotes",
-                exact: true,
-                component: VoiceNotes,
-                layout: "/admin"
-            }
-        ]
+const hist = createBrowserHistory();
+
+class MainRoutes extends Component {
+    render() {
+        return (
+            <Router history={hist}>
+                <Switch>
+                    {routes.publicRoutes.map(el => (
+                        <Route
+                            key={el.path}
+                            path={el.path}
+                            exact={el.exact}
+                            component={el.component}
+                        />
+                    ))}
+                    {routes.privateRoutes.sidebar.map(el => (
+                        <PrivateRoute
+                            key={el.path}
+                            path={el.path}
+                            exact={el.exact}
+                            // component={connect(state => state, mapDispatchToProps)(props => <el.component {...props} />)}
+                            component={el.component}
+                        />
+                    ))}
+                    {routes.privateRoutes.route.map(el => (
+                        <PrivateRoute
+                            key={el.path}
+                            path={el.path}
+                            exact={el.exact}
+                            component={el.component}
+                        />
+                    ))}
+                    <Route path="/404" component={() => <div style={{
+                        width: "100vw",
+                        height: "100vh",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        fontSize: 200
+                    }}>404</div>} />
+                    <Redirect from="/" to="/signin" />
+                    {/* <Redirect from="/admin" to="/admin/home" />
+                    <Redirect to="/404" /> */}
+                </Switch>
+            </Router>
+        )
     }
-};
+}
 
-export default routes;
+export default MainRoutes;
