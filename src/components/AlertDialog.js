@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withSnackbar } from 'notistack';
 import { connect } from "react-redux";
-import { showRequestFeedBack } from "../store/utilsModule/actions";
+import { showRequestFeedBack } from "../store/utils/actions";
 
 class AlertDialog extends Component {
     displayed = [];

@@ -2,19 +2,25 @@ import React, { Component } from 'react';
 
 import Button from "../../../components/Button/button";
 import FormField from '../../../components/Form';
+import { isRequestActive } from "../../../utils/misc";
+import AlertDialog from "../../../components/AlertDialog";
 
 class SignUp extends Component {
 
     continue = e => {
         e.preventDefault();
+        // this.props.triggerSignup(e, this.props.createAccountSuccess)
         this.props.nextStep();
     }
 
     render() {
         const {
-            form: { fields: field },
+            form: { fields: field, formError },
             _handleChange,
-            triggerSignup
+            onBlur,
+            triggerSignup,
+            authRequest,
+            request
         } = this.props,
             { business_name, email, password, confirm_password } = field;
         return (
@@ -31,6 +37,7 @@ class SignUp extends Component {
                                     name="business_name"
                                     value={business_name.value}
                                     form={field}
+                                    onBlur={onBlur}
                                     onChange={_handleChange}
                                 />
                             </div>
@@ -42,6 +49,7 @@ class SignUp extends Component {
                                     name="email"
                                     value={email.value}
                                     form={field}
+                                    onBlur={onBlur}
                                     onChange={_handleChange}
                                 />
                             </div>
@@ -55,6 +63,7 @@ class SignUp extends Component {
                                         name="password"
                                         value={password.value}
                                         form={field}
+                                        onBlur={onBlur}
                                         onChange={_handleChange}
                                     />
                                 </div>
@@ -67,15 +76,22 @@ class SignUp extends Component {
                                         name="confirm_password"
                                         value={confirm_password.value}
                                         form={field}
+                                        onBlur={onBlur}
                                         onChange={_handleChange}
                                     />
                                 </div>
                             </div>
                             <h6 className="lh-24 light text-light mb-32">By clicking "Create Account" you agree to our <span className="bold text-blue">Terms of Service</span>, and to receive marketing communications from Recallo.</h6>
                             <div>
-                                <Button onClick={this.continue} type="submit" className="signup-button br-8">
+                                <Button error={formError} onClick={this.continue} type="submit" className="signup-button br-8"
+                                >
                                     <h5 className="bold">Create Account</h5>
                                 </Button>
+                                {/* <AlertDialog
+                                    open={request.feedback.for === authRequest.signupRequest}
+                                    message={request.feedback.message}
+                                    success={request.feedback.success}
+                                /> */}
                             </div>
                             <hr />
                             <h5 className="bold light text-light">Back to website</h5>
