@@ -9,8 +9,9 @@ class SignUp extends Component {
 
     continue = e => {
         e.preventDefault();
-        // this.props.triggerSignup(e, this.props.createAccountSuccess)
-        this.props.nextStep();
+        if (this.props.validate()) {
+            this.props.triggerSignup(e, this.props.createAccountSuccess);
+        }
     }
 
     render() {
@@ -19,8 +20,7 @@ class SignUp extends Component {
             _handleChange,
             onBlur,
             triggerSignup,
-            authRequest,
-            request
+            validate
         } = this.props,
             { business_name, email, password, confirm_password } = field;
         return (
@@ -37,6 +37,7 @@ class SignUp extends Component {
                                     name="business_name"
                                     value={business_name.value}
                                     form={field}
+                                    validate={validate}
                                     onBlur={onBlur}
                                     onChange={_handleChange}
                                 />
@@ -49,6 +50,7 @@ class SignUp extends Component {
                                     name="email"
                                     value={email.value}
                                     form={field}
+                                    validate={validate}
                                     onBlur={onBlur}
                                     onChange={_handleChange}
                                 />
@@ -63,6 +65,7 @@ class SignUp extends Component {
                                         name="password"
                                         value={password.value}
                                         form={field}
+                                        validate={validate}
                                         onBlur={onBlur}
                                         onChange={_handleChange}
                                     />
@@ -76,6 +79,7 @@ class SignUp extends Component {
                                         name="confirm_password"
                                         value={confirm_password.value}
                                         form={field}
+                                        validate={validate}
                                         onBlur={onBlur}
                                         onChange={_handleChange}
                                     />
