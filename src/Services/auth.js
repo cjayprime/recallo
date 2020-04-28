@@ -11,6 +11,7 @@ class AuthService {
                     return resolve(res);
                 })
                 .catch(error => {
+                    console.log("hey the api is nt working", error)
                     reject(error.response)
                 })
         })

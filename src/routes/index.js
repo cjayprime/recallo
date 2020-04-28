@@ -1,6 +1,6 @@
 //Public routes components
 import SignInComponent from "../views/AuthScreen/SignIn";
-import SignUpComponent from "../views/AuthScreen/Signup/index"
+import SignUpContainer from "../views/AuthScreen/Signup/index"
 import ContactSupportComponent from "../views/ContactSupport";
 
 //Private routes components
@@ -26,7 +26,7 @@ var routes = {
         {
             path: "/signup",
             exact: true,
-            component: SignUpComponent,
+            component: SignUpContainer,
             name: "Create an Account"
         },
         {
