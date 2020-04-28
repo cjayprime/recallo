@@ -119,16 +119,6 @@ class SignUpComponent extends Component {
         this.setState({ step: step + 1 });
     };
 
-    componentWillUnmount() {
-        let newState = { ...this.state };
-        Object.keys(newState.fields).map(key => {
-            newState.fields[key].value = "";
-            newState.fields[key].error = null;
-            newState.fields[key].errorMessage = "";
-        });
-        this._safelySetState(newState);
-    }
-
     _safelySetState = (newState, prevState = null) => {
         return this.setState(state => ({
             [prevState]: !state[prevState],
@@ -159,37 +149,20 @@ class SignUpComponent extends Component {
         this._safelySetState(newForm);
     };
 
-    triggerSignup = e => {
+    triggerSignup = (e, success) => {
         e.preventDefault();
-        var fields = this.state.fields;
-        var compulsoryFields = {};
-        for (var key in fields) {
-            compulsoryFields[key] = fields[key];
-        }
+        let data = {};
+        Object.keys(this.state.fields).map(key => {
+            if (key !== "confirm_password") {
+                data[key] = this.state.fields[key].value;
+            }
+        });
 
-        if (validate(this, compulsoryFields)) {
-
-            let data = {};
-            Object.keys(this.state.fields).map(key => {
-                if (key !== "confirm_password") {
-                    data[key] = this.state.fields[key].value;
-                }
-            });
-
-            this.props.signup({ data, history: this.props.history });
-
-        }
+        this.props.signup({ data, success });
     };
 
     createAccountSuccess = () => {
-
-        if (this.state.fields.types.value === "Name based") {
-            this.nextStep();
-        } else {
-            const { step } = this.state;
-            this.setState({ step: step + 2 });
-        }
-
+        this.nextStep();
     };
 
 
@@ -226,20 +199,32 @@ class SignUpComponent extends Component {
     render() {
         const { step } = this.state;
         const { request } = this.props
-        // const forms = Object.assign(this.state.fields);
-        // const form1 = {};
-        // const form2 = {};
-        // const form3 = {};
+        const forms = Object.assign(this.state.fields);
+        const form1 = {};
+        const form2 = {};
+        const form3 = {};
 
-        // for (var key in forms) {
+        for (var key in forms) {
 
-        //     if (key === "business_name" || key === "email" || key === "password" || key === "confirm_password") {
+            if (key === "business_name" || key === "email" || key === "password" || key === "confirm_password") {
 
-        //         form1[key] = forms[key];
+                form1[key] = forms[key];
 
-        //     }
+            } else if (key === "first_name" || key === "last_name" || key === "mobile") {
 
-        // }
+                form2[key] = forms[key];
+
+            } else if (key === "business_name" || key === "email" || key === "business_address" || key === "people" || key === "business_rc") {
+
+                form3[key] = forms[key];
+
+            }
+
+        }
+
+        const validate1 = validate.bind(this, this, form1);
+        const validate2 = validate.bind(this, this, form2);
+        const validate3 = validate.bind(this, this, form3);
 
         switch (step) {
             case 1:
@@ -250,6 +235,7 @@ class SignUpComponent extends Component {
                             triggerSignup={this.triggerSignup}
                             _handleChange={this._handleChange}
                             form={this.state}
+                            validate={validate1}
                             onBlur={this.onBlur}
                             request={request}
                             authRequest={authRequest}
@@ -263,6 +249,7 @@ class SignUpComponent extends Component {
                         nextStep={this.nextStep}
                         _handleChange={this._handleChange}
                         form={this.state}
+                        validate={validate2}
                         onBlur={this.onBlur}
                         authRequest={authRequest}
                         triggerSavePersonalInformation={this.triggerSavePersonalInformation}
@@ -274,6 +261,7 @@ class SignUpComponent extends Component {
                         nextStep={this.nextStep}
                         _handleChange={this._handleChange}
                         form={this.state}
+                        validate={validate3}
                         onBlur={this.onBlur}
                         authRequest={authRequest}
                         triggerSaveBusinessInformation={this.triggerSaveBusinessInformation}
