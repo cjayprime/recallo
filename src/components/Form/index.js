@@ -27,7 +27,7 @@ const FormField = (props) => {
 
     if (type === "select") {
         return (
-            <div>
+            <div label={{ left: "", right: "" }}>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <h6 className={classNames("mb-8", "light", labelClass)}><label>{labelTitle}</label></h6>
                     <h6 className={classNames("mb-8", "light", labelClassRight)}><label>{labelTitleRight}</label></h6>
