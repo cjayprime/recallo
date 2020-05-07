@@ -20,6 +20,54 @@ const auth = (state = initialState, action) => {
                 success: true,
                 requestStatus: action.payload
             }
+        case Actions.SIGNIN_ERROR:
+            return {
+                ...state,
+                success: false,
+                requestStatus: action.payload
+            }
+        case Actions.SIGNIN_SUCCESS:
+            return {
+                ...state,
+                success: true,
+                requestStatus: action.payload
+            }
+        case Actions.SIGNOUT_ERROR:
+            return {
+                ...state,
+                success: false,
+                requestStatus: action.payload
+            }
+        case Actions.SIGNOUT_SUCCESS:
+            return {
+                ...state,
+                success: true,
+                requestStatus: action.payload
+            }
+        case Actions.PERSONALINFORMATION_ERROR:
+            return {
+                ...state,
+                success: false,
+                requestStatus: action.payload
+            }
+        case Actions.PERSONALINFORMATION_SUCCESS:
+            return {
+                ...state,
+                success: true,
+                requestStatus: action.payload
+            }
+        case Actions.BUSINESSINFORMATION_ERROR:
+            return {
+                ...state,
+                success: false,
+                requestStatus: action.payload
+            }
+        case Actions.BUSINESSINFORMATION_SUCCESS:
+            return {
+                ...state,
+                success: true,
+                requestStatus: action.payload
+            }
         case Actions.SET_USER_DATA:
             return {
                 ...state,

@@ -2,16 +2,27 @@ import React, { Component } from 'react';
 
 import logo from "../../../assets/img/appLogo.png";
 import FormField from '../../../components/Form';
+import TextInput from "../../../components/Form/TextInput";
 import Button from '../../../components/Button/button';
+import AlertDialog from "../../../components/AlertDialog";
 
 class PersonalInformation extends Component {
 
     continue = e => {
         e.preventDefault();
-        this.props.nextStep();
+        this.props.triggerPersonalInformation(e);
+        this.props.pushPersonalInformation();
     }
 
     render() {
+        const {
+            form,
+            handleChange,
+            authRequest,
+            request,
+            triggerPersonalInformation
+        } = this.props,
+            { first_name, last_name, mobile } = form;
         return (
             <div>
                 <header>
@@ -41,31 +52,51 @@ class PersonalInformation extends Component {
                             </div>
                         </div>
                         <hr />
-                        <form>
+                        <form onSubmit={triggerPersonalInformation}>
                             <div className="onboard-form">
-                                <FormField
+                                <TextInput
                                     labelTitle="First name"
                                     placeholder="Enter legal first name"
                                     labelClass="auth-label"
                                     className="onboard-input br-4 mb-32"
+                                    type="text"
+                                    name="first_name"
+                                    value={first_name}
+                                    form={form}
+                                    onChange={handleChange}
                                 />
-                                <FormField
+                                <TextInput
                                     labelTitle="Last name"
                                     placeholder="Enter legal last name"
                                     labelClass="auth-label"
                                     className="onboard-input br-4 mb-32"
+                                    type="text"
+                                    name="last_name"
+                                    value={last_name}
+                                    form={form}
+                                    onChange={handleChange}
                                 />
                                 <FormField
                                     labelTitle="Mobile"
                                     placeholder="Enter phone number"
                                     labelClass="auth-label"
                                     className="onboard-input br-4 mb-32"
+                                    type="tel"
+                                    name="mobile"
+                                    form={form}
+                                    value={mobile}
+                                    onChange={handleChange}
                                 />
                                 <div>
-                                    <Button onClick={this.continue} className="blue-button br-8" padding={"10px 32px"}>
+                                    <Button onClick={this.continue} type="submit" className="blue-button br-8" padding={"10px 32px"}>
                                         <h5 className="bold text-white">Save and Continue</h5>
                                     </Button>
                                 </div>
+                                {/* <AlertDialog
+                                    open={request.feedback.for === authRequest.signupRequest}
+                                    message={request.feedback.message}
+                                    success={request.feedback.success}
+                                /> */}
                             </div>
                         </form>
                     </div>

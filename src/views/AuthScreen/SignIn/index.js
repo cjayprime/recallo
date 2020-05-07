@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 
-import SignIn from "./Signin";
-import Layout from "../../../components/AppHeader/Layout";
+import SigninComponent from "./SigninComponent";
+import { signin } from "../../../store/auth/actions";
 
-class SignInComponent extends Component {
+class SigninContainer extends Component {
     render() {
+        const { signin, requestStatus } = this.props;
         return (
             <>
-                <Layout {...this.props}>
-                    <SignIn
-                        {...this.props}
-                    />
-                </Layout>
+                <SigninComponent
+                    {...this.props}
+                    signin={signin}
+                    requestStatus={requestStatus}
+                />
             </>
         )
     }
 }
 
+const mapStateToProps = ({ utils, auth }) => ({
+    requestStatus: auth.requestStatus,
+});
 
+const mapDispatchToProps = {
+    signin
+}
 
-export default SignInComponent;
+export default connect(mapStateToProps, mapDispatchToProps)(SigninContainer);

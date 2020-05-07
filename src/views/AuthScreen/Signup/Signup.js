@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
 
 import Button from "../../../components/Button/button";
-import FormField from '../../../components/Form';
-import { isRequestActive } from "../../../utils/misc";
+import TextInput from '../../../components/Form/TextInput';
 import AlertDialog from "../../../components/AlertDialog";
 
 class SignUp extends Component {
 
     continue = e => {
         e.preventDefault();
-        // this.props.triggerSignup(e, this.props.createAccountSuccess)
-        this.props.nextStep();
+        this.props.triggerSignup(e);
+        this.props.createAccountSuccess();
     }
 
     render() {
         const {
-            form: { fields: field, formError },
-            _handleChange,
-            onBlur,
+            form,
+            handleChange,
+            request,
             triggerSignup,
-            authRequest,
-            request
+            authRequest
         } = this.props,
-            { business_name, email, password, confirm_password } = field;
+            { business_name, email, password, confirm_password, formError } = form;
         return (
             <>
                 <div className="signup">
@@ -30,54 +28,55 @@ class SignUp extends Component {
                         <h1 className="bold mb-45">Create your Account</h1>
                         <form onSubmit={triggerSignup}>
                             <div className="field mb-50">
-                                <FormField
+                                <TextInput
                                     className="auth-input"
                                     labelClass="auth-lable"
                                     labelTitle="Business name"
                                     name="business_name"
-                                    value={business_name.value}
-                                    form={field}
-                                    onBlur={onBlur}
-                                    onChange={_handleChange}
+                                    value={business_name}
+                                    form={form}
+                                    onChange={handleChange}
+                                    novalidate
                                 />
                             </div>
                             <div className="mb-50">
-                                <FormField
+                                <TextInput
                                     className="auth-input"
                                     labelClass="auth-lable"
                                     labelTitle="Business email address"
                                     name="email"
-                                    value={email.value}
-                                    form={field}
-                                    onBlur={onBlur}
-                                    onChange={_handleChange}
+                                    value={email}
+                                    form={form}
+                                    type="email"
+                                    onChange={handleChange}
+                                    novalidate
                                 />
                             </div>
                             <div className="auth-password">
                                 <div className="col-7">
-                                    <FormField
+                                    <TextInput
                                         type="password"
                                         className="auth-input"
                                         labelClass="auth-lable"
                                         labelTitle="Password"
                                         name="password"
-                                        value={password.value}
-                                        form={field}
-                                        onBlur={onBlur}
-                                        onChange={_handleChange}
+                                        value={password}
+                                        form={form}
+                                        onChange={handleChange}
+                                        novalidate
                                     />
                                 </div>
                                 <div className="col-7">
-                                    <FormField
+                                    <TextInput
                                         type="password"
                                         className="auth-input"
                                         labelClass="auth-lable"
                                         labelTitle="Confirm Password"
                                         name="confirm_password"
-                                        value={confirm_password.value}
-                                        form={field}
-                                        onBlur={onBlur}
-                                        onChange={_handleChange}
+                                        value={confirm_password}
+                                        form={form}
+                                        onChange={handleChange}
+                                        novalidate
                                     />
                                 </div>
                             </div>
@@ -87,12 +86,12 @@ class SignUp extends Component {
                                 >
                                     <h5 className="bold">Create Account</h5>
                                 </Button>
-                                {/* <AlertDialog
-                                    open={request.feedback.for === authRequest.signupRequest}
-                                    message={request.feedback.message}
-                                    success={request.feedback.success}
-                                /> */}
                             </div>
+                            {/* <AlertDialog
+                                open={request.feedback.for === authRequest.signupRequest}
+                                message={request.feedback.message}
+                                success={request.feedback.success}
+                            /> */}
                             <hr />
                             <h5 className="bold light text-light">Back to website</h5>
                         </form>
