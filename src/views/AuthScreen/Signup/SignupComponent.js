@@ -21,6 +21,7 @@ class SignUpComponent extends Component {
             first_name: "",
             last_name: "",
             mobile: "",
+            business_email: "",
             business_address: "",
             people: "",
             business_rc: "",
@@ -58,22 +59,29 @@ class SignUpComponent extends Component {
     };
 
 
-    triggerSavePersonalInformation = e => {
+    triggerPersonalInformation = e => {
         e.preventDefault();
-        var fields = this.state.fields;
-        var compulsoryFields = {};
-        for (var key in fields) {
-            compulsoryFields[key] = fields[key];
-        }
+        const { first_name, last_name, mobile } = this.props;
+        let data = { first_name, last_name, mobile };
+        this.props.personalInformation({ data });
     }
 
-    triggerSaveBusinessInformation = e => {
+    pushPersonalInformation = () => {
+        this.nextStep();
+    }
+
+    triggerBusinessInformation = e => {
         e.preventDefault();
-        var fields = this.state.fields;
-        var compulsoryFields = {};
-        for (var key in fields) {
-            compulsoryFields[key] = fields[key];
-        }
+        const { business_name, business_email, business_address, people, business_rc } = this.props;
+        let data = {
+            business_name, business_email,
+            business_address, people, business_rc
+        };
+        this.props.businessInformation({ data, history: this.props.history });
+    }
+
+    pushBusinessInformation = () => {
+        this.nextStep();
     }
 
     render() {
@@ -102,7 +110,9 @@ class SignUpComponent extends Component {
                         handleChange={this.handleChange}
                         form={this.state}
                         authRequest={authRequest}
-                        triggerSavePersonalInformation={this.triggerSavePersonalInformation}
+                        request={request}
+                        triggerPersonalInformation={this.triggerPersonalInformation}
+                        pushPersonalInformation={this.pushPersonalInformation}
                     />
                 );
             case 3:
@@ -111,8 +121,10 @@ class SignUpComponent extends Component {
                         nextStep={this.nextStep}
                         handleChange={this.handleChange}
                         form={this.state}
+                        request={request}
                         authRequest={authRequest}
-                        triggerSaveBusinessInformation={this.triggerSaveBusinessInformation}
+                        triggerBusinessInformation={this.triggerBusinessInformation}
+                        pushBusinessInformation={this.pushBusinessInformation}
                     />
                 );
             case 4:
