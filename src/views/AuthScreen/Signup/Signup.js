@@ -2,19 +2,23 @@ import React, { Component } from 'react';
 
 import Button from "../../../components/Button/button";
 import TextInput from '../../../components/Form/TextInput';
+import AlertDialog from "../../../components/AlertDialog";
 
 class SignUp extends Component {
 
     continue = e => {
         e.preventDefault();
-        this.props.triggerSignup(e, this.props.createAccountSuccess);
+        this.props.triggerSignup(e);
+        this.props.createAccountSuccess();
     }
 
     render() {
         const {
             form,
             handleChange,
+            request,
             triggerSignup,
+            authRequest
         } = this.props,
             { business_name, email, password, confirm_password, formError } = form;
         return (
@@ -82,12 +86,12 @@ class SignUp extends Component {
                                 >
                                     <h5 className="bold">Create Account</h5>
                                 </Button>
-                                {/* <AlertDialog
-                                    open={request.feedback.for === authRequest.signupRequest}
-                                    message={request.feedback.message}
-                                    success={request.feedback.success}
-                                /> */}
                             </div>
+                            {/* <AlertDialog
+                                open={request.feedback.for === authRequest.signupRequest}
+                                message={request.feedback.message}
+                                success={request.feedback.success}
+                            /> */}
                             <hr />
                             <h5 className="bold light text-light">Back to website</h5>
                         </form>

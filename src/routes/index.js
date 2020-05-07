@@ -1,5 +1,8 @@
+import React from 'react';
+import { Redirect } from "react-router-dom";
+
 //Public routes components
-import SignInComponent from "../views/AuthScreen/SignIn";
+import SigninContainer from "../views/AuthScreen/SignIn";
 import SignUpContainer from "../views/AuthScreen/Signup/index"
 import ContactSupportComponent from "../views/ContactSupport";
 
@@ -15,12 +18,13 @@ import ManageAccount from "../views/Settings";
 import PreviousCall from "../views/PreviousCall";
 import VoiceNotes from "../views/Voicenotes";
 
+
 var routes = {
     publicRoutes: [
         {
             path: "/signin",
             exact: true,
-            component: SignInComponent,
+            component: SigninContainer,
             name: "Log In"
         },
         {
@@ -92,7 +96,12 @@ var routes = {
                 exact: true,
                 component: VoiceNotes,
                 layout: "/admin"
-            }
+            },
+            {
+                path: "/signout",
+                exact: true,
+                component: () => <Redirect to={{ pathname: "/signin", state: {} }} />
+            },
         ]
     }
 };

@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { connect } from "react-redux";
 
 import routes from "./index"
 
 import PrivateRoute from "../components/PrivateRoute";
+import { setUserData } from "../store/AllActions";
+import AuthService from "../Services/auth"
 
 const hist = createBrowserHistory();
 
 class MainRoutes extends Component {
+    componentDidMount() {
+        if (AuthService.isAuthenticated()) {
+            AuthService.getAccount().then(user => {
+                if (user.status.code === 100) {
+                    this.props.setUserData(user.entity.me)
+                }
+            })
+        }
+    }
     render() {
         return (
             <Router history={hist}>
@@ -55,4 +67,8 @@ class MainRoutes extends Component {
     }
 }
 
-export default MainRoutes;
+const mapDispatchToProps = {
+    setUserData
+}
+
+export default connect(null, mapDispatchToProps)(MainRoutes);
