@@ -21,7 +21,7 @@ class AppHeader extends Component {
                         <img className="logo" src={logo} alt="Recallo logo" />
                     </div>
                     <div className="header-menu">
-                        {routes.publicRoutes.map((prop, key) => {
+                        {routes.public.map((prop, key) => {
                             if (prop.redirect) return null;
                             return (
                                 <div key={key} className={this.activeRoute(prop.path) + (prop.pro ? "active" : "")}>

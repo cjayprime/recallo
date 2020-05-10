@@ -1,100 +1,64 @@
-//Public routes components
-import SignInComponent from "../views/AuthScreen/SignIn";
-import SignUpContainer from "../views/AuthScreen/Signup/index"
-import ContactSupportComponent from "../views/ContactSupport";
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
-//Private routes components
-import Admin from "../views/Admin/admin";
-import Home from "../views/Home/home";
-import Calls from "../views/Calls";
-import Personnel from "../views/Personnel";
-import Analytics from "../views/Analytics";
+import PrivateRoute from "../components/PrivateRoute";
 
-import homeIcon from "../assets/img/homeIcon.svg";
-import ManageAccount from "../views/Settings";
-import PreviousCall from "../views/PreviousCall";
-import VoiceNotes from "../views/Voicenotes";
+import routes from "./routes";
 
-var routes = {
-    publicRoutes: [
-        {
-            path: "/signin",
-            exact: true,
-            component: SignInComponent,
-            name: "Log In"
-        },
-        {
-            path: "/signup",
-            exact: true,
-            component: SignUpContainer,
-            name: "Create an Account"
-        },
-        {
-            path: "/support",
-            exact: true,
-            component: ContactSupportComponent,
-            name: "Contact Support"
+import * as Actions from "../store/actions";
+
+
+export default connect(null, Actions)(class Routes extends Component {
+    async componentDidMount() {
+        if (await Actions.token.get()) {
+            //this.props.load();
         }
-    ],
-    privateRoutes: {
-        sidebar: [
-            {
-                path: "/admin",
-                component: Admin
-            },
-            {
-                path: "/home",
-                exact: true,
-                component: Home,
-                name: "Home",
-                layout: "/admin",
-                icon: homeIcon
-            },
-            {
-                path: "/calls",
-                exact: true,
-                component: Calls,
-                name: "Calls",
-                layout: "/admin",
-                icon: homeIcon
-            },
-            {
-                path: "/personnel",
-                exact: true,
-                component: Personnel,
-                name: "Personnel",
-                layout: "/admin",
-                icon: homeIcon
-            },
-            {
-                path: "/analytics",
-                exact: true,
-                component: Analytics,
-                name: "Analytics",
-                layout: "/admin",
-                icon: homeIcon
-            }
-        ],
-        route: [
-            {
-                path: "/settings",
-                exact: true,
-                component: ManageAccount,
-                layout: "/admin"
-            },
-            {
-                path: "/previous",
-                exact: true,
-                component: PreviousCall,
-                layout: "/admin"
-            }, {
-                path: "/voicenotes",
-                exact: true,
-                component: VoiceNotes,
-                layout: "/admin"
-            }
-        ]
-    }
-};
+    };
 
-export default routes;
+    component = (route) => connect(state => state, Actions)(props => <route.component {...props} />)
+
+    render() {
+        return (
+            <Router history={createBrowserHistory()}>
+                <Switch>
+                    {routes.public.map(route => (
+                        <Route
+                            key={route.path}
+                            path={route.path}
+                            exact={route.exact}
+                            component={this.component(route)}
+                        />
+                    ))}
+                    {routes.private.sidebar.map(route => (
+                        <PrivateRoute
+                            key={route.path}
+                            path={route.path}
+                            exact={route.exact}
+                            component={this.component(route)}
+                        />
+                    ))}
+                    {routes.private.route.map(route => (
+                        <PrivateRoute
+                            key={route.path}
+                            path={route.path}
+                            exact={route.exact}
+                            component={this.component(route)}
+                        />
+                    ))}
+                    <Route path="/404" component={() => <div style={{
+                        width: "100vw",
+                        height: "100vh",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        fontSize: 200
+                    }}>404</div>} />
+                    <Redirect from="/" to="/signin" />
+                    <Redirect to="/404" />
+                </Switch>
+            </Router>
+        )
+    };
+})

@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 import Button from "../../components/Button/button";
-import Header from "../../components/Header/header"
+import Header from "../../components/Header/header";
 
 import "./sidenav.css"
 
 class Sidenav extends Component {
+    signout = () => {
+        const { history, signout } = this.props;
+        signout({ history });
+    }
+
     render() {
         const { routes, header } = this.props;
+        var business_name;
+        if (typeof this.props.user.account !== "undefined" && this.props.user.account.business_name !== "undefined") {
+            business_name = this.props.user.account.business_name
+        }
 
         return (
             <aside className="sidenav">
@@ -18,7 +27,10 @@ class Sidenav extends Component {
                         <div className="business-logo mb-23">
                             <h1 className="logo-text">AM</h1>
                         </div>
-                        <h3 className="text-blue bold mb-8">AutoMedics Africa Limited</h3>
+                        <h3 className="text-blue bold mb-8">
+                            {/* AutoMedics Africa Limited */}
+                            {business_name}
+                        </h3>
                         <p className="light text-light">2 agents license</p>
                         <Link to="/admin/settings" className="mt-24"><Button className="br-30 account-button orange-hover"
                             padding={"12px 20px"}
@@ -40,7 +52,7 @@ class Sidenav extends Component {
                         })}
                     </ul>
                     <hr />
-                    <h6 className="logout text-blue light">Logout</h6>
+                    <h6 className="logout text-blue light" onClick={this.signout}>Logout</h6>
                 </div>
             </aside>
         )

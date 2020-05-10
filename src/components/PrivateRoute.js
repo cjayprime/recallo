@@ -1,13 +1,28 @@
-import React from 'react';
-import { Route } from "react-router-dom";
+import React, {Component} from 'react';
+import { Route, Redirect } from "react-router-dom";
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
-    return (
-        <Route
-            {...rest}
-            render={props => <Component {...props} />}
-        />
-    )
-}
+import * as Actions from '../store/actions';
 
-export default PrivateRoute;
+export default class PrivateRoute extends Component{
+    render(){
+        return (
+            <Route
+                {...this.props}
+                render={props => {
+                    const content = Actions.token.get() ? (
+
+                        <this.props.component {...props} />
+                    ) : (
+                            <Redirect
+                                to={{
+                                    pathname: "/signin",
+                                    state: { from: props.location },
+                                }}
+                            />
+                        )
+                    return content
+                }}
+            />
+        )
+    }
+};

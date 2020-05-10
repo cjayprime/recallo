@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Sidenav from "../../components/SideNav/sidenav";
 import Header from "../../components/Header/header";
 
-import routes from "../../Routes";
+import routes from "../../routes";
 
 import "./admin.css";
 
@@ -22,7 +22,7 @@ class Admin extends Component {
     // }
 
     getRoutes = routes => {
-        return routes.privateRoutes.sidebar.map((prop, key) => {
+        return routes.private.sidebar.map((prop, key) => {
             if (prop.layout === "/admin") {
                 return (
                     <Route
@@ -38,7 +38,7 @@ class Admin extends Component {
     }
 
     getSettings = routes => {
-        return routes.privateRoutes.route.map((prop, key) => {
+        return routes.private.route.map((prop, key) => {
             if (prop.layout === "/admin") {
                 // from and to props of the Redirect component from react-router-dom npm library
                 // will aid you redirect if props.match.url === "/"

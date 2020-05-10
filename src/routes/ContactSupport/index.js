@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import AppHeader from "../../components/AppHeader";
 import ContactSupport from "./ContactSupport";
 
-import routes from "../../Routes";
+import routes from "../../routes";
 
 class ContactSupportComponent extends Component {
     render() {

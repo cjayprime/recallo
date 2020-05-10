@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 import SignupComponent from "./SignupComponent";
-import { signup } from "../../../store/auth/actions";
+//import { signup, personalInformation, businessInformation } from "../../../store/actions";
 
 class SignupContainer extends Component {
     render() {
@@ -12,7 +12,7 @@ class SignupContainer extends Component {
                 <SignupComponent
                     {...this.props}
                     signup={signup}
-                    request={request}
+                    request={request || {}}
                     misc={misc}
                 />
             </>
@@ -20,14 +20,18 @@ class SignupContainer extends Component {
     }
 }
 
-const mapStateToProps = ({ utils, misc, auth }) => ({
-    auth,
-    misc,
-    request: utils
-});
+// const mapStateToProps = ({ utils, misc, auth }) => ({
+//     auth,
+//     misc,
+//     request: utils
+// });
 
-const mapDispatchToProps = {
-    signup
-}
+// const mapDispatchToProps = {
+//     signup,
+//     personalInformation,
+//     businessInformation
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignupContainer);
+export default //connect(mapStateToProps, mapDispatchToProps)(
+    SignupContainer
+    //);

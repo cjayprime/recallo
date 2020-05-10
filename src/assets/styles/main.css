@@ -109,6 +109,9 @@ textarea {
 .deep-blue {
   color: #384364;
 }
+.red {
+  color: red;
+}
 .text-white {
   color: var(--text-white);
 }

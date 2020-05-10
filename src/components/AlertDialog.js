@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import { Component } from 'react'
 import { withSnackbar } from 'notistack';
-import { connect } from "react-redux";
-import { showRequestFeedBack } from "../store/utils/actions";
 
 class AlertDialog extends Component {
     displayed = [];
@@ -47,8 +45,4 @@ class AlertDialog extends Component {
     }
 }
 
-const mapDispatchProps = {
-    showRequestFeedBack
-};
-
-export default withSnackbar(connect(null, mapDispatchProps)(AlertDialog));
+export default withSnackbar(AlertDialog);
