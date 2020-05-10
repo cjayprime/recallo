@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 
 import Button from "../../components/Button/button";
 import Header from "../../components/Header/header";
-import { signout } from "../../store/AllActions";
-import AuthService from "../../Services/auth";
 
 import "./sidenav.css"
 
 class Sidenav extends Component {
-    constructor(props) {
-        super(props);
-        this.isAuthenticated = AuthService.isAuthenticated();
-    }
-
     signout = () => {
         const { history, signout } = this.props;
         signout({ history });
@@ -67,12 +59,4 @@ class Sidenav extends Component {
     }
 }
 
-const mapStateToProps = ({ auth }) => ({
-    user: auth.data,
-})
-
-const mapDispatchToProps = {
-    signout
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Sidenav);
+export default Sidenav;

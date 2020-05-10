@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import AppHeader from "./index";
-import routes from "../../routes";
+import routes from "../../routes/routes";
 
 class Layout extends Component {
 

@@ -1,27 +1,28 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Route, Redirect } from "react-router-dom";
-import Auth from '../Services/auth';
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
-    return (
-        <Route
-            {...rest}
-            render={props => {
-                const content = Auth.isAuthenticated() ? (
+import * as Actions from '../store/actions';
 
-                    <Component {...props} />
-                ) : (
-                        <Redirect
-                            to={{
-                                pathname: "/signin",
-                                state: { from: props.location },
-                            }}
-                        />
-                    )
-                return content
-            }}
-        />
-    )
-}
+export default class PrivateRoute extends Component{
+    render(){
+        return (
+            <Route
+                {...this.props}
+                render={props => {
+                    const content = Actions.token.get() ? (
 
-export default PrivateRoute
+                        <this.props.component {...props} />
+                    ) : (
+                            <Redirect
+                                to={{
+                                    pathname: "/signin",
+                                    state: { from: props.location },
+                                }}
+                            />
+                        )
+                    return content
+                }}
+            />
+        )
+    }
+};

@@ -6,7 +6,7 @@ import SignUp from './Signup';
 import PersonalInformation from "./PersonalInformation";
 import BusinessInformation from "./BusinessInformation";
 import PlanSelection from "./PlanSelection";
-import { authRequest } from "../../../store/auth/saga";
+// import { authRequest } from "../../../store/auth/saga";
 
 class SignUpComponent extends Component {
     constructor(props) {
@@ -98,7 +98,7 @@ class SignUpComponent extends Component {
                             handleChange={this.handleChange}
                             form={this.state}
                             request={request}
-                            authRequest={authRequest}
+                            //authRequest={authRequest}
                             createAccountSuccess={this.createAccountSuccess}
                         />
                     </Layout>
@@ -109,7 +109,7 @@ class SignUpComponent extends Component {
                         nextStep={this.nextStep}
                         handleChange={this.handleChange}
                         form={this.state}
-                        authRequest={authRequest}
+                        //authRequest={authRequest}
                         request={request}
                         triggerPersonalInformation={this.triggerPersonalInformation}
                         pushPersonalInformation={this.pushPersonalInformation}
@@ -122,7 +122,7 @@ class SignUpComponent extends Component {
                         handleChange={this.handleChange}
                         form={this.state}
                         request={request}
-                        authRequest={authRequest}
+                        //authRequest={authRequest}
                         triggerBusinessInformation={this.triggerBusinessInformation}
                         pushBusinessInformation={this.pushBusinessInformation}
                     />

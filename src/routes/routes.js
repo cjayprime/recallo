@@ -1,74 +1,108 @@
-import React, { Component } from 'react';
-import { Router, Route, Switch, Redirect } from "react-router-dom";
-import { createBrowserHistory } from "history";
-import { connect } from "react-redux";
+import React from 'react';
+import { Redirect } from "react-router-dom";
 
-import routes from "./index"
+// Public routes components
+import SigninContainer from "./AuthScreen/SignIn";
+import SignUpContainer from "./AuthScreen/Signup"
+import ContactSupportComponent from "./ContactSupport";
 
-import PrivateRoute from "../components/PrivateRoute";
-import { setUserData } from "../store/AllActions";
-import AuthService from "../Services/auth"
+// Private routes components
+import Admin from "./Admin/admin";
+import Home from "./Home/home";
+import Calls from "./Calls";
+import Personnel from "./Personnel";
+import Analytics from "./Analytics";
+import ManageAccount from "./Settings";
+import PreviousCall from "./PreviousCall";
+import VoiceNotes from "./Voicenotes";
 
-const hist = createBrowserHistory();
+import homeIcon from "../assets/img/homeIcon.svg";
 
-class MainRoutes extends Component {
-    componentDidMount() {
-        if (AuthService.isAuthenticated()) {
-            AuthService.getAccount().then(user => {
-                if (user.status.code === 100) {
-                    this.props.setUserData(user.entity.me)
-                }
-            })
+const routes = {
+    public: [
+        {
+            path: "/signin",
+            exact: true,
+            component: SigninContainer,
+            name: "Log In"
+        },
+        {
+            path: "/signup",
+            exact: true,
+            component: SignUpContainer,
+            name: "Create an Account"
+        },
+        {
+            path: "/support",
+            exact: true,
+            component: ContactSupportComponent,
+            name: "Contact Support"
         }
+    ],
+    private: {
+        sidebar: [
+            {
+                path: "/admin",
+                component: Admin
+            },
+            {
+                path: "/home",
+                exact: true,
+                component: Home,
+                name: "Home",
+                layout: "/admin",
+                icon: homeIcon
+            },
+            {
+                path: "/calls",
+                exact: true,
+                component: Calls,
+                name: "Calls",
+                layout: "/admin",
+                icon: homeIcon
+            },
+            {
+                path: "/personnel",
+                exact: true,
+                component: Personnel,
+                name: "Personnel",
+                layout: "/admin",
+                icon: homeIcon
+            },
+            {
+                path: "/analytics",
+                exact: true,
+                component: Analytics,
+                name: "Analytics",
+                layout: "/admin",
+                icon: homeIcon
+            }
+        ],
+        route: [
+            {
+                path: "/settings",
+                exact: true,
+                component: ManageAccount,
+                layout: "/admin"
+            },
+            {
+                path: "/previous",
+                exact: true,
+                component: PreviousCall,
+                layout: "/admin"
+            }, {
+                path: "/voicenotes",
+                exact: true,
+                component: VoiceNotes,
+                layout: "/admin"
+            },
+            {
+                path: "/signout",
+                exact: true,
+                component: () => <Redirect to={{ pathname: "/signin", state: {} }} />
+            },
+        ]
     }
-    render() {
-        return (
-            <Router history={hist}>
-                <Switch>
-                    {routes.publicRoutes.map(el => (
-                        <Route
-                            key={el.path}
-                            path={el.path}
-                            exact={el.exact}
-                            component={el.component}
-                        />
-                    ))}
-                    {routes.privateRoutes.sidebar.map(el => (
-                        <PrivateRoute
-                            key={el.path}
-                            path={el.path}
-                            exact={el.exact}
-                            // component={connect(state => state, mapDispatchToProps)(props => <el.component {...props} />)}
-                            component={el.component}
-                        />
-                    ))}
-                    {routes.privateRoutes.route.map(el => (
-                        <PrivateRoute
-                            key={el.path}
-                            path={el.path}
-                            exact={el.exact}
-                            component={el.component}
-                        />
-                    ))}
-                    <Route path="/404" component={() => <div style={{
-                        width: "100vw",
-                        height: "100vh",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        fontSize: 200
-                    }}>404</div>} />
-                    <Redirect from="/" to="/signin" />
-                    {/* <Redirect from="/admin" to="/admin/home" />
-                    <Redirect to="/404" /> */}
-                </Switch>
-            </Router>
-        )
-    }
-}
+};
 
-const mapDispatchToProps = {
-    setUserData
-}
-
-export default connect(null, mapDispatchToProps)(MainRoutes);
+export default routes;

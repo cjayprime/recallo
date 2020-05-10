@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from "classnames";
 
-class TextInput extends Component {
+export default class TextInput extends Component {
 
     state = {
         error: ""
@@ -9,68 +9,67 @@ class TextInput extends Component {
 
     handleChange = e => {
         e.preventDefault();
+
         var error = null;
-        var text = "";
         var valid;
-        var re
-        if (this.props.type === "email" && !!this.props.email) {
-            re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            valid = re.test(this.props.value);
-            if (!valid) {
-                this.setState({ error: "Please enter a valid email" });
-                error = true;
-            } else {
-                this.setState({ error: "" });
-                error = false;
-            }
-        }
-        if (this.props.type === "password" && !!this.props.password) {
-            re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-            valid = re.test(this.props.value);
-            if (!valid) {
-                this.setState({ error: "At least a number, a capital letter, and a minimum of 8 characters." });
-                error = true;
-            } else {
-                this.setState({ error: "" });
-                error = false;
-            }
-        }
-        if (this.props.type === "text" && this.props) {
+        var regex;
+        var {type, value, onChange} = this.props;
+        if (type === "email") {
+            regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            valid = regex.test(value);
+            error = "Please enter a valid email.";
+        }else if (type === "password") {
+            regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+            valid = regex.test(value);
+            error = "Please enter at least a number, a capital letter, and a minimum of 8 characters.";
+        }else if (type === "text") {
 
         }
-        this.props.onChange(error === true ? text : "")
+        
+        if (!valid) {
+            this.setState({ error });
+        } else {
+            error = "";
+            this.setState({ error: "" });
+        }
+        //console.log(error, valid)
+        onChange(e.target.value, e.target.name, error);
     }
 
     render() {
-        const { id,
+        const {
+            id,
+            type,
             value,
             name,
             className,
-            onKeyUp,
             placeholder,
-            onChange,
             labelTitle,
             labelClass,
-            form,
-            type } = this.props;
+        } = this.props;
+
+        const {error} = this.state;
+
         return (
             <div>
                 <div>
-                    <h6 className={form.error ? "red" : classNames("mb-8", "light", labelClass)}><label>{labelTitle}</label></h6>
+                    <h6 className={error ? "red" : classNames("mb-8", "light", labelClass)}>
+                        <label>
+                            {error ? error : labelTitle}
+                        </label>
+                    </h6>
                 </div>
                 <input
                     id={id}
                     value={value}
                     name={name}
                     className={className}
-                    type={type || "text"}
-                    onChange={onChange}
-                    onKeyUp={onKeyUp}
+                    type={type}
+                    onChange={this.handleChange}
+                    onKeyUp={this.handleChange}
                     placeholder={placeholder}
                 />
             </div>
         )
     }
-}
-
-export default TextInput;
+};
