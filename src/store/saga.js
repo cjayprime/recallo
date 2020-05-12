@@ -30,6 +30,7 @@ export default class Saga{
         
         yield put({
             ...result,
+            ...action,
             type: responder,
             loading: endpoint,
             message: result.message,

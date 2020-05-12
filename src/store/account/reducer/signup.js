@@ -4,11 +4,17 @@ function signup(state, action){
     const {data, loading, message, status, type} = action;
 
     if(type === Actions.SIGNUP && status === true){
-        return {
+        var newState = {
             ...state,
             loading: state.loading.filter(text => text !== loading),
             status: true,
             message,
+        }
+        //if(action.step === 0)// get the returned value from data and then put it into `newState`
+        //if(action.step === 1)// get the returned value from data and then put it into `newState`
+        //if(action.step === 2)// get the returned value from data and then put it into `newState`
+        return {
+            ...newState,
             user: {
                 firstname: data.first_name,
                 lastname: '',
