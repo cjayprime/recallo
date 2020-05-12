@@ -1,4 +1,4 @@
-import {takeLatest} from "redux-saga/effects";
+import {all, takeLatest} from "redux-saga/effects";
 
 import Saga from '../saga';
 
@@ -12,5 +12,7 @@ function* request() {
 }
 
 export default function* saga() {
-    yield request();
+    yield all([
+        request()
+    ]);
 }
