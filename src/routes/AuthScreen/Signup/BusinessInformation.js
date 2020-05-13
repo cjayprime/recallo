@@ -75,7 +75,7 @@ class BusinessInformation extends Component {
                                         />
                                     </div>
                                     <div className="col-7">
-                                        <FormField
+                                        <TextInput
                                             labelTitle="Business address"
                                             className="onboard-textarea"
                                             type="textarea"
@@ -100,7 +100,7 @@ class BusinessInformation extends Component {
                                         />
                                     </div>
                                     <div className="col-7">
-                                        <FormField
+                                        <TextInput
                                             className="onboard-input br-4"
                                             labelTitle="How many people with you at this business?"
                                             type="number"

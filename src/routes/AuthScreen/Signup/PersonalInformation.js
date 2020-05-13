@@ -11,7 +11,7 @@ class PersonalInformation extends Component {
     continue = e => {
         e.preventDefault();
         this.props.triggerPersonalInformation(e);
-        this.props.pushPersonalInformation();
+        this.props.nextStep();
     }
 
     render() {
@@ -76,7 +76,7 @@ class PersonalInformation extends Component {
                                     form={form}
                                     onChange={handleChange}
                                 />
-                                <FormField
+                                <TextInput
                                     labelTitle="Mobile"
                                     placeholder="Enter phone number"
                                     labelClass="auth-label"

@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 import Button from "../../../components/Button/button";
 import TextInput from '../../../components/Form/TextInput';
-import AlertDialog from "../../../components/AlertDialog";
+import AuthInput from "../../../components/Form/authInput";
 
 class SignUp extends Component {
 
     continue = e => {
         e.preventDefault();
         this.props.triggerSignup(e);
-        this.props.createAccountSuccess();
+        this.props.nextStep();
     }
 
     render() {
@@ -26,37 +26,35 @@ class SignUp extends Component {
                 <div className="signup">
                     <div className="signup-form form">
                         <h1 className="bold mb-45">Create your Account</h1>
-                        <form onSubmit={triggerSignup}>
-                            <div className="field mb-50">
-                                <TextInput
-                                    className="auth-input"
-                                    labelClass="auth-lable"
-                                    labelTitle="Business name"
-                                    name="business_name"
-                                    value={business_name}
-                                    form={form}
-                                    onChange={handleChange}
-                                    novalidate
-                                />
-                            </div>
-                            <div className="mb-50">
-                                <TextInput
-                                    className="auth-input"
-                                    labelClass="auth-lable"
-                                    labelTitle="Business email address"
-                                    name="email"
-                                    value={email}
-                                    form={form}
-                                    type="email"
-                                    onChange={handleChange}
-                                    novalidate
-                                />
-                            </div>
+                        <form onSubmit={triggerSignup} className="go-top">
+                            <AuthInput
+                                className="field mb-50 div"
+                                inputClass="auth-input"
+                                labelClass="auth-lable"
+                                labelTitle="Business name"
+                                name="business_name"
+                                value={business_name}
+                                form={form}
+                                onChange={handleChange}
+                                novalidate
+                            />
+                            <AuthInput
+                                className="mb-50 div"
+                                inputClass="auth-input"
+                                labelClass="auth-lable"
+                                labelTitle="Business email address"
+                                name="email"
+                                value={email}
+                                form={form}
+                                type="email"
+                                onChange={handleChange}
+                                novalidate
+                            />
                             <div className="auth-password">
-                                <div className="col-7">
-                                    <TextInput
+                                    <AuthInput
+                                        className="col-7 div"
                                         type="password"
-                                        className="auth-input"
+                                        inputClass="auth-input"
                                         labelClass="auth-lable"
                                         labelTitle="Password"
                                         name="password"
@@ -65,11 +63,10 @@ class SignUp extends Component {
                                         onChange={handleChange}
                                         novalidate
                                     />
-                                </div>
-                                <div className="col-7">
-                                    <TextInput
+                                    <AuthInput
                                         type="password"
-                                        className="auth-input"
+                                        className="col-7 div"
+                                        inputClass="auth-input"
                                         labelClass="auth-lable"
                                         labelTitle="Confirm Password"
                                         name="confirm_password"
@@ -78,7 +75,6 @@ class SignUp extends Component {
                                         onChange={handleChange}
                                         novalidate
                                     />
-                                </div>
                             </div>
                             <h6 className="lh-24 light text-light mb-32">By clicking "Create Account" you agree to our <span className="bold text-blue">Terms of Service</span>, and to receive marketing communications from Recallo.</h6>
                             <div>

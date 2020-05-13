@@ -4,7 +4,7 @@ import { SnackbarProvider } from "notistack";
 import Button from '@material-ui/core/Button';
 
 import "../src/assets/styles/main.css"
-import MainRoutes from "./Routes/routes";
+import Routes from "./routes";
 
 import store from "./store";
 
@@ -25,7 +25,7 @@ function App() {
             </Button>
           )}
         >
-          <MainRoutes />
+          <Routes />
         </SnackbarProvider>
       </Provider>
     </div>
