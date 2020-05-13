@@ -13,11 +13,8 @@ class Sidenav extends Component {
     }
 
     render() {
-        const { routes, header } = this.props;
-        var business_name;
-        if (typeof this.props.user.account !== "undefined" && this.props.user.account.business_name !== "undefined") {
-            business_name = this.props.user.account.business_name
-        }
+        const { routes, header, account } = this.props;
+        console.log("hey", account)
 
         return (
             <aside className="sidenav">
@@ -29,7 +26,6 @@ class Sidenav extends Component {
                         </div>
                         <h3 className="text-blue bold mb-8">
                             {/* AutoMedics Africa Limited */}
-                            {business_name}
                         </h3>
                         <p className="light text-light">2 agents license</p>
                         <Link to="/admin/settings" className="mt-24"><Button className="br-30 account-button orange-hover"
@@ -39,7 +35,7 @@ class Sidenav extends Component {
                         </Button></Link>
                     </div>
                     <ul className="sidenav-list">
-                        {routes.privateRoutes.sidebar.map((prop, key) => {
+                        {routes.private.sidebar.map((prop, key) => {
                             if (prop.redirect) return null;
                             return (
                                 <Link key={key} className="sidenav-list-link" to={prop.layout + prop.path}>

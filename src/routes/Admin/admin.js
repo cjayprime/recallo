@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Sidenav from "../../components/SideNav/sidenav";
 import Header from "../../components/Header/header";
 
-import routes from "../../routes";
+import routes from "../routes";
 
 import "./admin.css";
 
@@ -74,6 +74,7 @@ class Admin extends Component {
     }
 
     render() {
+        const { account, data, result } = this.props;
         return (
             <div className="grid">
                 <Header header={this.header(false)} className="main-header" />
@@ -81,6 +82,7 @@ class Admin extends Component {
                     header={this.header(true)}
                     {...this.props}
                     routes={routes}
+                    account={account}
                 />
                 <main className="main">
                     <Switch>

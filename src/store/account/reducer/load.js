@@ -10,10 +10,10 @@ function load(state, action){
             status: true,
             message,
             user: {
-                firstname: data.first_name,
-                lastname: '',
-                email: '',
-                mobile: ''
+                firstname: data.me.first_name,
+                lastname: data.me.last_name,
+                email: data.me.email,
+                mobile: data.me.mobile
             }
         };
     }else if(type === Actions.LOAD && status === false){

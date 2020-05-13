@@ -20,13 +20,13 @@ export default class SignIn extends Component {
 
     triggerSignin = e => {
         e.preventDefault();
-        if(! this.state.error){
+        if (!this.state.error) {
             const { email, password } = this.state;
 
             this.props.signin({ email, password }, () => {
                 this.props.history.push('/admin/home');
             });
-        }else{
+        } else {
             // Display error here
             // Say 'Please fill in the form correctly.'
             // Or show this.state.error
@@ -35,7 +35,7 @@ export default class SignIn extends Component {
 
     render() {
         const { email, password } = this.state;
-        console.log(this.props.account)
+        console.log(this.props.account);
         return (
             <Layout {...this.props}>
                 <div className="signin">
