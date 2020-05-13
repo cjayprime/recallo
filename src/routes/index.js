@@ -13,7 +13,7 @@ import * as Actions from "../store/actions";
 export default connect(null, Actions)(class Routes extends Component {
     async componentDidMount() {
         if (await Actions.token.get()) {
-            //this.props.load();
+            this.props.load();
         }
     };
 

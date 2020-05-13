@@ -68,6 +68,11 @@
   background: var(--text-color);
   color: var(--text-white);
   padding: 14px 128px;
+  transition: all 0.3s ease-in;
+}
+
+.signup-button:hover {
+  background-color: #384364;
 }
 
 .onboard {
@@ -340,6 +345,7 @@
 .signin-form {
   margin-top: 53.5px;
   margin-left: 95px;
+  width: 27%;
 }
 
 .form h1 {
@@ -368,6 +374,7 @@
 .auth-input {
   border: 0;
   outline: 0;
+  height: 30px;
   border-bottom: 1px solid #dddddd;
   -webkit-appearance: none;
   border-radius: 0;
@@ -392,7 +399,15 @@
 .login-button {
   background: var(--text-color);
   color: var(--text-white);
-  padding: 14px 0;
+  padding: 14px 0 14px 168px;
+  transition: all 0.3s ease-in;
+}
+
+.login-button:hover {
+  background-color: #384364;
+}
+
+.login-button div {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -400,13 +415,22 @@
 
 .login-button h5 {
   margin-right: 117px;
-  margin-left: 168px;
+  transition: all 0.3s ease-in;
+}
+
+.login-button:hover h5 {
+  margin-right: 122px;
+}
+
+.login-button:hover img {
+  margin-right: 26px;
 }
 
 .login-button img {
   width: 20px;
   height: 20px;
-  margin-right: 39px;
+  margin-right: 31px;
+  transition: all 0.3s ease-in;
 }
 
 .signin-hr {
@@ -419,6 +443,17 @@
 }
 
 /* End Signin Screen */
+
+/* contact support */
+
+.support {
+  margin-top: 159px;
+  margin-left: 94px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* End contact support */
 
 .grid {
   display: grid;

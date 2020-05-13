@@ -5,10 +5,19 @@ export const SIGNIN = "SIGNIN";
 export const SIGNOUT = "SIGNOUT";
 export const LOAD = "LOAD";
 
+// export const signup = (data, step) => ({
+//     type: REQUEST,
+//     responder: SIGNUP,
+//     endpoint: step === 3 ? 'payments/verifyandfinishregisteration' : 'account/setup/' + (step === 1 ? 'first' : 'second'),
+//     method: 'POST',
+//     data,
+//     step,
+// });
+
 export const signup = (data, step) => ({
-    type: REQUEST,
+    type: step === 0 ? SIGNUP : REQUEST,
     responder: SIGNUP,
-    endpoint: step === 3 ? 'payments/verifyandfinishregisteration' : 'account/setup/' + (step === 1 ? 'first' : 'second'),
+    endpoint: step === 3 ? 'payments/verifyandfinishregisteration' : 'account/' + (step === 1 ? 'setup/first' : 'setup/second'),
     method: 'POST',
     data,
     step,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from "classnames";
 
-export default class TextInput extends Component {
+export default class AuthInput extends Component {
 
     state = {
         error: ""
@@ -42,6 +42,7 @@ export default class TextInput extends Component {
             type,
             value,
             name,
+            inputClass,
             className,
             placeholder,
             labelTitle,
@@ -51,22 +52,22 @@ export default class TextInput extends Component {
         const { error } = this.state;
 
         return (
-            <div>
-                <h6 className={error ? "red" : classNames("mb-8", "light", labelClass)}>
-                    <label>
-                        {error ? error : labelTitle}
-                    </label>
-                </h6>
+            <div className={className}>
                 <input
                     id={id}
                     value={value}
                     name={name}
-                    className={className}
+                    className={inputClass}
                     type={type}
                     onChange={this.handleChange}
                     onKeyUp={this.handleChange}
                     placeholder={placeholder}
                 />
+                <label>
+                    <h6 className={error ? "red" : classNames("mb-8", "light", labelClass)}>
+                        {error ? error : labelTitle}
+                    </h6>
+                </label>
             </div>
         )
     }

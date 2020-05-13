@@ -14,14 +14,14 @@ class Button extends Component {
                         {error || "some of the inputs are not valid"}
                     </p>
                 )}
-                <div className="row">
-                    <div>                <button
+                <div>
+                    <div><button
                         type={type}
                         className={classNames("button", "bold", className)}
                         style={{ backgroundColor: background, color: text, padding: padding }}
                         onClick={onClick}
                     >
-                        {!isLoading && <span>{children}</span>}
+                        {!isLoading && <div>{children}</div>}
                     </button></div>
                     <div style={{ color: "grey" }}>{isLoading && <CircularProgress size={20} color="inherit" />}</div>
                 </div>
