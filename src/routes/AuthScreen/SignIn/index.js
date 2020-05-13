@@ -66,12 +66,11 @@ export default class SignIn extends Component {
                                 />
                             </div>
                             <div className="row">
-                                <div className="row-direction">
-                                    <FormField
-                                        type="checkbox"
-                                    />
-                                    <h6 className="bold text-blue">Remember me</h6>
-                                </div>
+                                <FormField
+                                    type="checkbox"
+                                    checkboxClass="checkbox"
+                                    checkboxTitle="Remember me"
+                                />
                                 <div>
                                     <h6 className="bold text-blue">Forgot your password?</h6>
                                 </div>
