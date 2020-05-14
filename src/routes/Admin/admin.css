@@ -67,7 +67,7 @@
 .signup-button {
   background: var(--text-color);
   color: var(--text-white);
-  padding: 14px 128px;
+  padding: 14px 150px;
   transition: all 0.3s ease-in;
 }
 
@@ -369,7 +369,7 @@
 .login-button {
   background: var(--text-color);
   color: var(--text-white);
-  padding: 14px 0 14px 138px;
+  padding: 14px 0 14px 174px;
   transition: all 0.3s ease-in;
 }
 
