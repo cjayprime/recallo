@@ -1,15 +1,15 @@
-import { combineReducers } from "redux";
+import { combineReducers } from "redux"
 
-import account from "./account/reducer";
+import account from "./account/reducer"
 
-export default class Reducer{
-    create = combineReducers({
-        account
-    });
+export default class Reducer {
+  create = combineReducers({
+    account,
+  })
 
-    rebuild = () => asyncReducers =>
-        combineReducers({
-        account,
-        ...asyncReducers
-    });
+  rebuild = () => (asyncReducers) =>
+    combineReducers({
+      account,
+      ...asyncReducers,
+    })
 }

@@ -1,21 +1,13 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
-class MenuCard extends Component{
-    render() {
+class MenuCard extends Component {
+  render() {
+    const elements = this.props.children.map((element) => (
+      <h6 className="text-blue light cursor hover-grey">{element}</h6>
+    ))
 
-
-        const elements = this.props.children.map(
-            element =>
-                <h6 className="text-blue light cursor hover-grey">{element}</h6>
-        );
-
-
-        return(
-            <div className="menu-card">
-                {elements}
-            </div>
-        )
-    }
+    return <div className="menu-card">{elements}</div>
+  }
 }
 
-export default MenuCard;
+export default MenuCard
