@@ -28,9 +28,7 @@ class SignUp extends Component {
                         <h1 className="bold mb-45">Create your Account</h1>
                         <form onSubmit={triggerSignup} className="go-top">
                             <AuthInput
-                                className="field mb-50 div"
-                                inputClass="auth-input"
-                                labelClass="auth-lable"
+                                className="field mb-50"
                                 labelTitle="Business name"
                                 name="business_name"
                                 value={business_name}
@@ -39,9 +37,7 @@ class SignUp extends Component {
                                 novalidate
                             />
                             <AuthInput
-                                className="mb-50 div"
-                                inputClass="auth-input"
-                                labelClass="auth-lable"
+                                className="mb-50"
                                 labelTitle="Business email address"
                                 name="email"
                                 value={email}
@@ -52,10 +48,8 @@ class SignUp extends Component {
                             />
                             <div className="auth-password">
                                     <AuthInput
-                                        className="col-7 div"
+                                        className="col-7"
                                         type="password"
-                                        inputClass="auth-input"
-                                        labelClass="auth-lable"
                                         labelTitle="Password"
                                         name="password"
                                         value={password}
@@ -65,9 +59,7 @@ class SignUp extends Component {
                                     />
                                     <AuthInput
                                         type="password"
-                                        className="col-7 div"
-                                        inputClass="auth-input"
-                                        labelClass="auth-lable"
+                                        className="col-7"
                                         labelTitle="Confirm Password"
                                         name="confirm_password"
                                         value={confirm_password}

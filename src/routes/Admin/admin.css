@@ -366,40 +366,10 @@
   background-image: url(../../assets/img/ladyCall.png);
 }
 
-.field:nth-child(2) {
-  margin-top: 49.5px;
-  margin-bottom: 23px;
-}
-
-.auth-input {
-  border: 0;
-  outline: 0;
-  height: 30px;
-  border-bottom: 1px solid #dddddd;
-  -webkit-appearance: none;
-  border-radius: 0;
-}
-
-.auth-input:focus {
-  outline: 0;
-  border-bottom: 1px solid var(--hover-color);
-}
-
-.auth-label {
-  font-size: 1.6rem;
-  color: var(--main-color);
-}
-
-.auth-label,
-.auth-input {
-  transition: all 0.2s;
-  touch-action: manipulation;
-}
-
 .login-button {
   background: var(--text-color);
   color: var(--text-white);
-  padding: 14px 0 14px 168px;
+  padding: 14px 0 14px 138px;
   transition: all 0.3s ease-in;
 }
 
@@ -472,7 +442,7 @@
   background-color: #fff;
   border: 1px solid #336799;
   border-radius: 4px;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .checkbox input:checked ~ .checkmark {
@@ -510,6 +480,33 @@
   margin-left: 94px;
   display: flex;
   justify-content: space-between;
+}
+
+.support-message {
+  width: 16%;
+}
+
+.support h2 {
+  color: #2e384d;
+}
+
+.message-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40.5px;
+}
+
+.message-board {
+  width: 40%;
+}
+
+.btw {
+  margin-left: 94px;
+  margin-top: 98px;
+}
+
+.message-board hr {
+  margin-top: 110px;
 }
 
 /* End contact support */
