@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import classNames from "classnames";
 
+import "./input.css";
+
 export default class AuthInput extends Component {
 
     state = {
@@ -42,29 +44,27 @@ export default class AuthInput extends Component {
             type,
             value,
             name,
-            inputClass,
             className,
             placeholder,
             labelTitle,
-            labelClass,
         } = this.props;
 
         const { error } = this.state;
 
         return (
-            <div className={className}>
+            <div className={classNames("form-group", className)}>
                 <input
                     id={id}
                     value={value}
                     name={name}
-                    className={inputClass}
+                    className="auth-input"
                     type={type}
                     onChange={this.handleChange}
                     onKeyUp={this.handleChange}
                     placeholder={placeholder}
                 />
                 <label>
-                    <h6 className={error ? "red" : classNames("mb-8", "light", labelClass)}>
+                    <h6 className={error ? "red" : "mb-8 light auth-label"}>
                         {error ? error : labelTitle}
                     </h6>
                 </label>

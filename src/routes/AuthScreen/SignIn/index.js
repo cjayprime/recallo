@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import TextInput from '../../../components/Form/TextInput';
+import AuthInput from '../../../components/Form/authInput';
 import FormField from '../../../components/Form';
 import Button from "../../../components/Button/button";
 import Layout from "../../../components/AppHeader/Layout";
@@ -44,10 +44,8 @@ export default class SignIn extends Component {
                         <h3 className="light text-light">Please enter your email address and password</h3>
                         <form onSubmit={this.triggerSignin}>
                             <div className="field">
-                                <TextInput
+                                <AuthInput
                                     type="email"
-                                    className="auth-input"
-                                    labelClass="auth-label"
                                     labelTitle="Email address"
                                     name="email"
                                     value={email}
@@ -55,10 +53,8 @@ export default class SignIn extends Component {
                                 />
                             </div>
                             <div className="field">
-                                <TextInput
+                                <AuthInput
                                     type="password"
-                                    className="auth-input"
-                                    labelClass="auth-label"
                                     labelTitle="Password"
                                     name="password"
                                     value={password}
