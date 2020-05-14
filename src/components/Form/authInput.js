@@ -22,6 +22,11 @@ export default class AuthInput extends Component {
             regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
             valid = regex.test(value);
             error = "Please enter at least a number, a capital letter, and a minimum of 8 characters.";
+        } else if (type === "confirm-password") {
+            valid = this.props.passed;
+            error = "Please confirm your password.";
+        } else if (type === "tel") {
+            // We need `class-validator` npm library
         } else if (type === "text") {
 
         }
@@ -32,8 +37,12 @@ export default class AuthInput extends Component {
             error = "";
             this.setState({ error: "" });
         }
-        //console.log(error, valid)
+        
         onChange(e.target.value, e.target.name, error);
+    }
+
+    componentDidMount(){
+        this.props.onChange("", "", "Please fill in the form correctly.");
     }
 
     render() {
@@ -58,7 +67,7 @@ export default class AuthInput extends Component {
                     value={value}
                     name={name}
                     className={inputClass}
-                    type={type}
+                    type={type === "confirm-password" ? "password" : type}
                     onChange={this.handleChange}
                     onKeyUp={this.handleChange}
                     placeholder={placeholder}

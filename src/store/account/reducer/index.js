@@ -22,31 +22,26 @@ const initialState = {
         rc: '',
         did: '',
         agents: '',
-        cards: '',
-        mode: '',
+        card: '',
+        artiste: '',
         recordings: {
             intro: '',
             thankyou: '',
             hold: '',
             hangup: '',
             adverts: '',
-            aohcs: '',
-            artiste: ''
+            aohcs: ''
         }
     }
 }
 
-const auth = (state = initialState, action) => {
+const account = (state = initialState, action) => {
     // console.log('All states and actions: ', state, action)
     const { loading, type, name } = action;
     var newState = null;
-
-    // Read the code in src/store/saga/(new Saga()).request()
-    // for a thorough understanding of how this works.
-    // action keys needed are:
-    // type, endpoint, responder, method, name, loading, message, status, data
+    
     if (type === Actions.LOADING && loading && name === "account") {
-        state.loading.push(loading);;;
+        state.loading.push(loading);
         return {
             ...state,
         };
@@ -61,4 +56,4 @@ const auth = (state = initialState, action) => {
     return state;
 }
 
-export default auth;
+export default account;

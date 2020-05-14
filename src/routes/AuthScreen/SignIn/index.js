@@ -7,6 +7,9 @@ import Layout from "../../../components/AppHeader/Layout";
 
 import arrowright from "../../../assets/img/arrow-right-circle.png";
 
+import Notification from "../../../utils/notification";
+
+
 export default class SignIn extends Component {
     state = {
         email: "",
@@ -18,31 +21,29 @@ export default class SignIn extends Component {
         this.setState({ [name]: value, error })
     }
 
-    triggerSignin = e => {
+    signin = e => {
         e.preventDefault();
-        if (!this.state.error) {
+        if (!this.state.error && this.state.email && this.state.password) {
             const { email, password } = this.state;
 
             this.props.signin({ email, password }, () => {
                 this.props.history.push('/admin/home');
             });
         } else {
-            // Display error here
-            // Say 'Please fill in the form correctly.'
-            // Or show this.state.error
+            Notification.error(this.state.error || 'Please fill in the form correctly.');
         }
     }
 
     render() {
         const { email, password } = this.state;
-        console.log(this.props.account);
+
         return (
             <Layout {...this.props}>
                 <div className="signin">
                     <div className="signin-form form">
                         <h1 className="bold mb-16">Log in</h1>
                         <h3 className="light text-light">Please enter your email address and password</h3>
-                        <form onSubmit={this.triggerSignin}>
+                        <form onSubmit={this.signin}>
                             <div className="field">
                                 <TextInput
                                     type="email"

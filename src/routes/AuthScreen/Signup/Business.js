@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import logo from "../../../assets/img/appLogo.png";
-import FormField from "../../../components/Form";
 import TextInput from "../../../components/Form/TextInput";
 import Button from "../../../components/Button/button";
 

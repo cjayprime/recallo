@@ -32,8 +32,12 @@ export default class TextInput extends Component {
             error = "";
             this.setState({ error: "" });
         }
-        //console.log(error, valid)
+        
         onChange(e.target.value, e.target.name, error);
+    }
+
+    componentDidMount(){
+        this.props.onChange("", "", "Please fill in the form correctly.");
     }
 
     render() {

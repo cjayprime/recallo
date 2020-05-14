@@ -14,7 +14,7 @@ class DepartmentOverlay extends Component{
             <Overlay open={open} toggle={toggle}>
                 <div>
                     <h4 className="mb-8">Add Department</h4>
-                    <h6 className="light text-light mb-32"></h6>
+                    {/* <h6 className="light text-light mb-32"></h6> */}
                     <div>
                         <FormField
                             labelTitle="Enter name of department"

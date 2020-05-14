@@ -1,0 +1,4 @@
+{
+    "*.+(js|jsx)": ["eslint --fix --no-verify", "git add"],
+    "*.+(json|css|md)": ["prettier --write", "git add"]
+}

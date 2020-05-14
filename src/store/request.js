@@ -41,7 +41,12 @@ export default class Request{
                 var desc = '';
                 var data = '';
 
-                if(e.response && e.response.data && e.response.data.status && e.response.data.status.code){
+                if(
+                    typeof e.response !== "undefined" &&
+                    typeof e.response.data !== "undefined" &&
+                    typeof e.response.data.status !== "undefined" &&
+                    e.response.data.status.code
+                ){
                     var status = e.response.data.status;
                     code = status.code;
                     desc = status.desc;

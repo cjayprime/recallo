@@ -11,7 +11,7 @@ class Button extends Component {
             <>
                 {error && (
                     <p style={{ color: "red", textAlign: "center", marginTop: 20 }}>
-                        {error || "some of the inputs are not valid"}
+                        {error || "Some of the inputs are not valid"}
                     </p>
                 )}
                 <div>

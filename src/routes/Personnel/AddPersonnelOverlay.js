@@ -43,7 +43,7 @@ class PersonnelOverlay extends Component {
             <Overlay open={open} toggle={toggle}>
                 <div>
                     <h4 className="mb-8">Add Personnel</h4>
-                    <h6 className="light text-light mb-32"></h6>
+                    {/* {<h6 className="light text-light mb-32"></h6>} */}
                     <div>
                         <div className="row mb-24">
                             <div className="col-7">

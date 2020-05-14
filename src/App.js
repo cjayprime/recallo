@@ -8,20 +8,21 @@ import Routes from "./routes";
 
 import store from "./store";
 
-const notistackRef = React.createRef();
-const onClickDismiss = key => () => {
-  notistackRef.current.closeSnackbar(key);
-}
+import Notification from "./utils/notification";
 
 function App() {
   return (
     <div>
       <Provider store={store}>
         <SnackbarProvider
-          ref={notistackRef}
+          anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+          }}
+          ref={Notification.reference}
           action={(key) => (
-            <Button onClick={onClickDismiss(key)}>
-              'Dismiss'
+            <Button onClick={Notification.close}>
+              dismiss
             </Button>
           )}
         >
