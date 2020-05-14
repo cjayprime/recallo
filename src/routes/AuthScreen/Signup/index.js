@@ -122,8 +122,6 @@ class SignUpComponent extends Component {
                         nextStep={this.nextStep}
                         handleChange={this.handleChange}
                         form={this.state.business}
-
-                        //triggerSignup={this.triggerSignup}
                     />
                 );
             case 1:
@@ -132,8 +130,6 @@ class SignUpComponent extends Component {
                         nextStep={this.nextStep}
                         handleChange={this.handleChange}
                         form={this.state.user}
-
-                        //triggerPersonalInformation={this.triggerPersonalInformation}
                     />
                 );
             case 2:
@@ -142,8 +138,6 @@ class SignUpComponent extends Component {
                         nextStep={this.nextStep}
                         handleChange={this.handleChange}
                         form={this.state}
-                        
-                        //triggerBusinessInformation={this.triggerBusinessInformation}
                     />
                 );
             case 3:
