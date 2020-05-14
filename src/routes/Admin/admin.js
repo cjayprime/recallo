@@ -74,7 +74,7 @@ class Admin extends Component {
     }
 
     render() {
-        const { account, data, result } = this.props;
+        const { account, /*data, result*/ } = this.props;
         return (
             <div className="grid">
                 <Header header={this.header(false)} className="main-header" />

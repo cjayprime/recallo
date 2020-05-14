@@ -9,35 +9,37 @@ function signup(state, action) {
             loading: state.loading.filter(text => text !== loading),
             status: true,
             message,
-        }
+        };
+        
         if (action.step === 0) {
-            Actions.token.set(data.entity.token)
+            Actions.token.set(data.token);
             return {
                 ...newState,
-                business: {
-                    name: data,
-                    email: data,
-                    password: data.password
-                }
+                // business: {
+                //     ...newState.business,
+                //     name: data,
+                //     email: data,
+                //     password: data.password
+                // }
             }
-        } // get the returned value from data and then put it into `newState`
-        if (action.step === 1) {
+        }else if (action.step === 1) {
             Actions.token.set(data.entity.token)
             return {
                 ...newState,
                 user: {
+                    ...newState.user,
                     firstname: data.first_name,
                     lastname: data.last_name,
                     email: data.email,
                     mobile: data.mobile
                 }
             };
-        }// get the returned value from data and then put it into `newState`
-        if (action.step === 2) {
+        }else if (action.step === 2) {
             Actions.token.set(data.entity.token)
             return {
                 ...newState,
                 business: {
+                    ...newState.business,
                     name: data,
                     email: '',
                     address: '',
@@ -45,7 +47,7 @@ function signup(state, action) {
                     agent: ''
                 }
             };
-        }// get the returned value from data and then put it into `newState`
+        }
     } else if (type === Actions.SIGNUP && status === false) {
         return {
             ...state,

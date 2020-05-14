@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
 
 import logo from "../../../assets/img/appLogo.png";
-import FormField from '../../../components/Form';
 import TextInput from "../../../components/Form/TextInput";
 import Button from '../../../components/Button/button';
-import AlertDialog from "../../../components/AlertDialog";
 
 class PersonalInformation extends Component {
 
     continue = e => {
         e.preventDefault();
-        this.props.triggerPersonalInformation(e);
         this.props.nextStep();
     }
 
     render() {
         const {
             form,
-            handleChange,
-            authRequest,
-            request,
-            triggerPersonalInformation
-        } = this.props,
-            { first_name, last_name, mobile } = form;
+            handleChange
+        } = this.props;
+        const { firstname, lastname, mobile } = form;
+
         return (
             <div>
                 <header>
@@ -44,15 +39,15 @@ class PersonalInformation extends Component {
                             <h2 className="light text-main">Personal Information</h2>
                             <div className="row-direction align-center">
                                 <p className="text-main bold mr-8">1 of 3</p>
-                                <p className="row-direction">
+                                <div className="row-direction">
                                     <p className="p-bar-1"></p>
                                     <p className="p-bar-2"></p>
                                     <p className="p-bar-3"></p>
-                                </p>
+                                </div>
                             </div>
                         </div>
                         <hr />
-                        <form onSubmit={triggerPersonalInformation}>
+                        <form onSubmit={this.continue}>
                             <div className="onboard-form">
                                 <TextInput
                                     labelTitle="First name"
@@ -60,9 +55,8 @@ class PersonalInformation extends Component {
                                     labelClass="auth-label"
                                     className="onboard-input br-4 mb-32"
                                     type="text"
-                                    name="first_name"
-                                    value={first_name}
-                                    form={form}
+                                    name="firstname"
+                                    value={firstname}
                                     onChange={handleChange}
                                 />
                                 <TextInput
@@ -71,9 +65,8 @@ class PersonalInformation extends Component {
                                     labelClass="auth-label"
                                     className="onboard-input br-4 mb-32"
                                     type="text"
-                                    name="last_name"
-                                    value={last_name}
-                                    form={form}
+                                    name="lastname"
+                                    value={lastname}
                                     onChange={handleChange}
                                 />
                                 <TextInput
@@ -83,7 +76,6 @@ class PersonalInformation extends Component {
                                     className="onboard-input br-4 mb-32"
                                     type="tel"
                                     name="mobile"
-                                    form={form}
                                     value={mobile}
                                     onChange={handleChange}
                                 />

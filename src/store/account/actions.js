@@ -5,21 +5,13 @@ export const SIGNIN = "SIGNIN";
 export const SIGNOUT = "SIGNOUT";
 export const LOAD = "LOAD";
 
-// export const signup = (data, step) => ({
-//     type: REQUEST,
-//     responder: SIGNUP,
-//     endpoint: step === 3 ? 'payments/verifyandfinishregisteration' : 'account/setup/' + (step === 1 ? 'first' : 'second'),
-//     method: 'POST',
-//     data,
-//     step,
-// });
-
-export const signup = (data, step) => ({
-    type: step === 0 ? SIGNUP : REQUEST,
+export const signup = (data, step, success) => ({
+    type: REQUEST,
     responder: SIGNUP,
-    endpoint: step === 3 ? 'payments/verifyandfinishregisteration' : 'account/' + (step === 1 ? 'setup/first' : 'setup/second'),
+    endpoint: step === 3 ? 'payments/verifyandfinishregisteration' : 'account' + (step === 2 ? '/setup/second' : step === 1 ? '/setup/first': ''),
     method: 'POST',
     data,
+    success,
     step,
 });
 
@@ -50,12 +42,12 @@ export const load = data => ({
 
 export const token = {
     get: async () => {
-        return await localStorage.getItem("token");
+        return await window.localStorage.getItem("token");
     },
     set: async token => {
-        return await localStorage.setItem("token", token);
+        return await window.localStorage.setItem("token", token);
     },
     remove: async () => {
-        return await localStorage.removeItem("token");
+        return await window.localStorage.removeItem("token");
     }
 };
