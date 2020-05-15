@@ -97,4 +97,4 @@ class ContactSupport extends Component {
     }
 }
 
-export default ContactSupport;
+export default ContactSupport
