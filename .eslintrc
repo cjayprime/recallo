@@ -17,6 +17,11 @@
         "error", {
           "semi": false
         }
-      ]
+      ],
+      "react/prop-types": 0,
+      "react/sort-comp": 0,
+      "react/state-in-constructor": 0,
+      "import/no-cycle": 0,
+      "react/destructuring-assignment": 0
     }
   }

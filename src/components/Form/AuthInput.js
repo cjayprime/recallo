@@ -25,10 +25,11 @@ export default class AuthInput extends Component {
     } else if (type === "confirm-password") {
       valid = this.props.passed
       error = "Please confirm your password."
-    } else if (type === "tel") {
-      // We need `class-validator` npm library
-    } else if (type === "text") {
     }
+    // else if (type === "tel") {
+    //   // We need `class-validator` npm library
+    // } else if (type === "text") {
+    // }
 
     if (!valid) {
       this.setState({ error })
@@ -71,7 +72,7 @@ export default class AuthInput extends Component {
           onKeyUp={this.handleChange}
           placeholder={placeholder}
         />
-        <label>
+        <label htmlFor={id}>
           <h6
             className={error ? "red" : classNames("mb-8", "light", labelClass)}
           >
