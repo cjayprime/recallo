@@ -22,6 +22,7 @@ const routes = {
   public: [
     {
       path: "/signin",
+
       exact: true,
       component: SigninContainer,
       name: "Log In",
