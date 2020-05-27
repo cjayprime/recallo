@@ -12,6 +12,11 @@ class Sidenav extends Component {
     signout({ history })
   }
 
+  //verifies if routeName is the one active in (in browser input)
+  activeRoute = (routeName) => {
+    return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
+  }
+
   render() {
     const { routes, header, account } = this.props
     console.log("hey", account)
@@ -41,16 +46,17 @@ class Sidenav extends Component {
             {routes.private.sidebar.map((prop, key) => {
               if (prop.redirect) return null
               return (
-                <Link
-                  key={key}
-                  className="sidenav-list-link"
-                  to={prop.layout + prop.path}
-                >
-                  <li className="sidenav-list-item">
+                <li key={key} className={this.activeRoute(prop.path) + (prop.pro ? " sidenav-list-link active" : "")}>
+                  <Link
+                    key={key}
+                    className="sidenav-list-item"
+                    activeClassName="active"
+                    to={prop.layout + prop.path}
+                  >
                     <img src={prop.icon} className="sidenav-list-icon" alt="" />
                     <h5>{prop.name}</h5>
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               )
             })}
           </ul>

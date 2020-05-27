@@ -75,8 +75,8 @@ export default class AuthInput extends Component {
         />
         <label htmlFor={id}>
           <h6
-            className={error ? "red" : "mb-8 light auth-label"}>
-            {error ? error : labelTitle}
+           className={error ? "red" : "mb-8 light auth-label"}>
+           {error ? error : labelTitle}
           >
             {error || labelTitle}
           </h6>

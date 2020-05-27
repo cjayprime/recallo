@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 
-import AuthInput from '../../../components/Form/authInput';
-import FormField from '../../../components/Form';
-import Button from "../../../components/Button/button";
-import Layout from "../../../components/AppHeader/Layout";
+import AuthInput from "../../../components/Form/authInput"
+import FormField from "../../../components/Form"
+import Button from "../../../components/Button/button"
+import Layout from "../../../components/AppHeader/Layout"
 
 import arrowright from "../../../assets/img/arrow-right-circle.png"
 
@@ -36,14 +36,16 @@ export default class SignIn extends Component {
   }
 
   render() {
-    const { email, password } = this.state;
-    console.log(this.props.account);
+    const { email, password } = this.state
+    console.log(this.props.account)
     return (
       <Layout {...this.props}>
         <div className="signin">
           <div className="signin-form form">
             <h1 className="bold mb-16">Log in</h1>
-            <h3 className="light text-light">Please enter your email address and password</h3>
+            <h3 className="light text-light">
+              Please enter your email address and password
+            </h3>
             <form onSubmit={this.signin}>
               <div className="field">
                 <AuthInput
@@ -85,7 +87,7 @@ export default class SignIn extends Component {
               <h5 className="light text-light bk-2-web">Back to website</h5>
             </div>
           </div>
-          <div className="signin-icon"></div>
+          <div className="signin-icon" />
         </div>
       </Layout>
     )

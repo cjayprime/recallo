@@ -63,6 +63,7 @@ class Admin extends Component {
     }
     if (
       this.props.location.pathname === "/admin/calls" ||
+      this.props.location.pathname === "/admin/contact" ||
       this.props.location.pathname === "/admin/personnel" ||
       this.props.location.pathname === "/admin/settings" ||
       this.props.location.pathname === "/admin/previous" ||

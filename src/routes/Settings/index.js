@@ -2,10 +2,31 @@ import React, { Component } from "react"
 
 import Profile from "./Profile"
 import AccountPlan from "./AccountPlan"
+import Greetings from "./Greetings"
+import BusinessHours from "./BusinessHours"
 
 class ManageAccount extends Component {
   state = {
     active: "Profile",
+    profile: {
+      user: {
+        name: "",
+        email: "",
+        password: ""
+      },
+      business: {
+        name: "",
+        mobile: "",
+        email: "",
+        address: "",
+        website: "",
+        rc: ""
+      }
+    }
+  }
+
+  handleChange = (value, name, error) => {
+    this.setState({ [name]: value, error })
   }
 
   styles = {
@@ -63,8 +84,10 @@ class ManageAccount extends Component {
         </div>
 
         <div className="settings">
-          {active === "Profile" && <Profile />}
-          {active === "Account Plan" && <AccountPlan />}
+          {this.state.active === "Profile" && <Profile form={this.state.profile} handleChange={this.handleChange} />}
+          {this.state.active === "Account Plan" && <AccountPlan />}
+          {this.state.active === "Greetings" && <Greetings />}
+          {this.state.active === "Business Hours" && <BusinessHours handleChange={this.handleChange} />}
         </div>
       </>
     )

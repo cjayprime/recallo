@@ -21,7 +21,7 @@ class Calls extends Component {
           <div className="title">
             <h2>Calls</h2>
           </div>
-          <div>
+          <div className="row">
             <Link to="/admin/voicenotes">
               <Button
                 background="#F5F6FA"
@@ -37,7 +37,7 @@ class Calls extends Component {
               text="#fff"
               padding="12px 25px"
               className="br-30"
-              click={this.toggle}
+              onClick={this.toggle}
             >
               Profile category
             </Button>

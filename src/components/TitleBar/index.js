@@ -10,7 +10,7 @@ class Titlebar extends Component {
         <div className="title">
           <h2>{this.props.heading}</h2>
         </div>
-        <div>
+        <div className="row">
           <Button
             background="#F5F6FA"
             text="var(--text-color)"
