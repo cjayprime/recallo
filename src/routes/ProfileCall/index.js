@@ -5,7 +5,7 @@ import arrowLeft from "../../assets/img/arrow-left.png"
 
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg"
 
-class PreviousCall extends Component {
+class ProfileCall extends Component {
   goBack = () => {
     this.props.history.goBack()
   }
@@ -123,4 +123,4 @@ class PreviousCall extends Component {
   }
 }
 
-export default PreviousCall
+export default ProfileCall

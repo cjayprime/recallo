@@ -10,13 +10,16 @@ import ContactSupportComponent from "./ContactSupport"
 import Admin from "./Admin/admin"
 import Home from "./Home/home"
 import Calls from "./Calls"
+import Contact from "./Contact"
 import Personnel from "./Personnel"
 import Analytics from "./Analytics"
 import ManageAccount from "./Settings"
-import PreviousCall from "./PreviousCall"
+import ProfileCall from "./ProfileCall"
+import NumberDetails from "./NumberDetails"
 import VoiceNotes from "./Voicenotes"
 
 import homeIcon from "../assets/img/homeIcon.svg"
+import contactBook from "../assets/img/contactbook.svg"
 
 const routes = {
   public: [
@@ -62,6 +65,14 @@ const routes = {
         icon: homeIcon,
       },
       {
+        path: "/contact",
+        exact: true,
+        component: Contact,
+        name: "Contact",
+        layout: "/admin",
+        icon: contactBook
+      },
+      {
         path: "/personnel",
         exact: true,
         component: Personnel,
@@ -86,10 +97,16 @@ const routes = {
         layout: "/admin",
       },
       {
-        path: "/previous",
+        path: "/profile-calls",
         exact: true,
-        component: PreviousCall,
+        component: ProfileCall,
         layout: "/admin",
+      },
+      {
+        path: "/number-details",
+        exact: true,
+        component: NumberDetails,
+        layout: "/admin"
       },
       {
         path: "/voicenotes",

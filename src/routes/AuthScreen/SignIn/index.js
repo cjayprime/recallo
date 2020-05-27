@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import TextInput from "../../../components/Form/TextInput"
+import AuthInput from "../../../components/Form/authInput"
 import FormField from "../../../components/Form"
 import Button from "../../../components/Button/button"
 import Layout from "../../../components/AppHeader/Layout"
@@ -37,7 +37,7 @@ export default class SignIn extends Component {
 
   render() {
     const { email, password } = this.state
-
+    console.log(this.props.account)
     return (
       <Layout {...this.props}>
         <div className="signin">
@@ -48,10 +48,8 @@ export default class SignIn extends Component {
             </h3>
             <form onSubmit={this.signin}>
               <div className="field">
-                <TextInput
+                <AuthInput
                   type="email"
-                  className="auth-input"
-                  labelClass="auth-label"
                   labelTitle="Email address"
                   name="email"
                   value={email}
@@ -59,10 +57,8 @@ export default class SignIn extends Component {
                 />
               </div>
               <div className="field">
-                <TextInput
+                <AuthInput
                   type="password"
-                  className="auth-input"
-                  labelClass="auth-label"
                   labelTitle="Password"
                   name="password"
                   value={password}

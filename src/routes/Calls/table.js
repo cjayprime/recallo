@@ -29,7 +29,7 @@ class Table extends Component {
           </tr>
           <tr className="table-body text-main hover-grey">
             <td className="text-blue bold">
-              <Link to="/admin/previous">+2348103153845</Link>
+              <Link to="/admin/profile-calls">+2348103153845</Link>
             </td>
             <td>
               Today<p className="text-light mt-5">12:03pm</p>
