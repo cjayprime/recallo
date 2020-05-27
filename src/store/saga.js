@@ -1,41 +1,49 @@
-import { put, call, all } from "redux-saga/effects";
-import Request from './request';
-import account from "./account/saga";
+import { put, call, all } from "redux-saga/effects"
 
-export default class Saga{
-    loading;
+import Request from "./request"
+import account from "./account/saga"
 
-    constructor(loading){
+import Notification from "../utils/notification"
 
-        this.loading = loading;
-        this.request = this.request.bind(this);
+export default class Saga {
+  loading
 
-    };
-    
-    root = function* () {
-        yield all([
-            account()
-        ]);
-    };
+  constructor(loading) {
+    this.loading = loading
+    this.request = this.request.bind(this)
+  }
 
-    request = function* (action){
-        const {endpoint, responder, method, data, success, error} = action;
+  root = function* () {
+    yield all([account()])
+  }
 
-        yield put(
-            {type: this.loading, loading: endpoint, name: 'account'}
-        );
+  request = function* (action) {
+    const { endpoint, responder, method, data, success, error } = action
 
-        const result = yield call(new Request().api, endpoint, method, data, success, error);
-        console.log('Server response: ', result)
-        
-        yield put({
-            ...result,
-            ...action,
-            type: responder,
-            loading: endpoint,
-            message: result.message,
-            status: result.status,
-            data: result.data
-        });
-    };
-};
+    yield put({ type: this.loading, loading: endpoint, name: "account" })
+
+    const result = yield call(
+      new Request().api,
+      endpoint,
+      method,
+      data,
+      success,
+      error
+    )
+    // console.log('Server response: ', result);
+
+    result.message && result.status
+      ? Notification.success(result.message)
+      : Notification.error(result.message)
+
+    yield put({
+      ...result,
+      ...action,
+      type: responder,
+      loading: endpoint,
+      message: result.message,
+      status: result.status,
+      data: result.data,
+    })
+  }
+}
