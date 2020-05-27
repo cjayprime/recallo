@@ -3,7 +3,7 @@ import React from "react"
 import Button from "../../components/Button/button"
 import FormField from "../../components/Form"
 
-const Profile = (props) => {
+const Profile = () => {
   return (
     <>
       <div className="screen-padding mt-80">

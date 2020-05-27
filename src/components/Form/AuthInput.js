@@ -8,13 +8,18 @@ export default class AuthInput extends Component {
     error: "",
   }
 
+  componentDidMount() {
+    const { onChange } = this.props
+    onChange("", "", "Please fill in the form correctly.")
+  }
+
   handleChange = (e) => {
     e.preventDefault()
 
     let error = null
     let valid
     let regex
-    const { type, value, onChange } = this.props
+    const { type, value, onChange, passed } = this.props
     if (type === "email") {
       regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
       valid = regex.test(value)
@@ -25,12 +30,13 @@ export default class AuthInput extends Component {
       error =
         "Please enter at least a number, a capital letter, and a minimum of 8 characters."
     } else if (type === "confirm-password") {
-      valid = this.props.passed
+      valid = passed
       error = "Please confirm your password."
-    } else if (type === "tel") {
-      // We need `class-validator` npm library
-    } else if (type === "text") {
     }
+    // else if (type === "tel") {
+    //   // We need `class-validator` npm library
+    // } else if (type === "text") {
+    // }
 
     if (!valid) {
       this.setState({ error })
@@ -40,10 +46,6 @@ export default class AuthInput extends Component {
     }
 
     onChange(e.target.value, e.target.name, error)
-  }
-
-  componentDidMount() {
-    this.props.onChange("", "", "Please fill in the form correctly.")
   }
 
   render() {
@@ -71,9 +73,12 @@ export default class AuthInput extends Component {
           onKeyUp={this.handleChange}
           placeholder={placeholder}
         />
-        <label>
-          <h6 className={error ? "red" : "mb-8 light auth-label"}>
+        <label htmlFor={id}>
+          <h6
+            className={error ? "red" : "mb-8 light auth-label"}>
             {error ? error : labelTitle}
+          >
+            {error || labelTitle}
           </h6>
         </label>
       </div>
