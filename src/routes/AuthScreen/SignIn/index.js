@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import AuthInput from "../../../components/Form/authInput"
+import AuthInput from "../../../components/Form/AuthInput"
 import FormField from "../../../components/Form"
 import Button from "../../../components/Button/button"
 import Layout from "../../../components/AppHeader/Layout"

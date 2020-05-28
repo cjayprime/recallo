@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 
 import Button from "../../components/Button/button"
-import AuthInput from "../../components/Form/authInput"
+import AuthInput from "../../components/Form/AuthInput"
 
 class ContactSupport extends Component {
   state = {

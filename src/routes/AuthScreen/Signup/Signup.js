@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 
 import Button from "../../../components/Button/button"
-import AuthInput from "../../../components/Form/authInput"
+import AuthInput from "../../../components/Form/AuthInput"
 import Layout from "../../../components/AppHeader/Layout"
 
 class SignUp extends Component {
