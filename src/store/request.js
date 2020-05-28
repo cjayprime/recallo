@@ -10,7 +10,7 @@ export default class Request {
       `${Configuration.url}/${endpoint}`
     );
 
-    return await axios({
+    const result = await axios({
       url: `${Configuration.url}/${endpoint}`,
       method,
       data: body ? JSON.stringify(body) : null,
@@ -24,21 +24,15 @@ export default class Request {
         if (response.status >= 200 && response.status < 300) {
           return Promise.resolve(response);
         }
-        const error = new Error(response.data.message || response.status);
-        error.response = response;
-        return Promise.reject(error);
+        const errorObj = new Error(response.data.message || response.status);
+        errorObj.response = response;
+        return Promise.reject(errorObj);
       })
       .then((response) => {
-        const result = response.data;
-        const { code, desc } = result.status;
+        const { data } = response;
+        const { code, desc } = data.status;
 
-        return this.validate.response(
-          code,
-          desc,
-          result.entity,
-          success,
-          error
-        );
+        return this.validate.response(code, desc, data.entity, success, error);
       })
       .catch(async (e) => {
         console.log(
@@ -70,19 +64,22 @@ export default class Request {
 
         return this.validate.response(code, desc, data, success, error);
       });
+
+    return result;
   };
 
   validate = {
-    response: (code, message, data, success, error) => {
+    response: (code, msg, data, success, error) => {
+      let message = msg;
       /*
-                API Responses Codes
+        API Responses Codes
 
-                100 - Success
-                101 - Success (Empty Records)
-                102 - Error Reading Resource (Parameters are not Complete)
-                105 - Email ALready Registered
-                115 - Server Error
-            */
+        100 - Success
+        101 - Success (Empty Records)
+        102 - Error Reading Resource (Parameters are not Complete)
+        105 - Email ALready Registered
+        115 - Server Error
+      */
       if (!message) {
         if (code === 100) {
           message = "Your request completed successfully.";

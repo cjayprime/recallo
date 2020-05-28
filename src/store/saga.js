@@ -13,11 +13,11 @@ export default class Saga {
     this.request = this.request.bind(this);
   }
 
-  root = function* () {
+  root = function* root() {
     yield all([account()]);
   };
 
-  request = function* (action) {
+  request = function* request(action) {
     const { endpoint, responder, method, data, success, error } = action;
 
     yield put({ type: this.loading, loading: endpoint, name: "account" });
@@ -32,9 +32,11 @@ export default class Saga {
     );
     // console.log('Server response: ', result);
 
-    result.message && result.status
-      ? Notification.success(result.message)
-      : Notification.error(result.message);
+    if (result.message && result.status) {
+      Notification.success(result.message);
+    } else {
+      Notification.error(result.message);
+    }
 
     yield put({
       ...result,

@@ -47,12 +47,15 @@ export const load = (data) => ({
 
 export const token = {
   get: async () => {
-    return await window.localStorage.getItem("token");
+    const item = await window.localStorage.getItem("token");
+    return item;
   },
-  set: async (token) => {
-    return await window.localStorage.setItem("token", token);
+  set: async (newToken) => {
+    const item = await window.localStorage.setItem("token", newToken);
+    return item;
   },
   remove: async () => {
-    return await window.localStorage.removeItem("token");
+    const item = await window.localStorage.removeItem("token");
+    return item;
   },
 };
