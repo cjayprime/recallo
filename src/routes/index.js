@@ -1,13 +1,13 @@
-import React, { Component } from "react"
-import { connect } from "react-redux"
-import { Router, Route, Switch, Redirect } from "react-router-dom"
-import { createBrowserHistory } from "history"
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
-import PrivateRoute from "../components/PrivateRoute"
+import PrivateRoute from "../components/PrivateRoute";
 
-import routes from "./routes"
+import routes from "./routes";
 
-import * as Actions from "../store/actions"
+import * as Actions from "../store/actions";
 
 export default connect(
   null,
@@ -16,7 +16,7 @@ export default connect(
   class Routes extends Component {
     async componentDidMount() {
       if (await Actions.token.get()) {
-        this.props.load()
+        this.props.load();
       }
     }
 
@@ -24,7 +24,7 @@ export default connect(
       connect(
         (state) => state,
         Actions
-      )((props) => <route.component {...props} />)
+      )((props) => <route.component {...props} />);
 
     render() {
       return (
@@ -75,7 +75,7 @@ export default connect(
             <Redirect to="/404" />
           </Switch>
         </Router>
-      )
+      );
     }
   }
-)
+);

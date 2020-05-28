@@ -1,35 +1,35 @@
 const isRequestActive = (reqArray, req) => {
-  return reqArray.findIndex((el) => el === req) !== -1
-}
+  return reqArray.findIndex((el) => el === req) !== -1;
+};
 
 const setRoutes = (config) => {
-  let routes = [...config.routes]
+  let routes = [...config.routes];
 
   if (config.settings || config.auth) {
     routes = routes.map((route) => {
-      let auth = config.auth ? [...config.auth] : null
-      auth = route.auth ? [...auth, ...route.auth] : auth
+      let auth = config.auth ? [...config.auth] : null;
+      auth = route.auth ? [...auth, ...route.auth] : auth;
       return {
         ...route,
         settings: { ...config.settings, ...route.settings },
         auth,
-      }
-    })
+      };
+    });
   }
 
-  return [...routes]
-}
+  return [...routes];
+};
 
 // export const IMAGE_URL = "http://server.elta.com.ng/ajo/uploads/";
-export const IMAGE_URL = "https://ajoo-images.s3.us-west-2.amazonaws.com/"
+export const IMAGE_URL = "https://ajoo-images.s3.us-west-2.amazonaws.com/";
 
 const generateRoutesFromConfigs = (configs) => {
-  let allRoutes = []
+  let allRoutes = [];
   configs.forEach((config) => {
-    allRoutes = [...allRoutes, ...this.setRoutes(config)]
-  })
-  return allRoutes
-}
+    allRoutes = [...allRoutes, ...this.setRoutes(config)];
+  });
+  return allRoutes;
+};
 
 const hasPermission = (authArr, userRole) => {
   /**
@@ -38,7 +38,7 @@ const hasPermission = (authArr, userRole) => {
    */
   if (authArr === null || authArr === undefined) {
     // console.info("auth is null || undefined:", authArr);
-    return true
+    return true;
   }
   if (authArr.length === 0) {
     /**
@@ -46,7 +46,7 @@ const hasPermission = (authArr, userRole) => {
      * allow only user role is guest (null or empty[])
      */
     // console.info("auth is empty[]:", authArr);
-    return !userRole || userRole.length === 0
+    return !userRole || userRole.length === 0;
   }
   /**
    * Check if user has grants
@@ -56,26 +56,26 @@ const hasPermission = (authArr, userRole) => {
                 Check if user role is array,
                 */
   if (userRole && Array.isArray(userRole)) {
-    return authArr.some((r) => userRole.indexOf(r) >= 0)
+    return authArr.some((r) => userRole.indexOf(r) >= 0);
   }
 
   /*
                 Check if user role is string,
                 */
-  return authArr.includes(userRole)
-}
+  return authArr.includes(userRole);
+};
 
 const validateInput = (arg) => {
-  let isValid = true
+  let isValid = true;
 
   for (const key in arg) {
     if (arg[key].error === true || arg[key].error === null) {
-      isValid = false
+      isValid = false;
     }
   }
 
-  return isValid
-}
+  return isValid;
+};
 
 const moneyFormat = function (
   number,
@@ -83,23 +83,23 @@ const moneyFormat = function (
   decSep = ".",
   thouSep = ","
 ) {
-  const regExp = new RegExp(`\\d(?=(\\d{3})+\\${decSep})`, "g")
-  return parseFloat(number).toFixed(decPlaces).replace(regExp, `$&${thouSep}`)
-}
+  const regExp = new RegExp(`\\d(?=(\\d{3})+\\${decSep})`, "g");
+  return parseFloat(number).toFixed(decPlaces).replace(regExp, `$&${thouSep}`);
+};
 
 const validateHelper = function (event, fields) {
-  const { name } = event.target
-  const properties = fields
-  const { rules, value, name: inputName } = properties[name]
-  let re
-  let valid
+  const { name } = event.target;
+  const properties = fields;
+  const { rules, value, name: inputName } = properties[name];
+  let re;
+  let valid;
 
   const onBlur = (res, name) => {
-    const { error, errorMessage } = res
+    const { error, errorMessage } = res;
 
-    if (typeof this === "undefined") return
+    if (typeof this === "undefined") return;
 
-    const newForm = { ...this.state }
+    const newForm = { ...this.state };
 
     if (
       typeof newForm.emailChangeField !== "undefined" &&
@@ -109,7 +109,7 @@ const validateHelper = function (event, fields) {
         ...newForm.emailChangeField[name],
         error,
         errorMessage,
-      }
+      };
     } else if (
       typeof newForm.passwordChangeField !== "undefined" &&
       newForm.passwordChangeField.hasOwnProperty(name)
@@ -118,7 +118,7 @@ const validateHelper = function (event, fields) {
         ...newForm.passwordChangeField[name],
         error,
         errorMessage,
-      }
+      };
     } else if (
       typeof newForm.basicInformationFields !== "undefined" &&
       newForm.basicInformationFields.hasOwnProperty(name)
@@ -127,7 +127,7 @@ const validateHelper = function (event, fields) {
         ...newForm.basicInformationFields[name],
         error,
         errorMessage,
-      }
+      };
     } else if (
       typeof newForm.rewardFields !== "undefined" &&
       newForm.rewardFields.hasOwnProperty(name)
@@ -136,57 +136,57 @@ const validateHelper = function (event, fields) {
         ...newForm.rewardFields[name],
         error,
         errorMessage,
-      }
+      };
     } else {
       newForm.fields[name] = {
         ...newForm.fields[name],
         error,
         errorMessage,
-      }
+      };
     }
 
     this._safelySetState
       ? this._safelySetState(newForm)
-      : this.setState(newForm)
-  }
+      : this.setState(newForm);
+  };
 
   const setError = (error) => {
-    onBlur({ ...error, name }, name)
-    return !error.errorMessage
-  }
+    onBlur({ ...error, name }, name);
+    return !error.errorMessage;
+  };
 
   if (rules.maxLength && value.length > rules.maxLength) {
     return setError({
       error: true,
       errorMessage: `Value too long. Must be a maximum of ${rules.maxLength} characters in length.`,
-    })
+    });
   }
   if (rules.minLength && value.length < rules.minLength) {
     return setError({
       error: true,
       errorMessage: `Value too short. Must be a minimum of ${rules.minLength} characters in length.`,
-    })
+    });
   }
   if (rules.email) {
-    re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     // re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    valid = re.test(value)
+    valid = re.test(value);
     if (!valid) {
       return setError({
         error: true,
         errorMessage: "Email must be a valid mail.",
-      })
+      });
     }
   }
   if (rules.password) {
-    re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
-    valid = re.test(value)
+    re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    valid = re.test(value);
     if (!valid) {
       return setError({
         error: true,
         errorMessage:
           "At least a number, a capital letter, and a minimum of 8 characters.",
-      })
+      });
     }
   }
   if (rules.confirmPassword) {
@@ -194,17 +194,17 @@ const validateHelper = function (event, fields) {
       return setError({
         error: true,
         errorMessage: "Must be equal to the password entry.",
-      })
+      });
     }
   }
   if (rules.hasPrenumber) {
-    const index = value.split("+234")
+    const index = value.split("+234");
 
     if (index[0] !== "") {
       return setError({
         error: true,
         errorMessage: "Your phone number should start with +234.",
-      })
+      });
     }
   }
   if (rules.length) {
@@ -212,34 +212,34 @@ const validateHelper = function (event, fields) {
       return setError({
         error: true,
         errorMessage: "Your phone number should look like +2348012345678",
-      })
+      });
     }
   }
   if (rules.required && value.length === 0) {
     return setError({
       error: true,
       errorMessage: `${inputName} can't be empty`,
-    })
+    });
   }
 
-  return setError({ error: false, errorMessage: "" })
-}
+  return setError({ error: false, errorMessage: "" });
+};
 
 const validate = function (context, fields, event) {
   /* Always omit the `event` parameter to the function, when there it is a submit/next action */
 
-  let passed = true
-  const fieldKeys = Object.keys(fields)
+  let passed = true;
+  const fieldKeys = Object.keys(fields);
 
   fieldKeys.map((key) => {
-    const e = event || { target: { name: key } }
-    if (validateHelper.call(context, e, fields) === false) passed = false
+    const e = event || { target: { name: key } };
+    if (validateHelper.call(context, e, fields) === false) passed = false;
 
-    return null
-  })
+    return null;
+  });
 
-  return passed
-}
+  return passed;
+};
 
 export {
   setRoutes,
@@ -249,4 +249,4 @@ export {
   isRequestActive,
   validate,
   moneyFormat,
-}
+};

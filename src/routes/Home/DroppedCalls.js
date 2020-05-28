@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const DroppedCalls = (props) => {
   return (
@@ -11,7 +11,7 @@ const DroppedCalls = (props) => {
         </p>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default DroppedCalls
+export default DroppedCalls;

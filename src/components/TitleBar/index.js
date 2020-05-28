@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import "./titlebar.css"
+import React, { Component } from "react";
+import "./titlebar.css";
 
-import Button from "../Button/button"
+import Button from "../Button/button";
 
 class Titlebar extends Component {
   render() {
@@ -31,8 +31,8 @@ class Titlebar extends Component {
           </Button>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Titlebar
+export default Titlebar;

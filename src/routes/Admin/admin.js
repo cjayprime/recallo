@@ -1,18 +1,18 @@
-import React, { Component } from "react"
-import { Route, Switch } from "react-router-dom"
+import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 
-import Sidenav from "../../components/SideNav/sidenav"
-import Header from "../../components/Header/header"
+import Sidenav from "../../components/SideNav/sidenav";
+import Header from "../../components/Header/header";
 
-import routes from "../routes"
+import routes from "../routes";
 
-import "./admin.css"
+import "./admin.css";
 
 // core components
 
 class Admin extends Component {
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   // state = {
@@ -28,11 +28,11 @@ class Admin extends Component {
             component={prop.component}
             key={key}
           />
-        )
+        );
       }
-      return null
-    })
-  }
+      return null;
+    });
+  };
 
   getSettings = (routes) => {
     return routes.private.route.map((prop, key) => {
@@ -45,11 +45,11 @@ class Admin extends Component {
             component={prop.component}
             key={key}
           />
-        )
+        );
       }
-      return null
-    })
-  }
+      return null;
+    });
+  };
 
   header = (isSideNav) => {
     if (isSideNav === false) {
@@ -57,9 +57,9 @@ class Admin extends Component {
         this.props.location.pathname === "/admin/home" ||
         this.props.location.pathname === "/admin/analytics"
       )
-        return true
+        return true;
 
-      return false
+      return false;
     }
     if (
       this.props.location.pathname === "/admin/calls" ||
@@ -69,13 +69,13 @@ class Admin extends Component {
       this.props.location.pathname === "/admin/previous" ||
       this.props.location.pathname === "/admin/voicenotes"
     )
-      return true
+      return true;
 
-    return false
-  }
+    return false;
+  };
 
   render() {
-    const { account /* data, result */ } = this.props
+    const { account /* data, result */ } = this.props;
     return (
       <div className="grid">
         <Header header={this.header(false)} className="main-header" />
@@ -92,8 +92,8 @@ class Admin extends Component {
           </Switch>
         </main>
       </div>
-    )
+    );
   }
 }
 
-export default Admin
+export default Admin;

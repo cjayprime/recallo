@@ -1,24 +1,24 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import MenuItem from "../../components/MenuItem/menuItem"
+import MenuItem from "../../components/MenuItem/menuItem";
 
-import TotalCalls from "./TotalCalls"
-import TotalCallsAnswered from "./TotalCallsAnswered"
-import ProfileVoiceNotes from "./ProfileVoicenotes"
-import VoiceNotes from "./VoiceNotes"
-import DroppedCalls from "./DroppedCalls"
-import MissedCalls from "./MissedCalls"
+import TotalCalls from "./TotalCalls";
+import TotalCallsAnswered from "./TotalCallsAnswered";
+import ProfileVoiceNotes from "./ProfileVoicenotes";
+import VoiceNotes from "./VoiceNotes";
+import DroppedCalls from "./DroppedCalls";
+import MissedCalls from "./MissedCalls";
 
 class Home extends Component {
   state = {
     active: "Total calls",
-  }
+  };
 
   setActiveTabs = (tab) => {
     this.setState({
       active: tab,
-    })
-  }
+    });
+  };
 
   render() {
     const tabs = [
@@ -28,7 +28,7 @@ class Home extends Component {
       { tab: "Voicenotes" },
       { tab: "Dropped calls" },
       { tab: "Missed calls" },
-    ]
+    ];
 
     return (
       <>
@@ -149,7 +149,7 @@ class Home extends Component {
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
@@ -161,8 +161,8 @@ const styles = {
       transition: ".2s all ease-in-out",
       cursor: "pointer",
       marginBottom: 5,
-    }
+    };
   },
-}
+};
 
-export default Home
+export default Home;

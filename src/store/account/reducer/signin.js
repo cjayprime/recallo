@@ -1,13 +1,13 @@
-import * as Actions from "../actions"
+import * as Actions from "../actions";
 
 function signin(state, action) {
-  const { data, loading, message, status, type } = action
+  const { data, loading, message, status, type } = action;
 
   if (type === Actions.SIGNIN && status === true) {
-    Actions.token.set(data.token)
+    Actions.token.set(data.token);
 
-    const { user } = data
-    const { account } = user
+    const { user } = data;
+    const { account } = user;
     return {
       ...state,
       loading: state.loading.filter((text) => text !== loading),
@@ -40,7 +40,7 @@ function signin(state, action) {
           aohcs: account.recording_aohcs ? account.recording_aohcs : "",
         },
       },
-    }
+    };
   }
   if (type === Actions.SIGNIN && status === false) {
     return {
@@ -48,9 +48,9 @@ function signin(state, action) {
       loading: state.loading.filter((text) => text !== loading),
       status: false,
       message,
-    }
+    };
   }
 
-  return null
+  return null;
 }
-export default signin
+export default signin;

@@ -1,20 +1,20 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import "./menuItem.css"
-import MenuCard from "../MenuCard/menuCard"
+import "./menuItem.css";
+import MenuCard from "../MenuCard/menuCard";
 
 class MenuItem extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       showMenuCard: false,
-    }
+    };
   }
 
   show() {
     this.setState({
       showMenuCard: !this.state.showMenuCard,
-    })
+    });
   }
 
   render() {
@@ -28,8 +28,8 @@ class MenuItem extends Component {
           <MenuCard>{this.props.item.values}</MenuCard>
         ) : null}
       </div>
-    )
+    );
   }
 }
 
-export default MenuItem
+export default MenuItem;

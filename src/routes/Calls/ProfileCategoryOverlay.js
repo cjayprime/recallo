@@ -1,11 +1,11 @@
-import React, { Component } from "react"
-import Overlay from "../../components/Overlay"
-import FormField from "../../components/Form"
-import Button from "../../components/Button/button"
+import React, { Component } from "react";
+import Overlay from "../../components/Overlay";
+import FormField from "../../components/Form";
+import Button from "../../components/Button/button";
 
 class ProfileCategoryOverlay extends Component {
   render() {
-    const { open, toggle } = this.props
+    const { open, toggle } = this.props;
 
     return (
       <Overlay open={open} toggle={toggle}>
@@ -101,8 +101,8 @@ class ProfileCategoryOverlay extends Component {
           </div>
         </div>
       </Overlay>
-    )
+    );
   }
 }
 
-export default ProfileCategoryOverlay
+export default ProfileCategoryOverlay;

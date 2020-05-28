@@ -1,17 +1,17 @@
-import React, { Component } from "react"
-import { Link } from "react-router-dom"
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import Button from "../../components/Button/button"
-import MenuItem from "../../components/MenuItem/menuItem"
+import Button from "../../components/Button/button";
+import MenuItem from "../../components/MenuItem/menuItem";
 
-import { ReactComponent as SearchIcon } from "../../assets/img/search.svg"
+import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 
 class VoiceNotes extends Component {
-  state = { open: false }
+  state = { open: false };
 
   toggle = () => {
-    this.setState({ open: !this.state.open })
-  }
+    this.setState({ open: !this.state.open });
+  };
 
   render() {
     return (
@@ -111,8 +111,8 @@ class VoiceNotes extends Component {
           </tbody>
         </table>
       </div>
-    )
+    );
   }
 }
 
-export default VoiceNotes
+export default VoiceNotes;

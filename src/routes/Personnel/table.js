@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 
 class Table extends Component {
@@ -42,8 +42,8 @@ class Table extends Component {
           </tr>
         </tbody>
       </table>
-    )
+    );
   }
 }
 
-export default Table
+export default Table;

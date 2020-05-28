@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import Button from "../../components/Button/button"
+import Button from "../../components/Button/button";
 
 const AccountPlan = (props) => {
   return (
@@ -161,7 +161,7 @@ const AccountPlan = (props) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AccountPlan
+export default AccountPlan;

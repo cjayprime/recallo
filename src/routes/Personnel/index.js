@@ -1,24 +1,24 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import Titlebar from "../../components/TitleBar"
-import MenuItem from "../../components/MenuItem/menuItem"
-import { ReactComponent as SearchIcon } from "../../assets/img/search.svg"
-import Table from "./table"
-import DepartmentOverlay from "./DepartmentOverlay"
-import PersonnelOverlay from "./AddPersonnelOverlay"
+import Titlebar from "../../components/TitleBar";
+import MenuItem from "../../components/MenuItem/menuItem";
+import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
+import Table from "./table";
+import DepartmentOverlay from "./DepartmentOverlay";
+import PersonnelOverlay from "./AddPersonnelOverlay";
 
 class Personnel extends Component {
-  state = { open: false, open2: false }
+  state = { open: false, open2: false };
 
   toggle = () => {
-    this.setState({ open: !this.state.open })
-    console.log("Toggled")
-  }
+    this.setState({ open: !this.state.open });
+    console.log("Toggled");
+  };
 
   toggle2 = () => {
-    this.setState({ open2: !this.state.open2 })
-    console.log("Toggled")
-  }
+    this.setState({ open2: !this.state.open2 });
+    console.log("Toggled");
+  };
 
   render() {
     return (
@@ -55,8 +55,8 @@ class Personnel extends Component {
         <PersonnelOverlay open={this.state.open2} toggle={this.toggle2} />
         <Table />
       </div>
-    )
+    );
   }
 }
 
-export default Personnel
+export default Personnel;

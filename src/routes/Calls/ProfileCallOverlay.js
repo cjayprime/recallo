@@ -1,23 +1,23 @@
-import React, { Component } from "react"
-import Overlay from "../../components/Overlay"
-import Button from "../../components/Button/button"
+import React, { Component } from "react";
+import Overlay from "../../components/Overlay";
+import Button from "../../components/Button/button";
 
 class ProfileCallOverlay extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       showMenuCard: false,
-    }
+    };
   }
 
   show() {
     this.setState({
       showMenuCard: !this.state.showMenuCard,
-    })
+    });
   }
 
   render() {
-    const { open, toggle } = this.props
+    const { open, toggle } = this.props;
 
     return (
       <Overlay open={open} toggle={toggle} width="96rem">
@@ -168,8 +168,8 @@ class ProfileCallOverlay extends Component {
           </div>
         </div>
       </Overlay>
-    )
+    );
   }
 }
 
-export default ProfileCallOverlay
+export default ProfileCallOverlay;

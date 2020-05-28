@@ -1,9 +1,9 @@
-export const LOADING = "ACCOUNT_LOADING"
-export const REQUEST = "ACCOUNT_REQUEST"
-export const SIGNUP = "SIGNUP"
-export const SIGNIN = "SIGNIN"
-export const SIGNOUT = "SIGNOUT"
-export const LOAD = "LOAD"
+export const LOADING = "ACCOUNT_LOADING";
+export const REQUEST = "ACCOUNT_REQUEST";
+export const SIGNUP = "SIGNUP";
+export const SIGNIN = "SIGNIN";
+export const SIGNOUT = "SIGNOUT";
+export const LOAD = "LOAD";
 
 export const signup = (data, step, success) => ({
   type: REQUEST,
@@ -18,7 +18,7 @@ export const signup = (data, step, success) => ({
   data,
   success,
   step,
-})
+});
 
 export const signin = (data, success) => ({
   type: REQUEST,
@@ -27,7 +27,7 @@ export const signin = (data, success) => ({
   method: "POST",
   data,
   success,
-})
+});
 
 export const signout = (data) => ({
   type: REQUEST,
@@ -35,7 +35,7 @@ export const signout = (data) => ({
   endpoint: "account/logout",
   method: "POST",
   data,
-})
+});
 
 export const load = (data) => ({
   type: REQUEST,
@@ -43,16 +43,16 @@ export const load = (data) => ({
   endpoint: "account",
   method: "GET",
   data,
-})
+});
 
 export const token = {
   get: async () => {
-    return await window.localStorage.getItem("token")
+    return await window.localStorage.getItem("token");
   },
   set: async (token) => {
-    return await window.localStorage.setItem("token", token)
+    return await window.localStorage.setItem("token", token);
   },
   remove: async () => {
-    return await window.localStorage.removeItem("token")
+    return await window.localStorage.removeItem("token");
   },
-}
+};

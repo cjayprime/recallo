@@ -1,14 +1,14 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import MenuItem from "../../components/MenuItem/menuItem"
-import arrowLeft from "../../assets/img/arrow-left.png"
+import MenuItem from "../../components/MenuItem/menuItem";
+import arrowLeft from "../../assets/img/arrow-left.png";
 
-import { ReactComponent as SearchIcon } from "../../assets/img/search.svg"
+import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 
 class ProfileCall extends Component {
   goBack = () => {
-    this.props.history.goBack()
-  }
+    this.props.history.goBack();
+  };
 
   render() {
     return (
@@ -119,8 +119,8 @@ class ProfileCall extends Component {
           </table>
         </div>
       </>
-    )
+    );
   }
 }
 
-export default ProfileCall
+export default ProfileCall;

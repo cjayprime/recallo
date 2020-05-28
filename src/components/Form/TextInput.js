@@ -1,42 +1,42 @@
-import React, { Component } from "react"
-import classNames from "classnames"
+import React, { Component } from "react";
+import classNames from "classnames";
 
 export default class TextInput extends Component {
   state = {
     error: "",
-  }
+  };
 
   handleChange = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    let error = null
-    let valid
-    let regex
-    const { type, value, onChange } = this.props
+    let error = null;
+    let valid;
+    let regex;
+    const { type, value, onChange } = this.props;
     if (type === "email") {
-      regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      valid = regex.test(value)
-      error = "Please enter a valid email."
+      regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      valid = regex.test(value);
+      error = "Please enter a valid email.";
     } else if (type === "password") {
-      regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
-      valid = regex.test(value)
+      regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+      valid = regex.test(value);
       error =
-        "Please enter at least a number, a capital letter, and a minimum of 8 characters."
+        "Please enter at least a number, a capital letter, and a minimum of 8 characters.";
     } else if (type === "text") {
     }
 
     if (!valid) {
-      this.setState({ error })
+      this.setState({ error });
     } else {
-      error = ""
-      this.setState({ error: "" })
+      error = "";
+      this.setState({ error: "" });
     }
 
-    onChange(e.target.value, e.target.name, error)
-  }
+    onChange(e.target.value, e.target.name, error);
+  };
 
   componentDidMount() {
-    this.props.onChange("", "", "Please fill in the form correctly.")
+    this.props.onChange("", "", "Please fill in the form correctly.");
   }
 
   render() {
@@ -49,9 +49,9 @@ export default class TextInput extends Component {
       placeholder,
       labelTitle,
       labelClass,
-    } = this.props
+    } = this.props;
 
-    const { error } = this.state
+    const { error } = this.state;
 
     return (
       <div>
@@ -69,6 +69,6 @@ export default class TextInput extends Component {
           placeholder={placeholder}
         />
       </div>
-    )
+    );
   }
 }

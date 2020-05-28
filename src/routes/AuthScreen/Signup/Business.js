@@ -1,8 +1,8 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import logo from "../../../assets/img/appLogo.png"
-import TextInput from "../../../components/Form/TextInput"
-import Button from "../../../components/Button/button"
+import logo from "../../../assets/img/appLogo.png";
+import TextInput from "../../../components/Form/TextInput";
+import Button from "../../../components/Button/button";
 
 class BusinessInformation extends Component {
   // continue = e => {
@@ -12,14 +12,14 @@ class BusinessInformation extends Component {
   // }
 
   render() {
-    const { form, handleChange, triggerBusinessInformation } = this.props
+    const { form, handleChange, triggerBusinessInformation } = this.props;
     const {
       business_name,
       business_email,
       business_address,
       people,
       business_rc,
-    } = form
+    } = form;
     return (
       <div>
         <header>
@@ -128,8 +128,8 @@ class BusinessInformation extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default BusinessInformation
+export default BusinessInformation;
