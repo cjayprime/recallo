@@ -8,7 +8,8 @@ import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 
 class NumberDetails extends Component {
   goBack = () => {
-    this.props.history.goBack();
+    const { history } = this.props;
+    history.goBack();
   };
 
   render() {

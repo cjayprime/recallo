@@ -23,7 +23,7 @@ class Table extends Component {
             <td>andrewb@recallo.services</td>
             <td>Unspecified</td>
             <td>
-              <label className="label yellow bold">Active</label>
+              <label for="active" className="label yellow bold">Active</label>
             </td>
             <td>+2348051113453</td>
             <td className="text-blue bold cursor">Edit</td>
@@ -35,7 +35,7 @@ class Table extends Component {
             <td>andrewb@recallo.services</td>
             <td>Unspecified</td>
             <td>
-              <label className="label yellow bold">Active</label>
+              <label for="active" className="label yellow bold">Active</label>
             </td>
             <td>+2348051113453</td>
             <td className="text-blue bold cursor">Edit</td>

@@ -11,13 +11,15 @@ class ProfileCallOverlay extends Component {
   }
 
   show() {
+    const { showMenuCard } = this.state;
     this.setState({
-      showMenuCard: !this.state.showMenuCard,
+      showMenuCard: !showMenuCard,
     });
   }
 
   render() {
     const { open, toggle } = this.props;
+    const { showMenuCard } = this.state;
 
     return (
       <Overlay open={open} toggle={toggle} width="96rem">
@@ -59,22 +61,22 @@ class ProfileCallOverlay extends Component {
               <div className="flex">
                 <div>
                   <h6 className="text-light flex-1 light">Select age group</h6>
-                  <label className="profile-call-label mt-16 cursor bold">
+                  <label for="teenager" className="profile-call-label mt-16 cursor bold">
                     Teenager
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
                   </label>
-                  <label className="profile-call-label mt-16 cursor bold">
+                  <label for="youth" className="profile-call-label mt-16 cursor bold">
                     Youth
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
                   </label>
-                  <label className="profile-call-label mt-16 cursor bold">
+                  <label for="adult" className="profile-call-label mt-16 cursor bold">
                     Adult
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
                   </label>
-                  <label className="profile-call-label mt-16 cursor bold">
+                  <label for="elder" className="profile-call-label mt-16 cursor bold">
                     Elder
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
@@ -82,12 +84,12 @@ class ProfileCallOverlay extends Component {
                 </div>
                 <div className="ml-35">
                   <h6 className="text-light flex-1 light">Select gender</h6>
-                  <label className="profile-call-label mt-16 cursor bold">
+                  <label for="male" className="profile-call-label mt-16 cursor bold">
                     Male
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
                   </label>
-                  <label className="profile-call-label mt-16 cursor bold">
+                  <label for="female" className="profile-call-label mt-16 cursor bold">
                     Female
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
@@ -103,12 +105,12 @@ class ProfileCallOverlay extends Component {
                   <h6 className="light text-light mb-16">Select Category</h6>
                   <h5
                     className="mb-8 cursor text-blue hover"
-                    onClick={() => this.show()}
+                    onClick={(e) => this.show(e)}
                   >
                     Enquiry
                     <span className="arrow-down ml-8" />
                   </h5>
-                  {this.state.showMenuCard ? (
+                  {showMenuCard ? (
                     <div className="menu-card" style={{ marginTop: 0 }}>
                       <h6 className="text-blue light cursor hover-grey">
                         Enquiry

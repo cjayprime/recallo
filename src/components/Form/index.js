@@ -17,7 +17,7 @@ export default class FormField extends Component {
     } = this.props;
     if (type === "checkbox") {
       return (
-        <label className={checkboxClass}>
+        <label for="checkbox" className={checkboxClass}>
           {checkboxTitle}
           <input type={type} />
           <span className="checkmark" />
@@ -28,7 +28,7 @@ export default class FormField extends Component {
       <div>
         <div>
           <h6 className={classNames("mb-8", "light", labelClass)}>
-            <label>{title}</label>
+            <label for="label">{title}</label>
           </h6>
         </div>
         <input

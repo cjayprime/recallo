@@ -10,7 +10,8 @@ class VoiceNotes extends Component {
   state = { open: false };
 
   toggle = () => {
-    this.setState({ open: !this.state.open });
+    const { open } = this.state;
+    this.setState({ open: !open });
   };
 
   render() {
@@ -89,8 +90,8 @@ class VoiceNotes extends Component {
               <td>Profile category</td>
               <td>Action</td>
             </tr>
-            {Array.apply(null, Array(6)).map((a, i) => (
-              <tr className="table-body text-main hover-grey">
+            {Array.apply(null, Array(6)).map((i) => (
+              <tr key={i} className="table-body text-main hover-grey">
                 <td className="text-blue bold">
                   <Link to="/admin/previous">+2348103153845</Link>
                 </td>

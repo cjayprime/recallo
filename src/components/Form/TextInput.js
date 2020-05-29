@@ -6,6 +6,11 @@ export default class TextInput extends Component {
     error: "",
   };
 
+  componentDidMount() {
+    const { onChange } = this.props;
+    onChange("", "", "Please fill in the form correctly.");
+  }
+
   handleChange = (e) => {
     e.preventDefault();
 
@@ -22,8 +27,9 @@ export default class TextInput extends Component {
       valid = regex.test(value);
       error =
         "Please enter at least a number, a capital letter, and a minimum of 8 characters.";
-    } else if (type === "text") {
     }
+    // else if (type === "text") {
+    // }
 
     if (!valid) {
       this.setState({ error });
@@ -34,10 +40,6 @@ export default class TextInput extends Component {
 
     onChange(e.target.value, e.target.name, error);
   };
-
-  componentDidMount() {
-    this.props.onChange("", "", "Please fill in the form correctly.");
-  }
 
   render() {
     const {
@@ -56,7 +58,7 @@ export default class TextInput extends Component {
     return (
       <div>
         <h6 className={error ? "red" : classNames("mb-8", "light", labelClass)}>
-          <label>{error || labelTitle}</label>
+          <label for="label">{error || labelTitle}</label>
         </h6>
         <input
           id={id}

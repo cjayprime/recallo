@@ -30,6 +30,8 @@ class Home extends Component {
       { tab: "Missed calls" },
     ];
 
+    const { active } = this.state;
+
     return (
       <>
         <div className="screen-padding container background-grey height mt-80">
@@ -39,14 +41,14 @@ class Home extends Component {
                 <div className="overview__action-button">
                   {tabs.map((tab) => (
                     <div
-                      style={styles.tabs(this.state.active === tab.tab)}
+                      style={styles.tabs(active === tab.tab)}
                       onClick={() => this.setActiveTabs(tab.tab)}
                       key={tab.tab}
                     >
                       <button
                         style={{
                           color:
-                            this.state.active === tab.tab
+                            active === tab.tab
                               ? "#33C534"
                               : "#336799",
                           transition: ".2s all ease-in-out",
@@ -59,16 +61,16 @@ class Home extends Component {
                 </div>
                 <hr className="vertical-hr ml-35" />
                 <div className="overview__action-view custom-col-5">
-                  {this.state.active === "Total calls" && <TotalCalls />}
-                  {this.state.active === "Total calls answered" && (
+                  {active === "Total calls" && <TotalCalls />}
+                  {active === "Total calls answered" && (
                     <TotalCallsAnswered />
                   )}
-                  {this.state.active === "Profile voicenotes" && (
+                  {active === "Profile voicenotes" && (
                     <ProfileVoiceNotes />
                   )}
-                  {this.state.active === "Voicenotes" && <VoiceNotes />}
-                  {this.state.active === "Dropped calls" && <DroppedCalls />}
-                  {this.state.active === "Missed calls" && <MissedCalls />}
+                  {active === "Voicenotes" && <VoiceNotes />}
+                  {active === "Dropped calls" && <DroppedCalls />}
+                  {active === "Missed calls" && <MissedCalls />}
                 </div>
                 <div>
                   <h2>GRAPH</h2>

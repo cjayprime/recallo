@@ -21,7 +21,7 @@ class ProfileCategoryOverlay extends Component {
               className="br-8 profile-input p-12 mb-16"
             />
             <form className="mb-32">
-              <label>
+              <label for="description">
                 <h6 className="mb-8 light profile-label">
                   Give a short description for the profile category
                 </h6>

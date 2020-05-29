@@ -2,7 +2,7 @@ import React from "react";
 
 import Button from "../../components/Button/button";
 
-const AccountPlan = (props) => {
+const AccountPlan = () => {
   return (
     <>
       <div className="screen-padding mt-80">

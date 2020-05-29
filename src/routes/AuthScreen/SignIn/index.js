@@ -22,22 +22,19 @@ export default class SignIn extends Component {
 
   signin = (e) => {
     e.preventDefault();
-    if (!this.state.error && this.state.email && this.state.password) {
-      const { email, password } = this.state;
-
-      this.props.signin({ email, password }, () => {
-        this.props.history.push("/admin/home");
+    const { email, password, error } = this.state;
+    const { signin, history } = this.props;
+    if (!error && email && password) {
+      signin({ email, password }, () => {
+        history.push("/admin/home");
       });
     } else {
-      Notification.error(
-        this.state.error || "Please fill in the form correctly."
-      );
+      Notification.error(error || "Please fill in the form correctly.");
     }
   };
 
   render() {
     const { email, password } = this.state;
-    console.log(this.props.account);
     return (
       <Layout {...this.props}>
         <div className="signin">

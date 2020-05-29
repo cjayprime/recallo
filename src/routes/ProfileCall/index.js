@@ -7,7 +7,8 @@ import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 
 class ProfileCall extends Component {
   goBack = () => {
-    this.props.history.goBack();
+    const { history } = this.props;
+    history.goBack();
   };
 
   render() {

@@ -9,10 +9,12 @@ class Contact extends Component {
   state = { open: false };
 
   toggle = () => {
-    this.setState({ open: !this.state.open });
+    const { open } = this.state;
+    this.setState({ open: !open });
   };
 
   render() {
+    const { open } = this.state;
     return (
       <div className="screen-padding">
         <div className="title-bar">
@@ -49,7 +51,7 @@ class Contact extends Component {
             </div>
           </div>
         </div>
-        <NewContactOverlay open={this.state.open} toggle={this.toggle} />
+        <NewContactOverlay open={open} toggle={this.toggle} />
         <Table />
       </div>
     );

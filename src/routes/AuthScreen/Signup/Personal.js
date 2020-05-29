@@ -6,8 +6,9 @@ import Button from "../../../components/Button/button";
 
 class PersonalInformation extends Component {
   continue = (e) => {
+    const { nextStep } = this.props;
     e.preventDefault();
-    this.props.nextStep();
+    nextStep();
   };
 
   render() {

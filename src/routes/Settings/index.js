@@ -25,10 +25,6 @@ class ManageAccount extends Component {
     },
   };
 
-  handleChange = (value, name, error) => {
-    this.setState({ [name]: value, error });
-  };
-
   styles = {
     tabs: (active) => {
       return {
@@ -47,6 +43,10 @@ class ManageAccount extends Component {
         color: active ? "#336799" : "#777777",
       };
     },
+  };
+
+  handleChange = (value, name, error) => {
+    this.setState({ [name]: value, error });
   };
 
   setActiveTabs = (tab) => {
@@ -84,15 +84,15 @@ class ManageAccount extends Component {
         </div>
 
         <div className="settings">
-          {this.state.active === "Profile" && (
+          {active === "Profile" && (
             <Profile
               form={this.state.profile}
               handleChange={this.handleChange}
             />
           )}
-          {this.state.active === "Account Plan" && <AccountPlan />}
-          {this.state.active === "Greetings" && <Greetings />}
-          {this.state.active === "Business Hours" && (
+          {active === "Account Plan" && <AccountPlan />}
+          {active === "Greetings" && <Greetings />}
+          {active === "Business Hours" && (
             <BusinessHours handleChange={this.handleChange} />
           )}
         </div>

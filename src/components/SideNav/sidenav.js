@@ -7,19 +7,20 @@ import Header from "../Header/header";
 import "./sidenav.css";
 
 class Sidenav extends Component {
-  signout = () => {
+  signout = (e) => {
+    e.preventDefault();
     const { history, signout } = this.props;
     signout({ history });
   };
 
   // verifies if routeName is the one active in (in browser input)
   activeRoute = (routeName) => {
-    return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
+    const { location } = this.props;
+    return location.pathname.indexOf(routeName) > -1 ? "active" : "";
   };
 
   render() {
-    const { routes, header, account } = this.props;
-    console.log("hey", account);
+    const { routes, header } = this.props;
 
     return (
       <aside className="sidenav">

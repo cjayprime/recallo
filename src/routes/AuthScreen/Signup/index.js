@@ -64,30 +64,32 @@ class SignUpComponent extends Component {
     let section = "user";
     if (step === 0) section = "business";
 
-    this.setState({
-      [section]: { ...this.state[section], [name]: value },
+    this.setState((prevState) => ({
+      [section]: { ...prevState[section], [name]: value },
       error,
-    });
+    }));
   };
 
   nextStep = () => {
     let { step } = this.state;
     this.signup(step, () => {
-      if (step < 3) step++;
+      if (step < 3) step ++;
       this.setState({ step });
     });
   };
 
   signup = (step, callback) => {
     let data = {};
+    const { error, business, user, payment } = this.state;
+    const { signup, history } = this.props;
     if (step === 0) {
-      const { name, email, password } = this.state.business;
+      const { name, email, password } = business;
       data = { business_name: name, email, password };
     } else if (step === 1) {
-      const { firstname, lastname, mobile } = this.state.user;
+      const { firstname, lastname, mobile } = user;
       data = { first_name: firstname, last_name: lastname, mobile };
     } else if (step === 2) {
-      const { name, email, address, people, rc } = this.state.business;
+      const { name, email, address, people, rc } = business;
       data = {
         business_name: name,
         business_email: email,
@@ -96,7 +98,7 @@ class SignUpComponent extends Component {
         business_rc: rc,
       };
     } else if (step === 3) {
-      const { reference, did, planID } = this.state.payment;
+      const { reference, did, planID } = payment;
       data = { reference_no: reference, did, payment_plan_id: planID };
     }
 
@@ -108,29 +110,30 @@ class SignUpComponent extends Component {
     // using it
     const dataKeys = Object.keys(data);
     if (
-      !this.state.error &&
+      !error &&
       dataKeys.filter((state) => !!data[state]).length === dataKeys.length
     ) {
-      this.props.signup(data, step, () => {
-        if (step === 3) this.props.history("/admin/home");
+      signup(data, step, () => {
+        if (step === 3) history("/admin/home");
         callback();
       });
     } else {
       Notification.error(
-        this.state.error || "Please fill in the form correctly."
+        error || "Please fill in the form correctly."
       );
     }
   };
 
   render() {
-    switch (this.state.step) {
+    const { step, business, user } = this.state;
+    switch (step) {
       case 0:
         return (
           <SignUp
             {...this.props}
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            form={this.state.business}
+            form={business}
           />
         );
       case 1:
@@ -138,7 +141,7 @@ class SignUpComponent extends Component {
           <Personal
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            form={this.state.user}
+            form={user}
           />
         );
       case 2:
@@ -146,7 +149,7 @@ class SignUpComponent extends Component {
           <Business
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            form={this.state}
+            form={business}
           />
         );
       case 3:

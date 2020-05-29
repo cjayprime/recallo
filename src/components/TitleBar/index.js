@@ -5,10 +5,11 @@ import Button from "../Button/button";
 
 class Titlebar extends Component {
   render() {
+    const { heading, buttons } = this.props;
     return (
       <div className="title-bar">
         <div className="title">
-          <h2>{this.props.heading}</h2>
+          <h2>{heading}</h2>
         </div>
         <div className="row">
           <Button
@@ -16,18 +17,18 @@ class Titlebar extends Component {
             text="var(--text-color)"
             padding="12px 25px"
             className="mr-16 br-30"
-            click={this.props.buttons.left.action}
+            click={buttons.left.action}
           >
-            {this.props.buttons.left.title}
+            {buttons.left.title}
           </Button>
           <Button
             background="var(--text-color)"
             text="#fff"
             padding="12px 25px"
             className="br-30"
-            click={this.props.buttons.right.action}
+            click={buttons.right.action}
           >
-            {this.props.buttons.right.title}
+            {buttons.right.title}
           </Button>
         </div>
       </div>

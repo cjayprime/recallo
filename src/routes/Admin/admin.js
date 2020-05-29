@@ -19,7 +19,7 @@ class Admin extends Component {
   //     header: false
   // }
 
-  getRoutes = (routes) => {
+  getRoutes = () => {
     return routes.private.sidebar.map((prop, key) => {
       if (prop.layout === "/admin") {
         return (
@@ -34,7 +34,7 @@ class Admin extends Component {
     });
   };
 
-  getSettings = (routes) => {
+  getSettings = () => {
     return routes.private.route.map((prop, key) => {
       if (prop.layout === "/admin") {
         // from and to props of the Redirect component from react-router-dom npm library
@@ -52,22 +52,23 @@ class Admin extends Component {
   };
 
   header = (isSideNav) => {
+    const { location } = this.props;
     if (isSideNav === false) {
       if (
-        this.props.location.pathname === "/admin/home" ||
-        this.props.location.pathname === "/admin/analytics"
+        location.pathname === "/admin/home" ||
+        location.pathname === "/admin/analytics"
       )
         return true;
 
       return false;
     }
     if (
-      this.props.location.pathname === "/admin/calls" ||
-      this.props.location.pathname === "/admin/contact" ||
-      this.props.location.pathname === "/admin/personnel" ||
-      this.props.location.pathname === "/admin/settings" ||
-      this.props.location.pathname === "/admin/previous" ||
-      this.props.location.pathname === "/admin/voicenotes"
+      location.pathname === "/admin/calls" ||
+      location.pathname === "/admin/contact" ||
+      location.pathname === "/admin/personnel" ||
+      location.pathname === "/admin/settings" ||
+      location.pathname === "/admin/previous" ||
+      location.pathname === "/admin/voicenotes"
     )
       return true;
 

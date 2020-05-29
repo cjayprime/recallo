@@ -15,8 +15,9 @@ export default connect(
 )(
   class Routes extends Component {
     async componentDidMount() {
+      const { load } = this.props;
       if (await Actions.token.get()) {
-        this.props.load();
+        load();
       }
     }
 

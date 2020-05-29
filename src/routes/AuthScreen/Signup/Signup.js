@@ -6,8 +6,9 @@ import Layout from "../../../components/AppHeader/Layout";
 
 class SignUp extends Component {
   continue = (e) => {
+    const { nextStep } = this.props;
     e.preventDefault();
-    this.props.nextStep();
+    nextStep();
   };
 
   render() {
@@ -54,7 +55,7 @@ class SignUp extends Component {
                 />
               </div>
               <h6 className="lh-24 light text-light mb-32">
-                By clicking "Create Account" you agree to our{" "}
+                By clicking "Create Account" you agree to our
                 <span className="bold text-blue">Terms of Service</span>, and to
                 receive marketing communications from Recallo.
               </h6>
