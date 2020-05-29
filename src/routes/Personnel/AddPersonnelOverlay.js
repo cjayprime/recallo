@@ -1,30 +1,30 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import Overlay from "../../components/Overlay"
-import FormField from "../../components/Form"
-import Button from "../../components/Button/button"
+import Overlay from "../../components/Overlay";
+import FormField from "../../components/Form";
+import Button from "../../components/Button/button";
 
-const statuses = ["Active", "Inactive"]
+const statuses = ["Active", "Inactive"];
 
-const departments = ["some department"]
+const departments = ["some department"];
 
-const skills = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"]
+const skills = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"];
 
 class PersonnelOverlay extends Component {
   render() {
-    const { open, toggle } = this.props
+    const { open, toggle } = this.props;
 
     const statusItem = statuses.map((status) => (
       <option key={status}>{status}</option>
-    ))
+    ));
 
     const departmentItem = departments.map((department) => (
       <option key={department}>{department}</option>
-    ))
+    ));
 
     const skillItem = skills.map((skill) => (
       <option key={skill}>{skill}</option>
-    ))
+    ));
 
     return (
       <Overlay open={open} toggle={toggle}>
@@ -149,8 +149,8 @@ class PersonnelOverlay extends Component {
           </div>
         </div>
       </Overlay>
-    )
+    );
   }
 }
 
-export default PersonnelOverlay
+export default PersonnelOverlay;

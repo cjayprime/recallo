@@ -1,6 +1,6 @@
-import React, { Component } from "react"
-import classNames from "classnames"
-import CircularProgress from "@material-ui/core/CircularProgress"
+import React, { Component } from "react";
+import classNames from "classnames";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 class Button extends Component {
   render() {
@@ -14,7 +14,7 @@ class Button extends Component {
       className,
       padding,
       onClick,
-    } = this.props
+    } = this.props;
 
     return (
       <>
@@ -43,8 +43,8 @@ class Button extends Component {
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
-export default Button
+export default Button;

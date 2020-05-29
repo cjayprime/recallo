@@ -1,39 +1,40 @@
-import { Component } from "react"
-import { withSnackbar } from "notistack"
+import { Component } from "react";
+import { withSnackbar } from "notistack";
 
 class AlertDialog extends Component {
-  displayed = []
-
-  storeDisplayed = (id) => {
-    this.displayed = [...this.displayed, id]
-  }
+  displayed = [];
 
   componentDidMount() {
-    this.displayed = []
+    this.displayed = [];
   }
 
-  closeAlert() {
-    this.props.showRequestFeedBack({})
+  componentDidUpdate() {
+    this.showAlert();
   }
+
+  storeDisplayed = (id) => {
+    this.displayed = [...this.displayed, id];
+  };
 
   showAlert = () => {
-    const { open, message, success } = this.props
+    const { open, message, success, enqueueSnackbar } = this.props;
 
     if (open && message) {
-      this.props.enqueueSnackbar(message, {
+      enqueueSnackbar(message, {
         variant: success ? "success" : "error",
         autoHideDuration: 3000,
         anchorOrigin: { horizontal: "right", vertical: "top" },
         // persist: true
-      })
+      });
 
       // Show the alert then remove it
-      this.closeAlert()
+      this.closeAlert();
     }
-  }
+  };
 
-  componentDidUpdate() {
-    this.showAlert()
+  closeAlert() {
+    const { showRequestFeedBack } = this.props;
+    showRequestFeedBack({});
   }
 
   render() {
@@ -41,8 +42,8 @@ class AlertDialog extends Component {
           The props `id={(Date.now())}` is USELESS except you want React to update
           and permit new messages to show, without props like the USEFUL `props.open`, `props.message` and `props.status`
         */
-    return null
+    return null;
   }
 }
 
-export default withSnackbar(AlertDialog)
+export default withSnackbar(AlertDialog);

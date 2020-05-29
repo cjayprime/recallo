@@ -1,9 +1,9 @@
-import React, { Component } from "react"
-import Overlay from "../../components/Overlay"
+import React, { Component } from "react";
+import Overlay from "../../components/Overlay";
 
 class ViewProfileOverlay extends Component {
   render() {
-    const { open, toggle } = this.props
+    const { open, toggle } = this.props;
 
     return (
       <Overlay open={open} toggle={toggle}>
@@ -62,8 +62,8 @@ class ViewProfileOverlay extends Component {
           </div>
         </div>
       </Overlay>
-    )
+    );
   }
 }
 
-export default ViewProfileOverlay
+export default ViewProfileOverlay;

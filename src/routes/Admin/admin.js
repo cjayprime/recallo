@@ -1,25 +1,25 @@
-import React, { Component } from "react"
-import { Route, Switch } from "react-router-dom"
+import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 
-import Sidenav from "../../components/SideNav/sidenav"
-import Header from "../../components/Header/header"
+import Sidenav from "../../components/SideNav/sidenav";
+import Header from "../../components/Header/header";
 
-import routes from "../routes"
+import routes from "../routes";
 
-import "./admin.css"
+import "./admin.css";
 
 // core components
 
 class Admin extends Component {
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   // state = {
   //     header: false
   // }
 
-  getRoutes = (routes) => {
+  getRoutes = () => {
     return routes.private.sidebar.map((prop, key) => {
       if (prop.layout === "/admin") {
         return (
@@ -28,13 +28,13 @@ class Admin extends Component {
             component={prop.component}
             key={key}
           />
-        )
+        );
       }
-      return null
-    })
-  }
+      return null;
+    });
+  };
 
-  getSettings = (routes) => {
+  getSettings = () => {
     return routes.private.route.map((prop, key) => {
       if (prop.layout === "/admin") {
         // from and to props of the Redirect component from react-router-dom npm library
@@ -45,37 +45,38 @@ class Admin extends Component {
             component={prop.component}
             key={key}
           />
-        )
+        );
       }
-      return null
-    })
-  }
+      return null;
+    });
+  };
 
   header = (isSideNav) => {
+    const { location } = this.props;
     if (isSideNav === false) {
       if (
-        this.props.location.pathname === "/admin/home" ||
-        this.props.location.pathname === "/admin/analytics"
+        location.pathname === "/admin/home" ||
+        location.pathname === "/admin/analytics"
       )
-        return true
+        return true;
 
-      return false
+      return false;
     }
     if (
-      this.props.location.pathname === "/admin/calls" ||
-      this.props.location.pathname === "/admin/contact" ||
-      this.props.location.pathname === "/admin/personnel" ||
-      this.props.location.pathname === "/admin/settings" ||
-      this.props.location.pathname === "/admin/previous" ||
-      this.props.location.pathname === "/admin/voicenotes"
+      location.pathname === "/admin/calls" ||
+      location.pathname === "/admin/contact" ||
+      location.pathname === "/admin/personnel" ||
+      location.pathname === "/admin/settings" ||
+      location.pathname === "/admin/previous" ||
+      location.pathname === "/admin/voicenotes"
     )
-      return true
+      return true;
 
-    return false
-  }
+    return false;
+  };
 
   render() {
-    const { account /* data, result */ } = this.props
+    const { account /* data, result */ } = this.props;
     return (
       <div className="grid">
         <Header header={this.header(false)} className="main-header" />
@@ -92,8 +93,8 @@ class Admin extends Component {
           </Switch>
         </main>
       </div>
-    )
+    );
   }
 }
 
-export default Admin
+export default Admin;

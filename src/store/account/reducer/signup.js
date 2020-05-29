@@ -1,7 +1,7 @@
-import * as Actions from "../actions"
+import * as Actions from "../actions";
 
 function signup(state, action) {
-  const { data, loading, message, status, type } = action
+  const { data, loading, message, status, type } = action;
 
   if (type === Actions.SIGNUP && status === true) {
     const newState = {
@@ -9,10 +9,10 @@ function signup(state, action) {
       loading: state.loading.filter((text) => text !== loading),
       status: true,
       message,
-    }
+    };
 
     if (action.step === 0) {
-      Actions.token.set(data.token)
+      Actions.token.set(data.token);
       return {
         ...newState,
         // business: {
@@ -21,10 +21,10 @@ function signup(state, action) {
         //     email: data,
         //     password: data.password
         // }
-      }
+      };
     }
     if (action.step === 1) {
-      Actions.token.set(data.entity.token)
+      Actions.token.set(data.entity.token);
       return {
         ...newState,
         user: {
@@ -34,10 +34,10 @@ function signup(state, action) {
           email: data.email,
           mobile: data.mobile,
         },
-      }
+      };
     }
     if (action.step === 2) {
-      Actions.token.set(data.entity.token)
+      Actions.token.set(data.entity.token);
       return {
         ...newState,
         business: {
@@ -48,7 +48,7 @@ function signup(state, action) {
           rc: "",
           agent: "",
         },
-      }
+      };
     }
   } else if (type === Actions.SIGNUP && status === false) {
     return {
@@ -56,9 +56,9 @@ function signup(state, action) {
       loading: state.loading.filter((text) => text !== loading),
       status: false,
       message,
-    }
+    };
   }
 
-  return null
+  return null;
 }
-export default signup
+export default signup;

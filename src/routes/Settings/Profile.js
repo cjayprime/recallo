@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import Button from "../../components/Button/button"
-import TextInput from "../../components/Form/TextInput"
+import Button from "../../components/Button/button";
+import TextInput from "../../components/Form/TextInput";
 
 class Profile extends Component {
   render() {
@@ -15,7 +15,10 @@ class Profile extends Component {
               <div className="row mb-23">
                 <h4 className="bold pt-32">Personal information</h4>
                 <div className="pt-23">
-                  <Button className="br-30 save orange-hover" padding="12px 32px">
+                  <Button
+                    className="br-30 save orange-hover"
+                    padding="12px 32px"
+                  >
                     <h6>Save</h6>
                   </Button>
                 </div>
@@ -53,7 +56,9 @@ class Profile extends Component {
                     placeholder="******"
                     className="mb-16 br-8 profile-input p-12"
                   />
-                  <Button className="br-8 pass-btn" padding="12px 12px"><h6>Change password</h6></Button>
+                  <Button className="br-8 pass-btn" padding="12px 12px">
+                    <h6>Change password</h6>
+                  </Button>
                 </div>
               </div>
             </form>
@@ -63,7 +68,10 @@ class Profile extends Component {
               <div className="row mb-23">
                 <h4 className="bold pt-32">Business information</h4>
                 <div className="pt-23">
-                  <Button className="br-30 save orange-hover" padding="12px 30px">
+                  <Button
+                    className="br-30 save orange-hover"
+                    padding="12px 30px"
+                  >
                     <h6>Save</h6>
                   </Button>
                 </div>
@@ -148,15 +156,15 @@ class Profile extends Component {
                     className="text-blue bc-blue br-8 upload-button"
                   >
                     Upload image
-                </Button>
+                  </Button>
                 </div>
               </div>
             </form>
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
-export default Profile
+export default Profile;

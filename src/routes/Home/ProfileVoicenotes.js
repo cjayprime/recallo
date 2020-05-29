@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const ProfileVoiceNotes = (props) => {
   return (
@@ -11,7 +11,7 @@ const ProfileVoiceNotes = (props) => {
         </p>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ProfileVoiceNotes
+export default ProfileVoiceNotes;

@@ -1,23 +1,23 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import Button from "../../components/Button/button"
-import AuthInput from "../../components/Form/AuthInput"
+import Button from "../../components/Button/button";
+import AuthInput from "../../components/Form/AuthInput";
 
 class ContactSupport extends Component {
   state = {
-    first_name: "",
-    last_name: "",
+    firstname: "",
+    lastname: "",
     email: "",
     message: "",
-    error: null,
-  }
+    // error: null,
+  };
 
-  handleChange = (value, name, error) => {
-    this.setState({ [name]: value, error })
-  }
+  handleChange = (value, name) => {
+    this.setState({ [name]: value });
+  };
 
   render() {
-    const { first_name, last_name, email, message } = this.state
+    const { firstname, lastname, email, message } = this.state;
     return (
       <>
         <div className="support">
@@ -35,17 +35,17 @@ class ContactSupport extends Component {
                 <AuthInput
                   labelTitle="First name"
                   className="col-7"
-                  name="first_name"
+                  name="firstname"
                   onChange={this.handleChange}
-                  value={first_name}
+                  value={firstname}
                   novalidate
                 />
                 <AuthInput
                   labelTitle="Last name"
                   className="col-7"
-                  name="last_name"
+                  name="lastname"
                   onChange={this.handleChange}
-                  value={last_name}
+                  value={lastname}
                   novalidate
                 />
               </div>
@@ -99,8 +99,8 @@ class ContactSupport extends Component {
         </div>
         <h5 className="light text-light btw">Back to website</h5>
       </>
-    )
+    );
   }
 }
 
-export default ContactSupport
+export default ContactSupport;

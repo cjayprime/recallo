@@ -1,20 +1,22 @@
-import React, { Component } from "react"
-import { Link } from "react-router-dom"
-import Button from "../../components/Button/button"
-import Table from "./table"
-import MenuItem from "../../components/MenuItem/menuItem"
-import ProfileCategoryOverlay from "./ProfileCategoryOverlay"
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Button from "../../components/Button/button";
+import Table from "./table";
+import MenuItem from "../../components/MenuItem/menuItem";
+import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
 
-import { ReactComponent as SearchIcon } from "../../assets/img/search.svg"
+import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 
 class Calls extends Component {
-  state = { open: false }
+  state = { open: false };
 
   toggle = () => {
-    this.setState({ open: !this.state.open })
-  }
+    const { open } = this.state;
+    this.setState({ open: !open });
+  };
 
   render() {
+    const { open } = this.state;
     return (
       <div className="screen-padding">
         <div className="title-bar">
@@ -85,11 +87,11 @@ class Calls extends Component {
             </div>
           </div>
         </div>
-        <ProfileCategoryOverlay open={this.state.open} toggle={this.toggle} />
+        <ProfileCategoryOverlay open={open} toggle={this.toggle} />
         <Table />
       </div>
-    )
+    );
   }
 }
 
-export default Calls
+export default Calls;

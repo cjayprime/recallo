@@ -1,14 +1,14 @@
-import React, { Component } from "react"
-import "./overlay.css"
-import { ReactComponent as CloseIcon } from "../../assets/img/close.svg"
+import React, { Component } from "react";
+import "./overlay.css";
+import { ReactComponent as CloseIcon } from "../../assets/img/close.svg";
 
 class Overlay extends Component {
   render() {
-    const { toggle, open, children, width } = this.props
+    const { toggle, open, children, width } = this.props;
 
     const showHideClassName = open
       ? "overlay display-block"
-      : "overlay display-none"
+      : "overlay display-none";
 
     return (
       <div className={showHideClassName}>
@@ -22,8 +22,8 @@ class Overlay extends Component {
           </div>
         </section>
       </div>
-    )
+    );
   }
 }
 
-export default Overlay
+export default Overlay;

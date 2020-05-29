@@ -1,26 +1,27 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import Titlebar from "../../components/TitleBar"
-import MenuItem from "../../components/MenuItem/menuItem"
-import { ReactComponent as SearchIcon } from "../../assets/img/search.svg"
-import Table from "./table"
-import DepartmentOverlay from "./DepartmentOverlay"
-import PersonnelOverlay from "./AddPersonnelOverlay"
+import Titlebar from "../../components/TitleBar";
+import MenuItem from "../../components/MenuItem/menuItem";
+import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
+import Table from "./table";
+import DepartmentOverlay from "./DepartmentOverlay";
+import PersonnelOverlay from "./AddPersonnelOverlay";
 
 class Personnel extends Component {
-  state = { open: false, open2: false }
+  state = { open: false, open2: false };
 
   toggle = () => {
-    this.setState({ open: !this.state.open })
-    console.log("Toggled")
-  }
+    const { open } = this.state;
+    this.setState({ open: !open });
+  };
 
   toggle2 = () => {
-    this.setState({ open2: !this.state.open2 })
-    console.log("Toggled")
-  }
+    const { open2 } = this.state;
+    this.setState({ open2: !open2 });
+  };
 
   render() {
+    const { open, open2 } = this.state;
     return (
       <div className="screen-padding">
         <Titlebar
@@ -51,12 +52,12 @@ class Personnel extends Component {
             </div>
           </div>
         </div>
-        <DepartmentOverlay open={this.state.open} toggle={this.toggle} />
-        <PersonnelOverlay open={this.state.open2} toggle={this.toggle2} />
+        <DepartmentOverlay open={open} toggle={this.toggle} />
+        <PersonnelOverlay open={open2} toggle={this.toggle2} />
         <Table />
       </div>
-    )
+    );
   }
 }
 
-export default Personnel
+export default Personnel;

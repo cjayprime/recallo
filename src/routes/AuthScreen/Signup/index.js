@@ -1,15 +1,15 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import SignUp from "./Signup"
-import Personal from "./Personal"
-import Business from "./Business"
-import Plans from "./Plans"
+import SignUp from "./Signup";
+import Personal from "./Personal";
+import Business from "./Business";
+import Plans from "./Plans";
 
-import Notification from "../../../utils/notification"
+import Notification from "../../../utils/notification";
 
 class SignUpComponent extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       // hidden: true,
 
@@ -56,48 +56,50 @@ class SignUpComponent extends Component {
       },
 
       error: null,
-    }
+    };
   }
 
   handleChange = (value, name, error) => {
-    const { step } = this.state
-    let section = "user"
-    if (step === 0) section = "business"
+    const { step } = this.state;
+    let section = "user";
+    if (step === 0) section = "business";
 
-    this.setState({
-      [section]: { ...this.state[section], [name]: value },
+    this.setState((prevState) => ({
+      [section]: { ...prevState[section], [name]: value },
       error,
-    })
-  }
+    }));
+  };
 
   nextStep = () => {
-    let { step } = this.state
+    let { step } = this.state;
     this.signup(step, () => {
-      if (step < 3) step++
-      this.setState({ step })
-    })
-  }
+      if (step < 3) step ++;
+      this.setState({ step });
+    });
+  };
 
   signup = (step, callback) => {
-    let data = {}
+    let data = {};
+    const { error, business, user, payment } = this.state;
+    const { signup, history } = this.props;
     if (step === 0) {
-      const { name, email, password } = this.state.business
-      data = { business_name: name, email, password }
+      const { name, email, password } = business;
+      data = { business_name: name, email, password };
     } else if (step === 1) {
-      const { firstname, lastname, mobile } = this.state.user
-      data = { first_name: firstname, last_name: lastname, mobile }
+      const { firstname, lastname, mobile } = user;
+      data = { first_name: firstname, last_name: lastname, mobile };
     } else if (step === 2) {
-      const { name, email, address, people, rc } = this.state.business
+      const { name, email, address, people, rc } = business;
       data = {
         business_name: name,
         business_email: email,
         business_address: address,
         people,
         business_rc: rc,
-      }
+      };
     } else if (step === 3) {
-      const { reference, did, planID } = this.state.payment
-      data = { reference_no: reference, did, payment_plan_id: planID }
+      const { reference, did, planID } = payment;
+      data = { reference_no: reference, did, payment_plan_id: planID };
     }
 
     // This is a potential flaw, a possible (and common) scenario of failure is this:
@@ -106,54 +108,55 @@ class SignUpComponent extends Component {
     // Don't globalise this.state.error OR do some other checks and don't rely on it
     // alone, since the state was messy any, and is needed before the next step I'm
     // using it
-    const dataKeys = Object.keys(data)
+    const dataKeys = Object.keys(data);
     if (
-      !this.state.error &&
+      !error &&
       dataKeys.filter((state) => !!data[state]).length === dataKeys.length
     ) {
-      this.props.signup(data, step, () => {
-        if (step === 3) this.props.history("/admin/home")
-        callback()
-      })
+      signup(data, step, () => {
+        if (step === 3) history("/admin/home");
+        callback();
+      });
     } else {
       Notification.error(
-        this.state.error || "Please fill in the form correctly."
-      )
+        error || "Please fill in the form correctly."
+      );
     }
-  }
+  };
 
   render() {
-    switch (this.state.step) {
+    const { step, business, user } = this.state;
+    switch (step) {
       case 0:
         return (
           <SignUp
             {...this.props}
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            form={this.state.business}
+            form={business}
           />
-        )
+        );
       case 1:
         return (
           <Personal
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            form={this.state.user}
+            form={user}
           />
-        )
+        );
       case 2:
         return (
           <Business
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            form={this.state}
+            form={business}
           />
-        )
+        );
       case 3:
-        return <Plans />
+        return <Plans />;
       default:
     }
   }
 }
 
-export default SignUpComponent
+export default SignUpComponent;

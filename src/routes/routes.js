@@ -1,25 +1,25 @@
-import React from "react"
-import { Redirect } from "react-router-dom"
+import React from "react";
+import { Redirect } from "react-router-dom";
 
 // Public routes components
-import SigninContainer from "./AuthScreen/SignIn"
-import SignUpContainer from "./AuthScreen/Signup"
-import ContactSupportComponent from "./ContactSupport"
+import SigninContainer from "./AuthScreen/SignIn";
+import SignUpContainer from "./AuthScreen/Signup";
+import ContactSupportComponent from "./ContactSupport";
 
 // Private routes components
-import Admin from "./Admin/admin"
-import Home from "./Home/home"
-import Calls from "./Calls"
-import Contact from "./Contact"
-import Personnel from "./Personnel"
-import Analytics from "./Analytics"
-import ManageAccount from "./Settings"
-import ProfileCall from "./ProfileCall"
-import NumberDetails from "./NumberDetails"
-import VoiceNotes from "./Voicenotes"
+import Admin from "./Admin/admin";
+import Home from "./Home/home";
+import Calls from "./Calls";
+import Contact from "./Contact";
+import Personnel from "./Personnel";
+import Analytics from "./Analytics";
+import ManageAccount from "./Settings";
+import ProfileCall from "./ProfileCall";
+import NumberDetails from "./NumberDetails";
+import VoiceNotes from "./Voicenotes";
 
-import homeIcon from "../assets/img/homeIcon.svg"
-import contactBook from "../assets/img/contactbook.svg"
+import homeIcon from "../assets/img/homeIcon.svg";
+import contactBook from "../assets/img/contactbook.svg";
 
 const routes = {
   public: [
@@ -70,7 +70,7 @@ const routes = {
         component: Contact,
         name: "Contact",
         layout: "/admin",
-        icon: contactBook
+        icon: contactBook,
       },
       {
         path: "/personnel",
@@ -106,7 +106,7 @@ const routes = {
         path: "/number-details",
         exact: true,
         component: NumberDetails,
-        layout: "/admin"
+        layout: "/admin",
       },
       {
         path: "/voicenotes",
@@ -121,6 +121,6 @@ const routes = {
       },
     ],
   },
-}
+};
 
-export default routes
+export default routes;

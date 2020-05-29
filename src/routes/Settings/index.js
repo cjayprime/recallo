@@ -1,9 +1,9 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import Profile from "./Profile"
-import AccountPlan from "./AccountPlan"
-import Greetings from "./Greetings"
-import BusinessHours from "./BusinessHours"
+import Profile from "./Profile";
+import AccountPlan from "./AccountPlan";
+import Greetings from "./Greetings";
+import BusinessHours from "./BusinessHours";
 
 class ManageAccount extends Component {
   state = {
@@ -12,7 +12,7 @@ class ManageAccount extends Component {
       user: {
         name: "",
         email: "",
-        password: ""
+        password: "",
       },
       business: {
         name: "",
@@ -20,14 +20,10 @@ class ManageAccount extends Component {
         email: "",
         address: "",
         website: "",
-        rc: ""
-      }
-    }
-  }
-
-  handleChange = (value, name, error) => {
-    this.setState({ [name]: value, error })
-  }
+        rc: "",
+      },
+    },
+  };
 
   styles = {
     tabs: (active) => {
@@ -37,23 +33,27 @@ class ManageAccount extends Component {
         backgroundColor: active ? "#0072A3" : "transparent",
         borderRadius: "70px",
         transition: ".2s all ease-in-out",
-      }
+      };
     },
-  }
+  };
 
   color = {
     tabs: (active) => {
       return {
         color: active ? "#336799" : "#777777",
-      }
+      };
     },
-  }
+  };
+
+  handleChange = (value, name, error) => {
+    this.setState({ [name]: value, error });
+  };
 
   setActiveTabs = (tab) => {
     this.setState({
       active: tab,
-    })
-  }
+    });
+  };
 
   render() {
     const tabs = [
@@ -61,9 +61,9 @@ class ManageAccount extends Component {
       { tab: "Account Plan" },
       { tab: "Greetings" },
       { tab: "Business Hours" },
-    ]
+    ];
 
-    const { active } = this.state
+    const { active } = this.state;
 
     return (
       <>
@@ -84,14 +84,21 @@ class ManageAccount extends Component {
         </div>
 
         <div className="settings">
-          {this.state.active === "Profile" && <Profile form={this.state.profile} handleChange={this.handleChange} />}
-          {this.state.active === "Account Plan" && <AccountPlan />}
-          {this.state.active === "Greetings" && <Greetings />}
-          {this.state.active === "Business Hours" && <BusinessHours handleChange={this.handleChange} />}
+          {active === "Profile" && (
+            <Profile
+              form={this.state.profile}
+              handleChange={this.handleChange}
+            />
+          )}
+          {active === "Account Plan" && <AccountPlan />}
+          {active === "Greetings" && <Greetings />}
+          {active === "Business Hours" && (
+            <BusinessHours handleChange={this.handleChange} />
+          )}
         </div>
       </>
-    )
+    );
   }
 }
 
-export default ManageAccount
+export default ManageAccount;
