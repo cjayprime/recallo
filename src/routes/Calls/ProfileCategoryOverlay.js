@@ -1,11 +1,11 @@
-import React, { Component } from "react"
-import Overlay from "../../components/Overlay"
-import FormField from "../../components/Form"
-import Button from "../../components/Button/button"
+import React, { Component } from "react";
+import Overlay from "../../components/Overlay";
+import FormField from "../../components/Form";
+import Button from "../../components/Button/button";
 
 class ProfileCategoryOverlay extends Component {
   render() {
-    const { open, toggle } = this.props
+    const { open, toggle } = this.props;
 
     return (
       <Overlay open={open} toggle={toggle}>
@@ -21,7 +21,7 @@ class ProfileCategoryOverlay extends Component {
               className="br-8 profile-input p-12 mb-16"
             />
             <form className="mb-32">
-              <label>
+              <label for="description">
                 <h6 className="mb-8 light profile-label">
                   Give a short description for the profile category
                 </h6>
@@ -101,8 +101,8 @@ class ProfileCategoryOverlay extends Component {
           </div>
         </div>
       </Overlay>
-    )
+    );
   }
 }
 
-export default ProfileCategoryOverlay
+export default ProfileCategoryOverlay;

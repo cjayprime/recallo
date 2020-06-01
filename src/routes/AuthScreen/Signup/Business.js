@@ -1,8 +1,8 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import logo from "../../../assets/img/appLogo.png"
-import TextInput from "../../../components/Form/TextInput"
-import Button from "../../../components/Button/button"
+import logo from "../../../assets/img/appLogo.png";
+import TextInput from "../../../components/Form/TextInput";
+import Button from "../../../components/Button/button";
 
 class BusinessInformation extends Component {
   // continue = e => {
@@ -12,14 +12,14 @@ class BusinessInformation extends Component {
   // }
 
   render() {
-    const { form, handleChange, triggerBusinessInformation } = this.props
+    const { form, handleChange, triggerBusinessInformation } = this.props;
     const {
-      business_name,
-      business_email,
-      business_address,
+      name,
+      email,
+      address,
       people,
-      business_rc,
-    } = form
+      rc,
+    } = form;
     return (
       <div>
         <header>
@@ -33,7 +33,7 @@ class BusinessInformation extends Component {
           <div className="onboard-welcome">
             <h1 className="bold mb-24">Welcome to Recallo</h1>
             <h5 className="light text-light">
-              In a few steps, your account will be up and running. <br /> <br />{" "}
+              In a few steps, your account will be up and running. <br /> <br />
               Let's get started.
             </h5>
           </div>
@@ -60,7 +60,7 @@ class BusinessInformation extends Component {
                       labelClass="auth-label"
                       type="text"
                       name="business_name"
-                      value={business_name}
+                      value={name}
                       form={form}
                       onChange={handleChange}
                     />
@@ -70,7 +70,7 @@ class BusinessInformation extends Component {
                       labelClass="auth-label"
                       type="email"
                       name="business_email"
-                      value={business_email}
+                      value={email}
                       form={form}
                       onChange={handleChange}
                     />
@@ -82,7 +82,7 @@ class BusinessInformation extends Component {
                       type="textarea"
                       labelClass="auth-label"
                       name="business_address"
-                      value={business_address}
+                      value={address}
                       form={form}
                       onChange={handleChange}
                     />
@@ -97,7 +97,7 @@ class BusinessInformation extends Component {
                       className="onboard-input br-4"
                       type="text"
                       name="business_rc"
-                      value={business_rc}
+                      value={rc}
                       form={form}
                       onChange={handleChange}
                     />
@@ -128,8 +128,8 @@ class BusinessInformation extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default BusinessInformation
+export default BusinessInformation;

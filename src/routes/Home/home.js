@@ -1,24 +1,24 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import MenuItem from "../../components/MenuItem/menuItem"
+import MenuItem from "../../components/MenuItem/menuItem";
 
-import TotalCalls from "./TotalCalls"
-import TotalCallsAnswered from "./TotalCallsAnswered"
-import ProfileVoiceNotes from "./ProfileVoicenotes"
-import VoiceNotes from "./VoiceNotes"
-import DroppedCalls from "./DroppedCalls"
-import MissedCalls from "./MissedCalls"
+import TotalCalls from "./TotalCalls";
+import TotalCallsAnswered from "./TotalCallsAnswered";
+import ProfileVoiceNotes from "./ProfileVoicenotes";
+import VoiceNotes from "./VoiceNotes";
+import DroppedCalls from "./DroppedCalls";
+import MissedCalls from "./MissedCalls";
 
 class Home extends Component {
   state = {
     active: "Total calls",
-  }
+  };
 
   setActiveTabs = (tab) => {
     this.setState({
       active: tab,
-    })
-  }
+    });
+  };
 
   render() {
     const tabs = [
@@ -28,7 +28,9 @@ class Home extends Component {
       { tab: "Voicenotes" },
       { tab: "Dropped calls" },
       { tab: "Missed calls" },
-    ]
+    ];
+
+    const { active } = this.state;
 
     return (
       <>
@@ -39,14 +41,14 @@ class Home extends Component {
                 <div className="overview__action-button">
                   {tabs.map((tab) => (
                     <div
-                      style={styles.tabs(this.state.active === tab.tab)}
+                      style={styles.tabs(active === tab.tab)}
                       onClick={() => this.setActiveTabs(tab.tab)}
                       key={tab.tab}
                     >
                       <button
                         style={{
                           color:
-                            this.state.active === tab.tab
+                            active === tab.tab
                               ? "#33C534"
                               : "#336799",
                           transition: ".2s all ease-in-out",
@@ -59,16 +61,16 @@ class Home extends Component {
                 </div>
                 <hr className="vertical-hr ml-35" />
                 <div className="overview__action-view custom-col-5">
-                  {this.state.active === "Total calls" && <TotalCalls />}
-                  {this.state.active === "Total calls answered" && (
+                  {active === "Total calls" && <TotalCalls />}
+                  {active === "Total calls answered" && (
                     <TotalCallsAnswered />
                   )}
-                  {this.state.active === "Profile voicenotes" && (
+                  {active === "Profile voicenotes" && (
                     <ProfileVoiceNotes />
                   )}
-                  {this.state.active === "Voicenotes" && <VoiceNotes />}
-                  {this.state.active === "Dropped calls" && <DroppedCalls />}
-                  {this.state.active === "Missed calls" && <MissedCalls />}
+                  {active === "Voicenotes" && <VoiceNotes />}
+                  {active === "Dropped calls" && <DroppedCalls />}
+                  {active === "Missed calls" && <MissedCalls />}
                 </div>
                 <div>
                   <h2>GRAPH</h2>
@@ -149,7 +151,7 @@ class Home extends Component {
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
@@ -161,8 +163,8 @@ const styles = {
       transition: ".2s all ease-in-out",
       cursor: "pointer",
       marginBottom: 5,
-    }
+    };
   },
-}
+};
 
-export default Home
+export default Home;

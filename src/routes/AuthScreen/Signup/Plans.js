@@ -1,10 +1,10 @@
-import React, { Component } from "react"
-import { Link } from "react-router-dom"
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import logo from "../../../assets/img/appLogo.png"
-import FormField from "../../../components/Form"
-import Button from "../../../components/Button/button"
-import paymentbadge from "../../../assets/img/paymentbadge.png"
+import logo from "../../../assets/img/appLogo.png";
+import FormField from "../../../components/Form";
+import Button from "../../../components/Button/button";
+import paymentbadge from "../../../assets/img/paymentbadge.png";
 
 class PlanSelection extends Component {
   render() {
@@ -162,8 +162,8 @@ class PlanSelection extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default PlanSelection
+export default PlanSelection;

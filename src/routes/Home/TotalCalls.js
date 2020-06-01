@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const TotalCalls = (props) => {
   return (
@@ -13,7 +13,7 @@ const TotalCalls = (props) => {
         </p>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default TotalCalls
+export default TotalCalls;

@@ -1,0 +1,45 @@
+.field:nth-child(2) {
+  margin-top: 49.5px;
+  margin-bottom: 23px;
+}
+
+.form-group {
+  position: relative;
+  height: auto;
+}
+
+.auth-input {
+  border: 0;
+  outline: 0;
+  height: 45px;
+  padding-top: 15px;
+  border-bottom: 1px solid #dddddd;
+  border-radius: 0;
+  transition: 0.3s ease-in-out;
+  position: relative;
+}
+
+.auth-input:focus {
+  outline: 0;
+  box-shadow: none;
+  border-bottom: 1px solid var(--hover-color);
+}
+
+label {
+  top: 0;
+  left: 0;
+  transition: 0.3s ease;
+  position: absolute;
+}
+
+.auth-label {
+  font-size: 1.6rem;
+  color: var(--main-color);
+}
+
+.auth-input:focus + label,
+.auth-label:valid + label {
+  top: -12px;
+  padding-left: 0;
+  left: 0;
+}

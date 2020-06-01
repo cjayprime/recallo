@@ -1,18 +1,21 @@
-import React, { Component } from "react"
-import { Link } from "react-router-dom"
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import logo from "../../assets/img/appLogo.png"
+import logo from "../../assets/img/appLogo.png";
 
-import "./AppHeader.css"
+import "./AppHeader.css";
 
 class AppHeader extends Component {
   // verifies if routeName is the one active in (in browser input)
   activeRoute = (routeName) => {
-    return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : ""
-  }
+    const {
+      location: { pathname },
+    } = this.props;
+    return pathname.indexOf(routeName) > -1 ? "active" : "";
+  };
 
   render() {
-    const { routes } = this.props
+    const { routes } = this.props;
     return (
       <header>
         <div className="app-header">
@@ -21,7 +24,7 @@ class AppHeader extends Component {
           </div>
           <div className="header-menu">
             {routes.public.map((prop, key) => {
-              if (prop.redirect) return null
+              if (prop.redirect) return null;
               return (
                 <div
                   key={key}
@@ -33,13 +36,13 @@ class AppHeader extends Component {
                     <h5 className="bold">{prop.name}</h5>
                   </Link>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </header>
-    )
+    );
   }
 }
 
-export default AppHeader
+export default AppHeader;

@@ -1,18 +1,19 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import logo from "../../../assets/img/appLogo.png"
-import TextInput from "../../../components/Form/TextInput"
-import Button from "../../../components/Button/button"
+import logo from "../../../assets/img/appLogo.png";
+import TextInput from "../../../components/Form/TextInput";
+import Button from "../../../components/Button/button";
 
 class PersonalInformation extends Component {
   continue = (e) => {
-    e.preventDefault()
-    this.props.nextStep()
-  }
+    const { nextStep } = this.props;
+    e.preventDefault();
+    nextStep();
+  };
 
   render() {
-    const { form, handleChange } = this.props
-    const { firstname, lastname, mobile } = form
+    const { form, handleChange } = this.props;
+    const { firstname, lastname, mobile } = form;
 
     return (
       <div>
@@ -96,8 +97,8 @@ class PersonalInformation extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default PersonalInformation
+export default PersonalInformation;

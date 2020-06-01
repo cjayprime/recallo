@@ -1,9 +1,9 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import AppHeader from "../../components/AppHeader"
-import ContactSupport from "./ContactSupport"
+import AppHeader from "../../components/AppHeader";
+import ContactSupport from "./ContactSupport";
 
-import routes from ".."
+import routes from "../routes";
 
 class ContactSupportComponent extends Component {
   render() {
@@ -12,8 +12,8 @@ class ContactSupportComponent extends Component {
         <AppHeader {...this.props} routes={routes} />
         <ContactSupport />
       </>
-    )
+    );
   }
 }
 
-export default ContactSupportComponent
+export default ContactSupportComponent;

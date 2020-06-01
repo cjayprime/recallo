@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import { Route, Redirect } from "react-router-dom"
+import React, { Component } from "react";
+import { Route, Redirect } from "react-router-dom";
 
-import * as Actions from "../store/actions"
+import * as Actions from "../store/actions";
 
 export default class PrivateRoute extends Component {
   render() {
@@ -18,10 +18,10 @@ export default class PrivateRoute extends Component {
                 state: { from: props.location },
               }}
             />
-          )
-          return content
+          );
+          return content;
         }}
       />
-    )
+    );
   }
 }

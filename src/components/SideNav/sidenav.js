@@ -1,20 +1,26 @@
-import React, { Component } from "react"
-import { Link } from "react-router-dom"
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import Button from "../Button/button"
-import Header from "../Header/header"
+import Button from "../Button/button";
+import Header from "../Header/header";
 
-import "./sidenav.css"
+import "./sidenav.css";
 
 class Sidenav extends Component {
-  signout = () => {
-    const { history, signout } = this.props
-    signout({ history })
-  }
+  signout = (e) => {
+    e.preventDefault();
+    const { history, signout } = this.props;
+    signout({ history });
+  };
+
+  // verifies if routeName is the one active in (in browser input)
+  activeRoute = (routeName) => {
+    const { location } = this.props;
+    return location.pathname.indexOf(routeName) > -1 ? "active" : "";
+  };
 
   render() {
-    const { routes, header, account } = this.props
-    console.log("hey", account)
+    const { routes, header } = this.props;
 
     return (
       <aside className="sidenav">
@@ -39,19 +45,26 @@ class Sidenav extends Component {
           </div>
           <ul className="sidenav-list">
             {routes.private.sidebar.map((prop, key) => {
-              if (prop.redirect) return null
+              if (prop.redirect) return null;
               return (
-                <Link
+                <li
                   key={key}
-                  className="sidenav-list-link"
-                  to={prop.layout + prop.path}
+                  className={
+                    this.activeRoute(prop.path) +
+                    (prop.pro ? " sidenav-list-link active" : "")
+                  }
                 >
-                  <li className="sidenav-list-item">
+                  <Link
+                    key={key}
+                    className="sidenav-list-item"
+                    activeClassName="active"
+                    to={prop.layout + prop.path}
+                  >
                     <img src={prop.icon} className="sidenav-list-icon" alt="" />
                     <h5>{prop.name}</h5>
-                  </li>
-                </Link>
-              )
+                  </Link>
+                </li>
+              );
             })}
           </ul>
           <hr />
@@ -60,8 +73,8 @@ class Sidenav extends Component {
           </h6>
         </div>
       </aside>
-    )
+    );
   }
 }
 
-export default Sidenav
+export default Sidenav;

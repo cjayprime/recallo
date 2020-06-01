@@ -1,5 +1,5 @@
-import React, { Component } from "react"
-import classNames from "classnames"
+import React, { Component } from "react";
+import classNames from "classnames";
 
 export default class FormField extends Component {
   render() {
@@ -14,21 +14,21 @@ export default class FormField extends Component {
       type,
       checkboxTitle,
       checkboxClass,
-    } = this.props
+    } = this.props;
     if (type === "checkbox") {
       return (
-        <label className={checkboxClass}>
+        <label for="checkbox" className={checkboxClass}>
           {checkboxTitle}
           <input type={type} />
           <span className="checkmark" />
         </label>
-      )
+      );
     }
     return (
       <div>
         <div>
           <h6 className={classNames("mb-8", "light", labelClass)}>
-            <label>{title}</label>
+            <label for="label">{title}</label>
           </h6>
         </div>
         <input
@@ -40,6 +40,6 @@ export default class FormField extends Component {
           onChange={onChange}
         />
       </div>
-    )
+    );
   }
 }

@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const VoiceNotes = (props) => {
   return (
@@ -11,7 +11,7 @@ const VoiceNotes = (props) => {
         </p>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default VoiceNotes
+export default VoiceNotes;

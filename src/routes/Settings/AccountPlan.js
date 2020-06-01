@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
 
-import Button from "../../components/Button/button"
+import Button from "../../components/Button/button";
 
-const AccountPlan = (props) => {
+const AccountPlan = () => {
   return (
     <>
       <div className="screen-padding mt-80">
@@ -161,7 +161,7 @@ const AccountPlan = (props) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AccountPlan
+export default AccountPlan;

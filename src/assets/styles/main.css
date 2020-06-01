@@ -52,6 +52,9 @@ button {
 header {
   display: block;
 }
+.p-40 {
+  font-size: 4rem;
+}
 h1 {
   font-size: 3rem;
 }
@@ -196,6 +199,9 @@ textarea {
 .ml-3 {
   margin-left: 3px;
 }
+.ml-7 {
+  margin-left: 7px;
+}
 .ml-10 {
   margin-left: 10px;
 }
@@ -217,6 +223,9 @@ textarea {
 .mt-5 {
   margin-top: 5px;
 }
+.mt-300 {
+  margin-top: 300px;
+}
 .ml-8 {
   margin-left: 8px;
 }
@@ -225,6 +234,9 @@ textarea {
 }
 .mr-10 {
   margin-right: 10px;
+}
+.mr-16 {
+  margin-right: 16px;
 }
 .mr-24 {
   margin-right: 24px;
@@ -246,6 +258,9 @@ textarea {
 }
 .mt-40 {
   margin-top: 40px;
+}
+.mt-44 {
+  margin-top: 44px;
 }
 .mt-80 {
   margin-top: 80px;
@@ -298,6 +313,12 @@ textarea {
 .mb-12 {
   margin-bottom: 12px;
 }
+.mb-13 {
+  margin-bottom: 13px;
+}
+.mb-14 {
+  margin-bottom: 14px;
+}
 .mb-16 {
   margin-bottom: 16px;
 }
@@ -306,6 +327,9 @@ textarea {
 }
 .mb-24 {
   margin-bottom: 24px;
+}
+.mb-30 {
+  margin-bottom: 30px;
 }
 .mb-32 {
   margin-bottom: 32px;
@@ -450,4 +474,19 @@ textarea {
   background: var(--text-color);
   color: var(--text-white);
   transition: 0.3s all ease-in-out;
+}
+.edit-circle {
+  width: 32px;
+  height: 32px;
+  box-shadow: 0px 0px 6px #00000014;
+  border: 1px solid #777777;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.edit-pen {
+  width: 12px;
+  height: 12px;
 }

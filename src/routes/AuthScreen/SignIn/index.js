@@ -1,43 +1,40 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import TextInput from "../../../components/Form/TextInput"
-import FormField from "../../../components/Form"
-import Button from "../../../components/Button/button"
-import Layout from "../../../components/AppHeader/Layout"
+import AuthInput from "../../../components/Form/AuthInput";
+import FormField from "../../../components/Form";
+import Button from "../../../components/Button/button";
+import Layout from "../../../components/AppHeader/Layout";
 
-import arrowright from "../../../assets/img/arrow-right-circle.png"
+import arrowright from "../../../assets/img/arrow-right-circle.png";
 
-import Notification from "../../../utils/notification"
+import Notification from "../../../utils/notification";
 
 export default class SignIn extends Component {
   state = {
     email: "",
     password: "",
     error: null,
-  }
+  };
 
   handleChange = (value, name, error) => {
-    this.setState({ [name]: value, error })
-  }
+    this.setState({ [name]: value, error });
+  };
 
   signin = (e) => {
-    e.preventDefault()
-    if (!this.state.error && this.state.email && this.state.password) {
-      const { email, password } = this.state
-
-      this.props.signin({ email, password }, () => {
-        this.props.history.push("/admin/home")
-      })
+    e.preventDefault();
+    const { email, password, error } = this.state;
+    const { signin, history } = this.props;
+    if (!error && email && password) {
+      signin({ email, password }, () => {
+        history.push("/admin/home");
+      });
     } else {
-      Notification.error(
-        this.state.error || "Please fill in the form correctly."
-      )
+      Notification.error(error || "Please fill in the form correctly.");
     }
-  }
+  };
 
   render() {
-    const { email, password } = this.state
-
+    const { email, password } = this.state;
     return (
       <Layout {...this.props}>
         <div className="signin">
@@ -48,10 +45,8 @@ export default class SignIn extends Component {
             </h3>
             <form onSubmit={this.signin}>
               <div className="field">
-                <TextInput
+                <AuthInput
                   type="email"
-                  className="auth-input"
-                  labelClass="auth-label"
                   labelTitle="Email address"
                   name="email"
                   value={email}
@@ -59,10 +54,8 @@ export default class SignIn extends Component {
                 />
               </div>
               <div className="field">
-                <TextInput
+                <AuthInput
                   type="password"
-                  className="auth-input"
-                  labelClass="auth-label"
                   labelTitle="Password"
                   name="password"
                   value={password}
@@ -94,6 +87,6 @@ export default class SignIn extends Component {
           <div className="signin-icon" />
         </div>
       </Layout>
-    )
+    );
   }
 }

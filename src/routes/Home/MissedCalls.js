@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const MissedCalls = (props) => {
   return (
@@ -10,7 +10,7 @@ const MissedCalls = (props) => {
         </p>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default MissedCalls
+export default MissedCalls;

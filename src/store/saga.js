@@ -1,26 +1,26 @@
-import { put, call, all } from "redux-saga/effects"
+import { put, call, all } from "redux-saga/effects";
 
-import Request from "./request"
-import account from "./account/saga"
+import Request from "./request";
+import account from "./account/saga";
 
-import Notification from "../utils/notification"
+import Notification from "../utils/notification";
 
 export default class Saga {
-  loading
+  loading;
 
   constructor(loading) {
-    this.loading = loading
-    this.request = this.request.bind(this)
+    this.loading = loading;
+    this.request = this.request.bind(this);
   }
 
-  root = function* () {
-    yield all([account()])
-  }
+  root = function* root() {
+    yield all([account()]);
+  };
 
-  request = function* (action) {
-    const { endpoint, responder, method, data, success, error } = action
+  request = function* request(action) {
+    const { endpoint, responder, method, data, success, error } = action;
 
-    yield put({ type: this.loading, loading: endpoint, name: "account" })
+    yield put({ type: this.loading, loading: endpoint, name: "account" });
 
     const result = yield call(
       new Request().api,
@@ -29,12 +29,14 @@ export default class Saga {
       data,
       success,
       error
-    )
+    );
     // console.log('Server response: ', result);
 
-    result.message && result.status
-      ? Notification.success(result.message)
-      : Notification.error(result.message)
+    if (result.message && result.status) {
+      Notification.success(result.message);
+    } else {
+      Notification.error(result.message);
+    }
 
     yield put({
       ...result,
@@ -44,6 +46,6 @@ export default class Saga {
       message: result.message,
       status: result.status,
       data: result.data,
-    })
-  }
+    });
+  };
 }

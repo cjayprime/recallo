@@ -1,18 +1,18 @@
-import React, { Component } from "react"
-import { Link } from "react-router-dom"
-import ProfileCallOverlay from "./ProfileCallOverlay"
-import ViewProfileOverlay from "./ViewProfileOverlay"
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import ProfileCallOverlay from "./ProfileCallOverlay";
+import ViewProfileOverlay from "./ViewProfileOverlay";
 
 class Table extends Component {
-  state = { open: false, open2: false }
+  state = { open: false, open2: false };
 
   toggle = () => {
-    this.setState({ open: !this.state.open })
-  }
+    this.setState({ open: !this.state.open });
+  };
 
   toggle2 = () => {
-    this.setState({ open2: !this.state.open2 })
-  }
+    this.setState({ open2: !this.state.open2 });
+  };
 
   render() {
     return (
@@ -29,7 +29,7 @@ class Table extends Component {
           </tr>
           <tr className="table-body text-main hover-grey">
             <td className="text-blue bold">
-              <Link to="/admin/previous">+2348103153845</Link>
+              <Link to="/admin/profile-calls">+2348103153845</Link>
             </td>
             <td>
               Today<p className="text-light mt-5">12:03pm</p>
@@ -65,8 +65,8 @@ class Table extends Component {
         <ProfileCallOverlay open={this.state.open} toggle={this.toggle} />
         <ViewProfileOverlay open={this.state.open2} toggle={this.toggle2} />
       </table>
-    )
+    );
   }
 }
 
-export default Table
+export default Table;

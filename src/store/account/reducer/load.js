@@ -1,7 +1,7 @@
-import * as Actions from "../actions"
+import * as Actions from "../actions";
 
 function load(state, action) {
-  const { data, loading, message, status, type } = action
+  const { data, loading, message, status, type } = action;
 
   if (type === Actions.LOAD && status === true) {
     return {
@@ -15,7 +15,7 @@ function load(state, action) {
         email: data.me.email,
         mobile: data.me.mobile,
       },
-    }
+    };
   }
   if (type === Actions.LOAD && status === false) {
     return {
@@ -23,9 +23,9 @@ function load(state, action) {
       loading: state.loading.filter((text) => text !== loading),
       status: false,
       message,
-    }
+    };
   }
 
-  return null
+  return null;
 }
-export default load
+export default load;

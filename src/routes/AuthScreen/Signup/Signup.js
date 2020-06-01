@@ -1,19 +1,19 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import Button from "../../../components/Button/button"
-import AuthInput from "../../../components/Form/AuthInput"
-import Layout from "../../../components/AppHeader/Layout"
+import Button from "../../../components/Button/button";
+import AuthInput from "../../../components/Form/AuthInput";
+import Layout from "../../../components/AppHeader/Layout";
 
 class SignUp extends Component {
   continue = (e) => {
-    e.preventDefault()
-    this.props.nextStep()
-  }
+    const { nextStep } = this.props;
+    e.preventDefault();
+    nextStep();
+  };
 
   render() {
-    const { form, handleChange } = this.props
-    const { name, email, password, confirmPassword } = form
-
+    const { form, handleChange } = this.props;
+    const { name, email, password, confirmPassword } = form;
     return (
       <Layout {...this.props}>
         <div className="signup">
@@ -21,18 +21,14 @@ class SignUp extends Component {
             <h1 className="bold mb-45">Create your Account</h1>
             <form className="go-top">
               <AuthInput
-                className="field mb-50 div"
-                inputClass="auth-input"
-                labelClass="auth-lable"
+                className="field mb-50"
                 labelTitle="Business name"
                 name="name"
                 value={name}
                 onChange={handleChange}
               />
               <AuthInput
-                className="mb-50 div"
-                inputClass="auth-input"
-                labelClass="auth-lable"
+                className="mb-50"
                 labelTitle="Business email address"
                 name="email"
                 value={email}
@@ -41,20 +37,16 @@ class SignUp extends Component {
               />
               <div className="auth-password">
                 <AuthInput
-                  className="col-7 div"
-                  inputClass="auth-input"
-                  labelClass="auth-lable"
+                  className="col-7"
+                  type="password"
                   labelTitle="Password"
                   name="password"
                   value={password}
-                  type="password"
                   onChange={handleChange}
                 />
                 <AuthInput
                   type="confirm-password"
-                  className="col-7 div"
-                  inputClass="auth-input"
-                  labelClass="auth-lable"
+                  className="col-7"
                   labelTitle="Confirm Password"
                   name="confirmPassword"
                   passed={password === confirmPassword}
@@ -63,7 +55,7 @@ class SignUp extends Component {
                 />
               </div>
               <h6 className="lh-24 light text-light mb-32">
-                By clicking "Create Account" you agree to our{" "}
+                By clicking "Create Account" you agree to our
                 <span className="bold text-blue">Terms of Service</span>, and to
                 receive marketing communications from Recallo.
               </h6>
@@ -76,6 +68,11 @@ class SignUp extends Component {
                   <h5 className="bold">Create Account</h5>
                 </Button>
               </div>
+              {/* <AlertDialog
+                                open={request.feedback.for === authRequest.signupRequest}
+                                message={request.feedback.message}
+                                success={request.feedback.success}
+                            /> */}
               <hr />
               <h5 className="bold light text-light">Back to website</h5>
             </form>
@@ -106,8 +103,8 @@ class SignUp extends Component {
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default SignUp
+export default SignUp;
