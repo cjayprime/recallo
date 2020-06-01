@@ -1,6 +1,6 @@
 import React from "react";
 
-const Select = function (props) {
+const Select = function S(props) {
   const { value, className, onChange, name, options } = props;
 
   return (
