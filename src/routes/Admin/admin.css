@@ -366,6 +366,234 @@
   background-image: url(../../assets/img/ladyCall.png);
 }
 
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+}
+
+@media (min-width: 1281px){
+  
+  .signin-icon {
+    position: absolute;
+    right: 0px;
+    margin-top: -110px;
+    width: 65%;
+   /* width: 891px;*/
+    height: 660.92px;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/img/ladyCall.png);
+  }
+
+#SignInBreakLine{
+  margin-top: 45px;
+}
+
+  .signin-form {
+    margin-top: 13.5px;
+    margin-left: 95px;
+    width: 30%;
+  }
+  #BackToSite{
+    margin-top: 45px;
+  }
+
+  .signup {
+    margin-top: 98px;
+    margin-left: 94px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .signup-button {
+    background: var(--text-color);
+    color: var(--text-white);
+    padding: 14px 110px;
+    transition: all 0.3s ease-in;
+    margin-top: -10px;
+  }
+
+  .go-top{
+    margin-top: -13px;
+  }
+
+  #CreateText{
+    margin-top: -12px;
+  }
+
+  #lineBreak{
+    margin-top: 16px;
+  }
+
+  #BackToSiteCreate{
+    margin-top: -17px;
+  }
+
+  .benefits-image {
+    position: absolute;
+    background-image: url(../../assets/img/createacntIcon.png);
+    height: 380px;
+    width: 405.68px;
+    margin-top: -245px;
+    right: 0px;
+    background-repeat: no-repeat;
+  }
+
+  .mark-Sign {
+    position: absolute;
+    background-image: url(../../assets/img/markSign.PNG);
+    height: 37px;
+    width: 45px;
+    margin-top: -5px;
+    margin-right: 570px;
+    right: 0px;
+    background-repeat: no-repeat;
+  }
+  .signup-benefits {
+    width: 50%;
+  }
+  .Link{
+    color: #336799;
+   text-decoration: none;
+  }
+
+  #side-text{
+    margin-left: 35px;
+  }
+}
+/*Medium View*/
+@media (min-width: 1025px) and (max-width: 1280px){
+
+.signin-form {
+  margin-top: 1px;
+  margin-left: 95px;
+  width: 35%;
+}
+
+.field{
+  margin-top: -30px;
+}
+
+#BackToSite{
+  margin-top: 40px;
+}
+
+#SignInBreakLine{
+  margin-top: 40px;
+}
+
+.signup {
+  margin-top: 85px;
+  margin-left: 94px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.signup-button {
+  background: var(--text-color);
+  color: var(--text-white);
+  padding: 14px 100px;
+  transition: all 0.3s ease-in;
+  margin-top: -10px;
+}
+
+#CreateText{
+  margin-top: -25px;
+}
+
+#lineBreak{
+  margin-top: 13px;
+}
+
+#BackToSiteCreate{
+  margin-top: -26px;
+}
+
+.go-top{
+  margin-top: -18px;
+}
+
+.signup-benefits {
+  width: 50%;
+}
+
+.mark-Sign {
+  position: absolute;
+  background-image: url(../../assets/img/markSign.PNG);
+  height: 37px;
+  width: 45px;
+  margin-top: -5px;
+  margin-right: 520px;
+  right: 0px;
+  background-repeat: no-repeat;
+}
+
+.benefits-image {
+  position: absolute;
+  background-image: url(../../assets/img/createacntIcon.png);
+  height: 380px;
+  width: 405.68px;
+  margin-top: -240px;
+  right: 0px;
+  background-repeat: no-repeat;
+}
+
+.Link{
+  color: #336799;
+ text-decoration: none;
+}
+
+#side-text{
+  margin-left: 20px;
+}
+
+
+
+.signin-icon {
+  position: absolute;
+  right: 0px;
+  margin-top: -125px;
+  width: 62%;
+   /* width: 831px;*/
+  height: 660.92px;
+  background-repeat: no-repeat;
+  background-image: url(../../assets/img/ladyCall.png);
+}
+}
+
+/*Ipad Pro and Tab view*/
+@media (min-width: 768px) and (max-width: 1024px){
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+  
+
+}
+/*Tab view*/
+@media (min-width: 481px) and (max-width: 767px){
+ 
+ 
+}
+
+/*SMALL SCREEN*/
+
+@media (min-width: 300px) and (max-width: 399px){
+
+ 
+}
+
+
 .login-button {
   background: var(--text-color);
   color: var(--text-white);

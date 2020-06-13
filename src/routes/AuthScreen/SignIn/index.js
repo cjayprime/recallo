@@ -40,7 +40,7 @@ export default class SignIn extends Component {
         <div className="signin">
           <div className="signin-form form">
             <h1 className="bold mb-16">Log in</h1>
-            <h3 className="light text-light">
+            <h3 id="h3" className="light text-light">
               Please enter your email address and password
             </h3>
             <form onSubmit={this.signin}>
@@ -79,9 +79,9 @@ export default class SignIn extends Component {
                 </Button>
               </div>
             </form>
-            <hr className="signin-hr" />
+            <hr id="SignInBreakLine"  className="signin-hr" />
             <div>
-              <h5 className="light text-light bk-2-web">Back to website</h5>
+              <h5 id="BackToSite" className="light text-light bk-2-web">Back to website</h5>
             </div>
           </div>
           <div className="signin-icon" />
