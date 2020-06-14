@@ -367,20 +367,6 @@
 }
 
 
-/* ----------- Non-Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-}
-
-/* ----------- Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) { 
-}
 
 @media (min-width: 1281px){
   
@@ -449,16 +435,21 @@
     background-repeat: no-repeat;
   }
 
-  .mark-Sign {
+  .markSign {
+    background-color:#FF6B00;
+    color:white;
+   font-size: 0.8rem;
+    padding:2px 5px;
+    border-radius:50%;
+    font-family: bold;
+    margin-top: 2px;
     position: absolute;
-    background-image: url(../../assets/img/markSign.PNG);
-    height: 37px;
-    width: 45px;
-    margin-top: -5px;
-    margin-right: 570px;
-    right: 0px;
-    background-repeat: no-repeat;
   }
+
+  #side-text{
+    margin-left: 30px;
+  }
+
   .signup-benefits {
     width: 50%;
   }
@@ -467,9 +458,7 @@
    text-decoration: none;
   }
 
-  #side-text{
-    margin-left: 35px;
-  }
+  
 }
 /*Medium View*/
 @media (min-width: 1025px) and (max-width: 1280px){
@@ -527,15 +516,20 @@
   width: 50%;
 }
 
-.mark-Sign {
+.markSign {
+  background-color:#FF6B00;
+  color:white;
+ font-size: 0.8rem;
+  padding:2px 5px;
+  border-radius:50%;
+  font-family: bold;
+  margin-top: 2px;
   position: absolute;
-  background-image: url(../../assets/img/markSign.PNG);
-  height: 37px;
-  width: 45px;
-  margin-top: -5px;
-  margin-right: 520px;
-  right: 0px;
-  background-repeat: no-repeat;
+}
+
+
+#side-text{
+  margin-left: 30px;
 }
 
 .benefits-image {
@@ -553,10 +547,6 @@
  text-decoration: none;
 }
 
-#side-text{
-  margin-left: 20px;
-}
-
 
 
 .signin-icon {
@@ -569,7 +559,7 @@
   background-repeat: no-repeat;
   background-image: url(../../assets/img/ladyCall.png);
 }
-}
+} 
 
 /*Ipad Pro and Tab view*/
 @media (min-width: 768px) and (max-width: 1024px){
