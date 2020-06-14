@@ -373,7 +373,7 @@
   .signin-icon {
     position: absolute;
     right: 0px;
-    margin-top: -110px;
+    margin-top: -120px;
     width: 65%;
    /* width: 891px;*/
     height: 660.92px;
@@ -381,10 +381,11 @@
     background-image: url(../../assets/img/ladyCall.png);
   }
 
-#SignInBreakLine{
-  margin-top: 45px;
-}
 
+
+.field{
+ margin-top: -20px;
+}
   .signin-form {
     margin-top: 13.5px;
     margin-left: 95px;
@@ -417,7 +418,7 @@
     margin-top: -12px;
   }
 
-  #lineBreak{
+  .signup hr{
     margin-top: 16px;
   }
 
@@ -491,7 +492,7 @@
 .signup-button {
   background: var(--text-color);
   color: var(--text-white);
-  padding: 14px 100px;
+  padding: 14px 90px;
   transition: all 0.3s ease-in;
   margin-top: -10px;
 }
@@ -500,7 +501,7 @@
   margin-top: -25px;
 }
 
-#lineBreak{
+.signup hr{
   margin-top: 13px;
 }
 
@@ -513,7 +514,7 @@
 }
 
 .signup-benefits {
-  width: 50%;
+  width: 55%;
 }
 
 .markSign {
@@ -547,22 +548,130 @@
  text-decoration: none;
 }
 
-
-
-.signin-icon {
-  position: absolute;
-  right: 0px;
-  margin-top: -125px;
-  width: 62%;
-   /* width: 831px;*/
-  height: 660.92px;
-  background-repeat: no-repeat;
-  background-image: url(../../assets/img/ladyCall.png);
+.signup h1{
+  font-size: 35px;
+/*  color: green; */
+  margin-top: 5px;
 }
+
+
+
+  .signin-icon {
+    position: absolute;
+    right: 0px;
+    margin-top: -125px;
+    width: 62%;
+    /* width: 831px;*/
+    height: 660.92px;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/img/ladyCall.png);
+  }
 } 
 
 /*Ipad Pro and Tab view*/
 @media (min-width: 768px) and (max-width: 1024px){
+  .field{
+    margin-top: -40px;
+   }
+     .signin-form {
+       margin-top: 13.5px;
+       margin-left: 95px;
+       width: 35%;
+     }
+     #BackToSite{
+       margin-top: 35px;
+     }
+
+     .signin-icon {
+      position: absolute;
+      right: 0px;
+      margin-top: -125px;
+      
+      width: 531px;
+      height: 660.92px;
+      background-repeat: no-repeat;
+      background-image: url(../../assets/img/ladyCall.png);
+    }
+   
+     .login-button {
+       background: var(--text-color);
+       color: var(--text-white);
+       padding: 4px 0 2px 44px;
+       transition: all 0.3s ease-in;
+     }
+
+     
+.markSign {
+  background-color:#FF6B00;
+  color:white;
+ font-size: 0.8rem;
+  padding:2px 5px;
+  border-radius:50%;
+  font-family: bold;
+  margin-top: 2px;
+  position: absolute;
+}
+
+
+#side-text{
+  margin-left: 30px;
+}
+  .signup h1{
+    font-size: 30px;
+  /*  color: red; */
+    margin-top: -55px;
+  }
+.go-top{
+  margin-top: -15px;
+}
+
+.signup h6{
+  margin-top: -15px;
+}
+
+.signup-button {
+  background: var(--text-color);
+  color: var(--text-white);
+  padding: 10px 80px;
+  transition: all 0.3s ease-in;
+  margin-top: -10px;
+}
+
+#BackToSiteCreate{
+  margin-top: -26px;
+}
+
+.signup hr{
+  margin-top: 25px;
+}
+
+.signup-benefits {
+  width: 53%;
+}
+
+.benefits-card{
+  margin-top: -55px;
+}
+
+.Link{
+  color: #336799;
+ text-decoration: none;
+ font-size: 14px;
+}
+
+.benefits-image {
+  position: absolute;
+  background-image: url(../../assets/img/createacntIcon.png);
+  height: 310px;
+  width: 360.68px;
+  margin-top: -215px;
+  right: 0px;
+  background-repeat: no-repeat;
+}
+
+#subtext{
+  margin-top: -5px;
+}
 
 }
 
@@ -573,13 +682,229 @@
 /*Tab view*/
 @media (min-width: 481px) and (max-width: 767px){
  
- 
+  .signup h1{
+    font-size: 30px;
+  /*  color: yellow; */
+    margin-top: -55px;
+  }
+
+  
+
+  .signup-form {
+    width: 100%;
+  }
+
+  .signin-icon {
+   display: none;
+  }
+
+.field{
+ margin-top: -40px;
+}
+  .signin-form {
+    margin-top: 13.5px;
+    margin-left: 95px;
+    width: 60%;
+  }
+  #BackToSite{
+    margin-top: 35px;
+  }
+
+  .login-button {
+    background: var(--text-color);
+    color: var(--text-white);
+    padding: 4px 0 2px 44px;
+    transition: all 0.3s ease-in;
+  }
+
+  .signup {
+    margin-left: 94px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .signup-button {
+    background: var(--text-color);
+    color: var(--text-white);
+    padding: 9px 120px;
+    transition: all 0.3s ease-in;
+    margin-top: -10px;
+  }
+
+  .go-top{
+    margin-top: -13px;
+  }
+
+  #CreateText{
+    margin-top: -12px;
+  }
+
+  .signup hr{
+    margin-top: 16px;
+  }
+
+  #BackToSiteCreate{
+    margin-top: -17px;
+  }
+
+  .benefits-image {
+    position: absolute;
+    background-image: url(../../assets/img/createacntIcon.png);
+    height: 280px;
+    width: 405.68px;
+    margin-top: -180px;
+    right: 0px;
+    background-repeat: no-repeat;
+  }
+
+  .markSign {
+    background-color:#FF6B00;
+    color:white;
+   font-size: 0.8rem;
+    padding:2px 5px;
+    border-radius:50%;
+    font-family: bold;
+    margin-top: 2px;
+    position: absolute;
+  }
+
+  #side-text{
+    margin-left: 30px;
+  }
+
+  .signup-benefits {
+    width: 100%;
+  }
+  .Link{
+    color: #336799;
+   text-decoration: none;
+  }
+
+  .benefits-card{
+    margin-top: 505px;
+    margin-left: -310px;
+    width: 330px;
+  }
+
 }
 
 /*SMALL SCREEN*/
 
 @media (min-width: 300px) and (max-width: 399px){
 
+  .signup h1{
+    font-size: 30px;
+   /* color: purple; */
+    margin-top: -55px;
+  }
+
+  .signin h1{
+    font-size: 30px;
+   /* color: purple; */
+    text-align: center;
+  }
+
+  .signin h3{
+text-align: center;
+  }
+ 
+
+  .signup-form {
+    width: 100%;
+  }
+
+  .signin-icon {
+   display: none;
+  }
+
+.field{
+ margin-top: -40px;
+}
+  .signin-form {
+    margin-top: 13.5px;
+    margin-left: 25px;
+    width: 80%;
+  }
+  #BackToSite{
+    margin-top: 35px;
+  }
+
+  .login-button {
+ width: 280px;
+  }
+
+  #login{
+    margin-left: -80px;
+  }
+
+  .signup {
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .signup-button {
+    background: var(--text-color);
+    color: var(--text-white);
+    padding: 9px 120px;
+    transition: all 0.3s ease-in;
+    margin-top: -10px;
+  }
+
+  .go-top{
+    margin-top: 83px;
+  }
+
+  #CreateText{
+    margin-top: -12px;
+  }
+
+  .signup hr{
+    margin-top: 40px;
+  }
+
+  #BackToSiteCreate{
+    margin-top: -10px;
+  }
+
+  .benefits-image {
+    position: absolute;
+    background-image: url(../../assets/img/createacntIcon.png);
+    height: 280px;
+    width: 405.68px;
+    margin-top: -180px;
+    right: 0px;
+    background-repeat: no-repeat;
+  }
+
+  .markSign {
+    background-color:#FF6B00;
+    color:white;
+   font-size: 0.8rem;
+    padding:2px 5px;
+    border-radius:50%;
+    font-family: bold;
+    margin-top: 2px;
+    position: absolute;
+  }
+
+  #side-text{
+    margin-left: 30px;
+  }
+
+  .signup-benefits {
+    width: 100%;
+  }
+  .Link{
+    color: #336799;
+   text-decoration: none;
+  }
+
+  .benefits-card{
+    margin-top: 570px;
+    margin-left: -310px;
+    width: 330px;
+  }
  
 }
 
