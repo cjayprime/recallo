@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 import Button from "../../../components/Button/button";
 import AuthInput from "../../../components/Form/AuthInput";
@@ -21,14 +22,14 @@ class SignUp extends Component {
             <h1 className="bold mb-45">Create your Account</h1>
             <form className="go-top">
               <AuthInput
-                className="field mb-50"
+                className="field mb-40"
                 labelTitle="Business name"
                 name="name"
                 value={name}
                 onChange={handleChange}
               />
               <AuthInput
-                className="mb-50"
+                className="mb-40"
                 labelTitle="Business email address"
                 name="email"
                 value={email}
@@ -74,30 +75,44 @@ class SignUp extends Component {
                                 success={request.feedback.success}
                             /> */}
               <hr />
-              <h5 className="bold light text-light">Back to website</h5>
+              <h5 id="BackToSiteCreate" className="bold light text-light">Back to website</h5>
             </form>
           </div>
           <div className="signup-benefits">
             <div className="benefits-card">
               <h5 className="bold text-main mb-16">What you will enjoy</h5>
               <div className="benefits-body">
-                <h5 className="light text-light mb-16">
-                  Efficiently reconceptualize innovative ROI without holistic
+             
+              <span className="markSign">✔</span>  <h5 id="side-text"  className="light text-light mb-16"> 
+                 Efficiently reconceptualize innovative ROI without holistic
                   information. Objectively cultivate.
                 </h5>
-                <h5 className="light text-light mb-16">
-                  Appropriately e-enable business "outside the box" thinking and
+               
+                <span className="markSign">✔</span> <h5 id="side-text" className="light text-light mb-16">
+                   Appropriately e-enable business "outside the box" thinking and
                   distributed.
                 </h5>
-                <h5 className="light text-light">
+                
+                <span className="markSign">✔</span><h5 id="side-text" className="light text-light">
                   Dramatically extend collaborative ROI vis-a-vis parallel
                   collaboration and idea-sharing. Intrinsicly.
                 </h5>
               </div>
               <hr />
-              <h5 className="text-main bold mb-16">Have more questions?</h5>
-              <h5 className="bold text-blue mb-16">Speak to us on phone</h5>
-              <h5 className="bold text-blue">Frequently Asked Questions</h5>
+              <h5 id="subtext" className="text-main bold mb-16">
+                <Link className="Link" to="/">
+                Have more questions?
+                </Link>
+                </h5>
+              <h5 id="subtext" className="bold text-blue mb-16">
+              <Link className="Link" to="/">
+                Frequently Asked QuestionsSpeak to us on phone
+                </Link>
+                </h5>
+              <h5 id="subtext" className="bold text-blue">
+                
+              <Link className="Link" to="/">
+              Frequently Asked Questions</Link></h5>
             </div>
             <div className="benefits-image" />
           </div>

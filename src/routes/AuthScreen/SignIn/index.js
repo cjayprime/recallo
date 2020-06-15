@@ -74,14 +74,14 @@ export default class SignIn extends Component {
               </div>
               <div className="mt-34">
                 <Button type="submit" className="login-button br-8">
-                  <h5 className="bold">login</h5>
+                  <h5 id="login" className="bold">login</h5>
                   <img src={arrowright} alt="arrow right icon" />
                 </Button>
               </div>
             </form>
-            <hr className="signin-hr" />
+            <hr id="SignInBreakLine"  className="signin-hr" />
             <div>
-              <h5 className="light text-light bk-2-web">Back to website</h5>
+              <h5 id="BackToSite" className="light text-light bk-2-web">Back to website</h5>
             </div>
           </div>
           <div className="signin-icon" />
