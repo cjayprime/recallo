@@ -1,7 +1,10 @@
 .sidenav-body {
   padding: 104px 32.5px 0;
   overflow-y: scroll;
+  width: 100%;
 }
+
+
 .sidenav-body::-webkit-scrollbar {
   display: none;
 }
@@ -23,6 +26,7 @@
   height: 76px;
   border-radius: 50%;
   background: #336799;
+  margin-top: -100px;
 }
 
 .logo-text {
@@ -93,4 +97,8 @@
   margin-bottom: 54px;
   text-align: center;
   cursor: pointer;
+}
+
+#sidebar-text{
+  font-size: 14px;
 }
