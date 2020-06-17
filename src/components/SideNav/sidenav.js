@@ -30,8 +30,8 @@ class Sidenav extends Component {
             <div className="business-logo mb-23">
               <h1 className="logo-text">AM</h1>
             </div>
-            <h3 className="text-blue bold mb-8">
-              {/* AutoMedics Africa Limited */}
+            <h3 className="text-blue bold mb-8" id="sidebar-text">
+               AutoMedics Africa Limited 
             </h3>
             <p className="light text-light">2 agents license</p>
             <Link to="/admin/settings" className="mt-24">
@@ -44,7 +44,7 @@ class Sidenav extends Component {
             </Link>
           </div>
           <ul className="sidenav-list">
-            {routes.private.sidebar.map((prop, key) => {
+          {/*  {routes.private.sidebar.map((prop, key) => {
               if (prop.redirect) return null;
               return (
                 <li
@@ -65,8 +65,36 @@ class Sidenav extends Component {
                   </Link>
                 </li>
               );
-            })}
+            })} 
+            */}
           </ul>
+          <Link to="/Home" className="Link">
+                <h5 className="sidebar-text">
+                  <div className="icon-home" />
+                    Home
+                </h5>
+              </Link> 
+
+              <Link to="/calls" className="Link">
+                <h5 className="sidebar-text">
+                  <div className="icon-call" />
+                    Calls
+                </h5>
+              </Link> 
+
+              <Link to="/Personnel" className="Link">
+                <h5 className="sidebar-text">
+                  <div className="icon-personnel" />
+                    Personnel
+                </h5>
+              </Link> 
+
+              <Link to="/Personnel" className="Link">
+                <h5 className="sidebar-text">
+                  <div className="icon-analytics" />
+                    Analytics
+                </h5>
+              </Link>
           <hr />
           <h6 className="logout text-blue light" onClick={this.signout}>
             Logout

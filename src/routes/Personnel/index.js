@@ -6,6 +6,9 @@ import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 import Table from "./table";
 import DepartmentOverlay from "./DepartmentOverlay";
 import PersonnelOverlay from "./AddPersonnelOverlay";
+import SideNav from "../../components/SideNav/sidenav";
+import Header from "../../components/Header/header";
+
 
 class Personnel extends Component {
   state = { open: false, open2: false };
@@ -23,7 +26,13 @@ class Personnel extends Component {
   render() {
     const { open, open2 } = this.state;
     return (
-      <div className="screen-padding">
+      <>
+      <div>
+
+      <SideNav />
+      </div>
+      
+      <div className="screen-padding" style={{width:1020, marginLeft:320}}>
         <Titlebar
           heading="Personnel"
           buttons={{
@@ -56,6 +65,7 @@ class Personnel extends Component {
         <PersonnelOverlay open={open2} toggle={this.toggle2} />
         <Table />
       </div>
+    </>
     );
   }
 }

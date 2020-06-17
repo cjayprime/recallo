@@ -1,0 +1,175 @@
+
+
+@media (min-width: 1281px){
+
+    #rowTwo{
+        margin-left: -250px;
+    }
+
+    #rowOne{
+        margin-left: -250px;
+        width:1000px;
+    }
+
+    .graphHeader{
+        margin-left: 70px;
+        margin-top: -40px;
+    }
+
+    .graphHeader span{
+        padding: 0px 10px;
+        font-size: 12px;
+    }
+
+    #dotting{
+        color:#FF6B00;
+        font-size: 60px;
+    }
+
+
+    .graph {
+        position: absolute;
+        right: 0px;
+        left: 850px;
+        margin-top: 40px;
+      width: 891px;
+      height: 660.92px;
+        background-repeat: no-repeat;
+        background-image: url(../../assets/img/graph.PNG);
+      }
+
+
+      .icon-home {
+        position: absolute;
+        right: 0px;
+      left: 80px;
+       width: 50px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-image: url(../../assets/img/iconhome.PNG);
+      }
+
+      .icon-call {
+        position: absolute;
+        right: 0px;
+      left: 80px;
+       width: 50px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-image: url(../../assets/img/iconCall.PNG);
+      }
+
+      .icon-personnel {
+        position: absolute;
+        right: 0px;
+      left: 80px;
+       width: 50px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-image: url(../../assets/img/iconPersonnel.PNG);
+      }
+
+      .icon-analytics {
+        position: absolute;
+        right: 0px;
+      left: 80px;
+       width: 50px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-image: url(../../assets/img/iconAnalytics.PNG);
+      }
+
+      .sidebar-text{
+        color: #384364;
+        margin-top: 20px;
+        margin-left: 105px;
+        font-size: 14px;
+    }
+  
+    #graph{
+        color: red;
+    }
+
+    .sidebar-title{
+        color: #336799;
+        text-align: center;
+        margin-top: 85px;
+        opacity: 1;
+        font-size: 20px;
+    }
+
+    .agent-license{
+        font-size: 14px;
+        color: #777777;
+        opacity: 1;
+    }
+
+    .Link{
+        text-decoration: none;
+        color: #336799;
+        font-size: 14px;
+    }
+
+    .home-button {
+        background: white;
+        color: var(--text-white);
+        padding: 10px 25px;
+        transition: all 0.08s ease-in;
+        margin-top: 13px;
+        border-radius: 50px;
+      }
+
+      .home-button:hover {
+        background-color:#FF6B00;
+      }
+
+      .bold{
+          font-size: 11px;
+          color: black;
+      }
+
+      .bold:hover{
+        font-size: 11px;
+        transition: all 0.05s ease-in;
+        color: white;
+    }
+
+    .text-blue{
+        color: #336799;
+        font-size: 12px;
+    }
+
+    .text-blue:hover{
+        color:#FF6B00;
+        font-size: 12px;
+    }
+
+    .text-light{
+        color: #777777;
+
+    }
+
+    #textHover{
+        font-size: 14px;
+    }
+
+    #textHover:hover{
+        color:#FF6B00;
+    }
+
+    ul li{
+        padding: 4px 0px;
+        
+    }
+
+    
+
+    .text-main{
+        font-size: 14px;
+    }
+
+      .horizontal-hr{
+          margin-top: 100px;
+      }
+    
+  }
