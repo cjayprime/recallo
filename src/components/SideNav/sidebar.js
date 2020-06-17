@@ -8,7 +8,7 @@ import LayoutPage from "../../components/AppPageHeader/LayoutPage";
 
 import "./sidenav.css";
 
-class Sidenav extends Component {
+class Sidebar extends Component {
   signout = (e) => {
     e.preventDefault();
     const { history, signout } = this.props;
@@ -28,8 +28,7 @@ class Sidenav extends Component {
       
       <aside className="sidenav">
        {/* {header && <Header className="sidenav-header" />}*/}
-         <Header className="sidenav-header" />
-        <div className="sidenav-body">
+        <div className="sidebar-body">
           <div className="details">
             <div className="business-logo mb-23">
               <h1 className="logo-text">AM</h1>
@@ -109,4 +108,4 @@ class Sidenav extends Component {
   }
 }
 
-export default Sidenav;
+export default Sidebar;

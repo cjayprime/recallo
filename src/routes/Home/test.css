@@ -171,5 +171,30 @@
       .horizontal-hr{
           margin-top: 100px;
       }
+
+      .label-active{
+        color:green;
+        padding: 8px 17px;
+        background-color: lightcyan;
+        border-radius: 35%;
+      }
+
+      .label-inactive{
+        color:black;
+        padding: 8px 17px;
+        background-color: rgb(217, 224, 224);
+        border-radius: 35%;
+      }
+
+      .tableIcon {
+        position: absolute;
+        right: 0px;
+      left: 380px;
+      margin-top: -4px;
+       width: 50px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-image: url(../../assets/img/tableIcon.PNG);
+      }
     
   }
