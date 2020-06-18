@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --save-dev babel-eslint eslint-config-standard eslint-config-standard-react eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node eslint-plugin-react
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --dev babel-eslint eslint-config-standard eslint-config-standard-react eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node eslint-plugin-react
 
 PATH: 
   C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Amazon\AWSCLIV2\;C:\wamp64\bin\postgresql\postgresql12.2.4\bin\;C:\wamp64\bin\postgresql\postgresql12.2.4\lib\;C:\Program Files (x86)\OpenSSH\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\NNA-PC\AppData\Local\Android\Sdk\platform-tools;C:\Users\NNA-PC\AppData\Roaming\npm;C:\Users\NNA-PC\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\NNA-PC\AppData\Local\Yarn\bin;C:\wamp64\bin\php\php7.3.1;
