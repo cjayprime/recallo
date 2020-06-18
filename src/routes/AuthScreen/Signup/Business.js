@@ -42,11 +42,11 @@ class BusinessInformation extends Component {
               <h2 className="light text-main">Business Information</h2>
               <div className="row-direction align-center">
                 <p className="text-main bold mr-8">2 of 3</p>
-                <p className="row-direction">
+                <div className="row-direction">
                   <p className="b-bar-1" />
                   <p className="b-bar-2" />
                   <p className="b-bar-3" />
-                </p>
+                </div>
               </div>
             </div>
             <hr />
