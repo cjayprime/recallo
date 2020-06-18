@@ -32,7 +32,7 @@ class Personnel extends Component {
       <SideNav />
       </div>
       
-      <div className="screen-padding" style={{width:1020, marginLeft:320}}>
+      <div className="screen-padding">
         <Titlebar
           heading="Personnel"
           buttons={{

@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 import Button from "../../components/Button/button";
 import MenuItem from "../../components/MenuItem/menuItem";
-
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
+import SideNav from "../../components/SideNav/sidenav";
+import Header from "../../components/Header/header";
 
 class VoiceNotes extends Component {
   state = { open: false };
@@ -16,12 +17,18 @@ class VoiceNotes extends Component {
 
   render() {
     return (
+      <>
+       <div>
+
+       <SideNav />
+      </div>
+
       <div className="screen-padding">
         <div className="title-bar">
           <div className="title">
             <h2>Voicenotes</h2>
           </div>
-          <div>
+          <div className="row">
             <Link to="/admin/calls">
               <Button
                 background="#F5F6FA"
@@ -112,6 +119,7 @@ class VoiceNotes extends Component {
           </tbody>
         </table>
       </div>
+      </>
     );
   }
 }
