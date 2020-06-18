@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dd2e9804.chunk.css",
+    "main.js": "/static/js/main.cd875e61.chunk.js",
+    "main.js.map": "/static/js/main.cd875e61.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.16cb3c5c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.16cb3c5c.js.map",
+    "static/js/2.33de1665.chunk.js": "/static/js/2.33de1665.chunk.js",
+    "static/js/2.33de1665.chunk.js.map": "/static/js/2.33de1665.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.29bb94805a7e5f5505686bb25929086c.js": "/precache-manifest.29bb94805a7e5f5505686bb25929086c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.dd2e9804.chunk.css.map": "/static/css/main.dd2e9804.chunk.css.map",
+    "static/js/2.33de1665.chunk.js.LICENSE.txt": "/static/js/2.33de1665.chunk.js.LICENSE.txt",
+    "static/media/main.css": "/static/media/SFProDisplay-Regular.d09549c1.ttf",
+    "static/media/bell.svg": "/static/media/bell.8881a410.svg",
+    "static/media/close.a404a1cd.svg": "/static/media/close.a404a1cd.svg",
+    "static/media/contactbook.svg": "/static/media/contactbook.ba101104.svg",
+    "static/media/admin.css": "/static/media/ladyCall.4c2631bd.png",
+    "static/media/editPen.svg": "/static/media/editPen.6834dce9.svg",
+    "static/media/test.css": "/static/media/tableIcon.4e2c41b7.PNG",
+    "static/media/homeIcon.svg": "/static/media/homeIcon.6c722b2d.svg",
+    "static/media/paymentbadge.png": "/static/media/paymentbadge.d128e62f.png",
+    "static/media/search.d7c40db7.svg": "/static/media/search.d7c40db7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.16cb3c5c.js",
+    "static/js/2.33de1665.chunk.js",
+    "static/css/main.dd2e9804.chunk.css",
+    "static/js/main.cd875e61.chunk.js"
+  ]
+}
