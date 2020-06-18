@@ -102,3 +102,117 @@
 #sidebar-text{
   font-size: 14px;
 }
+
+@media (min-width: 1281px){
+  .sidenav-body {
+    padding: 104px 32.5px 0;
+    margin-top: 110px;
+    overflow-y: scroll;
+    width: 100%;
+  }
+
+  .sidebar-body {
+    padding: 104px 32.5px 0;
+    overflow-y: scroll;
+    width: 100%;
+  }
+  
+  
+  .sidenav-body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .sidenav-body hr {
+    border: 1px solid #dddddd;
+    height: 0px;
+    margin: 80px 0 38.5px;
+  }
+  
+  .details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .business-logo {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: #336799;
+    margin-top: -100px;
+  }
+  
+  .logo-text {
+    font: Bold 31px/80px Barlow;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .account-button {
+    transition: 0.3s all ease-in-out;
+    color: var(--main-color);
+    background: var(--text-white);
+    border: 1px solid #dddddd;
+  }
+  
+  .sidenav-list {
+    margin-top: 41px;
+  }
+  
+  .sidenav-list-item {
+    position: relative;
+    padding: 9px 0px;
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: #384364;
+    letter-spacing: 0;
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 48px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .sidenav-list-item:hover {
+    color: var(--hover-color);
+  }
+  
+  .sidenav-list-link a {
+    text-decoration: none;
+  }
+  
+  .sidenav-list-icon {
+    font-size: 18px;
+    line-height: 18px;
+    margin-right: 31px;
+    margin-left: 19px;
+  }
+  
+  .sidenav-list-item h5 {
+    margin-right: 50px;
+  }
+  
+  .sidenav .sidenav-list li.active > a:not([data-toggle="collapse"]):before {
+    content: "";
+    position: absolute;
+    background: #eee;
+    border-radius: 28px;
+    padding: 24px 126px;
+    z-index: -1;
+  }
+  
+  .logout {
+    margin-bottom: 54px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  #sidebar-text{
+    font-size: 14px;
+  }
+}

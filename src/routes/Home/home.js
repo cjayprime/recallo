@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
 import "./test.css";
-
-import Header from "../../components/Header/header";
+import LayoutPage from "../../components/AppPageHeader/LayoutPage";
 import MenuItem from "../../components/MenuItem/menuItem";
-import SideNav from "../../components/SideNav/sidenav";
+import SideBar from "../../components/SideNav/sidebar";
 import TotalCalls from "./TotalCalls";
 import TotalCallsAnswered from "./TotalCallsAnswered";
 import ProfileVoiceNotes from "./ProfileVoicenotes";
 import VoiceNotes from "./VoiceNotes";
 import DroppedCalls from "./DroppedCalls";
 import MissedCalls from "./MissedCalls";
+
 
 
 
@@ -39,13 +39,13 @@ class Home extends Component {
     const { active } = this.state;
 
     return (
-      <>
-        <Header />
+      <LayoutPage {...this.props}>
+       
         <div className="screen-padding container background-grey height mt-80">
         
         <div className="row">
         <div className="col-2">
-           <SideNav />
+           <SideBar />
         </div> 
 
         <div className="col-10">
@@ -176,7 +176,7 @@ class Home extends Component {
 
           </div>
         </div>
-      </>
+      </LayoutPage>
     );
   }
 }

@@ -8,6 +8,7 @@ class Table extends Component {
         <tbody>
           <tr className="background-grey text-light table-head hover-grey">
             <td />
+            
             <td>First Name</td>
             <td>Last Name</td>
             <td>Email Address</td>
@@ -18,30 +19,40 @@ class Table extends Component {
           </tr>
           <tr className="table-body text-main hover-grey">
             <td className="text-blue bold" />
-            <td>Andrew</td>
+            
+            <td><div className="tableIcon" />Andrew</td>
             <td>Biodun</td>
             <td>andrewb@recallo.services</td>
             <td>Unspecified</td>
-            <td>
-              <label for="active" className="label yellow bold">Active</label>
-            </td>
+            
             <td>+2348051113453</td>
+
+            <td>
+              {/* <label for="active" className="label-inactive">Active</label>*/}
+              <p className="label-active">Active</p>
+            </td>
             <td className="text-blue bold cursor">Edit</td>
           </tr>
           <tr className="table-body text-main hover-grey">
             <td className="text-blue bold" />
-            <td>Andrew</td>
+            <td>  <div className="tableIcon" /> Andrew</td>
             <td>Biodun</td>
             <td>andrewb@recallo.services</td>
             <td>Unspecified</td>
-            <td>
-              <label for="active" className="label yellow bold">Active</label>
-            </td>
+           
             <td>+2348051113453</td>
+            <td>
+              {/*<label for="inactive" className="label-inactive">Inactive</label>*/}
+              <p className="label-inactive">Inactive</p>
+
+            </td>
             <td className="text-blue bold cursor">Edit</td>
           </tr>
         </tbody>
+       
       </table>
+
+      
     );
   }
 }
