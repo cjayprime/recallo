@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 import MenuItem from "../../components/MenuItem/menuItem";
 import arrowLeft from "../../assets/img/arrow-left.png";
-
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
+import SideNav from "../../components/SideNav/sidenav";
+import Header from "../../components/Header/header";
 
 class ProfileCall extends Component {
   goBack = () => {
@@ -14,25 +15,28 @@ class ProfileCall extends Component {
   render() {
     return (
       <>
-        <div className="previous-header mb-32">
+       <div>
+          <SideNav />
+        </div>
+        <div className="previous-header mb-0">
           <div className="callID">
             <p className="light mb-8">
               <span className="text-blue mr-8">Calls</span>>
               <span className="ml-8">Caller ID</span>
             </p>
-            <h2 className="bold text-main">+2348051113453</h2>
+            <h2 id="profCallHeader"  className="bold text-main">+2348051113453</h2>
           </div>
           <div className="callID-history">
             <div>
-              <h3 className="bold mb-4 text-main">12</h3>
+              <h3 id="profCallHeader" className="bold mb-4 text-main">12</h3>
               <p className="light text-light">Previous calls</p>
             </div>
             <div>
-              <h3 className="bold mb-4 text-main">4.3 mins</h3>
+              <h3 id="profCallHeader" className="bold mb-4 text-main">4.3 mins</h3>
               <p className="light text-light">Average call time</p>
             </div>
             <div>
-              <h3 className="bold mb-4 text-main">1.2 mins</h3>
+              <h3 id="profCallHeader" className="bold mb-4 text-main">1.2 mins</h3>
               <p className="light text-light">Average wait time</p>
             </div>
             <div>
@@ -47,7 +51,7 @@ class ProfileCall extends Component {
           </div>
         </div>
         <div className="screen-padding previous">
-          <h2 className="bold text-main pb-32">Previous calls</h2>
+          <h2 id="profCallHeader" className="bold text-main">Previous calls</h2><br/>
           <hr />
           <div className="menu-bar ptb-20">
             <div>
@@ -110,7 +114,8 @@ class ProfileCall extends Component {
                   <td>Grace Audu</td>
                   <td>03:20</td>
                   <td>
-                    <label className="label yellow bold">Voicenote</label>
+                   {/* <label className="label yellow bold">Voicenote</label> */}
+                   <p className="label-inactive">Inactive</p>
                   </td>
                   <td>Not yet profiled</td>
                   <td className="text-blue bold">Profile call</td>

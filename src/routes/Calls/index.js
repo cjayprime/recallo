@@ -4,8 +4,9 @@ import Button from "../../components/Button/button";
 import Table from "./table";
 import MenuItem from "../../components/MenuItem/menuItem";
 import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
-
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
+import SideNav from "../../components/SideNav/sidenav";
+import Header from "../../components/Header/header";
 
 class Calls extends Component {
   state = { open: false };
@@ -18,6 +19,10 @@ class Calls extends Component {
   render() {
     const { open } = this.state;
     return (
+      <>
+       <div>
+          <SideNav />
+        </div>
       <div className="screen-padding">
         <div className="title-bar">
           <div className="title">
@@ -90,6 +95,7 @@ class Calls extends Component {
         <ProfileCategoryOverlay open={open} toggle={this.toggle} />
         <Table />
       </div>
+    </>
     );
   }
 }

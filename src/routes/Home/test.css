@@ -2,6 +2,33 @@
 
 @media (min-width: 1281px){
 
+  .screen-padding{
+    width: 1020px;
+    margin-left: 320px;
+  }
+
+  .previous-header{
+    width: 1020px;
+    margin-left: 320px;
+
+  }
+
+  #profCallHeader{
+    font-size: 18px;
+  }
+
+  .callID{
+    margin-top: 60px;
+  }
+
+  .callID-history{
+    margin-top: 55px;
+  }
+
+  .title-bar{
+    margin-top: 20px;
+  }
+
     #rowTwo{
         margin-left: -250px;
     }
@@ -10,6 +37,8 @@
         margin-left: -250px;
         width:1000px;
     }
+
+
 
     .graphHeader{
         margin-left: 70px;
@@ -157,6 +186,7 @@
         color:#FF6B00;
     }
 
+ 
     ul li{
         padding: 4px 0px;
         
@@ -174,16 +204,53 @@
 
       .label-active{
         color:green;
-        padding: 8px 17px;
+        padding: 5px 10px;
         background-color: lightcyan;
+        border-radius: 35%;
+        text-align: center;
+
+      }
+
+      .label-active{
+        padding: 5px 10px;
+        color:black;
+        text-align: center;
+        background-color: rgb(211, 192, 83);
         border-radius: 35%;
       }
 
-      .label-inactive{
+      .label-voicenote{
+        padding: 5px 10px;
+        color:green;
+        text-align: center;
+        background-color: rgb(147, 202, 161);
+        border-radius: 35%;
+      }
+
+      .label-missed{
+        padding: 5px 10px;
         color:black;
-        padding: 8px 17px;
+        text-align: center;
+        background-color: rgb(230, 173, 173);
+        border-radius: 35%;
+      }
+
+      .label-dropped{
+        padding: 5px 10px;
+        color:purple;
+        text-align: center;
         background-color: rgb(217, 224, 224);
         border-radius: 35%;
+      }
+
+
+      .label-inactive{
+        color:black;
+        padding: 5px 10px;
+        background-color: rgb(217, 224, 224);
+        border-radius: 35%;
+        text-align: center;
+
       }
 
       .tableIcon {
