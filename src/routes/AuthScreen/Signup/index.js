@@ -49,7 +49,7 @@ class SignUpComponent extends Component {
       },
 
       // Step 3
-      payment: {
+      plan: {
         reference: "",
         did: "",
         planID: "",
@@ -62,7 +62,9 @@ class SignUpComponent extends Component {
   handleChange = (value, name, error) => {
     const { step } = this.state;
     let section = "user";
-    if (step === 0) section = "business";
+    if (step === 0 || step === 2) section = "business";
+    else if(step === 1) section = "user";
+    else if(step === 3) section = "plan";
 
     this.setState((prevState) => ({
       [section]: { ...prevState[section], [name]: value },
@@ -80,7 +82,7 @@ class SignUpComponent extends Component {
 
   signup = (step, callback) => {
     let data = {};
-    const { error, business, user, payment } = this.state;
+    const { error, business, user, plan } = this.state;
     const { signup, history } = this.props;
     if (step === 0) {
       const { name, email, password } = business;
@@ -98,7 +100,7 @@ class SignUpComponent extends Component {
         business_rc: rc,
       };
     } else if (step === 3) {
-      const { reference, did, planID } = payment;
+      const { reference, did, planID } = plan;
       data = { reference_no: reference, did, payment_plan_id: planID };
     }
 
@@ -125,7 +127,7 @@ class SignUpComponent extends Component {
   };
 
   render() {
-    const { step, business, user } = this.state;
+    const { step, business, user, plan } = this.state;
     switch (step) {
       case 0:
         return (
@@ -153,7 +155,14 @@ class SignUpComponent extends Component {
           />
         );
       case 3:
-        return <Plans />;
+        return (
+          <Plans
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            business={business}
+            form={plan}
+          />
+        )
       default:
     }
   }

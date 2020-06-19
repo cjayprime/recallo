@@ -16,8 +16,7 @@ function load(state, action) {
         mobile: data.me.mobile,
       },
     };
-  }
-  if (type === Actions.LOAD && status === false) {
+  }else if (type === Actions.LOAD && status === false) {
     return {
       ...state,
       loading: state.loading.filter((text) => text !== loading),

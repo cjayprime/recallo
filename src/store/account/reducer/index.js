@@ -45,16 +45,15 @@ const account = (state = initialState, action) => {
     return {
       ...state,
     };
-  }
-  if ((newState = signin(state, action))) {
+  }else if ((newState = signin(state, action))) {
     return newState;
-  }
-  if ((newState = signup(state, action))) {
+  }else if ((newState = signup(state, action))) {
     return newState;
-  }
-  if ((newState = load(state, action))) {
+  }else if ((newState = load(state, action))) {
     return newState;
-  }
+  }//else if ((newState = get(state, action))) {
+  //   return newState;
+  // }
 
   return state;
 };
