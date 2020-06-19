@@ -17,7 +17,7 @@ export default class FormField extends Component {
     } = this.props;
     if (type === "checkbox") {
       return (
-        <label for="checkbox" className={checkboxClass}>
+        <label htmlFor="checkbox" className={checkboxClass}>
           {checkboxTitle}
           <input type={type} />
           <span className="checkmark" />
