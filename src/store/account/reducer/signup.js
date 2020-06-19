@@ -27,27 +27,27 @@ function signup(state, action) {
       Actions.token.set(data.entity.token);
       return {
         ...newState,
-        user: {
-          ...newState.user,
-          firstname: data.first_name,
-          lastname: data.last_name,
-          email: data.email,
-          mobile: data.mobile,
-        },
+        // user: {
+        //   ...newState.user,
+        //   firstname: data.first_name,
+        //   lastname: data.last_name,
+        //   email: data.email,
+        //   mobile: data.mobile,
+        // },
       };
     }
     if (action.step === 2) {
       Actions.token.set(data.entity.token);
       return {
         ...newState,
-        business: {
-          ...newState.business,
-          name: data,
-          email: "",
-          address: "",
-          rc: "",
-          agent: "",
-        },
+        // business: {
+        //   ...newState.business,
+        //   name: data,
+        //   email: "",
+        //   address: "",
+        //   rc: "",
+        //   agent: "",
+        // },
       };
     }
   } else if (type === Actions.SIGNUP && status === false) {

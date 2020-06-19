@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Paystack from "react-paystack";
 
 import logo from "../../../assets/img/appLogo.png";
 import FormField from "../../../components/Form";
@@ -7,7 +8,29 @@ import Button from "../../../components/Button/button";
 import paymentbadge from "../../../assets/img/paymentbadge.png";
 
 class PlanSelection extends Component {
+
+  state = {
+    ref: '',
+    email
+  };
+
+  componentDidMount(){
+
+    const { paymentPlans, addPayment, dids } = this.props;
+    
+    paymentPlans();
+    addPayment();
+    dids();
+
+  }
+
   render() {
+    const { form, business, handleChange } = this.props;
+    const {
+      reference,
+      did,
+      planID,
+    } = form;
     return (
       <div>
         <header>
@@ -111,14 +134,21 @@ class PlanSelection extends Component {
               </div>
               <div className="col-8">
                 <div className="plan-did">
-                  <FormField
+                  <select>
+                    {
+                      this.state.dids.map(did => (
+                      <option>{did}</option>
+                      ))
+                    }
+                  </select>
+                  {/* <FormField
                     type="select"
                     className="onboard-select"
                     labelTitle="Select your DID"
                     labelTitleRight="What is s DID?"
                     labelClass="did-label-left"
                     labelClassRight="did-label-right"
-                  />
+                  /> */}
                 </div>
                 <div className="plan-payment">
                   <h3 className="bold">Payment details</h3>
@@ -127,6 +157,9 @@ class PlanSelection extends Component {
                     className="onboard-input br-8 mb-32"
                     placeholder="Card number"
                     labelTitle="Card number"
+                    type="text"
+                    value={email}
+                    onChange={handleChange}
                   />
                   <div className="row mb-24">
                     <FormField
@@ -156,6 +189,26 @@ class PlanSelection extends Component {
                       </Button>
                     </Link>
                   </div>
+                  <PaystackButton
+                    text="Make 100 naira Payment"
+                    className="payButton"
+                    callback={() => {
+
+                    }}
+                    close={(e) => {
+
+                      this.setState({loading: false});
+                      openModalAction();
+
+                    }}
+                    disabled={true}
+                    embed={true}
+                    reference={reference}
+                    email={email}
+                    amount={10000}
+                    paystackkey={initDonation.p_key}
+                    tag="button"
+                  />
                 </div>
               </div>
             </form>
