@@ -9,6 +9,9 @@ import routes from "./routes";
 
 import * as Actions from "../store/actions";
 
+// This is the only manually connected component in the app
+// because this.props.load needs to be called
+// it's loading all user info when the app first mounts
 export default connect(
   null,
   Actions
@@ -16,7 +19,8 @@ export default connect(
   class Routes extends Component {
     async componentDidMount() {
       const { load } = this.props;
-      if (await Actions.token.get()) {
+      const token = await Actions.token.get();
+      if (token) {
         load();
       }
     }
@@ -73,7 +77,7 @@ export default connect(
               )}
             />
             <Redirect from="/" to="/signin" />
-            <Redirect to="/404" />
+            {/* <Redirect to="/404" /> */}
           </Switch>
         </Router>
       );
