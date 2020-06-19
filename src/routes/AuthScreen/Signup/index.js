@@ -159,6 +159,7 @@ class SignUpComponent extends Component {
           <Plans
             nextStep={this.nextStep}
             handleChange={this.handleChange}
+            business={business}
             form={plan}
           />
         )

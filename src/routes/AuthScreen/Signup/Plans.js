@@ -11,7 +11,7 @@ class PlanSelection extends Component {
 
   state = {
     ref: '',
-    email
+    email: ''
   };
 
   componentDidMount(){
@@ -31,6 +31,9 @@ class PlanSelection extends Component {
       did,
       planID,
     } = form;
+    const {
+      email
+    } = business;
     return (
       <div>
         <header>
@@ -189,26 +192,28 @@ class PlanSelection extends Component {
                       </Button>
                     </Link>
                   </div>
-                  <PaystackButton
-                    text="Make 100 naira Payment"
-                    className="payButton"
-                    callback={() => {
+                  {
+                    <Paystack
+                      text="Make 100 naira Payment"
+                      className="payButton"
+                      callback={() => {
+                        
+                      }}
+                      close={(e) => {
 
-                    }}
-                    close={(e) => {
+                        this.setState({loading: false});
+                        // openModalAction();
 
-                      this.setState({loading: false});
-                      openModalAction();
-
-                    }}
-                    disabled={true}
-                    embed={true}
-                    reference={reference}
-                    email={email}
-                    amount={10000}
-                    paystackkey={initDonation.p_key}
-                    tag="button"
-                  />
+                      }}
+                      disabled={true}
+                      embed={true}
+                      reference={reference}
+                      email={email}
+                      amount={10000}
+                      // paystackkey={initDonation.p_key}
+                      tag="button"
+                    />
+                  }
                 </div>
               </div>
             </form>

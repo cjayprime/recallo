@@ -22,8 +22,7 @@ function signup(state, action) {
         //     password: data.password
         // }
       };
-    }
-    if (action.step === 1) {
+    }else if (action.step === 1) {
       Actions.token.set(data.entity.token);
       return {
         ...newState,
@@ -35,8 +34,7 @@ function signup(state, action) {
         //   mobile: data.mobile,
         // },
       };
-    }
-    if (action.step === 2) {
+    }else if (action.step === 2) {
       Actions.token.set(data.entity.token);
       return {
         ...newState,
