@@ -5,14 +5,14 @@ import TextInput from "../../../components/Form/TextInput";
 import Button from "../../../components/Button/button";
 
 class BusinessInformation extends Component {
-  // continue = e => {
-  //     e.preventDefault();
-  //     this.props.triggerBusinessInformation(e);
-  //     // this.props.pushBusinessInformation();
-  // }
+  continue = (e) => {
+    const { nextStep } = this.props;
+    e.preventDefault();
+    nextStep();
+  };
 
   render() {
-    const { form, handleChange, triggerBusinessInformation } = this.props;
+    const { form, handleChange } = this.props;
     const {
       name,
       email,
@@ -42,15 +42,15 @@ class BusinessInformation extends Component {
               <h2 className="light text-main">Business Information</h2>
               <div className="row-direction align-center">
                 <p className="text-main bold mr-8">2 of 3</p>
-                <p className="row-direction">
+                <div className="row-direction">
                   <p className="b-bar-1" />
                   <p className="b-bar-2" />
                   <p className="b-bar-3" />
-                </p>
+                </div>
               </div>
             </div>
             <hr />
-            <form onSubmit={triggerBusinessInformation}>
+            <form>
               <div className="business-info">
                 <div className="business-info-1">
                   <div className="col-7">

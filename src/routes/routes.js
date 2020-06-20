@@ -2,9 +2,9 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 
 // Public routes components
-import SigninContainer from "./AuthScreen/SignIn";
-import SignUpContainer from "./AuthScreen/Signup";
-import ContactSupportComponent from "./ContactSupport";
+import Signin from "./AuthScreen/SignIn";
+import SignUp from "./AuthScreen/Signup";
+import ContactSupport from "./ContactSupport";
 
 // Private routes components
 import Admin from "./Admin/admin";
@@ -13,7 +13,7 @@ import Calls from "./Calls";
 import Contact from "./Contact";
 import Personnel from "./Personnel";
 import Analytics from "./Analytics";
-import ManageAccount from "./Settings";
+import Settings from "./Settings";
 import ProfileCall from "./ProfileCall";
 import NumberDetails from "./NumberDetails";
 import VoiceNotes from "./Voicenotes";
@@ -26,19 +26,19 @@ const routes = {
     {
       path: "/signin",
       exact: true,
-      component: SigninContainer,
+      component: Signin,
       name: "Log In",
     },
     {
       path: "/signup",
       exact: true,
-      component: SignUpContainer,
+      component: SignUp,
       name: "Create an Account",
     },
     {
       path: "/support",
       exact: true,
-      component: ContactSupportComponent,
+      component: ContactSupport,
       name: "Contact Support",
     },
   ],
@@ -93,7 +93,7 @@ const routes = {
       {
         path: "/settings",
         exact: true,
-        component: ManageAccount,
+        component: Settings,
         layout: "/admin",
       },
       {

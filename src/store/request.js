@@ -97,8 +97,8 @@ export default class Request {
 
       const status = code === 100 || code === 101;
 
-      if (typeof success === "function" && status) success();
-      if (typeof error === "function" && !status) error();
+      if (typeof success === "function" && status) success(data, status);
+      if (typeof error === "function" && !status) error(data, status);
 
       return { status, message, data };
     },
