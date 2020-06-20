@@ -7,7 +7,8 @@ export default class Request {
   api = async (endpoint, method, body, success, error) => {
     console.log(
       `${method} request sent to:`,
-      `${Configuration.url}/${endpoint}`
+      `${Configuration.url}/${endpoint}`,
+      `with parameters:`, body
     );
 
     const result = await axios({
@@ -29,12 +30,14 @@ export default class Request {
         return Promise.reject(errorObj);
       })
       .then((response) => {
+        console.log(endpoint, 'raw server response: ', response.data);
         const { data } = response;
         const { code, desc } = data.status;
 
         return this.validate.response(code, desc, data.entity, success, error);
       })
       .catch(async (e) => {
+        console.log(endpoint, 'raw server response: ', e.response);
         console.log(
           `A fatal error occurred with the server during a request to the ${
             endpoint.split("/")[0]

@@ -59,7 +59,7 @@ class BusinessInformation extends Component {
                       className="onboard-input br-4 mb-32"
                       labelClass="auth-label"
                       type="text"
-                      name="business_name"
+                      name="name"
                       value={name}
                       form={form}
                       onChange={handleChange}
@@ -69,9 +69,8 @@ class BusinessInformation extends Component {
                       className="onboard-input br-4"
                       labelClass="auth-label"
                       type="email"
-                      name="business_email"
+                      name="email"
                       value={email}
-                      form={form}
                       onChange={handleChange}
                     />
                   </div>
@@ -81,24 +80,20 @@ class BusinessInformation extends Component {
                       className="onboard-textarea"
                       type="textarea"
                       labelClass="auth-label"
-                      name="business_address"
+                      name="address"
                       value={address}
-                      form={form}
                       onChange={handleChange}
                     />
                   </div>
                 </div>
                 <div className="business-info-2">
                   <div className="col-7">
-                    <label className="business-rc">
-                      Business RC No <span>(if registered)</span>
-                    </label>
                     <TextInput
+                      labelTitle={<span>Business RC No <i>(if registered)</i></span>}
                       className="onboard-input br-4"
                       type="text"
-                      name="business_rc"
+                      name="rc"
                       value={rc}
-                      form={form}
                       onChange={handleChange}
                     />
                   </div>
@@ -109,13 +104,13 @@ class BusinessInformation extends Component {
                       type="number"
                       name="people"
                       value={people}
-                      form={form}
                       onChange={handleChange}
                     />
                   </div>
                 </div>
                 <div>
                   <Button
+                    onClick={this.continue}
                     className="blue-button br-8"
                     type="submit"
                     padding="10px 32px"

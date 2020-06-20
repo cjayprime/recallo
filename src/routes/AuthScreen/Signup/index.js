@@ -13,21 +13,21 @@ class SignUpComponent extends Component {
     this.state = {
       // hidden: true,
 
-      // Step 0
-      business_name: "",
-      business_email: "",
-      business_address: "",
+      // // Step 0
+      // business_name: "",
+      // business_email: "",
+      // business_address: "",
 
-      // Step 1
-      first_name: "",
-      last_name: "",
-      mobile: "",
+      // // Step 1
+      // first_name: "",
+      // last_name: "",
+      // mobile: "",
 
-      email: "",
-      password: "",
-      confirm_password: "",
-      people: "",
-      business_rc: "",
+      // email: "",
+      // password: "",
+      // confirm_password: "",
+      // people: "",
+      // business_rc: "",
 
       step: 0,
       // Step 0 && 2
@@ -103,20 +103,14 @@ class SignUpComponent extends Component {
       const { reference, did, planID } = plan;
       data = { reference_no: reference, did, payment_plan_id: planID };
     }
-
-    // This is a potential flaw, a possible (and common) scenario of failure is this:
-    // if a user, coorectly fills one form (any form element at all, doesn't matter
-    // which one) then, this.state.error will be empty, so the fix is:
-    // Don't globalise this.state.error OR do some other checks and don't rely on it
-    // alone, since the state was messy any, and is needed before the next step I'm
-    // using it
+    
     const dataKeys = Object.keys(data);
     if (
       !error &&
       dataKeys.filter((state) => !!data[state]).length === dataKeys.length
     ) {
       signup(data, step, () => {
-        if (step === 3) history("/admin/home");
+        if (step === 3) history.push("/admin/home");
         callback();
       });
     } else {
@@ -128,6 +122,7 @@ class SignUpComponent extends Component {
 
   render() {
     const { step, business, user, plan } = this.state;
+
     switch (step) {
       case 0:
         return (
@@ -141,6 +136,7 @@ class SignUpComponent extends Component {
       case 1:
         return (
           <Personal
+            {...this.props}
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             form={user}
@@ -149,6 +145,7 @@ class SignUpComponent extends Component {
       case 2:
         return (
           <Business
+            {...this.props}
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             form={business}
@@ -157,9 +154,9 @@ class SignUpComponent extends Component {
       case 3:
         return (
           <Plans
+            {...this.props}
             nextStep={this.nextStep}
             handleChange={this.handleChange}
-            business={business}
             form={plan}
           />
         )
