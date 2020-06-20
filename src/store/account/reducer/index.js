@@ -1,8 +1,8 @@
-/* eslint-disable no-cond-assign */
 import * as Actions from "../actions";
 import signup from "./signup";
 import signin from "./signin";
 import load from "./load";
+import plans from "./plans";
 
 const initialState = {
   loading: [],
@@ -33,27 +33,34 @@ const initialState = {
       aohcs: "",
     },
   },
+  payment: {
+    reference: "",
+    publickey: "",
+    amount: 0,
+    plans: [],
+    dids: [],
+  }
 };
 
 const account = (state = initialState, action) => {
   // console.log('All states and actions: ', state, action)
   const { loading, type, name } = action;
-  let newState = null;
+  let newState;
 
   if (type === Actions.LOADING && loading && name === "account") {
     state.loading.push(loading);
     return {
       ...state,
     };
-  }else if ((newState = signin(state, action))) {
+  }else if (newState = signin(state, action)) {
     return newState;
-  }else if ((newState = signup(state, action))) {
+  }else if (newState = signup(state, action)) {
     return newState;
-  }else if ((newState = load(state, action))) {
+  }else if (newState = load(state, action)) {
     return newState;
-  }//else if ((newState = get(state, action))) {
-  //   return newState;
-  // }
+  }else if (newState = plans(state, action)) {
+    return newState;
+  }
 
   return state;
 };

@@ -76,8 +76,13 @@ export default connect(
                 </div>
               )}
             />
-            <Redirect from="/" to="/signin" />
-            {/* <Redirect to="/404" /> */}
+            <Route exact path="/">
+              <Redirect to="/signin" />
+            </Route>
+            {/* <Route path="*">
+              <Redirect to="/404" />
+            </Route> */}
+            {/* <Redirect from="/" to="/signin" /> */}
           </Switch>
         </Router>
       );
