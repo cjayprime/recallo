@@ -24,7 +24,7 @@ class ContactSupport extends Component {
           <div className="support-message">
             <h6 className="light text-light mb-16">GOT A QUESTION</h6>
             <h1 className="p-40 mb-24">Contact Recallo</h1>
-            <h6 className="light text-light">
+            <h6 id="hText" className="light text-light">
               We are here to help and answer any question you might have.
             </h6>
           </div>

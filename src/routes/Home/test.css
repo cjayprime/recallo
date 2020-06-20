@@ -370,4 +370,90 @@
     
     
   }
+
+  /*Tab view*/
+@media (min-width: 481px) and (max-width: 767px){
+  .support{
+    width: 3100px;
+    margin-left: 23px;
+    position: absolute;
+  }
+
+  .support-message{
+    margin-top: -50px;
+
+  }
+
+  .formDiv{
+    margin-top: 110px;
+    position: absolute;
+    width: 500px;
+    margin-left: 40px;
+
+
+  }
+
+  .light{
+    text-align: center;
+  }
+
+  .support h1{
+    text-align: center;
+  }
+
+  #hText{
+    font-size: 18px;
+    margin-left: 35px;
+  }
+
+  .message-board{
+    margin-top: 50px;
+    position: absolute;
+    margin-left: 310px;
+  }
+
+  .benefits-card{
+    width: 500px;
+    margin-left: -280px;
+
+  }
+
+  #kk{
+    margin-top: 670px;
+    position: absolute;
+    margin-left: 240px;
+
+}
+  .benefits-image {
+    position: absolute;
+    background-image: url(../../assets/img/createacntIcon.png);
+    height: 380px;
+    width: 400.68px;
+    margin-top: -225px;
+    right: 970px;
+    background-repeat: no-repeat;
+  }
+  
+  #line{
+    margin-top: 30px;
+  }
+  
+}
+
+/*Ipad Pro and Tab view*/
+@media (min-width: 768px) and (max-width: 1024px){
+
+  .benefits-image {
+    position: absolute;
+    background-image: url(../../assets/img/createacntIcon.png);
+    height: 380px;
+    width: 400.68px;
+    margin-top: -225px;
+    background-repeat: no-repeat;
+  }
+  
+  #line{
+    margin-top: 30px;
+  }
+}
   
