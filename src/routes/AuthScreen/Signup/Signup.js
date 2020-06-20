@@ -66,7 +66,7 @@ class SignUp extends Component {
                   type="submit"
                   className="signup-button br-8"
                 >
-                  <h5 className="bold">Create Account</h5>
+                  <h5 id="createAccount" className="bold">Create Account</h5>
                 </Button>
               </div>
               {/* <AlertDialog

@@ -40,15 +40,15 @@ class Home extends Component {
 
     return (
       <LayoutPage {...this.props}>
-       
+        <div>
+           <SideBar />
+        </div>
         <div className="screen-padding container background-grey height mt-80">
         
         <div className="row">
-        <div className="col-2">
-           <SideBar />
-        </div> 
+        
 
-        <div className="col-10">
+        <div className="col-12">
             <div className="row mb-32">
                 <div className="col-12" id="rowOne" >
                   <div className="overview br-30 row-direction p-24">
@@ -60,6 +60,7 @@ class Home extends Component {
                           key={tab.tab}
                         >
                           <button
+                          id="smallScreen"
                             style={{
                               color:
                                 active === tab.tab
@@ -73,7 +74,7 @@ class Home extends Component {
                         </div>
                       ))}
                     </div>
-                    <hr className="vertical-hr ml-35" />
+                    <hr id="smallScreen" className="vertical-hr ml-35" />
                     <div className="overview__action-view custom-col-5">
                       {active === "Total calls" && <TotalCalls />}
                       {active === "Total calls answered" && (
@@ -87,21 +88,22 @@ class Home extends Component {
                       {active === "Missed calls" && <MissedCalls />}
                     </div>
                     <div className="graphHeader">
+                      <h6>Home</h6><br/>
                         <span>Last 7 Days</span>
                         <span className="bold text-blue cursor">Last 30 Days</span>
                         <span className="bold text-blue cursor">Yesterday</span>
                         <span className="bold text-blue cursor">Today</span>
                         <span id="dotting">...</span>
-
-
+                        <hr className="Hline" />
                       </div>
+                      
                       <div className="graph" />
 
                   </div>
                 </div>
               </div>
               <div className="row" id="rowTwo" >
-                <div className="custom-col-3" >
+                <div className="custom-col-3" id="licence-info">
                   <div className="overview p-24 br-15">
                     <h4 className="text-main bold mb-24">License info</h4>
                     <span className="bold text-light">Type</span>
@@ -120,7 +122,7 @@ class Home extends Component {
                     <h6 className="text-light ">23 mins remaining</h6>
                   </div>
                 </div>
-                <div className="custom-col-3">
+                <div className="custom-col-3" id="average-time">
                   <div className="overview p-24 br-15">
                     <div className="row-direction mb-24 align-center">
                       <h4 className="text-main bold mr-5">Average time:</h4>
@@ -139,10 +141,10 @@ class Home extends Component {
                     <p className="overview-percent">+0.4%</p>
                   </div>
                 </div>
-                <div className="custom-col-6">
+                <div className="custom-col-6" >
                   <div className="overview p-24 br-15">
                     <div className="row">
-                      <div className="custom-col-6">
+                      <div className="custom-col-6" >
                         <h4 className="text-main bold mb-24">Personnel</h4>
                         <span className="bold text-light">Total number</span>
                         <div className="row overview-call">

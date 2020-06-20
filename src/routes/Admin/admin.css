@@ -381,7 +381,17 @@
     background-image: url(../../assets/img/ladyCall.png);
   }
 
+  #login{
+    font-size: 15px;
+    text-transform: capitalize;
+    color: white;
+  }
 
+  #createAccount{
+    font-size: 15px;
+    text-transform: capitalize;
+    color: white;
+  }
 
 .field{
  margin-top: -20px;
@@ -459,7 +469,25 @@
    text-decoration: none;
   }
   
+#contactHeader{
+  font-size: 18px;
+}
 
+#contactHeader:hover{
+  color: #FF6B00;
+}
+
+.message-board{
+  margin-top: -7px;
+}
+
+#headerText{
+  font-size: 16px;
+}
+
+#headerText:hover{
+  color: #FF6B00;
+}
   
 }
 /*Medium View*/
@@ -567,6 +595,19 @@
     background-repeat: no-repeat;
     background-image: url(../../assets/img/ladyCall.png);
   }
+
+  #login{
+    font-size: 15px;
+    text-transform: capitalize;
+    color: white;
+  }
+
+  
+  #createAccount{
+    font-size: 15px;
+    text-transform: capitalize;
+    color: white;
+  }
 } 
 
 /*Ipad Pro and Tab view*/
@@ -672,6 +713,19 @@
 
 #subtext{
   margin-top: -5px;
+}
+
+#login{
+  font-size: 15px;
+  text-transform: capitalize;
+  color: white;
+}
+
+
+#createAccount{
+  font-size: 15px;
+  text-transform: capitalize;
+  color: white;
 }
 
 }
@@ -787,6 +841,19 @@
     width: 330px;
   }
 
+ #login{
+  font-size: 15px;
+  text-transform: capitalize;
+  color: white;
+ }
+
+ 
+ #createAccount{
+  font-size: 15px;
+  text-transform: capitalize;
+  color: white;
+}
+
 }
 
 /*SMALL SCREEN*/
@@ -836,6 +903,16 @@ text-align: center;
 
   #login{
     margin-left: -80px;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: white;
+  }
+
+  
+  #createAccount{
+    font-size: 15px;
+    text-transform: capitalize;
+    color: white;
   }
 
   .signup {
