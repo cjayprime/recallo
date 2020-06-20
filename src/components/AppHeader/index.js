@@ -33,7 +33,7 @@ class AppHeader extends Component {
                   }
                 >
                   <Link to={prop.path}>
-                    <h5 className="bold">{prop.name}</h5>
+                    <h5 className="bold" id="headerText">{prop.name}</h5>
                   </Link>
                 </div>
               );

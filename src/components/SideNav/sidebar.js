@@ -33,7 +33,7 @@ class Sidebar extends Component {
             <div className="business-logo mb-23">
               <h1 className="logo-text">AM</h1>
             </div>
-            <h3 className="text-blue bold mb-8" id="sidebar-text">
+            <h3 className="text-blue bold mb-8" id="sidebar-header">
                AutoMedics Africa Limited 
             </h3>
             <p className="light text-light">2 agents license</p>
@@ -97,8 +97,9 @@ class Sidebar extends Component {
                   <div className="icon-analytics" />
                     Analytics
                 </h5>
-              </Link>
+              </Link> <br/><br/><br/>
           <hr />
+          <br/><br/>
           <h6 className="logout text-blue light" onClick={this.signout}>
             Logout
           </h6>

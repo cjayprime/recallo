@@ -1,7 +1,7 @@
 
 
 @media (min-width: 1281px){
-
+ 
   .screen-padding{
     width: 1020px;
     margin-left: 320px;
@@ -28,15 +28,6 @@
   .title-bar{
     margin-top: 20px;
   }
-
-    #rowTwo{
-        margin-left: -250px;
-    }
-
-    #rowOne{
-        margin-left: -250px;
-        width:1000px;
-    }
 
 
 
@@ -112,13 +103,12 @@
         color: #384364;
         margin-top: 20px;
         margin-left: 105px;
-        font-size: 14px;
-    }
-  
-    #graph{
-        color: red;
+        font-size: 16px;
     }
 
+  #sidebar-header{
+    font-size: 20px;
+  }
     .sidebar-title{
         color: #336799;
         text-align: center;
@@ -179,14 +169,14 @@
     }
 
     #textHover{
-        font-size: 14px;
+        font-size: 16px;
     }
 
     #textHover:hover{
         color:#FF6B00;
     }
 
- 
+
     ul li{
         padding: 4px 0px;
         
@@ -195,7 +185,7 @@
     
 
     .text-main{
-        font-size: 14px;
+        font-size: 16px;
     }
 
       .horizontal-hr{
@@ -265,3 +255,119 @@
       }
     
   }
+
+
+  @media (min-width: 300px) and (max-width: 399px){
+
+    #smallScreen{
+      display: none;
+    }
+
+    .overview__action-button{
+      height: 300px;
+    }
+
+    .graphHeader{
+      margin-top: -87px;
+      position: absolute;
+      font-size: 12px;
+      width: 100%;
+      margin-left: -40px;
+    }
+
+    #rowTwo{
+      width: 708px;
+    }
+    #licence-info{
+      width: 315px;
+      height: 260px;
+    }
+
+    #average-time{
+      height: 260px;
+      margin-left: -380px;
+      margin-top: 300px;
+      width: 315px;
+
+    }
+
+  
+
+  .Hline{
+    margin-top: 7px;
+    margin-left: -56px;
+  }
+
+  #rowOne{
+    margin-top: 40px;
+  }
+
+    .graph {
+      position: absolute;
+      right: 0px;
+      left: 40px;
+      margin-top: 115px;
+    width: 291px;
+    height: 660.92px;
+      background-repeat: no-repeat;
+      background-image: url(../../assets/img/graph.PNG);
+    }
+
+    .overview__action-view{
+      width: 100%;
+      margin-left: -9px;
+    }
+
+    .support{
+      width: 2000px;
+      margin-left: 23px;
+      position: absolute;
+    }
+
+    .support-message{
+      margin-top: -50px;
+
+    }
+
+    .formDiv{
+      margin-top: 110px;
+      position: absolute;
+
+    }
+
+    .light{
+      text-align: center;
+    }
+
+    .support h1{
+      text-align: center;
+    }
+
+    .message-board{
+      margin-top: -20px;
+      position: absolute;
+      margin-left: 310px;
+    }
+
+    #kk{
+      margin-top: 670px;
+      position: absolute;
+
+  }
+    .benefits-image {
+      position: absolute;
+      background-image: url(../../assets/img/createacntIcon.png);
+      height: 380px;
+      width: 360.68px;
+      margin-top: -210px;
+      right: 750px;
+      background-repeat: no-repeat;
+    }
+    
+    #line{
+      margin-top: 30px;
+    }
+    
+    
+  }
+  

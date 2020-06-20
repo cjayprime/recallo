@@ -28,9 +28,9 @@ class ContactSupport extends Component {
               We are here to help and answer any question you might have.
             </h6>
           </div>
-          <div>
+          <div className="formDiv">
             <form>
-              <h2 className="bold mb-50">Send Message</h2>
+              <h2 className="bold mb-50" id="contactHeader">Send Message</h2>
               <div className="message-row">
                 <AuthInput
                   labelTitle="First name"
@@ -74,7 +74,7 @@ class ContactSupport extends Component {
           </div>
           <div className="message-board">
             <div className="benefits-card">
-              <h5 className="bold text-main mb-16">Contact information</h5>
+              <h5 className="bold text-main mb-16" id="contactHeader">Contact information</h5>
               <div className="row-direction mb-24">
                 <div>
                   <i className="fa fa-phone text-light" aria-hidden="true" />
@@ -90,14 +90,14 @@ class ContactSupport extends Component {
                 </div>
                 <h6 className="bold text-blue ml-8">hi@recallomobile.com</h6>
               </div>
-              <hr />
+              <hr id="line" />
               <h5 className="text-main bold mb-16">Have more questions?</h5>
               <h5 className="bold text-blue">Frequently Asked Questions</h5>
             </div>
             <div className="benefits-image" />
           </div>
         </div>
-        <h5 className="light text-light btw">Back to website</h5>
+        <h5 id="kk" className="light text-light btw">Back to website</h5>
       </>
     );
   }
