@@ -41,6 +41,10 @@
         font-size: 12px;
     }
 
+    .graphHeader h6{
+    display:none
+  }
+
     #dotting{
         color:#FF6B00;
         font-size: 60px;
