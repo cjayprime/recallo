@@ -6,3 +6,5 @@ package-lock.json
 .env.*
 .idea
 .gitcommit
+yarn-error.log
+.gitignore
