@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "../Button/button";
-import Header from "../Header/header";
 import LayoutPage from "../../components/AppPageHeader/LayoutPage";
 
 

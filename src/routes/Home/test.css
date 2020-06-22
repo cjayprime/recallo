@@ -6,6 +6,29 @@
     width: 1020px;
     margin-left: 320px;
   }
+  
+
+  #gudder{
+    font-size: 18px;
+    color: gray;
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid rgb(238, 229, 229);
+  }
+
+  #gudder p{
+    padding: 0px 20px;
+    font-size: 16px;
+    margin-top: 50px;
+    display: inline-block;
+  }
+
+  #p{
+    margin-left: 300px;
+  }
+
+ 
 
   .previous-header{
     width: 1020px;
@@ -28,9 +51,6 @@
   .title-bar{
     margin-top: 20px;
   }
-
-
-
     .graphHeader{
         margin-left: 70px;
         margin-top: -40px;
@@ -257,6 +277,28 @@
         background-repeat: no-repeat;
         background-image: url(../../assets/img/tableIcon.PNG);
       }
+
+
+      /*Add Personnel style Begin*/
+          .addPersonnelContainer{
+            width: 500px;
+            float: right;
+          }
+
+          .addPersonnelSpan{
+            font-size: 14px;
+            color: gray;
+          }
+
+          #addPersonnelForm{
+            margin-left: -33px;
+          }
+
+          .addPersonnelButton{
+            color: white;
+          }
+
+       /*Add Personnel style End*/
     
   }
 

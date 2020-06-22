@@ -27,13 +27,15 @@ class PersonnelOverlay extends Component {
     ));
 
     return (
-      <Overlay open={open} toggle={toggle}>
-        <div>
-          <h4 className="mb-8">Add Personnel</h4>
+      <Overlay open={open} toggle={toggle}> 
+
+        <div className="addPersonnelContainer">
+          <h4 className="mb-8">Add Personnel</h4><br/><br/><br/>
           {/* {<h6 className="light text-light mb-32"></h6>} */}
           <div>
             <div className="row mb-24">
               <div className="col-7">
+                <span className="addPersonnelSpan">First Name</span>
                 <FormField
                   labelTitle="First name"
                   labelClass="profile-label"
@@ -41,6 +43,7 @@ class PersonnelOverlay extends Component {
                 />
               </div>
               <div className="col-7">
+              <span className="addPersonnelSpan">Last Name</span>
                 <FormField
                   labelTitle="Last name"
                   labelClass="profile-label"
@@ -48,6 +51,7 @@ class PersonnelOverlay extends Component {
                 />
               </div>
             </div>
+            <span className="addPersonnelSpan">Email</span>
             <FormField
               labelTitle="Email"
               labelClass="profile-label"
@@ -55,6 +59,7 @@ class PersonnelOverlay extends Component {
             />
             <div className="row mb-24">
               <div className="col-7">
+              <span className="addPersonnelSpan">Status</span>
                 <FormField
                   type="select"
                   labelTitle="Status"
@@ -65,6 +70,7 @@ class PersonnelOverlay extends Component {
                 />
               </div>
               <div className="col-7">
+              <span className="addPersonnelSpan">Department</span>
                 <FormField
                   type="select"
                   labelTitle="Department"
@@ -77,6 +83,7 @@ class PersonnelOverlay extends Component {
             </div>
             <div className="row mb-24">
               <div className="col-7">
+              <span className="addPersonnelSpan">Skill Level</span>
                 <FormField
                   type="select"
                   labelTitle="Skill level"
@@ -96,8 +103,8 @@ class PersonnelOverlay extends Component {
             </div>
             <div className="personnel-checkbox">
               <h6 className="mb-16 light profile-label">Days active</h6>
-              <form className="mb-32 row-direction">
-                <div className="checkbox ">
+              <form className="mb-32 row-direction" id="addPersonnelForm">
+                <div className="checkbox">
                   <label className="cursor mb-16 checkbox-label">
                     <h5 className="text-blue light">Monday</h5>
                     <input type="checkbox" checked="checked" />
@@ -115,14 +122,14 @@ class PersonnelOverlay extends Component {
                   </label>
                   <label className="cursor mb-16 checkbox-label">
                     <h5 className="text-blue light">Thursday</h5>
-                    <input type="checkbox" />
+                    <input type="checkbox" checked="checked" />
                     <span className="check-mark" />
                   </label>
                 </div>
                 <div className="checkbox " style={{ marginLeft: 100 }}>
                   <label className="cursor mb-16 checkbox-label">
                     <h5 className="text-blue light">Friday</h5>
-                    <input type="checkbox" />
+                    <input type="checkbox" checked="checked" />
                     <span className="check-mark" />
                   </label>
                   <label className="cursor mb-16 checkbox-label">
@@ -132,24 +139,25 @@ class PersonnelOverlay extends Component {
                   </label>
                   <label className="cursor mb-16 checkbox-label">
                     <h5 className="text-blue light">Sunday</h5>
-                    <input type="checkbox" />
+                    <input type="checkbox" checked="checked" />
                     <span className="check-mark" />
                   </label>
                 </div>
               </form>
             </div>
             <Button
-              className="br-30"
+              className="br-30 account-button orange-hover"
               padding="12px 30px"
               background="var(--text-color)"
               text="#fff"
             >
-              Add personnel
+             <h6 className="addPersonnelButton">Add personnel</h6> 
             </Button>
           </div>
         </div>
-      </Overlay>
-    );
+    </Overlay>
+
+   );
   }
 }
 

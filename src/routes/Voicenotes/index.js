@@ -5,7 +5,6 @@ import Button from "../../components/Button/button";
 import MenuItem from "../../components/MenuItem/menuItem";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 import SideNav from "../../components/SideNav/sidenav";
-import Header from "../../components/Header/header";
 
 class VoiceNotes extends Component {
   state = { open: false };

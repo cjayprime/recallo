@@ -24,7 +24,7 @@ class AppPageHeader extends Component {
           <div>
             <img className="logo" src={logo} alt="Recallo logo" />
           </div>
-              <div className="notification">
+              <div className="notification" style={{marginLeft:900}}>
               <img className="bell" src={bell} alt="notification bell" />
               <span className="message">4</span>
             </div>

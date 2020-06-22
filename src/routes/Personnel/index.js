@@ -7,7 +7,6 @@ import Table from "./table";
 import DepartmentOverlay from "./DepartmentOverlay";
 import PersonnelOverlay from "./AddPersonnelOverlay";
 import SideNav from "../../components/SideNav/sidenav";
-import Header from "../../components/Header/header";
 
 
 class Personnel extends Component {

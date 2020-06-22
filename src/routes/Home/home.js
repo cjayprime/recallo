@@ -14,7 +14,6 @@ import MissedCalls from "./MissedCalls";
 
 
 
-
 class Home extends Component {
   state = {
     active: "Total calls",
