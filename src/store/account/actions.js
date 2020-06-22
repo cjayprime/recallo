@@ -6,7 +6,8 @@ export const SIGNOUT = "SIGNOUT";
 export const LOAD = "LOAD";
 export const ADDPAYMENT = "ADDPAYMENT";
 export const PAYMENTPLAN = "PAYMENTPLAN";
-export const DIDS = "DIDS";
+export const DID = "DID";
+export const PAY = "PAY";
 
 export const signup = (data, step, success) => ({
   type: REQUEST,
@@ -48,6 +49,24 @@ export const load = (data) => ({
   data,
 });
 
+export const plans = (category, success) => ({
+  type: REQUEST,
+  responder:
+    category === "payment-plans"
+      ? PAYMENTPLAN
+      : category === "payment-addition"
+        ? ADDPAYMENT
+        : DID,
+  endpoint: 
+    category === "payment-plans"
+      ? "paymentplans"
+      : category === "payment-addition"
+        ? "payments/add"
+        : "getdids",
+  method: "GET",
+  success
+});
+
 export const token = {
   get: async () => {
     const item = await window.localStorage.getItem("token");
@@ -62,27 +81,3 @@ export const token = {
     return item;
   },
 };
-
-export const paymentPlans = (data) => ({
-  type: REQUEST,
-  responder: PAYMENTPLAN,
-  endpoint: "paymentplans",
-  method: "GET",
-  data,
-});
-
-export const addPayment = (data) => ({
-  type: REQUEST,
-  responder: ADDPAYMENT,
-  endpoint: "payments/add",
-  method: "GET",
-  data,
-});
-
-export const dids = (data) => ({
-  type: REQUEST,
-  responder: DIDS,
-  endpoint: "getdids",
-  method: "GET",
-  data,
-});

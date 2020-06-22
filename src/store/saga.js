@@ -31,7 +31,7 @@ export default class Saga {
       success,
       error
     );
-    // console.log('Server response: ', result);
+    console.log(endpoint, 'processed server response: ', result);
 
     if (result.message && result.status) {
       Notification.success(result.message);

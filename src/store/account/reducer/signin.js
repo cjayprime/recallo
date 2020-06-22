@@ -41,8 +41,7 @@ function signin(state, action) {
         },
       },
     };
-  }
-  if (type === Actions.SIGNIN && status === false) {
+  }else if (type === Actions.SIGNIN && status === false) {
     return {
       ...state,
       loading: state.loading.filter((text) => text !== loading),

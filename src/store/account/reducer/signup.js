@@ -23,7 +23,6 @@ function signup(state, action) {
         // }
       };
     }else if (action.step === 1) {
-      Actions.token.set(data.entity.token);
       return {
         ...newState,
         // user: {
@@ -35,7 +34,6 @@ function signup(state, action) {
         // },
       };
     }else if (action.step === 2) {
-      Actions.token.set(data.entity.token);
       return {
         ...newState,
         // business: {
