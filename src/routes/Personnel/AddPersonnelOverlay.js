@@ -35,7 +35,7 @@ class PersonnelOverlay extends Component {
           <div>
             <div className="row mb-24">
               <div className="col-7">
-                <span className="addPersonnelSpan">First Name</span>
+                <span className="formSpan">First Name</span>
                 <FormField
                   labelTitle="First name"
                   labelClass="profile-label"
@@ -43,7 +43,7 @@ class PersonnelOverlay extends Component {
                 />
               </div>
               <div className="col-7">
-              <span className="addPersonnelSpan">Last Name</span>
+              <span className="formSpan">Last Name</span>
                 <FormField
                   labelTitle="Last name"
                   labelClass="profile-label"
@@ -51,7 +51,7 @@ class PersonnelOverlay extends Component {
                 />
               </div>
             </div>
-            <span className="addPersonnelSpan">Email</span>
+            <span className="formSpan">Email</span>
             <FormField
               labelTitle="Email"
               labelClass="profile-label"
@@ -59,7 +59,7 @@ class PersonnelOverlay extends Component {
             />
             <div className="row mb-24">
               <div className="col-7">
-              <span className="addPersonnelSpan">Status</span>
+              <span className="formSpan">Status</span>
                 <FormField
                   type="select"
                   labelTitle="Status"
@@ -70,7 +70,7 @@ class PersonnelOverlay extends Component {
                 />
               </div>
               <div className="col-7">
-              <span className="addPersonnelSpan">Department</span>
+              <span className="formSpan">Department</span>
                 <FormField
                   type="select"
                   labelTitle="Department"
@@ -83,7 +83,7 @@ class PersonnelOverlay extends Component {
             </div>
             <div className="row mb-24">
               <div className="col-7">
-              <span className="addPersonnelSpan">Skill Level</span>
+              <span className="formSpan">Skill Level</span>
                 <FormField
                   type="select"
                   labelTitle="Skill level"

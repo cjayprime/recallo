@@ -8,6 +8,7 @@ import bell from "../../assets/img/bell.svg";
 import "./AppPageHeader.css";
 
 class AppPageHeader extends Component {
+
   // verifies if routeName is the one active in (in browser input)
   activeRoute = (routeName) => {
     const {

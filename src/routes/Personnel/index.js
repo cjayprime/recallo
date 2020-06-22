@@ -18,8 +18,10 @@ class Personnel extends Component {
   };
 
   toggle2 = () => {
+    //alert(333);
     const { open2 } = this.state;
     this.setState({ open2: !open2 });
+    
   };
 
   render() {
@@ -46,7 +48,7 @@ class Personnel extends Component {
             />
             <div className="search-form">
               <SearchIcon className="search-icon" />
-              <input className="br-3 search bc-blue hover" />
+              <input id="input" className="br-3 search bc-blue hover" />
             </div>
           </div>
           <div className="menu-bar-right">
