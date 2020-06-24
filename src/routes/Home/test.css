@@ -5,7 +5,41 @@
   .screen-padding{
     width: 1020px;
     margin-left: 320px;
+    height: 800px;
   }
+
+  Button:hover{
+    background-color: #FF6B00 !important;
+  }
+  
+#buttonText{
+  color: white;
+}
+  #gudder{
+    font-size: 18px;
+    color: gray;
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid rgb(238, 229, 229);
+  }
+
+  #input{
+    padding-left: 25px;
+  }
+
+  #gudder p{
+    padding: 0px 20px;
+    font-size: 16px;
+    margin-top: 50px;
+    display: inline-block;
+  }
+
+  #p{
+    margin-left: 300px;
+  }
+
+ 
 
   .previous-header{
     width: 1020px;
@@ -28,9 +62,6 @@
   .title-bar{
     margin-top: 20px;
   }
-
-
-
     .graphHeader{
         margin-left: 70px;
         margin-top: -40px;
@@ -257,6 +288,38 @@
         background-repeat: no-repeat;
         background-image: url(../../assets/img/tableIcon.PNG);
       }
+
+
+      /*Add Personnel and Department style Begin*/
+          .addPersonnelContainer{
+            width: 500px;
+            float: right;
+          }
+
+          .departmentContainer{
+            width: 500px;
+            float: right;
+          }
+
+          .editDepartment{
+            margin-top: 10px;
+          }
+
+
+          .formSpan{
+            font-size: 14px;
+            color: gray;
+          }
+
+          #addPersonnelForm{
+            margin-left: -33px;
+          }
+
+          .addPersonnelButton{
+            color: white;
+          }
+
+       /*Add Personnel and Department style End*/
     
   }
 
@@ -267,6 +330,14 @@
       display: none;
     }
 
+    .screen-padding{
+      height: 1500px;
+    }
+
+    Button:hover{
+      background-color: #FF6B00 !important;
+    }
+   
     .overview__action-button{
       height: 300px;
     }
@@ -279,19 +350,35 @@
       margin-left: -40px;
     }
 
+    .graphHeader span{
+        padding: 0px 12px;
+    }
+
     #rowTwo{
       width: 708px;
+      position: absolute;
+
     }
+
     #licence-info{
       width: 315px;
       height: 260px;
+      position: absolute;
+
     }
 
     #average-time{
       height: 260px;
-      margin-left: -380px;
       margin-top: 300px;
       width: 315px;
+position: absolute;
+    }
+
+    #personnelDiv{
+      margin-top: 600px;
+      position: absolute;
+      width: 315px;
+
 
     }
 

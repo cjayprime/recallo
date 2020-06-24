@@ -10,7 +10,7 @@ const departments = ["some department"];
 
 const skills = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"];
 
-class PersonnelOverlay extends Component {
+class EditPersonnelOverlay extends Component {
   render() {
     const { open, toggle } = this.props;
 
@@ -29,8 +29,8 @@ class PersonnelOverlay extends Component {
     return (
       <Overlay open={open} toggle={toggle}> 
 
-        <div className="addPersonnelContainer">
-          <h4 className="mb-8">Add Personnel</h4><br/><br/><br/>
+        <div className="editPersonnelContainer">
+          <h4 className="mb-8">Edit Personnel</h4><br/><br/><br/>
           {/* {<h6 className="light text-light mb-32"></h6>} */}
           <div>
             <div className="row mb-24">
@@ -151,7 +151,7 @@ class PersonnelOverlay extends Component {
               background="var(--text-color)"
               text="#fff"
             >
-             <h6 className="addPersonnelButton">Add personnel</h6> 
+             <h6 className="editPersonnelButton">Edit personnel</h6> 
             </Button>
           </div>
         </div>
@@ -161,4 +161,4 @@ class PersonnelOverlay extends Component {
   }
 }
 
-export default PersonnelOverlay;
+export default EditPersonnelOverlay;

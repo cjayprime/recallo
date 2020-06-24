@@ -4,7 +4,6 @@ import MenuItem from "../../components/MenuItem/menuItem";
 import arrowLeft from "../../assets/img/arrow-left.png";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 import SideNav from "../../components/SideNav/sidenav";
-import Header from "../../components/Header/header";
 
 class ProfileCall extends Component {
   goBack = () => {

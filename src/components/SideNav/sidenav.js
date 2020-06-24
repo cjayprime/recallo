@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import Button from "../Button/button";
 import Header from "../Header/header";
-import LayoutPage from "../../components/AppPageHeader/LayoutPage";
 
 
 import "./sidenav.css";
@@ -99,7 +98,7 @@ class Sidenav extends Component {
                     Analytics
                 </h5>
               </Link>
-          <hr />
+          <hr id="sidebarHr" />
           <h6 className="logout text-blue light" onClick={this.signout}>
             Logout
           </h6>

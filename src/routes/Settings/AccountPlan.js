@@ -1,12 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Button from "../../components/Button/button";
+import SideNav from "../../components/SideNav/sidenav";
+
 
 const AccountPlan = () => {
   return (
     <>
-      <div className="screen-padding mt-80">
-        <div className="row mb-24">
+     <div>
+          <SideNav />
+      </div>
+      <div id="gudder">
+      <p id="p"></p>
+      <p>Profile</p>
+                        <p>Account Plan</p>
+                        <p>Greetings</p>
+                        <p>Business Hour</p>
+                     
+      </div>
+      <div className="screen-padding container background-grey">
+        <div className="row mb-24" id="m">
           <div className="col-28">
             <div className="overview blue-hover text-center br-8">
               <div className="pt-40 mb-40">
@@ -31,7 +45,7 @@ const AccountPlan = () => {
                   background="var(--text-color)"
                   text="#fff"
                 >
-                  <h6 className="bold">Subcribe</h6>
+                  <h6 id="buttonText" className="bold">Subcribe</h6>
                 </Button>
               </div>
             </div>
@@ -60,7 +74,7 @@ const AccountPlan = () => {
                   background="var(--text-color)"
                   text="#fff"
                 >
-                  <h6 className="bold">Subcribe</h6>
+                  <h6 id="buttonText" className="bold">Subcribe</h6>
                 </Button>
               </div>
             </div>
@@ -89,7 +103,7 @@ const AccountPlan = () => {
                   background="var(--text-color)"
                   text="#fff"
                 >
-                  <h6 className="bold">Subcribe</h6>
+                  <h6 id="buttonText" className="bold">Subcribe</h6>
                 </Button>
               </div>
             </div>

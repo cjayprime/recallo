@@ -17,6 +17,7 @@ import Settings from "./Settings";
 import ProfileCall from "./ProfileCall";
 import NumberDetails from "./NumberDetails";
 import VoiceNotes from "./Voicenotes";
+import AccountPlan from "./Settings/AccountPlan"
 
 import homeIcon from "../assets/img/homeIcon.svg";
 import contactBook from "../assets/img/contactbook.svg";
@@ -80,6 +81,7 @@ const routes = {
         layout: "/admin",
         icon: homeIcon,
       },
+  
       {
         path: "/analytics",
         exact: true,
@@ -108,6 +110,14 @@ const routes = {
         component: NumberDetails,
         layout: "/admin",
       },
+     {
+        path: "/account-plan",
+        exact: true,
+        component: AccountPlan,
+        layout: "/admin",
+      },
+
+     
       {
         path: "/voicenotes",
         exact: true,

@@ -118,6 +118,7 @@
   }
   
   
+  
   .sidenav-body::-webkit-scrollbar {
     display: none;
   }
@@ -207,9 +208,13 @@
   }
   
   .logout {
-    margin-bottom: 54px;
+    margin-top: -15px;
     text-align: center;
     cursor: pointer;
+  }
+
+  #sidebarHr{
+    margin-top: 50px;
   }
   
   #sidebar-text{

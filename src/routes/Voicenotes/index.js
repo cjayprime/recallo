@@ -5,7 +5,6 @@ import Button from "../../components/Button/button";
 import MenuItem from "../../components/MenuItem/menuItem";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 import SideNav from "../../components/SideNav/sidenav";
-import Header from "../../components/Header/header";
 
 class VoiceNotes extends Component {
   state = { open: false };
@@ -72,7 +71,7 @@ class VoiceNotes extends Component {
             />
             <div className="search-form">
               <SearchIcon className="search-icon" />
-              <input className="br-3 search bc-blue hover" />
+              <input id="input" className="br-3 search bc-blue hover" />
             </div>
           </div>
           <div className="menu-bar-right">

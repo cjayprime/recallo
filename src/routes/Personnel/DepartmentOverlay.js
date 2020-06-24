@@ -8,22 +8,21 @@ class DepartmentOverlay extends Component {
     const { open, toggle } = this.props;
 
     return (
-      <Overlay open={open} toggle={toggle}>
-        <div>
-          <h4 className="mb-8">Add Department</h4>
+      <Overlay open={open} toggle={toggle}> 
+        <div className="departmentContainer">
+          <h4 className="mb-8">Add Department</h4><br/><br/><br/>
           {/* <h6 className="light text-light mb-32"></h6> */}
           <div>
+          <span className="formSpan">Enter name of department</span>
+
             <FormField
               labelTitle="Enter name of department"
               labelClass="profile-label"
               className="br-8 profile-input p-12 mb-16"
             />
             <form className="mb-32">
-              <label>
-                <h6 className="mb-8 light profile-label">
-                  Give a short description for the department
-                </h6>
-              </label>
+        
+              <span className="formSpan"> Give a short description for the department</span>
               <textarea
                 className="profile-input br-8 p-12"
                 style={{ overflow: "hidden", height: 100 }}
@@ -31,17 +30,18 @@ class DepartmentOverlay extends Component {
             </form>
             <Button
               className="br-30"
-              padding="12px 60px"
+              padding="10px 40px"
               background="var(--text-color)"
               text="#fff"
             >
-              Save
+              Add department
             </Button>
           </div>
+          <br/><br/>
         </div>
         <hr className="mt-40 mb-24" />
-        <div>
-          <h4 className="mb-8">Edit existing departments</h4>
+        <div className="departmentContainer">
+          <h4 className="mb-8" id="editDepartment">Edit existing departments</h4>
           <h6 className="light text-light mb-32">
             You can rename, add to description or delete previous departments
           </h6>
@@ -72,7 +72,8 @@ class DepartmentOverlay extends Component {
             </div>
           </div>
         </div>
-      </Overlay>
+        </Overlay>
+
     );
   }
 }

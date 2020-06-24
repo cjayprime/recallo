@@ -6,12 +6,12 @@ import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 import Table from "./table";
 import DepartmentOverlay from "./DepartmentOverlay";
 import PersonnelOverlay from "./AddPersonnelOverlay";
+import EditPersonnelOverlay from "./EditPersonnelOverlay";
 import SideNav from "../../components/SideNav/sidenav";
-import Header from "../../components/Header/header";
 
 
 class Personnel extends Component {
-  state = { open: false, open2: false };
+  state = { open: false, open2: false, open3: false };
 
   toggle = () => {
     const { open } = this.state;
@@ -19,12 +19,21 @@ class Personnel extends Component {
   };
 
   toggle2 = () => {
+    //alert(333);
     const { open2 } = this.state;
     this.setState({ open2: !open2 });
+    
+  };
+
+  toggle3 = () => {
+    //alert(333);
+    const { open3 } = this.state;
+    this.setState({ open3: !open3 });
+    
   };
 
   render() {
-    const { open, open2 } = this.state;
+    const { open, open2, open3 } = this.state;
     return (
       <>
       <div>
@@ -37,7 +46,9 @@ class Personnel extends Component {
           heading="Personnel"
           buttons={{
             left: { title: "Departments", action: this.toggle },
+            middle: { title: "Edit personnel", action: this.toggle3 },
             right: { title: "Add personnel", action: this.toggle2 },
+
           }}
         />
         <div className="menu-bar ptb-20">
@@ -47,7 +58,7 @@ class Personnel extends Component {
             />
             <div className="search-form">
               <SearchIcon className="search-icon" />
-              <input className="br-3 search bc-blue hover" />
+              <input id="input" className="br-3 search bc-blue hover" />
             </div>
           </div>
           <div className="menu-bar-right">
@@ -63,6 +74,7 @@ class Personnel extends Component {
         </div>
         <DepartmentOverlay open={open} toggle={this.toggle} />
         <PersonnelOverlay open={open2} toggle={this.toggle2} />
+        <EditPersonnelOverlay open={open3} toggle={this.toggle3} />
         <Table />
       </div>
     </>
