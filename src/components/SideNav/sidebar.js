@@ -96,9 +96,9 @@ class Sidebar extends Component {
                   <div className="icon-analytics" />
                     Analytics
                 </h5>
-              </Link> <br/><br/><br/>
-          <hr />
-          <br/><br/>
+              </Link> 
+          <hr id="sidebarHr" />
+         
           <h6 className="logout text-blue light" onClick={this.signout}>
             Logout
           </h6>

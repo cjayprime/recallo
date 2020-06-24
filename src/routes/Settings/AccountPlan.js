@@ -45,7 +45,7 @@ const AccountPlan = () => {
                   background="var(--text-color)"
                   text="#fff"
                 >
-                  <h6 className="bold">Subcribe</h6>
+                  <h6 id="buttonText" className="bold">Subcribe</h6>
                 </Button>
               </div>
             </div>
@@ -74,7 +74,7 @@ const AccountPlan = () => {
                   background="var(--text-color)"
                   text="#fff"
                 >
-                  <h6 className="bold">Subcribe</h6>
+                  <h6 id="buttonText" className="bold">Subcribe</h6>
                 </Button>
               </div>
             </div>
@@ -103,7 +103,7 @@ const AccountPlan = () => {
                   background="var(--text-color)"
                   text="#fff"
                 >
-                  <h6 className="bold">Subcribe</h6>
+                  <h6 id="buttonText" className="bold">Subcribe</h6>
                 </Button>
               </div>
             </div>

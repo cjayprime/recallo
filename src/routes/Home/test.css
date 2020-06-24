@@ -7,8 +7,14 @@
     margin-left: 320px;
     height: 800px;
   }
-  
 
+  Button:hover{
+    background-color: #FF6B00 !important;
+  }
+  
+#buttonText{
+  color: white;
+}
   #gudder{
     font-size: 18px;
     color: gray;
@@ -326,7 +332,10 @@
 
     .screen-padding{
       height: 1500px;
+    }
 
+    Button:hover{
+      background-color: #FF6B00 !important;
     }
    
     .overview__action-button{

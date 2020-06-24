@@ -15,22 +15,20 @@ class ProfileCategoryOverlay extends Component {
             You can enter a name to categorise calls you profile
           </h6>
           <div>
+          <form className="mb-32">
+          <span className="formSpan">Enter name of profile category</span>
             <FormField
               labelTitle="Enter name of profile category"
               labelClass="profile-label"
               className="br-8 profile-input p-12 mb-16"
             />
-            <form className="mb-32">
-              <label for="description">
-                <h6 className="mb-8 light profile-label">
-                  Give a short description for the profile category
-                </h6>
-              </label>
+           
+              <span className="formSpan"> Give a short description for the profile category</span><br/><br/>
               <textarea
                 className="profile-input br-8 p-12"
                 style={{ overflow: "hidden", height: 100 }}
               />
-            </form>
+            <br/><br/><br/>
             <Button
               className="br-30"
               padding="12px 60px"
@@ -39,6 +37,7 @@ class ProfileCategoryOverlay extends Component {
             >
               Save
             </Button>
+            </form>
           </div>
         </div>
         <hr className="mt-40 mb-24" />

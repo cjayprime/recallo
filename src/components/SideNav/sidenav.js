@@ -98,7 +98,7 @@ class Sidenav extends Component {
                     Analytics
                 </h5>
               </Link>
-          <hr />
+          <hr id="sidebarHr" />
           <h6 className="logout text-blue light" onClick={this.signout}>
             Logout
           </h6>
