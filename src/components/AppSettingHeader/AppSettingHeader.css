@@ -1,4 +1,4 @@
-.header {
+.settingheader {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,30 +6,17 @@
     height: 73px;
     width: 100%;
     z-index: 101;
+    margin-left: -320px;
     position: fixed;
     padding: 0 95px 0 92px;
     background-color:white;
-    border-top: 0px solid white!important;
-    border-bottom: 0px solid white !important;
+    border-bottom: 1px solid rgb(236, 231, 231) !important;
+    
   }
   
   .app-header .logo {
     width: 143px;
     height: 42px;
-  }
-
-  .businessnav-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #336799;
-    margin-top: 10px;
-  }
-
-  .logonav-text {
-    font: Bold 12px/40px Barlow;
-    color: #fff;
-    text-align: center;
   }
   
   .header-menu {
@@ -62,7 +49,7 @@
   } */
 
   @media (min-width: 1281px){
-    .header {
+    .settingheader {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -73,43 +60,21 @@
       position: fixed;
       padding: 0 95px 0 92px;
       background-color:white;
+      border-bottom: 1px solid rgb(231, 224, 224);
     }
 
-    .businessnav-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #336799;
-      margin-top: 10px;
-    }
-  
-    .logonav-text {
-      font: Bold 12px/40px Barlow;
-      color: #fff;
-      text-align: center;
+    #settingside-header{
+        font-size: 16px;
+        margin-left: 730px;
+        margin-top: 5px;
     }
 
-    .logo{
+    .settinglogo{
 
-      margin-left: 1px !important;
-      width: 120px !important;
-      height: 50px !important;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      top: 0;
-      height: 73px;
-      width: 100%;
-      z-index: 101;
-      position: fixed;
-      padding: 0 95px 0 92px;
-      background-color:white;
-      border-top: 0px solid white!important;
-      border-bottom: 0px solid white !important;
-    }
+        margin-left: -80px;
+        width: 45px;
+        height: 30px;
+      }
   
   }
 
@@ -120,7 +85,7 @@
       margin-left: 200px;
     }
 
-    .logo{
+    .settinglogo{
 
       margin-left: 0px;
     }

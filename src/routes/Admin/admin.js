@@ -3,6 +3,8 @@ import { Route, Switch } from "react-router-dom";
 
 import Sidenav from "../../components/SideNav/sidenav";
 import Header from "../../components/Header/header";
+import SettingSideBar from "../../components/SideNav/settingsidebar";
+
 
 import routes from "../routes";
 
@@ -76,7 +78,26 @@ class Admin extends Component {
   };
 
   render() {
-    const { account /* data, result */ } = this.props;
+    const { account, location/* data, result */ } = this.props;
+   if(location.pathname === "/admin/settings"){
+    return (
+      <div className="grid">
+           <Header header={this.header(false)} className="main-header" />
+            <SettingSideBar
+              header={this.header(true)}
+              {...this.props}
+              routes={routes}
+              account={account}
+            />
+        <main className="main">
+          <Switch>
+            {this.getRoutes(routes)}
+            {this.getSettings(routes)}
+          </Switch>
+        </main>
+      </div>
+    );
+   }else{
     return (
       <div className="grid">
         <Header header={this.header(false)} className="main-header" />
@@ -94,6 +115,7 @@ class Admin extends Component {
         </main>
       </div>
     );
+   }
   }
 }
 

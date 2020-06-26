@@ -84,6 +84,13 @@ class Sidebar extends Component {
                 </h5>
               </Link> 
 
+              <Link to="/calls" className="Link">
+                <h5 className="sidebar-text">
+                  <div className="icon-contact" />
+                    Contact
+                </h5>
+              </Link> 
+
               <Link to="/Personnel" className="Link">
                 <h5 className="sidebar-text">
                   <div className="icon-personnel" />

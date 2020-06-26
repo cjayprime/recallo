@@ -2,8 +2,12 @@ import React, { Component } from "react";
 
 import Profile from "./Profile";
 import AccountPlan from "./AccountPlan";
-import Greetings from "./Greetings";
+import IvrMenu from "./IvrMenu";
+import ServiceLevel from "./ServiceLevel";
+//import Greetings from "./Greetings";
 import BusinessHours from "./BusinessHours";
+import SettingLayoutPage from "../../components/AppSettingHeader/SettingLayoutPage";
+//import SettingSideBar from "../../components/SideNav/settingsidebar";
 
 class ManageAccount extends Component {
   state = {
@@ -41,6 +45,9 @@ class ManageAccount extends Component {
     tabs: (active) => {
       return {
         color: active ? "#336799" : "#777777",
+        backgroundColor: active ? "#d7e5f1" : "transparent",
+        borderRadius:5,
+        width:190
       };
     },
   };
@@ -59,26 +66,39 @@ class ManageAccount extends Component {
     const tabs = [
       { tab: "Profile" },
       { tab: "Account Plan" },
-      { tab: "Greetings" },
+    //  { tab: "Greetings" },
       { tab: "Business Hours" },
+      { tab: "IVR Menu" },
+      { tab: "Service Level" },
     ];
 
     const { active } = this.state;
 
     return (
-      <>
-        <div className="profile_tab">
+      <SettingLayoutPage>
+        {/*
+        <div>
+           <SettingSideBar />
+        </div>
+        */}
+        
+        <div className="profile_tab" style={{marginTop:0}}>
+        <div style={{marginTop:140}}>         
+             <h4 style={{marginLeft:40, color:"grey", fontSize:15, paddingBottom:15}}>SETTINGS</h4>
+      </div>
+        
           {tabs.map((tab) => (
             <div key={tab.tab}>
-              <button
+              <button id="xz"
                 type="button"
                 className="profile_tablinks"
                 onClick={() => this.setActiveTabs(tab.tab)}
                 style={this.color.tabs(active === tab.tab)}
               >
-                <h5 className="bold">{tab.tab}</h5>
+                <h5 className="tabText">{tab.tab}</h5>
               </button>
-              <div style={this.styles.tabs(active === tab.tab)} />
+
+              {/* <div style={this.styles.tabs(active === tab.tab)} />*/}
             </div>
           ))}
         </div>
@@ -91,12 +111,14 @@ class ManageAccount extends Component {
             />
           )}
           {active === "Account Plan" && <AccountPlan />}
-          {active === "Greetings" && <Greetings />}
+          {/*{active === "Greetings" && <Greetings />}*/}
+          {active === "Greetings" && <IvrMenu />}
+          {active === "Greetings" && <ServiceLevel />}
           {active === "Business Hours" && (
             <BusinessHours handleChange={this.handleChange} />
           )}
         </div>
-      </>
+      </SettingLayoutPage>
     );
   }
 }

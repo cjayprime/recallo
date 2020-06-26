@@ -9,10 +9,10 @@ class Profile extends Component {
     const { user, business } = form;
     return (
       <>
-        <div className="screen-padding mt-80">
-          <div className="overview br-16 plr-32 pb-32 mb-32">
+        <div id="settingscreenDiv" className="screen-padding container background-grey">
+          <div className="overview br-16 plr-32 pb-32 mb-32" >
             <form>
-              <div className="row mb-23">
+              <div className="row mb-23" id="settingContainer">
                 <h4 className="bold pt-32">Personal information</h4>
                 <div className="pt-23">
                   <Button
@@ -61,6 +61,7 @@ class Profile extends Component {
                   </Button>
                 </div>
               </div>
+           
             </form>
           </div>
           <div className="overview br-16 plr-32 pb-32">

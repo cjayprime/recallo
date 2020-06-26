@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import "./test.css";
 import LayoutPage from "../../components/AppPageHeader/LayoutPage";
 import MenuItem from "../../components/MenuItem/menuItem";
-import SideBar from "../../components/SideNav/sidebar";
+//import SideBar from "../../components/SideNav/sidebar";
 import TotalCalls from "./TotalCalls";
 import TotalCallsAnswered from "./TotalCallsAnswered";
 import ProfileVoiceNotes from "./ProfileVoicenotes";
@@ -39,9 +39,9 @@ class Home extends Component {
 
     return (
       <LayoutPage {...this.props}>
-        <div>
+       {/* <div>
            <SideBar />
-        </div>
+        </div>*/}
         <div className="screen-padding container background-grey height mt-80">
         
         <div className="row">

@@ -79,6 +79,7 @@ export default class SignIn extends Component {
                 </Button>
               </div>
             </form>
+            
             <hr id="SignInBreakLine"  className="signin-hr" />
             <div>
               <h5 id="BackToSite" className="light text-light bk-2-web">Back to website</h5>

@@ -21,15 +21,7 @@ class Titlebar extends Component {
           >
             {buttons.left.title}
           </Button>
-          <Button
-            background="rgb(211, 192, 83)"
-            text="#fff"
-            padding="12px 25px"
-            className="mr-16 br-30"
-            onClick={buttons.middle.action}
-          >
-            {buttons.middle.title}
-          </Button>
+     
           <Button
             background="var(--text-color)"
             text="#fff"

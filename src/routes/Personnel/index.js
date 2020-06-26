@@ -6,12 +6,11 @@ import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 import Table from "./table";
 import DepartmentOverlay from "./DepartmentOverlay";
 import PersonnelOverlay from "./AddPersonnelOverlay";
-import EditPersonnelOverlay from "./EditPersonnelOverlay";
-import SideNav from "../../components/SideNav/sidenav";
+//import SideNav from "../../components/SideNav/sidenav";
 
 
 class Personnel extends Component {
-  state = { open: false, open2: false, open3: false };
+  state = { open: false, open2: false };
 
   toggle = () => {
     const { open } = this.state;
@@ -25,28 +24,20 @@ class Personnel extends Component {
     
   };
 
-  toggle3 = () => {
-    //alert(333);
-    const { open3 } = this.state;
-    this.setState({ open3: !open3 });
-    
-  };
+
 
   render() {
-    const { open, open2, open3 } = this.state;
+    const { open, open2 } = this.state;
     return (
       <>
-      <div>
+             {/*<div> <SideNav /></div>*/}
 
-      <SideNav />
-      </div>
       
       <div className="screen-padding">
         <Titlebar
           heading="Personnel"
           buttons={{
             left: { title: "Departments", action: this.toggle },
-            middle: { title: "Edit personnel", action: this.toggle3 },
             right: { title: "Add personnel", action: this.toggle2 },
 
           }}
@@ -74,7 +65,6 @@ class Personnel extends Component {
         </div>
         <DepartmentOverlay open={open} toggle={this.toggle} />
         <PersonnelOverlay open={open2} toggle={this.toggle2} />
-        <EditPersonnelOverlay open={open3} toggle={this.toggle3} />
         <Table />
       </div>
     </>

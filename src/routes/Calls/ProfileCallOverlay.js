@@ -22,7 +22,7 @@ class ProfileCallOverlay extends Component {
     const { showMenuCard } = this.state;
 
     return (
-      <Overlay open={open} toggle={toggle} width="96rem">
+      <Overlay open={open} toggle={toggle} width="76rem">
         <div>
           <h4 className="mb-8">Profiled call from +2348051113453</h4>
           <h6 className="light text-light mb-32">Edit call details</h6>

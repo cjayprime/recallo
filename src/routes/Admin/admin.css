@@ -1360,16 +1360,23 @@ text-align: center;
 
 /* Profile styles */
 .profile_tab {
-  display: flex;
+  display: inline-block;
   flex-direction: row;
   top: 0;
-  height: 79px;
-  width: 100%;
-  z-index: 101;
-  position: fixed;
+  width: 20%;
+  margin-left: 30px;
+  position: absolute;
+  margin-top: 2000px;
   padding-left: 40px;
-  background-color: #fff;
+ /* background-color: #fff; 
+   z-index: 101;
   box-shadow: 0px 3px 6px #00000014;
+
+ */
+}
+
+#xz:hover{
+  background-color: white !important;
 }
 
 .profile_tablinks {
@@ -1377,10 +1384,17 @@ text-align: center;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 38px 40px 14px;
+  padding: 10px 40px 0px;
   line-height: 25px;
   display: block;
 }
+
+.tabText{
+  font-size: 14px;
+  float: left;
+}
+
+
 
 .profile-input {
   border: 1px solid #dddddd;
