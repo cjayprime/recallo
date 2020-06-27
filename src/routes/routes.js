@@ -42,6 +42,22 @@ const routes = {
       component: ContactSupport,
       name: "Contact Support",
     },
+
+/*
+    {
+      path: "/admin/settings",
+      exact: true,
+      component: Settings,
+      name: "Settings",
+    },
+
+    {
+      path: "/admin/account-plan",
+      exact: true,
+      component: AccountPlan,
+      name: "Account Plan",
+    },
+*/
   ],
   private: {
     sidebar: [
@@ -92,12 +108,21 @@ const routes = {
       },
     ],
     route: [
-      {
+    {
         path: "/settings",
         exact: true,
         component: Settings,
+       layout: "/admin",
+      },
+
+        {
+        path: "/account-plan",
+        exact: true,
+        component: AccountPlan,
         layout: "/admin",
       },
+
+
       {
         path: "/profile-calls",
         exact: true,
@@ -110,13 +135,7 @@ const routes = {
         component: NumberDetails,
         layout: "/admin",
       },
-     {
-        path: "/account-plan",
-        exact: true,
-        component: AccountPlan,
-        layout: "/admin",
-      },
-
+   
      
       {
         path: "/voicenotes",

@@ -1,8 +1,21 @@
 import React, { Component } from "react";
+import EditPersonnelOverlay from "./EditPersonnelOverlay";
+
 // import { Link } from "react-router-dom";
 
 class Table extends Component {
+  state = { open: false };
+
+
+  toggle = () => {
+   // alert(333);
+    const { open } = this.state;
+    this.setState({ open: !open });
+    
+  };
   render() {
+    const { open } = this.state;
+
     return (
       <table className="mtb-15">
         <tbody>
@@ -31,7 +44,7 @@ class Table extends Component {
               {/* <label for="active" className="label-inactive">Active</label>*/}
               <p className="label-active">Active</p>
             </td>
-            <td className="text-blue bold cursor">Edit</td>
+            <td onClick={this.toggle} className="text-blue bold cursor">Edit</td>
           </tr>
           <tr className="table-body text-main hover-grey">
             <td className="text-blue bold" />
@@ -46,10 +59,11 @@ class Table extends Component {
               <p className="label-inactive">Inactive</p>
 
             </td>
-            <td className="text-blue bold cursor">Edit</td>
+            <td onClick={this.toggle} className="text-blue bold cursor">Edit</td>
           </tr>
         </tbody>
-       
+        <EditPersonnelOverlay open={open} toggle={this.toggle} />
+
       </table>
 
       

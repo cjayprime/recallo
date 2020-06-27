@@ -117,7 +117,7 @@
     width: 100%;
   }
   
-  
+
   
   .sidenav-body::-webkit-scrollbar {
     display: none;
@@ -148,6 +148,8 @@
     color: #fff;
     text-align: center;
   }
+
+
   
   .account-button {
     transition: 0.3s all ease-in-out;
@@ -208,16 +210,103 @@
   }
   
   .logout {
-    margin-top: -15px;
+    margin-top: 20px;
     text-align: center;
     cursor: pointer;
   }
 
   #sidebarHr{
-    margin-top: 50px;
+    margin-top: 40px;
   }
   
   #sidebar-text{
     font-size: 14px;
   }
+
+  /*SETTING STYLE BEGINING*/
+  .settingbusiness-logo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #336799;
+    margin-top: -100px;
+  }
+  
+  .settinglogo-text {
+    font: Bold 13px/36px Barlow;
+    color: #fff;
+    text-align: center;
+  }
+
+  #seetingsidebar{
+    width: 65px;
+    background-color: #2C405A;
+  }
+
+  .setting-icon {
+    position: absolute;
+    right: -3px;
+   width: 50px;
+   margin-top: -10px;
+    height: 45px;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/img/setting-icon.PNG);
+  }
+
+  .settingicon-home {
+    position: absolute;
+    right: -3px;
+    width: 50px;
+     height: 45px;
+     background-repeat: no-repeat;
+    background-image: url(../../assets/img/settinghome-icon.PNG);
+  }
+
+  .settingicon-call {
+    position: absolute;
+    right: -3px;
+    margin-top: 40px;
+
+    width: 50px;
+     height: 45px;
+     background-repeat: no-repeat;
+    background-image: url(../../assets/img/settingcall-icon.PNG);
+  }
+
+  .settingicon-personnel {
+    position: absolute;
+    right: -3px;
+    width: 50px;
+    margin-top: 75px;
+
+     height: 45px;
+     background-repeat: no-repeat;
+    background-image: url(../../assets/img/settingpersonnel-icon.PNG);
+  }
+
+  .settingicon-analytics {
+    position: absolute;
+    right: -3px;
+    margin-top: 110px;
+
+    width: 50px;
+     height: 45px;
+     background-repeat: no-repeat;
+    background-image: url(../../assets/img/settinganalytics-icon.PNG);
+  }
+
+  .settingicon-power {
+    position: absolute;
+    right: -3px;
+    margin-top: -30px;
+    width: 50px;
+     height: 45px;
+     background-repeat: no-repeat;
+    background-image: url(../../assets/img/settingpower-icon.PNG);
+  }
+
+  
+
+/*SETTING STYLE END*/
+
 }
