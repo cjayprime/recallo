@@ -87,11 +87,6 @@ class PersonalInformation extends Component {
                     <h5 className="bold text-white">Save and Continue</h5>
                   </Button>
                 </div>
-                {/* <AlertDialog
-                                    open={request.feedback.for === authRequest.signupRequest}
-                                    message={request.feedback.message}
-                                    success={request.feedback.success}
-                                /> */}
               </div>
             </form>
           </div>

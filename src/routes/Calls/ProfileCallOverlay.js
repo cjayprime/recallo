@@ -61,22 +61,22 @@ class ProfileCallOverlay extends Component {
               <div className="flex">
                 <div>
                   <h6 className="text-light flex-1 light">Select age group</h6>
-                  <label for="teenager" className="profile-call-label mt-16 cursor bold">
+                  <label htmlFor="teenager" className="profile-call-label mt-16 cursor bold">
                     Teenager
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
                   </label>
-                  <label for="youth" className="profile-call-label mt-16 cursor bold">
+                  <label htmlFor="youth" className="profile-call-label mt-16 cursor bold">
                     Youth
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
                   </label>
-                  <label for="adult" className="profile-call-label mt-16 cursor bold">
+                  <label htmlFor="adult" className="profile-call-label mt-16 cursor bold">
                     Adult
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
                   </label>
-                  <label for="elder" className="profile-call-label mt-16 cursor bold">
+                  <label htmlFor="elder" className="profile-call-label mt-16 cursor bold">
                     Elder
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
@@ -84,12 +84,12 @@ class ProfileCallOverlay extends Component {
                 </div>
                 <div className="ml-35">
                   <h6 className="text-light flex-1 light">Select gender</h6>
-                  <label for="male" className="profile-call-label mt-16 cursor bold">
+                  <label htmlFor="male" className="profile-call-label mt-16 cursor bold">
                     Male
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
                   </label>
-                  <label for="female" className="profile-call-label mt-16 cursor bold">
+                  <label htmlFor="female" className="profile-call-label mt-16 cursor bold">
                     Female
                     <input type="radio" name="radio" />
                     <span className="checkmark" />
