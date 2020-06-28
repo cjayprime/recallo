@@ -19,13 +19,10 @@ export default connect(
   class Routes extends Component {
     async componentDidMount() {
       const { load } = this.props;
-      const token = await Actions.token.get();
+      const token = Actions.token.get();
+      console.log('Token: ', token);
       if (token) {
-        load(
-          /*
-          () => this.setState({signedIn: true});
-          */
-        );
+        load();
       }
     }
 
@@ -39,30 +36,18 @@ export default connect(
       return (
         <Router history={createBrowserHistory()}>
           <Switch>
-            {routes.public.map((route, i) => (
+            {routes.public.map((route) => (
               <Route
-                key={i}
-                path={route.path}
-                component={this.component(route)}
-                exact={true}
-              />
-            ))}
-            {routes.private.sidebar.map((route, i) => (
-              <PrivateRoute
-                key={i}
+                key={route.path}
                 path={route.path}
                 exact={route.exact}
                 component={this.component(route)}
               />
             ))}
-            {routes.private.route.map((route, i) => (
-              <PrivateRoute
-                key={i}
-                path={route.path}
-                exact={route.exact}
-                component={this.component(route)}
-              />
-            ))}
+            <PrivateRoute
+              path="/admin"
+              component={routes.private.admin}
+            />
             <Route
               path="/404"
               component={() => (
@@ -80,13 +65,9 @@ export default connect(
                 </div>
               )}
             />
-            {/* <Route exact path="/">
+            <Route exact path="/">
               <Redirect to="/signin" />
-            </Route> */}
-            {/* <Route path="*">
-              <Redirect to="/404" />
-            </Route> */}
-            {/* <Redirect from="/" to="/signin" /> */}
+            </Route>
           </Switch>
         </Router>
       );

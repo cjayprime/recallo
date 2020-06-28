@@ -1,17 +1,16 @@
 import * as Actions from "../actions";
 
 function plans(state, action) {
-  const { data, loading, message, status, type } = action;
+  const { data, loading, status, type } = action;
   var newState = {
-    ...state,
-    loading: state.loading.filter((text) => text !== loading),
+    ...state
   };
 
   if (
     status === true &&
     (
-      type === Actions.ADDPAYMENT ||
-      type === Actions.PAYMENTPLAN ||
+      type === Actions.ADDPAYMENT   ||
+      type === Actions.PAYMENTPLAN  ||
       type === Actions.DID
     )
   ) {
@@ -53,23 +52,9 @@ function plans(state, action) {
       
     }
 
-    return newState
-  }else if(
-    status === false &&
-    (
-      type === Actions.ADDPAYMENT ||
-      type === Actions.PAYMENTPLAN ||
-      type === Actions.DID
-    )
-  ){
-    return {
-      ...state,
-      loading: state.loading.filter((text) => text !== loading),
-      status: false,
-      message,
-    };
+    return newState;
   }
 
-  return null;
+  return newState;
 }
 export default plans;

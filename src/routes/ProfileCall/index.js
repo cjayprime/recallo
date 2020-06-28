@@ -11,6 +11,12 @@ class ProfileCall extends Component {
     history.goBack();
   };
 
+  componentDidMount(){
+    const { getCalls, match: { params: {id: id} } } = this.props;
+    console.log(id)
+    getCalls(id);
+  }
+
   render() {
     return (
       <>
@@ -20,7 +26,7 @@ class ProfileCall extends Component {
         <div className="previous-header mb-0">
           <div className="callID">
             <p className="light mb-8">
-              <span className="text-blue mr-8">Calls</span>>
+              <span className="text-blue mr-8">Calls</span>
               <span className="ml-8">Caller ID</span>
             </p>
             <h2 id="profCallHeader"  className="bold text-main">+2348051113453</h2>

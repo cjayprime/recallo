@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+// import { connect } from "react-redux";
 import Button from "../../components/Button/button";
 import Table from "./Table";
 import MenuItem from "../../components/MenuItem/menuItem";
@@ -10,6 +11,11 @@ import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 class Calls extends Component {
   state = { open: false };
 
+  componentDidMount(){
+    const { getCalls } = this.props;
+    getCalls('all');
+  }
+
   toggle = () => {
     const { open } = this.state;
     this.setState({ open: !open });
@@ -17,6 +23,9 @@ class Calls extends Component {
 
   render() {
     const { open } = this.state;
+    const { calls } = this.props;
+
+    console.log('Props', this.props)
     return (
       <>
        {/*<div> <SideNav /></div>*/}
@@ -81,7 +90,7 @@ class Calls extends Component {
           <div className="menu-bar-right">
             <p className="text-light mr-5">Viewing results</p>
             <p className="text-main bold mr-20">
-              1-10 <span className="text-light ml-5 mr-5">of</span>36
+              1-10 <span className="text-light ml-5 mr-5">of</span>{calls.all.length}
             </p>
             <div className="arrow-icons">
               <span className="arrow arrow-left mr-10 op-4 hover" />
@@ -90,7 +99,7 @@ class Calls extends Component {
           </div>
         </div>
         <ProfileCategoryOverlay open={open} toggle={this.toggle} />
-        <Table />
+        <Table all={calls.all} />
       </div>
     </>
     );
@@ -98,3 +107,4 @@ class Calls extends Component {
 }
 
 export default Calls;
+//export default connect(state=>state, null)(Calls);

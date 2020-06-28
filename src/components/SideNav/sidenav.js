@@ -78,14 +78,14 @@ class Sidenav extends Component {
                 </h5>
               </Link> 
 
-              <Link to="/calls" className="Link">
+              <Link to="/admin/calls" className="Link">
                 <h5 className="sidebar-text">
                   <div className="icon-call" />
                     Calls
                 </h5>
               </Link> 
 
-              <Link to="/calls" className="Link">
+              <Link to="/admin/contacts" className="Link">
                 <h5 className="sidebar-text">
                   <div className="icon-contact" />
                     Contact

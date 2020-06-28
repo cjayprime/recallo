@@ -4,10 +4,10 @@ import { Redirect } from "react-router-dom";
 // Public routes components
 import Signin from "./AuthScreen/SignIn";
 import SignUp from "./AuthScreen/Signup";
-import ContactSupport from "./ContactSupport";
+import Support from "./Support";
 
 // Private routes components
-import Admin from "./Admin/admin";
+import Admin from "./Admin";
 import Home from "./Home/home";
 import Calls from "./Calls";
 import Contact from "./Contact";
@@ -19,8 +19,8 @@ import NumberDetails from "./NumberDetails";
 import VoiceNotes from "./Voicenotes";
 import AccountPlan from "./Settings/AccountPlan"
 
-import homeIcon from "../assets/img/homeIcon.svg";
-import contactBook from "../assets/img/contactbook.svg";
+// import homeIcon from "../assets/img/homeIcon.svg";
+// import contactBook from "../assets/img/contactbook.svg";
 
 const routes = {
   public: [
@@ -34,78 +34,78 @@ const routes = {
     },
     {
       path: "/support",
-      component: ContactSupport,
+      component: Support,
     },
   ],
   private: {
+    admin: Admin,
     sidebar: [
       {
-        path: "/admin",
-        component: Admin,
-      },
-      {
-        path: "/home",
-        exact: true,
+        path: "/admin/home",
+        // exact: true,
         component: Home,
-        name: "Home",
-        layout: "/admin",
-        icon: homeIcon,
+        // name: "Home",
+        // layout: "/admin",
+        // icon: homeIcon,
       },
       {
-        path: "/calls",
+        path: "/admin/calls",
         exact: true,
         component: Calls,
-        name: "Calls",
-        layout: "/admin",
-        icon: homeIcon,
+        // name: "Calls",
+        // layout: "/admin",
+        // icon: homeIcon,
       },
       {
-        path: "/contact",
-        exact: true,
+        path: "/admin/calls/:id",
+        component: ProfileCall,
+        // name: "Calls",
+        // layout: "/admin",
+        // icon: homeIcon,
+      },
+      {
+        path: "/admim/contact",
+        // exact: true,
         component: Contact,
-        name: "Contact",
-        layout: "/admin",
-        icon: contactBook,
+        // name: "Contact",
+        // layout: "/admin",
+        // icon: contactBook,
       },
       {
-        path: "/personnel",
-        exact: true,
+        path: "/admin/personnel",
+        // exact: true,
         component: Personnel,
-        name: "Personnel",
-        layout: "/admin",
-        icon: homeIcon,
+        // name: "Personnel",
+        // layout: "/admin",
+        // icon: homeIcon,
       },
-  
       {
-        path: "/analytics",
-        exact: true,
+        path: "/admin/analytics",
+        // exact: true,
         component: Analytics,
-        name: "Analytics",
-        layout: "/admin",
-        icon: homeIcon,
+        // name: "Analytics",
+        // layout: "/admin",
+        // icon: homeIcon,
       },
     ],
     route: [
-    {
+      {
         path: "/settings",
         exact: true,
         component: Settings,
-       layout: "/admin",
+        layout: "/admin",
       },
-
-        {
+      {
         path: "/account-plan",
         exact: true,
         component: AccountPlan,
         layout: "/admin",
       },
-
-
       {
-        path: "/profile-calls",
+        path: "/admin/profile-calls",
         exact: true,
         component: ProfileCall,
-        layout: "/admin",
+        // layout: "/admin",
       },
       {
         path: "/number-details",
@@ -113,8 +113,6 @@ const routes = {
         component: NumberDetails,
         layout: "/admin",
       },
-   
-     
       {
         path: "/voicenotes",
         exact: true,
