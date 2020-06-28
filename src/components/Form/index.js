@@ -28,7 +28,7 @@ export default class FormField extends Component {
       <div>
         <div>
           <h6 className={classNames("mb-8", "light", labelClass)}>
-            <label for="label">{title}</label>
+            <label htmlFor="label">{title}</label>
           </h6>
         </div>
         <input

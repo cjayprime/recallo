@@ -6,16 +6,9 @@ import logo from "../../assets/img/appLogo.png";
 import "./AppHeader.css";
 
 class AppHeader extends Component {
-  // verifies if routeName is the one active in (in browser input)
-  activeRoute = (routeName) => {
-    const {
-      location: { pathname },
-    } = this.props;
-    return pathname.indexOf(routeName) > -1 ? "active" : "";
-  };
-
   render() {
     const { routes } = this.props;
+
     return (
       <header>
         <div className="app-header">
@@ -23,21 +16,21 @@ class AppHeader extends Component {
             <img className="logo" src={logo} alt="Recallo logo" />
           </div>
           <div className="header-menu">
-            {routes.public.map((prop, key) => {
-              if (prop.redirect) return null;
-              return (
-                <div
-                  key={key}
-                  className={
-                    this.activeRoute(prop.path) + (prop.pro ? "active" : "")
-                  }
-                >
-                  <Link to={prop.path}>
-                    <h5 className="bold" id="headerText">{prop.name}</h5>
-                  </Link>
-                </div>
-              );
-            })}
+            <div>
+              <Link to={"/signin"}>
+                <h5 className="bold" id="headerText">Log In</h5>
+              </Link>
+            </div>
+            <div>
+              <Link to={"/signup"}>
+                <h5 className="bold" id="headerText">Create an Account</h5>
+              </Link>
+            </div>
+            <div>
+              <Link to={"/support"}>
+                <h5 className="bold" id="headerText">Contact Support</h5>
+              </Link>
+            </div>
           </div>
         </div>
       </header>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/button";
-import Table from "./table";
+import Table from "./Table";
 import MenuItem from "../../components/MenuItem/menuItem";
 import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
@@ -45,8 +45,6 @@ class Calls extends Component {
             >
               Profile category
             </Button>
-
-            
           </div>
         </div>
         <div className="menu-bar ptb-20">

@@ -17,8 +17,6 @@ function load(state, action) {
       },
     };
   }else if (type === Actions.LOAD && status === false) {
-    Actions.token.remove();
-    
     return {
       ...state,
       loading: state.loading.filter((text) => text !== loading),

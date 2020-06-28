@@ -16,99 +16,101 @@ class Table extends Component {
 
   render() {
     return (
-      <table className="mtb-15">
-        <tbody>
-          <tr className="background-grey text-light table-head hover-grey">
-            <td>Call ID</td>
-            <td>Call date & time</td>
-            <td>Personnel</td>
-            <td>Call duration</td>
-            <td>Call status</td>
-            <td>Profile category</td>
-            <td>Action</td>
-          </tr>
-          <tr className="table-body text-main hover-grey">
-            <td className="text-blue bold">
-              <Link to="/admin/profile-calls">+2348103153845</Link>
-            </td>
-            <td>
-              Today<p className="text-light mt-5">12:03pm</p>
-            </td>
-            <td>Grace Audu</td>
-            <td>03:20</td>
-            <td>
-             {/* <label className="label yellow bold">Answered</label> */}
-             <p className="label-active">Answered</p>
+      <>
+        <table className="mtb-15">
+          <tbody>
+            <tr className="background-grey text-light table-head hover-grey">
+              <td>Call ID</td>
+              <td>Call date & time</td>
+              <td>Personnel</td>
+              <td>Call duration</td>
+              <td>Call status</td>
+              <td>Profile category</td>
+              <td>Action</td>
+            </tr>
+            <tr className="table-body text-main hover-grey">
+              <td className="text-blue bold">
+                <Link to="/admin/profile-calls">+2348103153845</Link>
+              </td>
+              <td>
+                Today<p className="text-light mt-5">12:03pm</p>
+              </td>
+              <td>Grace Audu</td>
+              <td>03:20</td>
+              <td>
+              {/* <label className="label yellow bold">Answered</label> */}
+              <p className="label-active">Answered</p>
 
-            </td>
-            <td>
-            <p className="label-inactive"> Engine fault</p>
-             </td>
-            <td className="text-blue bold cursor" onClick={this.toggle}>
-              Profile call
-            </td>
-          </tr>
-          <tr className="table-body text-main hover-grey">
-            <td className="text-blue bold">
-              <Link to="/admin/previous">+2348103153845</Link>
-            </td>
-            <td>
-              Today<p className="text-light mt-5">12:03pm</p>
-            </td>
-            <td>Grace Audu</td>
-            <td>03:20</td>
-            <td>
-             {/* <label className="label yellow bold">Voicenote</label> */}
-             <p className="label-voicenote">Voicenote</p>
-            </td>
-            <td>Not yet profiled</td>
-            <td className="text-blue bold cursor" onClick={this.toggle2}>
-              View Profile
-            </td>
-          </tr>
-          <tr className="table-body text-main hover-grey">
-            <td className="text-blue bold">
-              <Link to="/admin/previous">+2348103153845</Link>
-            </td>
-            <td>
-              Today<p className="text-light mt-5">12:03pm</p>
-            </td>
-            <td>Grace Audu</td>
-            <td>03:20</td>
-            <td>
-             {/* <label className="label yellow bold">Missed</label> */}
-             <p className="label-missed">Missed</p>
-            </td>
-            <td>
-            <p className="label-inactive"> Break fault</p>
-             </td>
-            <td className="text-blue bold cursor" onClick={this.toggle2}>
-              View Profile
-            </td>
-          </tr>
+              </td>
+              <td>
+              <p className="label-inactive"> Engine fault</p>
+              </td>
+              <td className="text-blue bold cursor" onClick={this.toggle}>
+                Profile call
+              </td>
+            </tr>
+            <tr className="table-body text-main hover-grey">
+              <td className="text-blue bold">
+                <Link to="/admin/previous">+2348103153845</Link>
+              </td>
+              <td>
+                Today<p className="text-light mt-5">12:03pm</p>
+              </td>
+              <td>Grace Audu</td>
+              <td>03:20</td>
+              <td>
+              {/* <label className="label yellow bold">Voicenote</label> */}
+              <p className="label-voicenote">Voicenote</p>
+              </td>
+              <td>Not yet profiled</td>
+              <td className="text-blue bold cursor" onClick={this.toggle2}>
+                View Profile
+              </td>
+            </tr>
+            <tr className="table-body text-main hover-grey">
+              <td className="text-blue bold">
+                <Link to="/admin/previous">+2348103153845</Link>
+              </td>
+              <td>
+                Today<p className="text-light mt-5">12:03pm</p>
+              </td>
+              <td>Grace Audu</td>
+              <td>03:20</td>
+              <td>
+              {/* <label className="label yellow bold">Missed</label> */}
+              <p className="label-missed">Missed</p>
+              </td>
+              <td>
+              <p className="label-inactive"> Break fault</p>
+              </td>
+              <td className="text-blue bold cursor" onClick={this.toggle2}>
+                View Profile
+              </td>
+            </tr>
 
-          <tr className="table-body text-main hover-grey">
-            <td className="text-blue bold">
-              <Link to="/admin/previous">+2348103153845</Link>
-            </td>
-            <td>
-              Today<p className="text-light mt-5">12:03pm</p>
-            </td>
-            <td>Grace Audu</td>
-            <td>03:20</td>
-            <td>
-             {/* <label className="label yellow bold">Dropped</label> */}
-             <p className="label-dropped">Dropped</p>
-            </td>
-            <td>Not yet profiled</td>
-            <td className="text-blue bold cursor" onClick={this.toggle2}>
-              View Profile
-            </td>
-          </tr>
-        </tbody>
+            <tr className="table-body text-main hover-grey">
+              <td className="text-blue bold">
+                <Link to="/admin/previous">+2348103153845</Link>
+              </td>
+              <td>
+                Today<p className="text-light mt-5">12:03pm</p>
+              </td>
+              <td>Grace Audu</td>
+              <td>03:20</td>
+              <td>
+              {/* <label className="label yellow bold">Dropped</label> */}
+              <p className="label-dropped">Dropped</p>
+              </td>
+              <td>Not yet profiled</td>
+              <td className="text-blue bold cursor" onClick={this.toggle2}>
+                View Profile
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <ProfileCallOverlay open={this.state.open} toggle={this.toggle} />
         <ViewProfileOverlay open={this.state.open2} toggle={this.toggle2} />
-      </table>
+      </>
     );
   }
 }

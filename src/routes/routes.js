@@ -26,38 +26,16 @@ const routes = {
   public: [
     {
       path: "/signin",
-      exact: true,
       component: Signin,
-      name: "Log In",
     },
     {
       path: "/signup",
-      exact: true,
       component: SignUp,
-      name: "Create an Account",
     },
     {
       path: "/support",
-      exact: true,
       component: ContactSupport,
-      name: "Contact Support",
     },
-
-/*
-    {
-      path: "/admin/settings",
-      exact: true,
-      component: Settings,
-      name: "Settings",
-    },
-
-    {
-      path: "/admin/account-plan",
-      exact: true,
-      component: AccountPlan,
-      name: "Account Plan",
-    },
-*/
   ],
   private: {
     sidebar: [

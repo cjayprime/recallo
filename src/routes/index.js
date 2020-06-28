@@ -21,7 +21,11 @@ export default connect(
       const { load } = this.props;
       const token = await Actions.token.get();
       if (token) {
-        load();
+        load(
+          /*
+          () => this.setState({signedIn: true});
+          */
+        );
       }
     }
 
@@ -35,25 +39,25 @@ export default connect(
       return (
         <Router history={createBrowserHistory()}>
           <Switch>
-            {routes.public.map((route) => (
+            {routes.public.map((route, i) => (
               <Route
-                key={route.path}
+                key={i}
+                path={route.path}
+                component={this.component(route)}
+                exact={true}
+              />
+            ))}
+            {routes.private.sidebar.map((route, i) => (
+              <PrivateRoute
+                key={i}
                 path={route.path}
                 exact={route.exact}
                 component={this.component(route)}
               />
             ))}
-            {routes.private.sidebar.map((route) => (
+            {routes.private.route.map((route, i) => (
               <PrivateRoute
-                key={route.path}
-                path={route.path}
-                exact={route.exact}
-                component={this.component(route)}
-              />
-            ))}
-            {routes.private.route.map((route) => (
-              <PrivateRoute
-                key={route.path}
+                key={i}
                 path={route.path}
                 exact={route.exact}
                 component={this.component(route)}
@@ -76,9 +80,9 @@ export default connect(
                 </div>
               )}
             />
-            <Route exact path="/">
+            {/* <Route exact path="/">
               <Redirect to="/signin" />
-            </Route>
+            </Route> */}
             {/* <Route path="*">
               <Redirect to="/404" />
             </Route> */}
