@@ -5,8 +5,7 @@ import Table from "./table";
 import MenuItem from "../../components/MenuItem/menuItem";
 import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
-import SideNav from "../../components/SideNav/sidenav";
-import Header from "../../components/Header/header";
+//import SideNav from "../../components/SideNav/sidenav";
 
 class Calls extends Component {
   state = { open: false };
@@ -20,9 +19,7 @@ class Calls extends Component {
     const { open } = this.state;
     return (
       <>
-       <div>
-          <SideNav />
-        </div>
+       {/*<div> <SideNav /></div>*/}
       <div className="screen-padding">
         <div className="title-bar">
           <div className="title">
@@ -48,6 +45,8 @@ class Calls extends Component {
             >
               Profile category
             </Button>
+
+            
           </div>
         </div>
         <div className="menu-bar ptb-20">
@@ -78,7 +77,7 @@ class Calls extends Component {
             />
             <div className="search-form">
               <SearchIcon className="search-icon" />
-              <input className="br-3 search bc-blue hover" />
+              <input id="input" className="br-3 search bc-blue hover" />
             </div>
           </div>
           <div className="menu-bar-right">

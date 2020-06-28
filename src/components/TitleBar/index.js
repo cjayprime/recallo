@@ -17,16 +17,17 @@ class Titlebar extends Component {
             text="var(--text-color)"
             padding="12px 25px"
             className="mr-16 br-30"
-            click={buttons.left.action}
+            onClick={buttons.left.action}
           >
             {buttons.left.title}
           </Button>
+     
           <Button
             background="var(--text-color)"
             text="#fff"
             padding="12px 25px"
             className="br-30"
-            click={buttons.right.action}
+            onClick={buttons.right.action}
           >
             {buttons.right.title}
           </Button>

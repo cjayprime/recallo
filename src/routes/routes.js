@@ -17,6 +17,7 @@ import Settings from "./Settings";
 import ProfileCall from "./ProfileCall";
 import NumberDetails from "./NumberDetails";
 import VoiceNotes from "./Voicenotes";
+import AccountPlan from "./Settings/AccountPlan"
 
 import homeIcon from "../assets/img/homeIcon.svg";
 import contactBook from "../assets/img/contactbook.svg";
@@ -41,6 +42,22 @@ const routes = {
       component: ContactSupport,
       name: "Contact Support",
     },
+
+/*
+    {
+      path: "/admin/settings",
+      exact: true,
+      component: Settings,
+      name: "Settings",
+    },
+
+    {
+      path: "/admin/account-plan",
+      exact: true,
+      component: AccountPlan,
+      name: "Account Plan",
+    },
+*/
   ],
   private: {
     sidebar: [
@@ -80,6 +97,7 @@ const routes = {
         layout: "/admin",
         icon: homeIcon,
       },
+  
       {
         path: "/analytics",
         exact: true,
@@ -90,12 +108,21 @@ const routes = {
       },
     ],
     route: [
-      {
+    {
         path: "/settings",
         exact: true,
         component: Settings,
+       layout: "/admin",
+      },
+
+        {
+        path: "/account-plan",
+        exact: true,
+        component: AccountPlan,
         layout: "/admin",
       },
+
+
       {
         path: "/profile-calls",
         exact: true,
@@ -108,6 +135,8 @@ const routes = {
         component: NumberDetails,
         layout: "/admin",
       },
+   
+     
       {
         path: "/voicenotes",
         exact: true,

@@ -9,8 +9,8 @@ class BusinessHours extends Component {
   render() {
     return (
       <>
-        <div className="screen-padding mt-80">
-          <div className="overview br-8 pt-30 plr-32 pb-32 mb-24">
+      <div id="settingscreenDiv" className="screen-padding container background-grey">
+          <div className="overview br-8 pt-30 plr-32 pb-32 mb-24" id="settingContainer">
             <form>
               <h4 className="bold mb-14">Add time slot</h4>
               <div className="time-slot">

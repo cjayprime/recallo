@@ -3,9 +3,37 @@
 @media (min-width: 1281px){
  
   .screen-padding{
-    width: 1020px;
-    margin-left: 320px;
+    width: 1035px;
+    height: 1000px;
   }
+
+
+
+  #screenDiv{
+    margin-left: 317px;
+  }
+
+  #settingscreenDiv{
+    margin-left: -10px;
+    position: absolute;
+    width: 78%;
+  }
+
+
+  Button:hover{
+    background-color: #FF6B00 !important;
+  }
+  
+#buttonText{
+  color: white;
+}
+
+
+  #input{
+    padding-left: 25px;
+  }
+
+ 
 
   .previous-header{
     width: 1020px;
@@ -28,9 +56,6 @@
   .title-bar{
     margin-top: 20px;
   }
-
-
-
     .graphHeader{
         margin-left: 70px;
         margin-top: -40px;
@@ -71,6 +96,17 @@
         height: 32px;
         background-repeat: no-repeat;
         background-image: url(../../assets/img/iconhome.PNG);
+      }
+
+
+      .icon-contact {
+        position: absolute;
+        right: 0px;
+      left: 80px;
+       width: 50px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-image: url(../../assets/img/iconContact.PNG);
       }
 
       .icon-call {
@@ -221,6 +257,14 @@
         border-radius: 35%;
       }
 
+      .label-style{
+        padding: 10px 30px;
+        color:green;
+        text-align: center;
+        background-color: rgb(147, 202, 161);
+        border-radius: 10%;
+      }
+
       .label-missed{
         padding: 5px 10px;
         color:black;
@@ -257,9 +301,203 @@
         background-repeat: no-repeat;
         background-image: url(../../assets/img/tableIcon.PNG);
       }
-    
-  }
 
+
+      /*Add Personnel and Department style Begin*/
+          .addPersonnelContainer{
+            width: 500px;
+            float: right;
+          }
+
+          .departmentContainer{
+            width: 500px;
+            float: right;
+          }
+
+          .editDepartment{
+            margin-top: 10px;
+          }
+
+
+          .formSpan{
+            font-size: 14px;
+            color: gray;
+          }
+
+          #addPersonnelForm{
+            margin-left: -33px;
+          }
+
+          .addPersonnelButton{
+            color: white;
+          }
+
+       /*Add Personnel and Department style End*/
+    
+
+       /*Account Plan Begining*/
+       .MonthlySub{
+         width: 89%;
+         margin-left: 25px;
+         margin-bottom: -90px;
+         position: absolute;
+       }
+
+       .MonthlySub2{
+        width: 95%;
+        margin-left: 25px;
+        margin-bottom: -90px;
+      }
+
+       .Title-tag{
+         color: black;
+         padding: 7px 0px;
+       }
+
+       .Title-tag2{
+        color: black;
+        font-size: 18px;
+      }
+
+       .planText1{
+        font-size: 14px;
+        margin-right: 75px;
+      }
+
+       .planText2{
+         font-size: 14px;
+         margin-right: 10px;
+         color: black;
+         font-weight: bold;
+       }
+
+       sup{
+        color:darkgray;
+         font-size: 16px;
+       }
+
+       sub{
+        color:darkgray;
+         font-size: 19px;
+       }
+
+       .planCoupon{
+        color:darkgray;
+          font-size: 23px;
+          margin-top: 100px;
+       }
+
+       #planPrice{
+         font-size: 35px;
+        color:darkgray;
+        font-weight: bold;
+       }
+       
+       .planText3{
+        font-size: 14px;
+        margin-right: 100px;
+      }
+
+      .planText4{
+        font-size: 14px;
+        margin-right: 40px;
+        color: black;
+        font-weight: bold;
+      }
+
+       .price{
+         font-size: 18px;
+       }
+
+       
+
+       #zz{
+         height: 390px;
+         border-radius: 10px;
+         width: 210px;
+         background-color: rgba(197, 195, 195, 0.116) !important;
+       }
+
+       .plan-header{
+         padding: 30px 5px;
+       }
+
+       #planDiv{
+        background-color: rgba(197, 195, 195, 0.116) !important;
+       }
+
+       .planTag{
+         font-size: 16px;
+         padding: 0px 8px;
+         margin-top: 50px !important;
+       }
+
+       .planInput{
+         width:145px;
+         height: 36px;
+         margin-top: 25px;
+         margin-left: 18px;
+         border-top-left-radius: 12px;
+         border-bottom-left-radius: 12px;
+         border: 1px solid grey;
+       }
+
+       .planButton{
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        margin-top: 25px;
+        width: 65px;
+        font-size: 14px;
+        margin-right: 10px;
+        background-color: rgb(7, 7, 100) !important;
+        color: white;
+       }
+#settingContainer{
+  margin-top: 80px;
+}
+       .profile_tab {
+  display: inline-block;
+  flex-direction: row;
+  top: 0;
+  margin-left: -300px;
+  width: 30%;
+  position: absolute;
+  margin-top: 2000px;
+  padding-left: 40px;
+  background-color: #fff; 
+ 
+ /*  z-index: 101;
+  box-shadow: 0px 3px 6px #00000014;
+
+ */
+}
+
+.settingProfile span{
+  padding: 0px 10px;
+  font-size: 16px;
+  color:gray;
+}
+
+#xz:hover{
+  background-color: white !important;
+}
+
+.profile_tablinks {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 40px 0px;
+  line-height: 25px;
+  display: block;
+}
+
+.tabText{
+  font-size: 12px;
+  float: left;
+}
+        /*Account Plan End*/
+  }
 
   @media (min-width: 300px) and (max-width: 399px){
 
@@ -267,6 +505,14 @@
       display: none;
     }
 
+    .screen-padding{
+      height: 1500px;
+    }
+
+    Button:hover{
+      background-color: #FF6B00 !important;
+    }
+   
     .overview__action-button{
       height: 300px;
     }
@@ -279,19 +525,35 @@
       margin-left: -40px;
     }
 
+    .graphHeader span{
+        padding: 0px 12px;
+    }
+
     #rowTwo{
       width: 708px;
+      position: absolute;
+
     }
+
     #licence-info{
       width: 315px;
       height: 260px;
+      position: absolute;
+
     }
 
     #average-time{
       height: 260px;
-      margin-left: -380px;
       margin-top: 300px;
       width: 315px;
+position: absolute;
+    }
+
+    #personnelDiv{
+      margin-top: 600px;
+      position: absolute;
+      width: 315px;
+
 
     }
 

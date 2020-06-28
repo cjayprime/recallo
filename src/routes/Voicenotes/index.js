@@ -4,24 +4,31 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button/button";
 import MenuItem from "../../components/MenuItem/menuItem";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
-import SideNav from "../../components/SideNav/sidenav";
-import Header from "../../components/Header/header";
+//import SideNav from "../../components/SideNav/sidenav";
+import ProfileCategoryOverlay from "./../Calls/ProfileCategoryOverlay";
+import ProfileCallOverlay from "./../Calls/ProfileCallOverlay";
+
+
 
 class VoiceNotes extends Component {
-  state = { open: false };
+  state = { open: false, open2: false };
 
   toggle = () => {
     const { open } = this.state;
     this.setState({ open: !open });
   };
 
+  toggle2 = () => {
+    this.setState({ open2: !this.state.open2 });
+  };
+
   render() {
+    const { open, open2 } = this.state;
+
     return (
       <>
-       <div>
+             {/*<div> <SideNav /></div>*/}
 
-       <SideNav />
-      </div>
 
       <div className="screen-padding">
         <div className="title-bar">
@@ -44,7 +51,7 @@ class VoiceNotes extends Component {
               text="#fff"
               padding="12px 25px"
               className="br-30"
-              click={this.toggle}
+              onClick={this.toggle}
             >
               Profile category
             </Button>
@@ -72,7 +79,7 @@ class VoiceNotes extends Component {
             />
             <div className="search-form">
               <SearchIcon className="search-icon" />
-              <input className="br-3 search bc-blue hover" />
+              <input id="input" className="br-3 search bc-blue hover" />
             </div>
           </div>
           <div className="menu-bar-right">
@@ -105,19 +112,24 @@ class VoiceNotes extends Component {
                 <td>
                   Today<p className="text-light mt-5">12:03pm</p>
                 </td>
-                <td>Grace Audu</td>
+                <td style={{width:130}}>Grace Audu</td>
                 <td>03:20</td>
                 <td>
-                  <audio className="audioPlayer" autoPlay controls loop>
+                  <audio style={{width:250}} className="audioPlayer" autoPlay controls loop>
                     <source src="#" type="audio/mpeg" />
                   </audio>
                 </td>
-                <td>Not yet profiled</td>
-                <td className="text-blue bold">Profile call</td>
+                <td style={{width:150}}>Not yet profiled</td>
+                <td style={{width:100}} onClick={this.toggle2} className="text-blue bold">Profile call</td>
               </tr>
             ))}
           </tbody>
         </table>
+        
+        <ProfileCategoryOverlay open={open} toggle={this.toggle} />
+        <ProfileCallOverlay open={this.state.open2} toggle={this.toggle2} />
+
+
       </div>
       </>
     );

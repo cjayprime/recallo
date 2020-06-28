@@ -8,6 +8,7 @@ import bell from "../../assets/img/bell.svg";
 import "./AppPageHeader.css";
 
 class AppPageHeader extends Component {
+
   // verifies if routeName is the one active in (in browser input)
   activeRoute = (routeName) => {
     const {
@@ -21,13 +22,21 @@ class AppPageHeader extends Component {
     return (
       <header>
         <div className="header">
+          
           <div>
             <img className="logo" src={logo} alt="Recallo logo" />
           </div>
-              <div className="notification">
+   
+              <div className="notification" style={{marginLeft:820}}>
               <img className="bell" src={bell} alt="notification bell" />
               <span className="message">4</span>
+              
+              <div className="businessnav-logo mb-23" style={{marginLeft:290, marginTop:-35, position:"absolute"}}>
+              <h1 className="logonav-text">AM</h1>
+              <span style={{marginLeft:50, marginTop:-21, position:"absolute"}} className="arrow-down ml-5" />
             </div>
+            </div>
+           
         </div>
       </header>
     );

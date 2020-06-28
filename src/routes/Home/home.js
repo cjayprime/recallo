@@ -4,14 +4,13 @@ import { Link } from 'react-router-dom';
 import "./test.css";
 import LayoutPage from "../../components/AppPageHeader/LayoutPage";
 import MenuItem from "../../components/MenuItem/menuItem";
-import SideBar from "../../components/SideNav/sidebar";
+//import SideBar from "../../components/SideNav/sidebar";
 import TotalCalls from "./TotalCalls";
 import TotalCallsAnswered from "./TotalCallsAnswered";
 import ProfileVoiceNotes from "./ProfileVoicenotes";
 import VoiceNotes from "./VoiceNotes";
 import DroppedCalls from "./DroppedCalls";
 import MissedCalls from "./MissedCalls";
-
 
 
 
@@ -40,14 +39,12 @@ class Home extends Component {
 
     return (
       <LayoutPage {...this.props}>
-        <div>
+       {/* <div>
            <SideBar />
-        </div>
+        </div>*/}
         <div className="screen-padding container background-grey height mt-80">
         
         <div className="row">
-        
-
         <div className="col-12">
             <div className="row mb-32">
                 <div className="col-12" id="rowOne" >
@@ -89,10 +86,10 @@ class Home extends Component {
                     </div>
                     <div className="graphHeader">
                       <h6>Home</h6><br/>
+                      <span className="bold text-blue cursor">Today</span>
+                      <span className="bold text-blue cursor">Yesterday</span>
                         <span>Last 7 Days</span>
                         <span className="bold text-blue cursor">Last 30 Days</span>
-                        <span className="bold text-blue cursor">Yesterday</span>
-                        <span className="bold text-blue cursor">Today</span>
                         <span id="dotting">...</span>
                         <hr className="Hline" />
                       </div>
@@ -101,7 +98,9 @@ class Home extends Component {
 
                   </div>
                 </div>
+                
               </div>
+             
               <div className="row" id="rowTwo" >
                 <div className="custom-col-3" id="licence-info">
                   <div className="overview p-24 br-15">
@@ -122,7 +121,7 @@ class Home extends Component {
                     <h6 className="text-light ">23 mins remaining</h6>
                   </div>
                 </div>
-                <div className="custom-col-3" id="average-time">
+                <div className="custom-col-3 " id="average-time">
                   <div className="overview p-24 br-15">
                     <div className="row-direction mb-24 align-center">
                       <h4 className="text-main bold mr-5">Average time:</h4>
@@ -141,7 +140,7 @@ class Home extends Component {
                     <p className="overview-percent">+0.4%</p>
                   </div>
                 </div>
-                <div className="custom-col-6" >
+                <div className="custom-col-6" id="personnelDiv">
                   <div className="overview p-24 br-15">
                     <div className="row">
                       <div className="custom-col-6" >
