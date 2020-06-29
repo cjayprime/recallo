@@ -11,24 +11,6 @@ class SignUpComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // hidden: true,
-
-      // // Step 0
-      // business_name: "",
-      // business_email: "",
-      // business_address: "",
-
-      // // Step 1
-      // first_name: "",
-      // last_name: "",
-      // mobile: "",
-
-      // email: "",
-      // password: "",
-      // confirm_password: "",
-      // people: "",
-      // business_rc: "",
-
       step: 0,
       // Step 0 && 2
       business: {

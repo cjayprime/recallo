@@ -1,14 +1,15 @@
 import * as Actions from "../actions";
 
 function signup(state, action) {
-  const { data, status, type } = action;
+  const { data, status } = action;
   let newState = {
     ...state
   };
 
-  if (type === Actions.SIGNUP && status === true) {
+  if (status === true) {
     if (action.step >= 0) {
-      Actions.token.set(data.token);
+      if(action.step === 0) Actions.token.set(data.token);
+
       return {
         ...newState,
       };

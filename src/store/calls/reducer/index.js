@@ -30,7 +30,7 @@ const initialState = {
     //   "_id": 17
     // }
   ],
-  details: [
+  details: {
     // {
     //   "start_time": "2019-06-28 09:50:22",
     //   "start_time_wait": null,
@@ -55,7 +55,7 @@ const initialState = {
     //   "rec_name": "2019-06-28/",
     //   "_id": 17
     // }
-  ],
+  },
   // callStatus: {
   //   answered: 0,
   //   waiting: 2,
@@ -75,14 +75,19 @@ const calls = (state = initialState, action) => {
   if (type === Actions.LOADING && loading && name === "account") {
     state.loading.push(loading);
     return newState;
-  }else if (type === Actions.CALLS && status === true) {
+  }else if (type === Actions.ALLCALLS && status === true) {
     return {
       ...newState,
       all: data.calls,
     };
+  }else if (type === Actions.EACHCALL && status === true) {
+    return {
+      ...newState,
+      details: data.call,
+    };
   }
 
-  return state;
+  return newState;
 };
 
 export default calls;

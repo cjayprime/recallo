@@ -1,31 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import { connect } from "react-redux";
 import Button from "../../components/Button/button";
 import Table from "./Table";
 import MenuItem from "../../components/MenuItem/menuItem";
-import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
-//import SideNav from "../../components/SideNav/sidenav";
+
 
 class Calls extends Component {
-  state = { open: false };
-
   componentDidMount(){
     const { getCalls } = this.props;
     getCalls('all');
   }
 
-  toggle = () => {
-    const { open } = this.state;
-    this.setState({ open: !open });
-  };
-
   render() {
-    const { open } = this.state;
     const { calls } = this.props;
 
-    console.log('Props', this.props)
     return (
       <>
        {/*<div> <SideNav /></div>*/}
@@ -98,7 +87,6 @@ class Calls extends Component {
             </div>
           </div>
         </div>
-        <ProfileCategoryOverlay open={open} toggle={this.toggle} />
         <Table all={calls.all} />
       </div>
     </>
@@ -107,4 +95,3 @@ class Calls extends Component {
 }
 
 export default Calls;
-//export default connect(state=>state, null)(Calls);

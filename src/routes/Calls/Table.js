@@ -35,12 +35,14 @@ class Table extends Component {
                       pathname: "/admin/calls/" + call.reference_no,
                       // state: {reference_no: call.reference_no}
                     }}>
-                      {call.did_called}
+                      +{call.personnel_mobile}
                     </Link>
                   </td>
                   <td>
-                    {/* Today<p className="text-light mt-5">12:03pm</p> */}
-                    <p className="text-light mt-5">{call.end_time.split(' ')[1]}</p>
+                    {call.end_time.split(' ')[0]}
+                    <p className="text-light mt-5">
+                      {call.end_time.split(' ')[1]}
+                    </p>
                   </td>
                   <td>{call.personnel_name}</td>
                   <td>{call.call_duration}</td>
