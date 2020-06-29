@@ -14,7 +14,7 @@ import Contact from "./Contact";
 import Personnel from "./Personnel";
 import Analytics from "./Analytics";
 import Settings from "./Settings";
-import ProfileCall from "./ProfileCall";
+import CallsID from "./CallsID";
 import NumberDetails from "./NumberDetails";
 import VoiceNotes from "./Voicenotes";
 import AccountPlan from "./Settings/AccountPlan"
@@ -42,50 +42,28 @@ const routes = {
     sidebar: [
       {
         path: "/admin/home",
-        // exact: true,
         component: Home,
-        // name: "Home",
-        // layout: "/admin",
-        // icon: homeIcon,
       },
       {
         path: "/admin/calls",
         exact: true,
         component: Calls,
-        // name: "Calls",
-        // layout: "/admin",
-        // icon: homeIcon,
       },
       {
         path: "/admin/calls/:id",
-        component: ProfileCall,
-        // name: "Calls",
-        // layout: "/admin",
-        // icon: homeIcon,
+        component: CallsID,
       },
       {
         path: "/admim/contact",
-        // exact: true,
         component: Contact,
-        // name: "Contact",
-        // layout: "/admin",
-        // icon: contactBook,
       },
       {
         path: "/admin/personnel",
-        // exact: true,
         component: Personnel,
-        // name: "Personnel",
-        // layout: "/admin",
-        // icon: homeIcon,
       },
       {
         path: "/admin/analytics",
-        // exact: true,
         component: Analytics,
-        // name: "Analytics",
-        // layout: "/admin",
-        // icon: homeIcon,
       },
     ],
     route: [
@@ -100,12 +78,6 @@ const routes = {
         exact: true,
         component: AccountPlan,
         layout: "/admin",
-      },
-      {
-        path: "/admin/profile-calls",
-        exact: true,
-        component: ProfileCall,
-        // layout: "/admin",
       },
       {
         path: "/number-details",

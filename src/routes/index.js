@@ -9,6 +9,8 @@ import routes from "./routes";
 
 import * as Actions from "../store/actions";
 
+const token = Actions.token.get();
+
 // This is the only manually connected component in the app
 // because this.props.load needs to be called
 // it's loading all user info when the app first mounts
@@ -19,7 +21,6 @@ export default connect(
   class Routes extends Component {
     async componentDidMount() {
       const { load } = this.props;
-      const token = Actions.token.get();
       console.log('Token: ', token);
       if (token) {
         load();
@@ -66,7 +67,7 @@ export default connect(
               )}
             />
             <Route exact path="/">
-              <Redirect to="/signin" />
+              <Redirect to={token ? "/admin/home" : "/signin"} />
             </Route>
           </Switch>
         </Router>

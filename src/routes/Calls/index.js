@@ -17,6 +17,7 @@ class Calls extends Component {
   }
 
   toggle = () => {
+    
     const { open } = this.state;
     this.setState({ open: !open });
   };

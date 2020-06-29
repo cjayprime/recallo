@@ -4,19 +4,16 @@ import ProfileCallOverlay from "./ProfileCallOverlay";
 import ViewProfileOverlay from "./ViewProfileOverlay";
 
 class Table extends Component {
-  state = { open: false, open2: false };
-
-  toggle = () => {
-    this.setState({ open: !this.state.open });
+  state = {
+    open: ""
   };
 
-  toggle2 = () => {
-    this.setState({ open2: !this.state.open2 });
+  toggle = (open) => {
+    this.setState({ open: this.state.open ? "" : open });
   };
 
   render() {
     const { all } = this.props;
-    console.log(this.props.all)
     return (
       <>
         <table className="mtb-15">
@@ -56,13 +53,21 @@ class Table extends Component {
                   <td>
                   <p className="label-inactive"> Engine fault</p>
                   </td>
-                  <td className="text-blue bold cursor" onClick={this.toggle}>
-                    Profile call
+                  <td className="text-blue bold cursor" onClick={() => {
+                    call.call_status
+                    ? this.toggle('profile-call')
+                    : this.toggle('view-profile')
+                  }}>
+                    {
+                      call.call_status
+                      ? 'Profile call'
+                      : 'View Profile'
+                    }
                   </td>
                 </tr>
               ))
             }
-            <tr className="table-body text-main hover-grey">
+            {/* <<tr className="table-body text-main hover-grey">
               <td className="text-blue bold">
                 <Link to="/admin/previous">+2348103153845</Link>
               </td>
@@ -72,15 +77,15 @@ class Table extends Component {
               <td>Grace Audu</td>
               <td>03:20</td>
               <td>
-              {/* <label className="label yellow bold">Dropped</label> */}
+              {/* <label className="label yellow bold">Dropped</label> /}
               <p className="label-dropped">Dropped</p>
               </td>
               <td>Not yet profiled</td>
-              <td className="text-blue bold cursor" onClick={this.toggle2}>
+              <td className="text-blue bold cursor" onClick={() => this.toggle('view-profile')}>
                 View Profile
               </td>
             </tr>
-            {/* <tr className="table-body text-main hover-grey">
+            tr className="table-body text-main hover-grey">
               <td className="text-blue bold">
                 <Link to="/admin/profile-calls">+2348103153845</Link>
               </td>
@@ -159,8 +164,18 @@ class Table extends Component {
             </tr> */}
           </tbody>
         </table>
-        <ProfileCallOverlay open={this.state.open} toggle={this.toggle} />
-        <ViewProfileOverlay open={this.state.open2} toggle={this.toggle2} />
+        <ProfileCallOverlay
+          open={this.state.open === "profile-call"}
+          toggle={() => {
+            this.toggle('profile-call');
+          }}
+        />
+        <ViewProfileOverlay
+          open={this.state.open === "view-profile"}
+          toggle={() => {
+            this.toggle('view-profile');
+          }}
+        />
       </>
     );
   }

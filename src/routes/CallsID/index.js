@@ -13,7 +13,6 @@ class ProfileCall extends Component {
 
   componentDidMount(){
     const { getCalls, match: { params: {id: id} } } = this.props;
-    console.log(id)
     getCalls(id);
   }
 
