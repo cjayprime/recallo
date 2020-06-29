@@ -4,10 +4,6 @@ import signin from "./signin";
 import load from "./load";
 import plans from "./plans";
 
-// TODO: all else statements that return just status and 
-// message are irrelevant even the loading resolution can
-// be made better by declaring a newState object at the 
-// top and moving it to it
 const initialState = {
   loading: [],
   status: false,
@@ -48,24 +44,27 @@ const initialState = {
 
 const account = (state = initialState, action) => {
   // console.log('All account states and actions: ', state, action)
-  const { loading, type, name } = action;
+  const { loading, type } = action;
   let newState = {
     ...state,
     loading: state.loading.filter((text) => text !== loading)
   };
 
-  if (type === Actions.LOADING && loading && name === "account") {
+  if (type === Actions.LOADING && loading) {
     newState.loading.push(loading);
-    return {
-      ...newState,
-    };
-  }else if (newState = signin(newState, action)) {
     return newState;
-  }else if (newState = signup(newState, action)) {
+  }else if (type === Actions.SIGNIN && (newState = signin(newState, action))) {
     return newState;
-  }else if (newState = load(newState, action)) {
+  }else if (type === Actions.SIGNUP && (newState = signup(newState, action))) {
     return newState;
-  }else if (newState = plans(newState, action)) {
+  }else if (type === Actions.LOAD && (newState = load(newState, action))) {
+    return newState;
+  }else if (
+    (
+      type === Actions.ADDPAYMENT   ||
+      type === Actions.PAYMENTPLAN  ||
+      type === Actions.DID
+    ) && (newState = plans(newState, action))) {
     return newState;
   }
 

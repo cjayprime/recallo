@@ -1,12 +1,12 @@
 import * as Actions from "../actions";
 
 function signin(state, action) {
-  const { data, status, type } = action;
+  const { data, status } = action;
   let newState = {
     ...state
   };
 
-  if (type === Actions.SIGNIN && status === true) {
+  if (status === true) {
     Actions.token.set(data.token);
 
     const { user } = data;

@@ -25,7 +25,7 @@ export default class Saga {
     // success and error are callbacks
     const { endpoint, responder, method, data, success, error } = action;
 
-    yield put({ type: this.loading, loading: endpoint, name: "account" });
+    yield put({ type: this.loading, loading: endpoint });
 
     const result = yield call(
       new Request().api,

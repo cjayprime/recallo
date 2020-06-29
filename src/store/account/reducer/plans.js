@@ -1,18 +1,13 @@
 import * as Actions from "../actions";
 
 function plans(state, action) {
-  const { data, loading, status, type } = action;
+  const { data, status, type } = action;
   var newState = {
     ...state
   };
 
   if (
-    status === true &&
-    (
-      type === Actions.ADDPAYMENT   ||
-      type === Actions.PAYMENTPLAN  ||
-      type === Actions.DID
-    )
+    status === true
   ) {
     if(type === Actions.ADDPAYMENT){
 
@@ -40,7 +35,7 @@ function plans(state, action) {
         }
       };
       
-    }else{
+    }else if(type === Actions.DID){
 
       newState = {
         ...newState,

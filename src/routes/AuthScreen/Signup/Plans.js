@@ -23,6 +23,7 @@ class PlanSelection extends Component {
     ].map(category => {
       plans(category, 
         (param) => {
+          // Set initial values of the form
           if(category === "payment-plans"){
             const {plans} = param;
             if(plans && plans.length > 0){

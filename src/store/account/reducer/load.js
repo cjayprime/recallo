@@ -1,12 +1,12 @@
 import * as Actions from "../actions";
 
 function load(state, action) {
-  const { data, loading, message, status, type } = action;
+  const { data, status } = action;
   let newState = {
     ...state
   };
 
-  if (type === Actions.LOAD && status === true) {
+  if (status === true) {
     return {
       ...newState,
       user: {
@@ -16,7 +16,7 @@ function load(state, action) {
         mobile: data.me.mobile,
       },
     };
-  }else if (type === Actions.LOAD && status === false) {
+  }else if (status === false) {
     Actions.token.remove();
   }
 

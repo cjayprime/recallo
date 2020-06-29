@@ -5,7 +5,7 @@ import arrowLeft from "../../assets/img/arrow-left.png";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 import SideNav from "../../components/SideNav/sidenav";
 
-class ProfileCall extends Component {
+class CallsID extends Component {
   goBack = () => {
     const { history } = this.props;
     history.goBack();
@@ -17,18 +17,17 @@ class ProfileCall extends Component {
   }
 
   render() {
+    const { calls: { details } } = this.props;
+    console.log(details)
     return (
       <>
-       <div>
-          <SideNav />
-        </div>
         <div className="previous-header mb-0">
           <div className="callID">
             <p className="light mb-8">
               <span className="text-blue mr-8">Calls</span>
               <span className="ml-8">Caller ID</span>
             </p>
-            <h2 id="profCallHeader"  className="bold text-main">+2348051113453</h2>
+            <h2 id="profCallHeader"  className="bold text-main">{details.personnel_mobile ? '+' + details.personnel_mobile : ''}</h2>
           </div>
           <div className="callID-history">
             <div>
@@ -44,13 +43,13 @@ class ProfileCall extends Component {
               <p className="light text-light">Average wait time</p>
             </div>
             <div>
-              <p
+              <div
                 className="row-direction align-center cursor goback"
                 onClick={this.goBack}
               >
                 <img src={arrowLeft} alt="arrow left" />
                 <h5 className="bold text-blue ml-8">Go back</h5>
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -111,7 +110,7 @@ class ProfileCall extends Component {
                 <td>Action</td>
               </tr>
               {Array.apply(null, Array(6)).map((a, i) => (
-                <tr className="table-body text-main hover-grey">
+                <tr key={i} className="table-body text-main hover-grey">
                   <td>
                     Today<p className="text-light mt-5">12:03pm</p>
                   </td>
@@ -133,4 +132,4 @@ class ProfileCall extends Component {
   }
 }
 
-export default ProfileCall;
+export default CallsID;
