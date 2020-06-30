@@ -230,15 +230,15 @@
 
   /*SETTING STYLE BEGINING*/
   .settingbusiness-logo {
-    width: 62px;
-    height: 62px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: #336799;
     margin-top: -100px;
   }
   
   .settinglogo-text {
-    font: Bold 25px/60px Barlow;
+    font: Bold 20px/50px Barlow;
     color: #fff;
     text-align: center;
     font-family: sans-serif;

@@ -54,7 +54,7 @@ const routes = {
         component: CallsID,
       },
       {
-        path: "/admim/contact",
+        path: "/admin/contact",
         component: Contact,
       },
       {
@@ -68,10 +68,12 @@ const routes = {
     ],
     route: [
       {
-        path: "/settings",
-        exact: true,
+        path: "/admin/settings",
         component: Settings,
+      /*
+        exact: true,
         layout: "/admin",
+       */
       },
       {
         path: "/account-plan",
@@ -86,10 +88,13 @@ const routes = {
         layout: "/admin",
       },
       {
-        path: "/voicenotes",
-        exact: true,
+        path: "/admin/voicenotes",
         component: VoiceNotes,
+
+       /*
+        exact: true,
         layout: "/admin",
+       */
       },
       {
         path: "/signout",

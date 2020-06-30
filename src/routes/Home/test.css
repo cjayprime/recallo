@@ -266,6 +266,7 @@
         border-radius: 29%;
         text-align: center;
       }
+  
 
       .label-style{
         padding: 10px 30px;
@@ -278,7 +279,7 @@
       .label-missed{
         color:gray;
         padding:5px 18px;
-        width: 95px;
+        width: 110px;
         background-color: #FFE2E6;
         border-radius: 29%;
         text-align: center;
@@ -429,7 +430,7 @@
        #zz{
          height: 390px;
          border-radius: 10px;
-         width: 210px;
+         width: 225px;
          background-color: rgba(197, 195, 195, 0.116) !important;
        }
 
