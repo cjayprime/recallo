@@ -6,20 +6,31 @@
     width: 1035px;
     height: 1000px;
   }
-
-
+#profilecallContainer{
+  width: 1000px;
+}
+#profilecalsubtext{
+  padding: 0px 90px;
+}
 
   #screenDiv{
     margin-left: 317px;
   }
 
   #settingscreenDiv{
-    margin-left: -10px;
+    margin-left: -60px;
     position: absolute;
-    width: 78%;
+    width: 83%;
   }
 
+.callviewHeader{
+  font-size: 16px;
+}
 
+.callviewHeader2{
+  font-size: 16px;
+  padding: 0px 12px;
+}
   Button:hover{
     background-color: #FF6B00 !important;
   }
@@ -37,7 +48,6 @@
 
   .previous-header{
     width: 1020px;
-    margin-left: 320px;
 
   }
 
@@ -46,15 +56,20 @@
   }
 
   .callID{
-    margin-top: 60px;
+    margin-top: 30px;
   }
 
   .callID-history{
-    margin-top: 55px;
+    margin-top: 20px;
   }
 
   .title-bar{
     margin-top: 20px;
+    height: 50px;
+  }
+
+  #calltopbutton{
+    margin-top: -15px;
   }
     .graphHeader{
         margin-left: 70px;
@@ -232,29 +247,24 @@
           margin-top: 100px;
       }
 
+
+
       .label-active{
         color:green;
-        padding: 5px 10px;
-        background-color: lightcyan;
-        border-radius: 35%;
+        padding:5px 18px;
+        width: 95px;
+        background-color: #DAF7E8;
+        border-radius: 29%;
         text-align: center;
-
-      }
-
-      .label-active{
-        padding: 5px 10px;
-        color:black;
-        text-align: center;
-        background-color: rgb(211, 192, 83);
-        border-radius: 35%;
       }
 
       .label-voicenote{
-        padding: 5px 10px;
-        color:green;
+        color:gray;
+        padding:5px 18px;
+        width: 95px;
+        background-color: #FFF9C4;
+        border-radius: 29%;
         text-align: center;
-        background-color: rgb(147, 202, 161);
-        border-radius: 35%;
       }
 
       .label-style{
@@ -266,27 +276,32 @@
       }
 
       .label-missed{
-        padding: 5px 10px;
-        color:black;
+        color:gray;
+        padding:5px 18px;
+        width: 95px;
+        background-color: #FFE2E6;
+        border-radius: 29%;
         text-align: center;
-        background-color: rgb(230, 173, 173);
-        border-radius: 35%;
       }
 
       .label-dropped{
-        padding: 5px 10px;
         color:purple;
+        padding:5px 18px;
+        width: 95px;
+        background-color: #E8E7FF;
+        border-radius: 29%;
         text-align: center;
-        background-color: rgb(217, 224, 224);
-        border-radius: 35%;
+      }
+      .table-body td{
+        font-size: 14px;
       }
 
-
       .label-inactive{
-        color:black;
-        padding: 5px 10px;
-        background-color: rgb(217, 224, 224);
-        border-radius: 35%;
+        color:gray;
+        padding:5px 18px;
+        width: 95px;
+        background-color: #F5F6FA;
+        border-radius: 29%;
         text-align: center;
 
       }
@@ -335,7 +350,7 @@
        /*Add Personnel and Department style End*/
     
 
-       /*Account Plan Begining*/
+       /*Settings Module Begining*/
        .MonthlySub{
          width: 89%;
          margin-left: 25px;
@@ -471,12 +486,44 @@
 
  */
 }
+.row-direction{
+  padding: 12px 0px;
+}
+
+.row-direction .cursor{
+    margin-top: 6px;
+}
+
+.time-info p{
+  font-size: 14px;
+}
 
 .settingProfile span{
   padding: 0px 10px;
   font-size: 16px;
   color:gray;
 }
+
+.formLabel{
+  font-size: 16px;
+  padding: 18px 0px;
+  color: #777777;
+}
+
+#profileFormInput{
+  width: 350px;
+  position: absolute;
+  margin-left: 260px;
+}
+
+.br-8{
+  color: #336799;
+}
+
+.br-30{
+  color: white;
+}
+
 
 #xz:hover{
   background-color: white !important;
@@ -496,7 +543,30 @@
   font-size: 12px;
   float: left;
 }
-        /*Account Plan End*/
+        /*Settings Module End*/
+
+        /*TermsOfUse Page Style Begining*/
+          #FaqAndTermsDiv{
+            position: fixed; /* Sit on top of the page content */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            z-index: 200; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+          }
+
+          #FaqAndTermsDiv2{
+            height:550px;
+                 margin-left:350px;
+                 width:620px;
+                 margin-top: 42px;
+position: absolute;
+          }
+        /*TermsOfUse Page Style End*/
   }
 
   @media (min-width: 300px) and (max-width: 399px){

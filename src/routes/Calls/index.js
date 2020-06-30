@@ -10,6 +10,9 @@ import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
 class Calls extends Component {
   state = { open: false };
 
+  onNav = ()=>{
+      
+  }
   toggle = () => {
     const { open } = this.state;
     this.setState({ open: !open });
@@ -17,20 +20,21 @@ class Calls extends Component {
 
   render() {
     const { open } = this.state;
+    
     return (
       <>
        {/*<div> <SideNav /></div>*/}
       <div className="screen-padding">
-        <div className="title-bar">
+        <div className="title-bar" >
           <div className="title">
             <h2>Calls</h2>
           </div>
-          <div className="row">
+          <div className="row" id="calltopbutton">
             <Link to="/admin/voicenotes">
               <Button
                 background="#F5F6FA"
                 text="var(--text-color)"
-                padding="12px 25px"
+                padding="12px 35px"
                 className="mr-16 br-30"
               >
                 View voicenotes
@@ -39,7 +43,7 @@ class Calls extends Component {
             <Button
               background="var(--text-color)"
               text="#fff"
-              padding="12px 25px"
+              padding="12px 35px"
               className="br-30"
               onClick={this.toggle}
             >

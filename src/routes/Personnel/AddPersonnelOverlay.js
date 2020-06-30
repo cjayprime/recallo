@@ -122,7 +122,7 @@ class PersonnelOverlay extends Component {
                   </label>
                   <label className="cursor mb-16 checkbox-label">
                     <h5 className="text-blue light">Thursday</h5>
-                    <input type="checkbox" checked="checked" />
+                    <input type="checkbox"  />
                     <span className="check-mark" />
                   </label>
                 </div>

@@ -234,7 +234,7 @@ const AccountPlan = () => {
 
                 <form>
                     <div className="row">
-                        <input
+                        <input id="input"
                         className="planInput"
                           type="text"
                           placeholder="Enter Coupon"

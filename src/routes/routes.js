@@ -6,6 +6,7 @@ import Signin from "./AuthScreen/SignIn";
 import SignUp from "./AuthScreen/Signup";
 import ContactSupport from "./ContactSupport";
 
+
 // Private routes components
 import Admin from "./Admin/admin";
 import Home from "./Home/home";
@@ -19,8 +20,8 @@ import NumberDetails from "./NumberDetails";
 import VoiceNotes from "./Voicenotes";
 import AccountPlan from "./Settings/AccountPlan"
 
-import homeIcon from "../assets/img/homeIcon.svg";
-import contactBook from "../assets/img/contactbook.svg";
+//import homeIcon from "../assets/img/homeIcon.svg";
+//import contactBook from "../assets/img/contactbook.svg";
 
 const routes = {
   public: [
@@ -69,42 +70,32 @@ const routes = {
         path: "/home",
         exact: true,
         component: Home,
-        name: "Home",
-        layout: "/admin",
-        icon: homeIcon,
+         layout: "/admin", 
       },
       {
         path: "/calls",
         exact: true,
         component: Calls,
-        name: "Calls",
-        layout: "/admin",
-        icon: homeIcon,
+         layout: "/admin",
       },
       {
         path: "/contact",
         exact: true,
         component: Contact,
-        name: "Contact",
-        layout: "/admin",
-        icon: contactBook,
+         layout: "/admin",
       },
       {
         path: "/personnel",
         exact: true,
         component: Personnel,
-        name: "Personnel",
-        layout: "/admin",
-        icon: homeIcon,
+         layout: "/admin",
       },
   
       {
         path: "/analytics",
         exact: true,
         component: Analytics,
-        name: "Analytics",
         layout: "/admin",
-        icon: homeIcon,
       },
     ],
     route: [
@@ -112,14 +103,14 @@ const routes = {
         path: "/settings",
         exact: true,
         component: Settings,
-       layout: "/admin",
+        layout: "/admin", 
       },
 
         {
         path: "/account-plan",
         exact: true,
         component: AccountPlan,
-        layout: "/admin",
+        layout: "/admin", 
       },
 
 
@@ -127,13 +118,13 @@ const routes = {
         path: "/profile-calls",
         exact: true,
         component: ProfileCall,
-        layout: "/admin",
+         layout: "/admin",
       },
       {
         path: "/number-details",
         exact: true,
         component: NumberDetails,
-        layout: "/admin",
+        layout: "/admin", 
       },
    
      
