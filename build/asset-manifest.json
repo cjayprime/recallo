@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2213632c.chunk.css",
+    "main.js": "/static/js/main.2dd3fabe.chunk.js",
+    "main.js.map": "/static/js/main.2dd3fabe.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8f833e01.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8f833e01.js.map",
+    "static/js/2.ce3e9e8a.chunk.js": "/static/js/2.ce3e9e8a.chunk.js",
+    "static/js/2.ce3e9e8a.chunk.js.map": "/static/js/2.ce3e9e8a.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c5965e49a422b1f859bd0deb27092bb2.js": "/precache-manifest.c5965e49a422b1f859bd0deb27092bb2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.2213632c.chunk.css.map": "/static/css/main.2213632c.chunk.css.map",
+    "static/js/2.ce3e9e8a.chunk.js.LICENSE.txt": "/static/js/2.ce3e9e8a.chunk.js.LICENSE.txt",
+    "static/media/main.css": "/static/media/SFProDisplay-Regular.d09549c1.ttf",
+    "static/media/bell.svg": "/static/media/bell.8881a410.svg",
+    "static/media/close.a404a1cd.svg": "/static/media/close.a404a1cd.svg",
+    "static/media/admin.css": "/static/media/ladyCall.4c2631bd.png",
+    "static/media/test.css": "/static/media/tableIcon.4e2c41b7.PNG",
+    "static/media/editPen.svg": "/static/media/editPen.6834dce9.svg",
+    "static/media/paymentbadge.png": "/static/media/paymentbadge.d128e62f.png",
+    "static/media/search.d7c40db7.svg": "/static/media/search.d7c40db7.svg",
+    "static/media/sidenav.css": "/static/media/settingpower-icon.8e2f6daf.PNG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8f833e01.js",
+    "static/js/2.ce3e9e8a.chunk.js",
+    "static/css/main.2213632c.chunk.css",
+    "static/js/main.2dd3fabe.chunk.js"
+  ]
+}

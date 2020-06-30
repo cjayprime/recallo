@@ -381,17 +381,6 @@
     background-image: url(../../assets/img/ladyCall.png);
   }
 
-  .TermofUse{
-    position: absolute;
-    right: 0px;
-    width: 100%;
-   /* width: 891px;*/
-    height: 660.92px;
-    background-repeat: no-repeat;
-    background-image: url(../../assets/img/contactimage.PNG);
-
-  }
-
   #login{
     font-size: 15px;
     text-transform: capitalize;
@@ -1477,14 +1466,6 @@ text-align: center;
 /* End View Profile Overlay */
 
 /*  Profile Call Overlay */
-
-#radioInput{
-  margin-left: -30px;
-  margin-top: -4px;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-}
 .profile-call-label {
   display: block;
   position: relative;
@@ -1497,13 +1478,11 @@ text-align: center;
   -ms-user-select: none;
   user-select: none;
 }
-/*
 .profile-call-label input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
-*/
 .profile-call-label .checkmark {
   position: absolute;
   top: 0;
@@ -1583,7 +1562,7 @@ text-align: center;
 
 /* Previous call style */
 .previous-header {
-  height: 80px;
+  height: 118px;
   background: var(--text-white);
   box-shadow: 0px 3px 6px #0000000a;
   padding: 0 32px 24px;

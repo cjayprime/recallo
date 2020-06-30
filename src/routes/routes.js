@@ -4,130 +4,87 @@ import { Redirect } from "react-router-dom";
 // Public routes components
 import Signin from "./AuthScreen/SignIn";
 import SignUp from "./AuthScreen/Signup";
-import ContactSupport from "./ContactSupport";
-
+import Support from "./Support";
 
 // Private routes components
-import Admin from "./Admin/admin";
+import Admin from "./Admin";
 import Home from "./Home/home";
 import Calls from "./Calls";
 import Contact from "./Contact";
 import Personnel from "./Personnel";
 import Analytics from "./Analytics";
 import Settings from "./Settings";
-import ProfileCall from "./ProfileCall";
+import CallsID from "./CallsID";
 import NumberDetails from "./NumberDetails";
 import VoiceNotes from "./Voicenotes";
 import AccountPlan from "./Settings/AccountPlan"
 
-//import homeIcon from "../assets/img/homeIcon.svg";
-//import contactBook from "../assets/img/contactbook.svg";
+// import homeIcon from "../assets/img/homeIcon.svg";
+// import contactBook from "../assets/img/contactbook.svg";
 
 const routes = {
   public: [
     {
       path: "/signin",
-      exact: true,
       component: Signin,
-      name: "Log In",
     },
     {
       path: "/signup",
-      exact: true,
       component: SignUp,
-      name: "Create an Account",
     },
     {
       path: "/support",
-      exact: true,
-      component: ContactSupport,
-      name: "Contact Support",
+      component: Support,
     },
-
-/*
-    {
-      path: "/admin/settings",
-      exact: true,
-      component: Settings,
-      name: "Settings",
-    },
-
-    {
-      path: "/admin/account-plan",
-      exact: true,
-      component: AccountPlan,
-      name: "Account Plan",
-    },
-*/
   ],
   private: {
+    admin: Admin,
     sidebar: [
       {
-        path: "/admin",
-        component: Admin,
-      },
-      {
-        path: "/home",
-        exact: true,
+        path: "/admin/home",
         component: Home,
-         layout: "/admin", 
       },
       {
-        path: "/calls",
+        path: "/admin/calls",
         exact: true,
         component: Calls,
-         layout: "/admin",
       },
       {
-        path: "/contact",
-        exact: true,
+        path: "/admin/calls/:id",
+        component: CallsID,
+      },
+      {
+        path: "/admim/contact",
         component: Contact,
-         layout: "/admin",
       },
       {
-        path: "/personnel",
-        exact: true,
+        path: "/admin/personnel",
         component: Personnel,
-         layout: "/admin",
       },
-  
       {
-        path: "/analytics",
-        exact: true,
+        path: "/admin/analytics",
         component: Analytics,
-        layout: "/admin",
       },
     ],
     route: [
-    {
+      {
         path: "/settings",
         exact: true,
         component: Settings,
-        layout: "/admin", 
+        layout: "/admin",
       },
-
-        {
+      {
         path: "/account-plan",
         exact: true,
         component: AccountPlan,
-        layout: "/admin", 
-      },
-
-
-      {
-        path: "/profile-calls",
-        exact: true,
-        component: ProfileCall,
-         layout: "/admin",
+        layout: "/admin",
       },
       {
         path: "/number-details",
         exact: true,
         component: NumberDetails,
-        layout: "/admin", 
+        layout: "/admin",
       },
-   
-     
       {
         path: "/voicenotes",
         exact: true,

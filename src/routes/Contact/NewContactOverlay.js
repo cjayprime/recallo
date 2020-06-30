@@ -31,7 +31,6 @@ class NewContactOverlay extends Component {
               onChange={this.handleChange}
               value={name}
             />
-
             <TextInput
               labelTitle="Phone number"
               labelClass="profile-label"
@@ -54,14 +53,14 @@ class NewContactOverlay extends Component {
               onChange={this.handleChange}
               value={company}
             />
-            <div className="mt-300" style={{marginTop:140}}>
+            <div className="mt-300">
               <Button
                 background="#336799"
                 className="br-30"
                 text="#fff"
                 padding="12px 227px"
               >
-                Save
+                <h6 className="bold">Save</h6>
               </Button>
             </div>
           </form>

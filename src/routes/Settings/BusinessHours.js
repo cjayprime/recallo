@@ -10,11 +10,9 @@ class BusinessHours extends Component {
     return (
       <>
       <div id="settingscreenDiv" className="screen-padding container background-grey">
-          <div className="overview br-16 plr-32 mb-32" style={{height:600}}>
+          <div className="overview br-8 pt-30 plr-32 pb-32 mb-24" id="settingContainer">
             <form>
-            <div className="row mb-23" id="settingContainer">
-            <h4 className="pt-32">Add time slot</h4>           
-              </div>
+              <h4 className="bold mb-14">Add time slot</h4>
               <div className="time-slot">
                 <div className="time-slot-1">
                   <div>
@@ -132,65 +130,64 @@ class BusinessHours extends Component {
                     </div>
                     <div className="slot">
                       <div className="row-direction">
-                          <label className="cursor mb-16 checkbox-label">
-                            <input type="checkbox" />
-                            <span className="check-mark" />
-                          </label>
-                        <Select type="select" className="time-select" />
-                        <p className="text-light to">TO</p>
-                        <Select type="select" className="time-select" />
-                        
-                      </div>
-                      <div className="row-direction">
-                         <label className="cursor mb-16 checkbox-label">
-                            <input type="checkbox" />
-                            <span className="check-mark" />
-                          </label>
+                        <FormField
+                          type="checkbox"
+                          checkboxClass="checkbox-extra"
+                        />
                         <Select type="select" className="time-select" />
                         <p className="text-light to">TO</p>
                         <Select type="select" className="time-select" />
                       </div>
                       <div className="row-direction">
-                         <label className="cursor mb-16 checkbox-label">
-                            <input type="checkbox" />
-                            <span className="check-mark" />
-                          </label>
+                        <FormField
+                          type="checkbox"
+                          checkboxClass="checkbox-extra"
+                        />
                         <Select type="select" className="time-select" />
                         <p className="text-light to">TO</p>
                         <Select type="select" className="time-select" />
                       </div>
                       <div className="row-direction">
-                         <label className="cursor mb-16 checkbox-label">
-                            <input type="checkbox" />
-                            <span className="check-mark" />
-                          </label>
+                        <FormField
+                          type="checkbox"
+                          checkboxClass="checkbox-extra"
+                        />
                         <Select type="select" className="time-select" />
                         <p className="text-light to">TO</p>
                         <Select type="select" className="time-select" />
                       </div>
                       <div className="row-direction">
-                         <label className="cursor mb-16 checkbox-label">
-                            <input type="checkbox" />
-                            <span className="check-mark" />
-                          </label>
+                        <FormField
+                          type="checkbox"
+                          checkboxClass="checkbox-extra"
+                        />
                         <Select type="select" className="time-select" />
                         <p className="text-light to">TO</p>
                         <Select type="select" className="time-select" />
                       </div>
                       <div className="row-direction">
-                         <label className="cursor mb-16 checkbox-label">
-                            <input type="checkbox" />
-                            <span className="check-mark" />
-                          </label>
+                        <FormField
+                          type="checkbox"
+                          checkboxClass="checkbox-extra"
+                        />
                         <Select type="select" className="time-select" />
                         <p className="text-light to">TO</p>
                         <Select type="select" className="time-select" />
                       </div>
                       <div className="row-direction">
-                      <label className="cursor mb-16 checkbox-label">
-                            <input type="checkbox" />
-                            <span className="check-mark" />
-                          </label>
+                        <FormField
+                          type="checkbox"
+                          checkboxClass="checkbox-extra"
+                        />
+                        <Select type="select" className="time-select" />
+                        <p className="text-light to">TO</p>
+                        <Select type="select" className="time-select" />
+                      </div>
+                      <div className="row-direction">
+                        <FormField
+                          type="checkbox"
+                          checkboxClass="checkbox-extra"
+                        />
                         <Select type="select" className="time-select" />
                         <p className="text-light to">TO</p>
                         <Select type="select" className="time-select" />
@@ -200,7 +197,6 @@ class BusinessHours extends Component {
                 </div>
                 <div className="time-info">
                   <p className="time-info-i">i</p>
-                  <br/>
                   <p className="light mb-16">
                     Any time of day outside of the chosen working/extra hours
                     would be diverted to voicenote.
@@ -211,18 +207,9 @@ class BusinessHours extends Component {
                   </p>
                 </div>
               </div>
-              <div className="pt-23">
-                  <Button
-                    className="br-30 save orange-hover"
-                    padding="10px 210px"
-                  >
-                    <h6>Save</h6>
-                  </Button>
-                </div>
             </form>
           </div>
-          
-          <div className="overview br-8 pt-30 pb-32 plr-32" style={{height:400}}>
+          <div className="overview br-8 pt-30 pb-32 plr-32">
             <div className="holiday">
               <div className="holiday-form">
                 <form>

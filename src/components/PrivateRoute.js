@@ -7,8 +7,7 @@ export default class PrivateRoute extends Component {
   render() {
     return (
       <Route
-        {...this.props}
-        render={(props) => {
+        component={(props) => {
           const content = Actions.token.get() ? (
             <this.props.component {...props} />
           ) : (

@@ -9,6 +9,8 @@ import routes from "./routes";
 
 import * as Actions from "../store/actions";
 
+const token = Actions.token.get();
+
 // This is the only manually connected component in the app
 // because this.props.load needs to be called
 // it's loading all user info when the app first mounts
@@ -19,7 +21,7 @@ export default connect(
   class Routes extends Component {
     async componentDidMount() {
       const { load } = this.props;
-      const token = await Actions.token.get();
+      console.log('Token: ', token);
       if (token) {
         load();
       }
@@ -43,22 +45,10 @@ export default connect(
                 component={this.component(route)}
               />
             ))}
-            {routes.private.sidebar.map((route) => (
-              <PrivateRoute
-                key={route.path}
-                path={route.path}
-                exact={route.exact}
-                component={this.component(route)}
-              />
-            ))}
-            {routes.private.route.map((route) => (
-              <PrivateRoute
-                key={route.path}
-                path={route.path}
-                exact={route.exact}
-                component={this.component(route)}
-              />
-            ))}
+            <PrivateRoute
+              path="/admin"
+              component={routes.private.admin}
+            />
             <Route
               path="/404"
               component={() => (
@@ -77,12 +67,8 @@ export default connect(
               )}
             />
             <Route exact path="/">
-              <Redirect to="/signin" />
+              <Redirect to={token ? "/admin/home" : "/signin"} />
             </Route>
-            {/* <Route path="*">
-              <Redirect to="/404" />
-            </Route> */}
-            {/* <Redirect from="/" to="/signin" /> */}
           </Switch>
         </Router>
       );

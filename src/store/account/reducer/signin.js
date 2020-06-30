@@ -1,18 +1,18 @@
 import * as Actions from "../actions";
 
 function signin(state, action) {
-  const { data, loading, message, status, type } = action;
+  const { data, status } = action;
+  let newState = {
+    ...state
+  };
 
-  if (type === Actions.SIGNIN && status === true) {
+  if (status === true) {
     Actions.token.set(data.token);
 
     const { user } = data;
     const { account } = user;
     return {
-      ...state,
-      loading: state.loading.filter((text) => text !== loading),
-      status: true,
-      message,
+      ...newState,
       user: {
         firstname: user.first_name,
         lastname: user.last_name,
@@ -41,15 +41,8 @@ function signin(state, action) {
         },
       },
     };
-  }else if (type === Actions.SIGNIN && status === false) {
-    return {
-      ...state,
-      loading: state.loading.filter((text) => text !== loading),
-      status: false,
-      message,
-    };
   }
 
-  return null;
+  return newState;
 }
 export default signin;

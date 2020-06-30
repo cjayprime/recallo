@@ -2,6 +2,7 @@ import { put, call, all } from "redux-saga/effects";
 
 import Request from "./request";
 import account from "./account/saga";
+import calls from "./calls/saga";
 
 import Notification from "../utils/notification";
 
@@ -14,14 +15,17 @@ export default class Saga {
   }
 
   root = function* root() {
-    yield all([account()]);
+    yield all([
+      account(),
+      calls()
+    ]);
   };
 
   request = function* request(action) {
     // success and error are callbacks
     const { endpoint, responder, method, data, success, error } = action;
 
-    yield put({ type: this.loading, loading: endpoint, name: "account" });
+    yield put({ type: this.loading, loading: endpoint });
 
     const result = yield call(
       new Request().api,

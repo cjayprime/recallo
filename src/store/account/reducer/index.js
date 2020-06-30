@@ -43,26 +43,32 @@ const initialState = {
 };
 
 const account = (state = initialState, action) => {
-  // console.log('All states and actions: ', state, action)
-  const { loading, type, name } = action;
-  let newState;
+  // console.log('All account states and actions: ', state, action)
+  const { loading, type } = action;
+  let newState = {
+    ...state,
+    loading: state.loading.filter((text) => text !== loading)
+  };
 
-  if (type === Actions.LOADING && loading && name === "account") {
-    state.loading.push(loading);
-    return {
-      ...state,
-    };
-  }else if (newState = signin(state, action)) {
+  if (type === Actions.LOADING && loading) {
+    newState.loading.push(loading);
     return newState;
-  }else if (newState = signup(state, action)) {
+  }else if (type === Actions.SIGNIN && (newState = signin(newState, action))) {
     return newState;
-  }else if (newState = load(state, action)) {
+  }else if (type === Actions.SIGNUP && (newState = signup(newState, action))) {
     return newState;
-  }else if (newState = plans(state, action)) {
+  }else if (type === Actions.LOAD && (newState = load(newState, action))) {
+    return newState;
+  }else if (
+    (
+      type === Actions.ADDPAYMENT   ||
+      type === Actions.PAYMENTPLAN  ||
+      type === Actions.DID
+    ) && (newState = plans(newState, action))) {
     return newState;
   }
 
-  return state;
+  return newState;
 };
 
 export default account;

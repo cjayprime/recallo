@@ -1,3 +1,24 @@
+/*
+For all requests throughout the app the following actions are fired when triggering it:
+  type,
+  responder,
+  endpoint,
+  method,
+  data,
+  success,
+  error
+    
+and when the request is complete it fires:
+  ...result,
+  ...action,
+  type: responder,
+  loading,
+  message,
+  status,
+  data
+  success,
+  error
+*/
 export const LOADING = "ACCOUNT_LOADING";
 export const REQUEST = "ACCOUNT_REQUEST";
 export const SIGNUP = "SIGNUP";
@@ -68,16 +89,16 @@ export const plans = (category, success) => ({
 });
 
 export const token = {
-  get: async () => {
-    const item = await window.localStorage.getItem("token");
+  get: () => {
+    const item = window.localStorage.getItem("token");
     return item;
   },
-  set: async (newToken) => {
-    const item = await window.localStorage.setItem("token", newToken);
+  set: (newToken) => {
+    const item = window.localStorage.setItem("token", newToken);
     return item;
   },
-  remove: async () => {
-    const item = await window.localStorage.removeItem("token");
+  remove: () => {
+    const item = window.localStorage.removeItem("token");
     return item;
   },
 };
