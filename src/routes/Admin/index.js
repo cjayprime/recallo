@@ -1,107 +1,82 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { connect } from 'react-redux';
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import Sidenav from "../../components/SideNav/sidenav";
 import Header from "../../components/Header/header";
 import SettingSideBar from "../../components/SideNav/settingsidebar";
 
-
 import routes from "../routes";
 
-import "./admin.css";
+import * as Actions from "../../store/actions";
 
-// core components
+import "./admin.css";
 
 class Admin extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
-  // state = {
-  //     header: false
-  // }
+  component = (route) =>
+    connect(
+      (state) => state,
+      Actions
+    )((props) => <route.component {...props} />);
 
   getRoutes = () => {
-    return routes.private.sidebar.map((prop, key) => {
-      if (prop.layout === "/admin") {
-        return (
-          <Route
-            path={prop.layout + prop.path}
-            component={prop.component}
-            key={key}
-          />
-        );
-      }
-      return null;
-    });
+    return routes.private.sidebar.map((route, i) => (
+      <Route
+        key={i}
+        path={route.path}
+        exact={route.exact}
+        component={this.component(route)}
+      />
+    ));
   };
 
   getSettings = () => {
-    return routes.private.route.map((prop, key) => {
-      if (prop.layout === "/admin") {
-        // from and to props of the Redirect component from react-router-dom npm library
-        // will aid you redirect if props.match.url === "/"
-        return (
-          <Route
-            path={prop.layout + prop.path}
-            component={prop.component}
-            key={key}
-          />
-        );
-      }
-      return null;
-    });
+    return routes.private.route.map((route, i) => (
+      <Route
+        key={i}
+        path={route.path}
+        exact={route.exact}
+        component={this.component(route)}
+      />
+    ));
   };
 
   header = (isSideNav) => {
+    if(isSideNav)
+    return true;
+
     const { location } = this.props;
-    if (isSideNav === false) {
-      if (
-        location.pathname === "/admin/home" ||
-        location.pathname === "/admin/analytics"
-      )
+
+    switch (location.pathname){
+      case (
+        "/admin/home"         ||
+        "/admin/analytics"    ||
+        "/admin/calls"        ||
+        "/admin/contact"      ||
+        "/admin/personnel"    ||
+        "/admin/settings"     ||
+        "/admin/previous"     ||
+        "/admin/voicenotes"
+      ):
         return true;
 
-      return false;
+      default:
+        return false;
     }
-    if (
-      location.pathname === "/admin/calls" ||
-      location.pathname === "/admin/contact" ||
-      location.pathname === "/admin/personnel" ||
-      location.pathname === "/admin/settings" ||
-      location.pathname === "/admin/previous" ||
-      location.pathname === "/admin/voicenotes"
-    )
-      return true;
-
-    return false;
   };
 
   render() {
     const { account, location/* data, result */ } = this.props;
-   if(location.pathname === "/admin/settings"){
-    return (
-      <div className="grid">
-           <Header header={this.header(false)} className="main-header" />
-            <SettingSideBar
-              header={this.header(true)}
-              {...this.props}
-              routes={routes}
-              account={account}
-            />
-        <main className="main">
-          <Switch>
-            {this.getRoutes(routes)}
-            {this.getSettings(routes)}
-          </Switch>
-        </main>
-      </div>
-    );
-   }else{
+    const Component = location.pathname === "/admin/settings" ? SettingSideBar : Sidenav;
+
     return (
       <div className="grid">
         <Header header={this.header(false)} className="main-header" />
-        <Sidenav
+        <Component
           header={this.header(true)}
           {...this.props}
           routes={routes}
@@ -111,11 +86,13 @@ class Admin extends Component {
           <Switch>
             {this.getRoutes(routes)}
             {this.getSettings(routes)}
+            <Route exact path="/admin">
+              <Redirect to="/admin/home" />
+            </Route>
           </Switch>
         </main>
       </div>
     );
-   }
   }
 }
 
