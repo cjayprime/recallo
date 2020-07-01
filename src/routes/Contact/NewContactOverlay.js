@@ -53,15 +53,15 @@ class NewContactOverlay extends Component {
               onChange={this.handleChange}
               value={company}
             />
-            <div className="mt-300">
-              <Button
-                background="#336799"
-                className="br-30"
-                text="#fff"
-                padding="12px 227px"
-              >
-                <h6 className="bold">Save</h6>
-              </Button>
+            <div style={{marginTop:100}}>
+            <Button
+              className="br-30 account-button orange-hover"
+              padding="12px 220px"
+              background="var(--text-color)"
+              text="#fff"
+            >
+             <h6 className="Bold">Save</h6> 
+            </Button>
             </div>
           </form>
         </div>

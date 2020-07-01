@@ -21,7 +21,7 @@ class Contact extends Component {
           <div className="title">
             <h2>Contact</h2>
           </div>
-          <div>
+          <div className="row" id="calltopbutton">
             <Button
               background="#336799"
               text="#fff"
@@ -37,7 +37,7 @@ class Contact extends Component {
           <div>
             <div className="search-form">
               <SearchIcon className="search-icon" />
-              <input className="br-3 search bc-blue hover" />
+              <input id="input" className="br-3 search bc-blue hover" />
             </div>
           </div>
           <div className="menu-bar-right">
