@@ -42,7 +42,7 @@ class Table extends Component {
 
             <td>
               {/* <label for="active" className="label-inactive">Active</label>*/}
-              <p className="label-active">Active</p>
+              <p className="label voicenote">Active</p>
             </td>
             <td onClick={this.toggle} className="text-blue bold cursor">Edit</td>
           </tr>
@@ -56,7 +56,7 @@ class Table extends Component {
             <td>+2348051113453</td>
             <td>
               {/*<label for="inactive" className="label-inactive">Inactive</label>*/}
-              <p className="label-inactive">Inactive</p>
+              <p className="label fault">Inactive</p>
 
             </td>
             <td onClick={this.toggle} className="text-blue bold cursor">Edit</td>

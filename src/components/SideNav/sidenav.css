@@ -102,9 +102,6 @@
   cursor: pointer;
 }
 
-#sidebar-text{
-  font-size: 14px;
-}
 
 @media (min-width: 1281px){
   .sidenav-body {
@@ -223,10 +220,7 @@
   #sidebarHr{
     margin-top: 40px;
   }
-  
-  #sidebar-text{
-    font-size: 14px;
-  }
+
 
   /*SETTING STYLE BEGINING*/
   .settingbusiness-logo {

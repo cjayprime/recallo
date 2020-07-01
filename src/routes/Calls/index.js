@@ -8,7 +8,10 @@ import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
 
 
 class Calls extends Component {
-  state = { open: false };
+  state = { 
+    open: false,
+    
+  };
 
   toggle = () => {
     const { open } = this.state;

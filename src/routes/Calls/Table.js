@@ -18,18 +18,18 @@ class Table extends Component {
       <>
         <table className="mtb-15">
           <tbody>
-            <tr className="background-grey text-light table-head hover-grey">
+            <tr id="callTableHeader" className="background-grey text-light table-head hover-grey" >
               <td>Call ID</td>
               <td>Call date & time</td>
               <td>Personnel</td>
               <td>Call duration</td>
               <td>Call status</td>
-              <td>Profile category</td>
+              {/*<td>Profile category</td>*/}
               <td>Action</td>
             </tr>
             {
               all.map((call, i) => (
-                <tr key={i} className="table-body text-main hover-grey">
+                <tr key={i} id="callTableHeader" className="table-body text-main hover-grey">
                   <td className="text-blue bold">
                     <Link to={{
                       pathname: "/admin/calls/" + call.reference_no,
@@ -48,13 +48,21 @@ class Table extends Component {
                   <td>{call.call_duration}</td>
                   <td>
                   {/* <label className="label yellow bold">Answered</label> */}
-                  <p className={"label-" + (call.call_status === "answered" ? "voicenote" : "missed")}>
+                  <span className={"label " + (call.call_status === "answered" ? "voicenote" : "missed")}>
                     {call.call_status.substr(0, 1).toUpperCase() + '' + call.call_status.substr(1)}
-                  </p>
+                  </span>
                   </td>
+                  {/*
                   <td>
-                  <p className="label-inactive"> Engine fault</p>
+    
+                                      <p className="label-inactive"> Engine fault</p>
+
+                  <span class="label fault">Engine fault</span>
+
+                   
                   </td>
+
+                   */}
                   <td className="text-blue bold cursor" onClick={() => {
                     call.call_status
                     ? this.toggle('profile-call')
