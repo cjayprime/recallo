@@ -66,7 +66,7 @@ class PersonnelOverlay extends Component {
                   labelClass="profile-label"
                   selectClass="custom-select"
                   options={statusItem}
-                  className="profile-input"
+                  className="br-8 profile-input p-12"
                 />
               </div>
               <div className="col-7">
@@ -77,7 +77,7 @@ class PersonnelOverlay extends Component {
                   labelClass="profile-label"
                   selectClass="custom-select"
                   options={departmentItem}
-                  className="profile-input"
+                  className="br-8 profile-input p-12"
                 />
               </div>
             </div>
@@ -90,7 +90,7 @@ class PersonnelOverlay extends Component {
                   labelClass="profile-label"
                   selectClass="custom-select"
                   options={skillItem}
-                  className="profile-input"
+                  className="br-8 profile-input p-12"
                 />
               </div>
               <div className="col-7 pt-23">
@@ -112,7 +112,7 @@ class PersonnelOverlay extends Component {
                   </label>
                   <label className="cursor mb-16 checkbox-label">
                     <h5 className="text-blue light">Tuesday</h5>
-                    <input type="checkbox" />
+                    <input type="checkbox" checked="checked"/>
                     <span className="check-mark" />
                   </label>
                   <label className="cursor mb-16 checkbox-label">

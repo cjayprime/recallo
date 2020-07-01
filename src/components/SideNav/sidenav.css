@@ -21,19 +21,7 @@
   flex-direction: column;
 }
 
-.business-logo {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  background: #336799;
-  margin-top: -100px;
-}
 
-.logo-text {
-  font: Bold 31px/80px Barlow;
-  color: #fff;
-  text-align: center;
-}
 
 .account-button {
   transition: 0.3s all ease-in-out;
@@ -93,6 +81,21 @@
   z-index: -1;
 }
 
+.business-logo {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #336799;
+  margin-top: -100px;
+}
+
+.logo-text {
+  font: Bold 25px/60px Barlow;
+  color: #fff;
+  text-align: center;
+  font-family: sans-serif;
+}
+
 .logout {
   margin-bottom: 54px;
   text-align: center;
@@ -118,6 +121,20 @@
   }
   
 
+  .business-logo {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #336799;
+    margin-top: -100px;
+  }
+  
+  .logo-text {
+    font: Bold 25px/60px Barlow;
+    color: #fff;
+    text-align: center;
+    font-family: sans-serif;
+  }
   
   .sidenav-body::-webkit-scrollbar {
     display: none;
@@ -135,19 +152,7 @@
     flex-direction: column;
   }
   
-  .business-logo {
-    width: 76px;
-    height: 76px;
-    border-radius: 50%;
-    background: #336799;
-    margin-top: -100px;
-  }
-  
-  .logo-text {
-    font: Bold 31px/80px Barlow;
-    color: #fff;
-    text-align: center;
-  }
+
 
 
   
@@ -225,17 +230,18 @@
 
   /*SETTING STYLE BEGINING*/
   .settingbusiness-logo {
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: #336799;
     margin-top: -100px;
   }
   
   .settinglogo-text {
-    font: Bold 13px/36px Barlow;
+    font: Bold 20px/50px Barlow;
     color: #fff;
     text-align: center;
+    font-family: sans-serif;
   }
 
   #seetingsidebar{

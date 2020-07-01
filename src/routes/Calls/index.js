@@ -4,15 +4,24 @@ import Button from "../../components/Button/button";
 import Table from "./Table";
 import MenuItem from "../../components/MenuItem/menuItem";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
+import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
 
 
 class Calls extends Component {
+  state = { open: false };
+
+  toggle = () => {
+    const { open } = this.state;
+    this.setState({ open: !open });
+  };
+
   componentDidMount(){
     const { getCalls } = this.props;
     getCalls('all');
   }
 
   render() {
+    const { open } = this.state;
     const { calls } = this.props;
 
     return (
@@ -23,7 +32,7 @@ class Calls extends Component {
           <div className="title">
             <h2>Calls</h2>
           </div>
-          <div className="row">
+          <div className="row" id="calltopbutton">
             <Link to="/admin/voicenotes">
               <Button
                 background="#F5F6FA"
@@ -87,6 +96,8 @@ class Calls extends Component {
             </div>
           </div>
         </div>
+        <ProfileCategoryOverlay open={open} toggle={this.toggle} />
+
         <Table all={calls.all} />
       </div>
     </>

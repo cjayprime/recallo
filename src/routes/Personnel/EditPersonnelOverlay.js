@@ -66,7 +66,7 @@ class EditPersonnelOverlay extends Component {
                   labelClass="profile-label"
                   selectClass="custom-select"
                   options={statusItem}
-                  className="profile-input"
+                  className="br-8 profile-input p-12"
                 />
               </div>
               <div className="col-7">
@@ -77,7 +77,7 @@ class EditPersonnelOverlay extends Component {
                   labelClass="profile-label"
                   selectClass="custom-select"
                   options={departmentItem}
-                  className="profile-input"
+                  className="br-8 profile-input p-12"
                 />
               </div>
             </div>
@@ -90,7 +90,7 @@ class EditPersonnelOverlay extends Component {
                   labelClass="profile-label"
                   selectClass="custom-select"
                   options={skillItem}
-                  className="profile-input"
+                  className="br-8 profile-input p-12"
                 />
               </div>
               <div className="col-7 pt-23">
