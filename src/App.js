@@ -20,7 +20,7 @@ function App() {
             horizontal: "right",
           }}
           ref={Notification.reference}
-          action={() => <Button onClick={Notification.close}>dismiss</Button>}
+          action={(key) => <Button onClick={() => Notification.close(key)}>dismiss</Button>}
         >
           <Routes />
         </SnackbarProvider>

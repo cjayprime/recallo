@@ -4,12 +4,14 @@ export const GETPERSONNEL = "GETPERSONNEL";
 export const EACHPERSONNEL = "EACHPERSONNEL";
 export const CREATEPERSONNEL = "CREATEPERSONNEL";
 export const UPDATEPERSONNEL = "UPDATEPERSONNEL";
+export const STATUSANDSKILLS = "STATUSANDSKILLS";
 
-export const getPersonnels = id => ({
+export const getPersonnels = (id, success) => ({
   type: REQUEST,
   responder: id ? GETPERSONNEL : EACHPERSONNEL,
   method: "GET",
-  endpoint: id ? 'personnel/' + id : 'personnel'
+  endpoint: id ? 'personnel/' + id : 'personnel',
+  success
 });
 
 export const createPersonnel = data => ({
@@ -20,12 +22,12 @@ export const createPersonnel = data => ({
   data
 });
 
-export const updatePersonnel = id => ({
+export const updatePersonnel = (data, id) => ({
   type: REQUEST,
   responder: UPDATEPERSONNEL,
   method: "PUT",
-  endpoint: 'personnel',
-  data: 'personnel/' + id
+  endpoint: 'personnel/' + id,
+  data
 });
 
 export const deletePersonnel = id => ({
@@ -34,4 +36,11 @@ export const deletePersonnel = id => ({
   method: "DELETE",
   endpoint: 'personnel',
   data: id
+});
+
+export const statusAndSkills = () => ({
+  type: REQUEST,
+  responder: STATUSANDSKILLS,
+  method: "DELETE",
+  endpoint: 'personnel'
 });

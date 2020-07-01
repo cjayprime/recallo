@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Overlay from "../../components/Overlay";
-import FormField from "../../components/Form";
-import Button from "../../components/Button/button";
+import Overlay from "../../../components/Overlay";
+import FormField from "../../../components/Form";
+import Button from "../../../components/Button/button";
 
-class DepartmentOverlay extends Component {
+class Department extends Component {
   render() {
     const { open, toggle } = this.props;
 
@@ -78,4 +78,4 @@ class DepartmentOverlay extends Component {
   }
 }
 
-export default DepartmentOverlay;
+export default Department;
