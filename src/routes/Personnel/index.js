@@ -24,6 +24,12 @@ class Personnel extends Component {
     
   };
 
+  componentDidMount(){
+    console.log(this.props)
+
+    this.props.getPersonnels();
+  }
+
 
 
   render() {
