@@ -24,7 +24,7 @@ class Table extends Component {
               <td>Personnel</td>
               <td>Call duration</td>
               <td>Call status</td>
-              {/*<td>Profile category</td>*/}
+              <td>Profile category</td>
               <td>Action</td>
             </tr>
             {
@@ -52,17 +52,18 @@ class Table extends Component {
                     {call.call_status.substr(0, 1).toUpperCase() + '' + call.call_status.substr(1)}
                   </span>
                   </td>
-                  {/*
+                 
                   <td>
+                     {/*
     
                                       <p className="label-inactive"> Engine fault</p>
 
+                   */}
                   <span class="label fault">Engine fault</span>
 
                    
                   </td>
 
-                   */}
                   <td className="text-blue bold cursor" onClick={() => {
                     call.call_status
                     ? this.toggle('profile-call')
