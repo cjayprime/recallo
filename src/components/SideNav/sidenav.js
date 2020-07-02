@@ -92,14 +92,14 @@ class Sidenav extends Component {
                 </h5>
               </Link> 
 
-              <Link to="/Personnel" className="Link">
+              <Link to="/admin/personnel" className="Link">
                 <h5 className="sidebar-text">
                   <div className="icon-personnel" />
                     Personnel
                 </h5>
               </Link> 
 
-              <Link to="/Personnel" className="Link">
+              <Link to="/admin/analytics" className="Link">
                 <h5 className="sidebar-text">
                   <div className="icon-analytics" />
                     Analytics

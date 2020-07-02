@@ -3,6 +3,7 @@ import { put, call, all } from "redux-saga/effects";
 import Request from "./request";
 import account from "./account/saga";
 import calls from "./calls/saga";
+import personnel from "./personnel/saga";
 
 import Notification from "../utils/notification";
 
@@ -17,7 +18,8 @@ export default class Saga {
   root = function* root() {
     yield all([
       account(),
-      calls()
+      calls(),
+      personnel()
     ]);
   };
 
