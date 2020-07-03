@@ -53,7 +53,7 @@ class Personnel extends Component {
             <div className="menu-bar-right">
               <p className="text-light mr-5">Viewing results</p>
               <p className="text-main bold mr-20">
-                {!loading && <>1-{personnel.all.length} <span className="text-light ml-5 mr-5">of</span>{personnel.all.length}</>}
+                {!loading && <>1-10 <span className="text-light ml-5 mr-5">of</span>{personnel.all.length}</>}
               </p>
               <div className="arrow-icons">
                 <span className="arrow arrow-left mr-10 op-4 hover" />

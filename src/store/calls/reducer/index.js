@@ -30,7 +30,7 @@ const initialState = {
     //   "_id": 17
     // }
   ],
-  details: {
+  details: [
     // {
     //   "start_time": "2019-06-28 09:50:22",
     //   "start_time_wait": null,
@@ -55,18 +55,11 @@ const initialState = {
     //   "rec_name": "2019-06-28/",
     //   "_id": 17
     // }
-  },
-  // callStatus: {
-  //   answered: 0,
-  //   waiting: 2,
-  //   queued: 0,
-  //   recording: 0,
-  // }
+  ]
 };
 
 const calls = (state = initialState, action) => {
-  // console.log('All calls states and actions: ', state, action)
-  const { loading, type, name, data, status } = action;
+  const { loading, type, data, status } = action;
   let newState = {
     ...state,
     loading: state.loading.filter((text) => text !== loading),
@@ -83,7 +76,7 @@ const calls = (state = initialState, action) => {
   }else if (type === Actions.EACHCALL && status === true) {
     return {
       ...newState,
-      details: data.call,
+      details: data.calls,
     };
   }
 

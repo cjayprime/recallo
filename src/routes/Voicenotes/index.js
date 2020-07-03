@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button/button";
 import MenuItem from "../../components/MenuItem/menuItem";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
-//import SideNav from "../../components/SideNav/sidenav";
-import ProfileCategoryOverlay from "./../Calls/ProfileCategoryOverlay";
-import ProfileCallOverlay from "./../Calls/ProfileCallOverlay";
+import ProfileCategory from "./../Calls/ProfileCategory";
+import ProfileCall from "./../Calls/ProfileCall";
 
 
 
@@ -126,8 +125,8 @@ class VoiceNotes extends Component {
           </tbody>
         </table>
         
-        <ProfileCategoryOverlay open={open} toggle={this.toggle} />
-        <ProfileCallOverlay open={this.state.open2} toggle={this.toggle2} />
+        <ProfileCategory open={open} toggle={this.toggle} />
+        <ProfileCall open={this.state.open2} toggle={this.toggle2} />
 
 
       </div>

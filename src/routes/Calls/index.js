@@ -4,7 +4,7 @@ import Button from "../../components/Button/button";
 import Table from "./Table";
 import MenuItem from "../../components/MenuItem/menuItem";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
-import ProfileCategoryOverlay from "./ProfileCategoryOverlay";
+import ProfileCategory from "./ProfileCategory";
 
 
 class Calls extends Component {
@@ -96,7 +96,7 @@ class Calls extends Component {
             </div>
           </div>
         </div>
-        <ProfileCategoryOverlay open={open} toggle={this.toggle} />
+        <ProfileCategory open={open} toggle={this.toggle} />
 
         <Table all={calls.all} />
       </div>
