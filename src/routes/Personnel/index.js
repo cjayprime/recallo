@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Titlebar from "../../components/TitleBar";
 import MenuItem from "../../components/MenuItem/menuItem";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
-import Table from "./AAA";
+import Table from "./Table";
 // import DepartmentOverlay fro./Overlays/DepartmentOverlaylay";
 // import Add from "./AddPersonnelOverlay";
 import Add from "./Overlays/Add";
