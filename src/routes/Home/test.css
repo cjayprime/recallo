@@ -612,13 +612,44 @@
           }
 
           #FaqAndTermsDiv2{
-            height:550px;
+                height:550px;
                  margin-left:350px;
                  width:620px;
                  margin-top: 42px;
-position: absolute;
+                position: absolute;
           }
         /*TermsOfUse Page Style End*/
+
+
+           /*TermsOfUse Page Style Begining*/
+           #pfcat{
+            position: fixed; /* Sit on top of the page content */
+            width: 24.5%; /* Full width (cover the whole page) */
+            height: 12.5%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin-top: 555px !important;
+margin-left: 390px;
+            background-color:rgba(143, 18, 18, 0.5); /* Black background with opacity */
+            z-index: -20; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+          }
+
+          #pfcat2{
+                height:90px;
+                position: absolute;
+          }
+        /*TermsOfUse Page Style End*/
+
+        .editLogo {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: #336799;
+          margin-top: -10px;
+        }
   }
 
   @media (min-width: 300px) and (max-width: 399px){
