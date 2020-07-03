@@ -3,22 +3,29 @@ import React, { Component } from "react";
 import MenuItem from "../../components/MenuItem/menuItem";
 import arrowLeft from "../../assets/img/arrow-left.png";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
-import SideNav from "../../components/SideNav/sidenav";
 
 class CallsID extends Component {
-  goBack = () => {
-    const { history } = this.props;
-    history.goBack();
+  state = {
+    open: false
   };
 
   componentDidMount(){
     const { getCalls, match: { params: {id: id} } } = this.props;
-    getCalls(id);
+    getCalls('all?caller_id=' + id);
   }
 
+  goBack = () => {
+    const { history } = this.props;
+    history.push('../calls');
+  };
+
+  toggle = (open) => {
+    this.setState({ open: this.state.open ? "" : open });
+  };
+
   render() {
-    const { calls: { details } } = this.props;
-    console.log(details)
+    var { calls: { details, loading }, match: { params: {id: id} }  } = this.props;
+    loading = loading.indexOf('calls/all?caller_id=' + id) >= 0;
     return (
       <>
         <div className="previous-header mb-0">
@@ -27,19 +34,35 @@ class CallsID extends Component {
               <span className="text-blue mr-8">Calls</span>
               <span className="ml-8">Caller ID</span>
             </p>
-            <h2 id="profCallHeader"  className="bold text-main">{details.personnel_mobile ? '+' + details.personnel_mobile : ''}</h2>
+            <h2 id="profCallHeader"  className="bold text-main">{id}</h2>
           </div>
           <div className="callID-history">
             <div>
-              <h3 id="profCallHeader" className="bold mb-4 text-main">12</h3>
+              <h3 id="profCallHeader" className="bold mb-4 text-main">{details.length}</h3>
               <p className="light text-light">Previous calls</p>
             </div>
             <div>
-              <h3 id="profCallHeader" className="bold mb-4 text-main">4.3 mins</h3>
+              <h3 id="profCallHeader" className="bold mb-4 text-main">
+                {
+                  details.length
+                  ? details.reduce((old, prop) => {
+                      return old + ((new Date(prop.end_time).getTime() - new Date(prop.start_time).getTime()) / details.length);
+                    }, 0)
+                  : 0
+                } mins
+              </h3>
               <p className="light text-light">Average call time</p>
             </div>
             <div>
-              <h3 id="profCallHeader" className="bold mb-4 text-main">1.2 mins</h3>
+              <h3 id="profCallHeader" className="bold mb-4 text-main">
+                {
+                  details.length
+                  ? details.reduce((old, prop) => {
+                      return old + ((new Date(prop.end_time).getTime() - new Date(prop.start_time).getTime()) / details.length);
+                    }, 0)
+                  : 0
+                } mins
+              </h3>
               <p className="light text-light">Average wait time</p>
             </div>
             <div>
@@ -90,7 +113,7 @@ class CallsID extends Component {
             <div className="menu-bar-right">
               <p className="text-light mr-5">Viewing results</p>
               <p className="text-main bold mr-20">
-                1-10 <span className="text-light ml-5 mr-5">of</span>36
+                1-10 <span className="text-light ml-5 mr-5">of</span>{details.length}
               </p>
               <div className="arrow-icons">
                 <span className="arrow arrow-left mr-10 op-4 hover" />
@@ -109,21 +132,47 @@ class CallsID extends Component {
                 <td>Profile category</td>
                 <td>Action</td>
               </tr>
-              {Array.apply(null, Array(6)).map((a, i) => (
-                <tr key={i} className="table-body text-main hover-grey">
-                  <td>
-                    Today<p className="text-light mt-5">12:03pm</p>
-                  </td>
-                  <td>Grace Audu</td>
-                  <td>03:20</td>
-                  <td>
-                   {/* <label className="label yellow bold">Voicenote</label> */}
-                   <p className="label-inactive">Inactive</p>
-                  </td>
-                  <td>Not yet profiled</td>
-                  <td className="text-blue bold">Profile call</td>
-                </tr>
-              ))}
+              {
+                loading
+                ? <tr><td>Loading</td></tr>
+                : details.length === 0
+                  ? <tr><td>This caller ID has no details.</td></tr>
+                  : details.map((call, i) => (
+                      <tr key={i} className="table-body text-main hover-grey">
+                        <td>
+                          {call.end_time.split(' ')[0]}
+                          <p className="text-light mt-5">
+                            {call.end_time.split(' ')[1]}
+                          </p>
+                        </td>
+                        <td>{call.personnel_name}</td>
+                        <td>{call.call_duration}</td>
+                        <td>
+                          <p className={"label-" + (call.call_status === "answered" ? "voicenote" : "missed")}>
+                            {call.call_status.substr(0, 1).toUpperCase() + '' + call.call_status.substr(1)}
+                          </p>
+                        </td>
+                        <td>
+                          {
+                            call.call_status
+                            ? 'Not yet profiled'
+                            : 'Profiled'
+                          }
+                        </td>
+                        <td className="text-blue bold cursor" onClick={() => {
+                          call.call_status
+                          ? this.toggle('profile-call')
+                          : this.toggle('view-profile')
+                        }}>
+                          {
+                            call.call_status
+                            ? 'Profile call'
+                            : 'View Profile'
+                          }
+                        </td>
+                      </tr>
+                    ))
+              }
             </tbody>
           </table>
         </div>

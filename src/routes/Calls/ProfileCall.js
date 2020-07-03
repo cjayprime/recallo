@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Overlay from "../../components/Overlay";
 import Button from "../../components/Button/button";
 
-class ProfileCallOverlay extends Component {
+class ProfileCall extends Component {
   constructor() {
     super();
     this.state = {
@@ -182,4 +182,4 @@ class ProfileCallOverlay extends Component {
   }
 }
 
-export default ProfileCallOverlay;
+export default ProfileCall;

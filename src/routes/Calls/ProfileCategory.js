@@ -3,7 +3,7 @@ import Overlay from "../../components/Overlay";
 import FormField from "../../components/Form";
 import Button from "../../components/Button/button";
 
-class ProfileCategoryOverlay extends Component {
+class ProfileCategory extends Component {
   render() {
     const { open, toggle } = this.props;
 
@@ -16,7 +16,7 @@ class ProfileCategoryOverlay extends Component {
           </h6>
           <div>
           <form className="mb-32">
-          <span className="formSpan">Enter name of profile category</span>
+          {/* <span className="formSpan">Enter name of profile category</span> */}
             <FormField
               labelTitle="Enter name of profile category"
               labelClass="profile-label"
@@ -104,4 +104,4 @@ class ProfileCategoryOverlay extends Component {
   }
 }
 
-export default ProfileCategoryOverlay;
+export default ProfileCategory;
