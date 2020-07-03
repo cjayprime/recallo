@@ -4,13 +4,14 @@ import Add from "./Overlays/Add";
 class Table extends Component {
   state = { open: false, id: 1 };
 
-  toggle = () => {
+  toggle = id => {
     const { open } = this.state;
-    this.setState({ open: !open });
+    this.setState({ open: !open, id });
   };
+  
   render() {
     const { open } = this.state;
-
+    const { personnels, updatePersonnel } = this.props;
     return (
       <>
         <table className="mtb-15">
@@ -22,41 +23,31 @@ class Table extends Component {
               <td>Last Name</td>
               <td>Email Address</td>
               <td>Department</td>
-              <td>Mobile Number</td>
+              {/* <td>Mobile Number</td> */}
               <td>Status</td>
               <td>Action</td>
             </tr>
-            <tr className="table-body text-main hover-grey">
-              <td className="text-blue bold" />
-              
-              <td><div className="tableIcon" />Andrew</td>
-              <td>Biodun</td>
-              <td>andrewb@recallo.services</td>
-              <td>Unspecified</td>
-              
-              <td>+2348051113453</td>
+            {
+              personnels.map((personnel, i) => (
+                <tr key={i} className="table-body text-main hover-grey">
+                  <td className="text-blue bold" />
+                  
+                  <td>{/*<div className="tableIcon" />*/}{personnel.name.split(' ')[0]}</td>
+                  <td>{personnel.name.split(' ')[1]}</td>
+                  <td>{personnel.email}</td>
+                  <td>{personnel.department ? personnel.department : 'Unspecified'}</td>
+                  
+                  {/* <td>{personnel.mobile}</td> */}
 
-              <td>
-                {/* <label for="active" className="label-inactive">Active</label>*/}
-                <p className="label-active">Active</p>
-              </td>
-              <td onClick={this.toggle} className="text-blue bold cursor">Edit</td>
-            </tr>
-            <tr className="table-body text-main hover-grey">
-              <td className="text-blue bold" />
-              <td>  <div className="tableIcon" /> Andrew</td>
-              <td>Biodun</td>
-              <td>andrewb@recallo.services</td>
-              <td>Unspecified</td>
-            
-              <td>+2348051113453</td>
-              <td>
-                {/*<label for="inactive" className="label-inactive">Inactive</label>*/}
-                <p className="label-inactive">Inactive</p>
-
-              </td>
-              <td onClick={this.toggle} className="text-blue bold cursor">Edit</td>
-            </tr>
+                  <td>
+                    {/* <label for="active" className="label-inactive">Active</label>*/}
+                    <p className="label-active">{personnel.status}</p>
+                  </td>
+                  <td onClick={() => this.toggle(personnel._id)} className="text-blue bold cursor">Edit</td>
+                </tr>
+                
+              ))
+            }
           </tbody>
         </table>
         <Add
@@ -65,6 +56,7 @@ class Table extends Component {
           edit={true}
           open={open}
           toggle={this.toggle}
+          submit={updatePersonnel}
         />
       </>
     );

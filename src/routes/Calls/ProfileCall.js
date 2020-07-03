@@ -4,7 +4,7 @@ import Button from "../../components/Button/button";
 import { Link } from 'react-router-dom';
 
 
-class ProfileCallOverlay extends Component {
+class ProfileCall extends Component {
   constructor() {
     super();
     this.state = {
@@ -199,4 +199,4 @@ class ProfileCallOverlay extends Component {
   }
 }
 
-export default ProfileCallOverlay;
+export default ProfileCall;

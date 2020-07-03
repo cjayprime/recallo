@@ -25,22 +25,22 @@ class Add extends Component {
   };
 
   componentDidUpdate(prevProps){
-    if(this.props.open && prevProps.open !== this.props.open){
-      const { getPersonnels, edit, id } = this.props;
-
-      if(edit){
-        getPersonnels(5, data => {
+    const { open, getPersonnels, edit, id } = this.props;
+    if(edit && open && prevProps.open !== open){
+      getPersonnels(id, data => {
+        const personnel = data.personnel;
+        if(Object.keys(personnel).length > 0){
           this.setState({
-            firstname: "",
-            lastname: "",
-            email: "",
-            status: 1,
-            skill: 1,
-            department: 'Marketing',
-            schedule: [],
+            firstname: personnel.name.split(' ')[0],
+            lastname: personnel.name.split(' ')[1],
+            email: personnel.email,
+            status: personnel.status,
+            skill: personnel.skill_level,
+            department: personnel.department ? personnel.department : '',
+            schedule: personnel.schedules.map(sched => parseInt(sched.day, 10)),
           });
-        });
-      }
+        }
+      });
     }
   };
 
@@ -53,12 +53,11 @@ class Add extends Component {
   };
 
   submit = () => {
-    const { submit } = this.props;
+    const { submit, getPersonnels, toggle, id } = this.props;
     const data = this.state;
     const { error } = data;
     
     const dataKeys = Object.keys(data);
-    console.log(error, data, dataKeys.filter((state) => state === "error" || !!data[state]).length, dataKeys.length);
     if (
       !error &&
       dataKeys.filter((state) => state == "error" || !!data[state]).length === dataKeys.length
@@ -71,7 +70,9 @@ class Add extends Component {
         mobile: "2930220",
         department: data.department,
         schedule: data.schedule
-      });
+      }, () => {
+        getPersonnels(null, toggle);
+      }, id);
     } else {
       Notification.error(
         error || "Please fill in the form correctly."

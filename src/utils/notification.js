@@ -4,10 +4,12 @@ class Notification {
   reference = React.createRef();
 
   close = (key) => {
+    if(this.reference.current)
     this.reference.current.closeSnackbar(key);
   };
 
   success = (message) => {
+    if(this.reference.current)
     this.reference.current.enqueueSnackbar(message, {
       preventDuplicate: true,
       variant: "success",
@@ -16,6 +18,7 @@ class Notification {
   };
 
   error = (message) => {
+    if(this.reference.current)
     this.reference.current.enqueueSnackbar(message, {
       preventDuplicate: true,
       variant: "error",

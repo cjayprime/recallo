@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ProfileCallOverlay from "./ProfileCallOverlay";
-import ViewProfileOverlay from "./ViewProfileOverlay";
+import ProfileCallOverlay from "./ProfileCall";
+import ViewProfileOverlay from "./ViewProfile";
 
 class Table extends Component {
   state = {
@@ -32,10 +32,9 @@ class Table extends Component {
                 <tr key={i} id="callTableHeader" className="table-body text-main hover-grey">
                   <td className="text-blue bold">
                     <Link to={{
-                      pathname: "/admin/calls/" + call.reference_no,
-                      // state: {reference_no: call.reference_no}
+                      pathname: "/admin/calls/" + call.caller_id,
                     }}>
-                      +{call.personnel_mobile}
+                      {call.caller_id}
                     </Link>
                   </td>
                   <td>
@@ -47,10 +46,17 @@ class Table extends Component {
                   <td>{call.personnel_name}</td>
                   <td>{call.call_duration}</td>
                   <td>
+<<<<<<< HEAD
                   {/* <label className="label yellow bold">Answered</label> */}
                   <span className={"label " + (call.call_status === "answered" ? "voicenote" : "missed")}>
                     {call.call_status.substr(0, 1).toUpperCase() + '' + call.call_status.substr(1)}
                   </span>
+=======
+                    {/* <label className="label yellow bold">Answered</label> */}
+                    <p className={"label-" + (call.call_status === "answered" ? "voicenote" : "missed")}>
+                      {call.call_status.substr(0, 1).toUpperCase() + '' + call.call_status.substr(1)}
+                    </p>
+>>>>>>> 4f1f9aa6b1060433b9dcfad3023aa30480be6856
                   </td>
                  
                   <td>
