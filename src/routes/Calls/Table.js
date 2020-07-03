@@ -46,17 +46,10 @@ class Table extends Component {
                   <td>{call.personnel_name}</td>
                   <td>{call.call_duration}</td>
                   <td>
-<<<<<<< HEAD
                   {/* <label className="label yellow bold">Answered</label> */}
                   <span className={"label " + (call.call_status === "answered" ? "voicenote" : "missed")}>
                     {call.call_status.substr(0, 1).toUpperCase() + '' + call.call_status.substr(1)}
                   </span>
-=======
-                    {/* <label className="label yellow bold">Answered</label> */}
-                    <p className={"label-" + (call.call_status === "answered" ? "voicenote" : "missed")}>
-                      {call.call_status.substr(0, 1).toUpperCase() + '' + call.call_status.substr(1)}
-                    </p>
->>>>>>> 4f1f9aa6b1060433b9dcfad3023aa30480be6856
                   </td>
                  
                   <td>
