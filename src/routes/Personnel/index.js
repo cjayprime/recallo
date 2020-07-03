@@ -29,8 +29,7 @@ class Personnel extends Component {
   render() {
     const { personnel, createPersonnel } = this.props;
     const { open } = this.state;
-
-    console.log('Personnel', personnel)
+    const loading = personnel.loading.indexOf('personnel') >= 0;
     return (
       <>
         <div className="screen-padding">
@@ -54,7 +53,7 @@ class Personnel extends Component {
             <div className="menu-bar-right">
               <p className="text-light mr-5">Viewing results</p>
               <p className="text-main bold mr-20">
-                1-6 <span className="text-light ml-5 mr-5">of</span>6
+                {!loading && <>1-{personnel.all.length} <span className="text-light ml-5 mr-5">of</span>{personnel.all.length}</>}
               </p>
               <div className="arrow-icons">
                 <span className="arrow arrow-left mr-10 op-4 hover" />
@@ -69,15 +68,23 @@ class Personnel extends Component {
             }}
           />
           <Add
+            {...this.props}
             open={open === "add"}
             toggle={() => {
               this.toggle('add');
             }}
             submit={createPersonnel}
           />
-          <Table
-            {...this.props}
-          />
+          {
+            loading
+            ? 'Loading'
+            : personnel.all.length === 0
+              ? 'You have no personnels.'
+              : <Table
+                  {...this.props}
+                  personnels={personnel.all}
+                />
+          }
         </div>
       </>
     );

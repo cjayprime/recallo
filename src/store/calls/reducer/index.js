@@ -72,8 +72,8 @@ const calls = (state = initialState, action) => {
     loading: state.loading.filter((text) => text !== loading),
   };
 
-  if (type === Actions.LOADING && loading && name === "account") {
-    state.loading.push(loading);
+  if (type === Actions.LOADING && loading) {
+    newState.loading.push(loading);
     return newState;
   }else if (type === Actions.ALLCALLS && status === true) {
     return {
