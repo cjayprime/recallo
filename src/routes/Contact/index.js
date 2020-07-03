@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Button from "../../components/Button/button";
-import Table from "./AAA";
+import Table from "./Table";
 import NewContactOverlay from "./NewContactOverlay";
 
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
