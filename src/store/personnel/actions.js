@@ -1,5 +1,5 @@
-export const LOADING = "CALLS_LOADING";
-export const REQUEST = "CALLS_REQUEST";
+export const LOADING = "PERSONNEL_LOADING";
+export const REQUEST = "PERSONNEL_REQUEST";
 export const GETPERSONNEL = "GETPERSONNEL";
 export const EACHPERSONNEL = "EACHPERSONNEL";
 export const CREATEPERSONNEL = "CREATEPERSONNEL";
@@ -8,26 +8,28 @@ export const STATUSANDSKILLS = "STATUSANDSKILLS";
 
 export const getPersonnels = (id, success) => ({
   type: REQUEST,
-  responder: id ? GETPERSONNEL : EACHPERSONNEL,
+  responder: id ? EACHPERSONNEL : GETPERSONNEL,
   method: "GET",
   endpoint: id ? 'personnel/' + id : 'personnel',
   success
 });
 
-export const createPersonnel = data => ({
+export const createPersonnel = (data, success) => ({
   type: REQUEST,
   responder: CREATEPERSONNEL,
   method: "POST",
   endpoint: 'personnel',
-  data
+  data,
+  success
 });
 
-export const updatePersonnel = (data, id) => ({
+export const updatePersonnel = (data, success, id) => ({
   type: REQUEST,
   responder: UPDATEPERSONNEL,
   method: "PUT",
   endpoint: 'personnel/' + id,
-  data
+  data,
+  success
 });
 
 export const deletePersonnel = id => ({

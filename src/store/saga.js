@@ -1,5 +1,7 @@
 import { put, call, all } from "redux-saga/effects";
 
+import Configuration from "./config";
+
 import Request from "./request";
 import account from "./account/saga";
 import calls from "./calls/saga";
@@ -13,7 +15,21 @@ export default class Saga {
   constructor(loading) {
     this.loading = loading;
     this.request = this.request.bind(this);
+    this.root = this.root.bind(this);
   }
+
+  listener = function* () {
+    // import { LOADING, REQUEST } from "./actions";
+
+    // function* request() {
+    //   const req = new Saga(LOADING).request;
+    //   yield takeEvery(ACCOUNT_REQUEST, new Saga(ACCOUNT_LOADING).request);
+    //   yield takeEvery(CALLS_REQUEST, new Saga(CALLS_LOADING).request);
+    //   yield takeEvery(PERSONNEL_REQUEST, new Saga(PERSONNEL_LOADING).request);
+    // }
+
+    // yield all([request()]);
+  };
 
   root = function* root() {
     yield all([
@@ -24,11 +40,15 @@ export default class Saga {
   };
 
   request = function* request(action) {
-    // success and error are callbacks
     const { endpoint, responder, method, data, success, error } = action;
 
     yield put({ type: this.loading, loading: endpoint });
 
+    console.log(
+      `${method} request sent to:`,
+      `${Configuration.url}/${endpoint}`,
+      `with parameters:`, data
+    );
     const result = yield call(
       new Request().api,
       endpoint,
@@ -37,7 +57,11 @@ export default class Saga {
       success,
       error
     );
-    console.log(endpoint, 'processed server response: ', result);
+    console.log(
+      endpoint,
+      'processed server response:',
+      result
+    );
 
     if (result.message && result.status) {
       Notification.success(result.message);

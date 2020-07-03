@@ -70,7 +70,7 @@ class Admin extends Component {
   };
 
   render() {
-    const { account, location/* data, result */ } = this.props;
+    const { account, location } = this.props;
     const Component = location.pathname === "/admin/settings" ? SettingSideBar : Sidenav;
 
     return (

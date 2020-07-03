@@ -5,12 +5,6 @@ import * as Actions from "./actions";
 
 export default class Request {
   api = async (endpoint, method, body, success, error) => {
-    console.log(
-      `${method} request sent to:`,
-      `${Configuration.url}/${endpoint}`,
-      `with parameters:`, body
-    );
-
     const result = await axios({
       url: `${Configuration.url}/${endpoint}`,
       method,
