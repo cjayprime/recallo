@@ -1,72 +1,99 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
+
+import FormField from "../../components/Form";
 import Overlay from "../../components/Overlay";
 import Button from "../../components/Button/button";
-import { Link } from 'react-router-dom';
 
 
 class ProfileCall extends Component {
   constructor() {
     super();
     this.state = {
-      showMenuCard: false,
+      gender: 'Male',
+      age: 'Youth',
+      comment: '',
+      currentCategory: '',
+      showMenuCard: false
     };
-  }
+  };
+
+  componentDidUpdate(prevProps){
+    const { getCategories, open } = this.props;
+    if(prevProps.open !== open){
+      getCategories(data => {
+        this.setState({
+          currentCategory: data.category && data.category.length ? data.category[0].category_name : ''
+        });
+      });
+    }
+  };
+
+  handleChange = (value, name, error) => {
+    if(name)
+    this.setState({
+      [name]: value,
+      error,
+    });
+  };
 
   show() {
     const { showMenuCard } = this.state;
     this.setState({
       showMenuCard: !showMenuCard,
     });
+  };
+
+  submit = () => {
+
   }
 
   render() {
-    const { open, toggle } = this.props;
-    const { showMenuCard } = this.state;
-
+    const { open, toggle, call, category } = this.props;
+    const { gender, age, comment, showMenuCard, currentCategory } = this.state;
     return (
       <Overlay open={open} toggle={toggle} width="90rem">
         <div id="profilecallContainer">
-              <Link to="#" className="callviewHeader"> 
-          Call Profile
+          <Link to="#" className="callviewHeader"> 
+            Call Profile
           </Link>
-
           <Link to="#" className="callviewHeader2"> 
-          Call Event
-          </Link><br/><br/>
-        <hr/>
-        <br/><br/>
-   
-          <h4 className="mb-8">Profiled call from +2348051113453</h4>
+            Call Event
+          </Link>
+          <br/><br/>
+          <hr/>
+          <br/><br/>
+          <h4 className="mb-8">Profiled call from {call.caller_id}</h4>
           <h6 className="light text-light mb-32">Edit call details</h6>
           <div className="mb-32 flex">
             <div className="flex-1">
               <div className="background-grey flex view-profile-table">
                 <h6 className="text-light flex-1 light">Call ID</h6>
-                <h6 className="flex-3" id="profilecalsubtext">+2348051113453</h6>
+                <h6 className="flex-3" id="profilecalsubtext">{call.caller_id}</h6>
               </div>
               <div className="flex view-profile-table">
                 <h6 className="text-light flex-1 light">Personnel</h6>
-                <h6 className="flex-3" id="profilecalsubtext">Grace Audu</h6>
+                <h6 className="flex-3" id="profilecalsubtext">{call.personnel_name}</h6>
               </div>
               <div className="background-grey flex view-profile-table">
                 <h6 className="text-light flex-1 light">Date Time</h6>
-                <h6 className="flex-3" id="profilecalsubtext">22-01-2020 12:03:pm</h6>
+                <h6 className="flex-3" id="profilecalsubtext">{call.end_time}</h6>
               </div>
               <div className="flex view-profile-table">
                 <h6 className="text-light flex-1 light">Duration</h6>
-                <h6 className="flex-3" id="profilecalsubtext">3mins 2secs</h6>
+                <h6 className="flex-3" id="profilecalsubtext">{call.call_duration}</h6>
               </div>
               <div className="background-grey flex view-profile-table">
                 <h6 className="text-light flex-1 light">Status</h6>
-                <h6 className="flex-3" id="profilecalsubtext">Answered</h6>
+                <h6 className="flex-3" id="profilecalsubtext">{call.call_status}</h6>
               </div>
               <div className="flex view-profile-table">
                 <h6 className="text-light flex-1 light">Age group</h6>
-                <h6 className="flex-3" id="profilecalsubtext">Youth</h6>
+                <h6 className="flex-3" id="profilecalsubtext">{age}</h6>
               </div>
               <div className="background-grey flex view-profile-table">
                 <h6 className="text-light flex-1 light">Gender</h6>
-                <h6 className="flex-3" id="profilecalsubtext">Female</h6>
+                <h6 className="flex-3" id="profilecalsubtext">{gender}</h6>
               </div>
             </div>
             <div className="flex-1 ml-35">
@@ -84,18 +111,36 @@ class ProfileCall extends Component {
                   </label>
                   <label htmlFor="youth" className="profile-call-label mt-16 cursor bold">
                     
-                    <input type="radio" id="radioInput" name="radio" />
+                    <input
+                      type="radio"
+                      id="radioInput"
+                      name="radio" 
+                      checked={age === 'Youth'}
+                      onChange={() => this.setState({age: 'Youth'})}
+                    />
                     Youth
                   </label>
                   <label htmlFor="adult" className="profile-call-label mt-16 cursor bold">
                     
-                    <input type="radio" id="radioInput" name="radio" />
+                    <input
+                      type="radio"
+                      id="radioInput"
+                      name="radio" 
+                      checked={age === 'Adult'}
+                      onChange={() => this.setState({age: 'Adult'})}
+                    />
                     Adult
                     {/*<span className="checkmark" />*/}
                   </label>
                   <label htmlFor="elder" className="profile-call-label mt-16 cursor bold">
                     
-                    <input type="radio" id="radioInput" name="radio" />
+                    <input
+                      type="radio"
+                      id="radioInput"
+                      name="radio" 
+                      checked={age === 'Elder'}
+                      onChange={() => this.setState({age: 'Elder'})}
+                    />
                     Elder
                     {/*<span className="checkmark" />*/}
                   </label>
@@ -103,14 +148,26 @@ class ProfileCall extends Component {
                 <div className="ml-35">
                   <h6 className="text-light flex-1 light">Select gender</h6>
                   <label htmlFor="male" className="profile-call-label mt-16 cursor bold">
-                   
-                    <input type="radio" id="radioInput" name="gender" />
+                    
+                    <input
+                      type="radio"
+                      id="radioInput"
+                      name="gender" 
+                      checked={gender === 'Male'}
+                      onChange={() => this.setState({age: 'Male'})}
+                    />
                     Male
                     {/*<span className="checkmark" />*/}
                   </label>
                   <label htmlFor="female" className="profile-call-label mt-16 cursor bold">
-                    
-                    <input type="radio" id="radioInput" name="gender" />
+
+                    <input
+                      type="radio"
+                      id="radioInput"
+                      name="gender" 
+                      checked={age === 'Female'}
+                      onChange={() => this.setState({age: 'Female'})}
+                    />
                     Female
                     {/*<span className="checkmark" />*/}
                   </label>
@@ -127,25 +184,24 @@ class ProfileCall extends Component {
                     className="mb-8 cursor text-blue hover"
                     onClick={(e) => this.show(e)}
                   >
-                    Enquiry
+                    {currentCategory}
                     <span className="arrow-down ml-8" />
                   </h5>
-                  {showMenuCard ? (
-                    <div className="menu-card" style={{ marginTop: 0 }}>
-                      <h6 className="text-blue light cursor hover-grey">
-                        Enquiry
+                  <div className="menu-card" style={{ marginTop: 0 }}>
+                  {showMenuCard ? category.all.map((prop, i) => {
+                    if(!prop.category_name) return null;
+                    
+                    return (
+                      <h6
+                        key={i}
+                        className="text-blue light cursor hover-grey"
+                        onClick={() => this.setState({showMenuCard: false, currentCategory: prop.category_name})}
+                      >
+                        {prop.category_name}
                       </h6>
-                      <h6 className="text-blue light cursor hover-grey">
-                        Complaints
-                      </h6>
-                      <h6 className="text-blue light cursor hover-grey">
-                        Request
-                      </h6>
-                      <h6 className="text-blue light cursor hover-grey">
-                        Engine fault
-                      </h6>
-                    </div>
-                  ) : null}
+                    );
+                  }) : null}
+                  </div>
                   <h6 className="light text-light">
                     Caller raised an issue about engine
                   </h6>
@@ -154,19 +210,29 @@ class ProfileCall extends Component {
             </div>
             <div className="flex-1 ml-35" />
             <div style={{marginLeft:540, marginTop:40, position:"absolute"}}>
-            <audio style={{width:250}} className="audioPlayer" autoPlay controls loop>
-                    <source src="#" type="audio/mpeg" />
-                  </audio>
+              <audio style={{width:250}} className="audioPlayer" autoPlay controls loop>
+                <source src="#" type="audio/mpeg" />
+              </audio>
             </div>
           </div>
           <div className="mb-32">
             <h6 className="light text-light mb-8">Add Comments</h6>
             <div className="row-direction profile-category-card mb-16 ">
+                <FormField
+                  labelTitle="Add a brief comment"
+                  labelClass="formSpan"
+                  type="textarea"
+                  className="profile-input br-8 p-12"
+                  style={{ overflow: "hidden", height: 100 }}
+                  name="comment"
+                  value={comment}
+                  onChange={this.handleChange}
+                />
               <div className="p-16">
-                <h6 className="light text-light">
+                {/* <h6 className="light text-light">
                   Caller mentioned a desire to be able to switch mechanics as
                   often as possible
-                </h6>
+                </h6> */}
               </div>
             </div>
           </div>
@@ -177,17 +243,18 @@ class ProfileCall extends Component {
                 padding="11px 32px"
                 background="var(--text-color)"
                 text="#fff"
+                onClick={this.submit}
               >
                 <h6>Save Profile</h6>
               </Button>
-              <Button
+              {/* <Button
                 className="br-30"
                 padding="11px 32px"
                 background="background-grey"
                 text="var(--text-color)"
               >
                 <h6>Profile Next Call</h6>
-              </Button>
+              </Button> */}
             </div>
             <h6 className="bold text-light cursor" onClick={toggle}>
               Close

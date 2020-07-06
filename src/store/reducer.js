@@ -3,12 +3,14 @@ import { combineReducers } from "redux";
 import account from "./account/reducer";
 import calls from "./calls/reducer";
 import personnel from "./personnel/reducer";
+import category from "./category/reducer";
 
 export default class Reducer {
   create = combineReducers({
     account,
     calls,
-    personnel
+    personnel,
+    category
   });
 
   // Doubt I'll need this,
@@ -18,6 +20,7 @@ export default class Reducer {
       account,
       calls,
       personnel,
+      category,
       ...asyncReducers,
     });
 }

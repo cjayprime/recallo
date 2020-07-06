@@ -56,7 +56,8 @@ export default class FormField extends Component {
       type,
       checkboxTitle,
       checkboxClass,
-      required
+      required,
+      style
     } = this.props;
 
     const { error } = this.state;
@@ -69,24 +70,39 @@ export default class FormField extends Component {
           <span className="checkmark" />
         </label>
       );
-    }
-    return (
-      <div>
+    }else{
+      return (
         <div>
-          <h6 className={classNames("mb-8", "light", labelClass)}>
-            <label htmlFor="label" style={{position: 'static'}}>{error || labelTitle}</label>
-          </h6>
+          <div>
+            <h6 className={classNames("mb-8", "light", labelClass)}>
+              <label htmlFor="label" style={{position: 'static'}}>{error || labelTitle}</label>
+            </h6>
+          </div>
+          {
+            type === "textarea"
+            ? <textarea
+                style={style}
+                required={required}
+                id={id}
+                value={value}
+                name={name}
+                className={className}
+                type={type}
+                onChange={this.handleChange}
+              />
+            : <input
+                required={required}
+                id={id}
+                value={value}
+                name={name}
+                className={className}
+                type={type}
+                onChange={this.handleChange}
+              />
+
+          }
         </div>
-        <input
-          required={required}
-          id={id}
-          value={value}
-          name={name}
-          className={className}
-          type={type}
-          onChange={this.handleChange}
-        />
-      </div>
-    );
+      );
+    }
   }
 }

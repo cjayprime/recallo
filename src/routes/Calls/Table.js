@@ -1,25 +1,27 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ProfileCallOverlay from "./ProfileCall";
-import ViewProfileOverlay from "./ViewProfile";
+import ProfileCall from "./ProfileCall";
+import ViewProfile from "./ViewProfile";
 
 class Table extends Component {
   state = {
-    open: ""
+    open: "",
+    call: {}
   };
 
-  toggle = (open) => {
-    this.setState({ open: this.state.open ? "" : open });
+  toggle = (open, call) => {
+    this.setState({ open: this.state.open ? "" : open, call });
   };
 
   render() {
     const { all } = this.props;
+    const { call } = this.state;
     return (
       <>
         <table className="mtb-15">
           <tbody>
             <tr id="callTableHeader" className="background-grey text-light table-head hover-grey" >
-              <td>Call ID</td>
+              <td>CallerID</td>
               <td>Call date & time</td>
               <td>Personnel</td>
               <td>Call duration</td>
@@ -47,26 +49,19 @@ class Table extends Component {
                   <td>{call.call_duration}</td>
                   <td>
                   {/* <label className="label yellow bold">Answered</label> */}
+                  {call.final_state === 0 ? <>Has Events</> : ''}
                   <span className={"label " + (call.call_status === "answered" ? "voicenote" : "missed")}>
                     {call.call_status.substr(0, 1).toUpperCase() + '' + call.call_status.substr(1)}
                   </span>
                   </td>
-                 
                   <td>
-                     {/*
-    
-                                      <p className="label-inactive"> Engine fault</p>
-
-                   */}
-                  <span className="label fault">Engine fault</span>
-
-                   
+                    {/*<p className="label-inactive"> Engine fault</p>*/}
+                    <span className="label fault">Engine fault</span>
                   </td>
-
                   <td className="text-blue bold cursor" onClick={() => {
                     call.call_status
-                    ? this.toggle('profile-call')
-                    : this.toggle('view-profile')
+                    ? this.toggle('profile-call', call)
+                    : this.toggle('view-profile', call)
                   }}>
                     {
                       call.call_status
@@ -174,14 +169,17 @@ class Table extends Component {
             </tr> */}
           </tbody>
         </table>
-        <ProfileCallOverlay
+        <ProfileCall
+          {...this.props}
           open={this.state.open === "profile-call"}
+          call={call}
           toggle={() => {
             this.toggle('profile-call');
           }}
         />
-        <ViewProfileOverlay
+        <ViewProfile
           open={this.state.open === "view-profile"}
+          call={call}
           toggle={() => {
             this.toggle('view-profile');
           }}

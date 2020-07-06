@@ -25,7 +25,7 @@ class Notification {
       autoHideDuration: 3000,
     });
   };
-}
+};
 
 const notification = new Notification();
 export default notification;

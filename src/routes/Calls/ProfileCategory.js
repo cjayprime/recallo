@@ -1,263 +1,161 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
 import Overlay from "../../components/Overlay";
 import FormField from "../../components/Form";
 import Button from "../../components/Button/button";
-import editPen from "../../assets/img/editPen.svg";
+
+import Notification from "../../utils/notification";
+// TODO: Implement an util method to be re-used
+// import { Form, Notification } from "../../utils";
 
 
 class ProfileCategory extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      popover: null,
+      name: '',
+      description: '',
+      error: ''
+    };
+  };
 
-constructor(props){
-  super(props);
-      this.state={
-        popover1: false,
-        popover2: false,
-        popover3: false,
-        popover4: false,
-      };
-}
+  toggle = (popover) => {
+    this.setState({ popover });
+  };
 
-popoverlay = (name) =>{
-  /*  console.log(name);
-*/
- switch(name) {
-   case "popover1":
-    this.setState({popover1: true})
-    break;
+  componentDidUpdate(prevProps){
+    const { getCategories, open } = this.props;
+    if(prevProps.open !== open){
+      getCategories();
+    }
+  };
 
-    case "popover2":
-    this.setState({popover2: true})
-    break;
+  handleChange = (value, name, error) => {
+    if(name)
+    this.setState({
+      [name]: value,
+      error,
+    });
+  };
+
+  submit = () => {
+    const { addCategory, getCategories } = this.props;
+    const {name, description} = this.state;
+    const data = {name, description};
+    const { error } = data;
     
-    case "popover3":
-      this.setState({popover3: true})
-      break;
-
-      case "popover4":
-        this.setState({popover4: true})
-        break;
-
- }
-}
- 
-popoverlay2 = (name) =>{
-  /*console.log(name+"2");
-*/
- switch(name) {
-   case "popover1":
-    this.setState({popover1: false})
-    break;
-
-    case "popover2":
-    this.setState({popover2: false})
-    break;
-
-    case "popover3":
-      this.setState({popover3: false})
-      break;
-    
-      case "popover4":
-        this.setState({popover4: false})
-        break;
- }
-}
-  render() {
-    const { open, toggle } = this.props;
-    const { popover1, popover2, popover3, popover4} = this.state
-    
-    
-      return (
-        <Overlay open={open} toggle={toggle}>
-          <div>
-            <h4 className="mb-8">Add new profile category</h4>
-            <h6 className="light text-light mb-32">
-              You can enter a name to categorise calls you profile
-            </h6>
-            <div>
-            <form className="mb-32">
-              <FormField
-                labelTitle="Enter name of profile category"
-                labelClass="profile-label"
-                className="br-8 profile-input p-12 mb-16"
-              />
-             
-                <span className="formSpan"> Give a short description for the profile category</span><br/><br/>
-                <textarea
-                  className="profile-input br-8 p-12"
-                  style={{ overflow: "hidden", height: 100 }}
-                />
-              <br/><br/><br/>
-              <Button
-                className="br-30"
-                padding="12px 60px"
-                background="var(--text-color)"
-                text="#fff"
-              >
-                Save
-              </Button>
-              </form>
-            </div>
-          </div>
-          <hr className="mt-40 mb-24" />
-          <div>
-            <h4 className="mb-8">Edit existing categories</h4>
-            <h6 className="light text-light mb-32">
-              You can rename, add to description or delete previous categories
-            </h6>
-            <div className="row-direction mb-16">
-              <div className="flex-3 p-16 existing-category-card background-darkgrey">
-                <h5 className="mb-8">Enquiry</h5>
-                <h6 className="light text-light">
-                  Caller wanted to know more about our product and services
-                </h6>
-              </div>
-              <div onMouseOver={()=>this.popoverlay("popover1")} onMouseOut={()=>this.popoverlay2("popover1")} className="flex-1 existing-category-card2 p-16">
-             
-                <p>No of calls </p>
-                <p className="mb-8">profiled with</p>
-                <h3>13</h3>
-              </div>
-
-              
-                { popover1 && 
-                     <div id="pfcategory">
-                     <div id="pfcategoryDiv1" className="br-16 plr-32 mb-32">     
-                           <div className="row-direction">   
-                               <div>
-                                     <Link to="#" className="Link">
-                                       <div className="Edit-icon" />
-                                         <p className="profilecalltag">Edit</p>
-                                     </Link> 
-                               </div>
- 
-                                 <div>
-                                   <Link to="#" className="Link">
-                                       <div className="Delete-icon" />
-                                         <p className="profilecalltag2">Delete</p>
-                                     </Link>
-                                 </div>
-                                 
-                             </div>
-                       </div> 
-            </div>
-                }
-        
-            </div>
-            <div className="row-direction mb-16">
-              <div className="flex-3 p-16 existing-category-card background-darkgrey">
-                <h5 className="mb-8">Complaint</h5>
-                <h6 className="light text-light">
-                  Caller raised an issue or two regarding our services
-                </h6>
-              </div>
-              <div onMouseOver={()=>this.popoverlay("popover2")}  onMouseOut={()=>this.popoverlay2("popover2")}  className="flex-1 existing-category-card2 p-16">
-                <p>No of calls </p>
-                <p className="mb-8">profiled with</p>
-                <h3>34</h3>
-              </div>
-
-              { popover2 && 
-                     <div id="pfcategory">
-                     <div id="pfcategoryDiv2" className="br-16 plr-32 mb-32">     
-                           <div className="row-direction">   
-                               <div>
-                                     <Link to="#" className="Link">
-                                       <div className="Edit-icon" />
-                                         <p className="profilecalltag">Edit</p>
-                                     </Link> 
-                               </div>
- 
-                                 <div>
-                                   <Link to="#" className="Link">
-                                       <div className="Delete-icon" />
-                                         <p className="profilecalltag2">Delete</p>
-                                     </Link>
-                                 </div>
-                                 
-                             </div>
-                       </div> 
-            </div>
-                }
-              
-        
-            </div>
-            <div className="row-direction mb-16">
-              <div className="flex-3 p-16 existing-category-card background-darkgrey">
-                <h5 className="mb-8">Request</h5>
-                <h6 className="light text-light">
-                  Caller expressed a desire or a need for somethings
-                </h6>
-              </div>
-              <div onMouseOver={()=>this.popoverlay("popover3")}  onMouseOut={()=>this.popoverlay2("popover3")} className="flex-1 existing-category-card2 p-16">
-                <p>No of calls </p>
-                <p className="mb-8">profiled with</p>
-                <h3>23</h3>
-              </div>
-
-              { popover3 && 
-                     <div id="pfcategory">
-                     <div id="pfcategoryDiv3" className="br-16 plr-32 mb-32">     
-                           <div className="row-direction">   
-                               <div>
-                                     <Link to="#" className="Link">
-                                       <div className="Edit-icon" />
-                                         <p className="profilecalltag">Edit</p>
-                                     </Link> 
-                               </div>
- 
-                                 <div>
-                                   <Link to="#" className="Link">
-                                       <div className="Delete-icon" />
-                                         <p className="profilecalltag2">Delete</p>
-                                     </Link>
-                                 </div>
-                                 
-                             </div>
-                       </div> 
-                    </div>
-                }
-            </div>
-            <div className="row-direction mb-16">
-              <div className="flex-3 p-16 existing-category-card background-darkgrey">
-                <h5 className="mb-8">Engine fault</h5>
-                <h6 className="light text-light">
-                  Caller raised an issue about engine
-                </h6>
-              </div>
-              <div onMouseOver={()=>this.popoverlay("popover4")}  onMouseOut={()=>this.popoverlay2("popover4")} className="flex-1 existing-category-card2 p-16">
-                <p>No of calls </p>
-                <p className="mb-8">profiled with</p>
-                <h3>17</h3>
-              </div>
-              { popover4 && 
-                     <div id="pfcategory">
-                     <div id="pfcategoryDiv4" className="br-16 plr-32 mb-32">     
-                           <div className="row-direction">   
-                               <div>
-                                     <Link to="#" className="Link">
-                                       <div className="Edit-icon" />
-                                         <p className="profilecalltag">Edit</p>
-                                     </Link> 
-                               </div>
- 
-                                 <div>
-                                   <Link to="#" className="Link">
-                                       <div className="Delete-icon" />
-                                         <p className="profilecalltag2">Delete</p>
-                                     </Link>
-                                 </div>
-                                 
-                             </div>
-                       </div> 
-                    </div>
-                }
-            </div>
-          </div>
-
-        </Overlay>
+    const dataKeys = Object.keys(data);
+    if (
+      !error &&
+      dataKeys.filter((state) => state == "error" || !!data[state]).length === dataKeys.length
+    ) {
+      addCategory({
+        category: name,
+        description
+      }, getCategories);
+    } else {
+      Notification.error(
+        error || "Please fill in the form correctly."
       );
+    }
+  };
 
+  render() {
+    const { open, toggle, category } = this.props;
+    const { popover1, popover2, popover3, popover4, popover, name, description} = this.state;
+    return (
+      <Overlay open={open} toggle={toggle}>
+        <div>
+          <h4 className="mb-8">Add new profile category</h4>
+          <h6 className="light text-light mb-32">
+            You can enter a name and description to categorize calls in your profile
+          </h6>
+          <div className="mb-32">
+            <FormField
+              labelTitle="Enter name of profile category"
+              labelClass="profile-label"
+              className="br-8 profile-input p-12 mb-16"
+              type="text"
+              name="name"
+              value={name}
+              onChange={this.handleChange}
+            />
+            <FormField
+              labelTitle="Give a short description for the profile category"
+              labelClass="formSpan"
+              type="textarea"
+              className="profile-input br-8 p-12"
+              style={{ overflow: "hidden", height: 100 }}
+              name="description"
+              value={description}
+              onChange={this.handleChange}
+            />
+            <br/><br/><br/>
+            <Button
+              className="br-30"
+              padding="12px 60px"
+              background="var(--text-color)"
+              text="#fff"
+              onClick={this.submit}
+            >
+              Save
+            </Button>
+          </div>
+        </div>
+        <hr className="mt-40 mb-24" />
+        <div>
+          <h4 className="mb-8">Edit existing categories</h4>
+          <h6 className="light text-light mb-32">
+            You can rename, add to description or delete previous categories
+          </h6>
+          {
+            category.all.map((prop, i) => {
+              return (
+                <div key={i} className="row-direction mb-16">
+                  <div className="flex-3 p-16 existing-category-card background-darkgrey">
+                    <h5 className="mb-8">{prop.category_name}</h5>
+                    <h6 className="light text-light">
+                      {prop.category_description}
+                    </h6>
+                  </div>
+                  <div
+                    onMouseEnter={()=>this.toggle(i + 1)}
+                    onMouseLeave={()=>this.toggle(null)}
+                    className="flex-1 existing-category-card2 p-16"
+                    style={{position: 'relative'}}
+                  >
+                    <p>No of calls </p>
+                    <p className="mb-8">profiled with</p>
+                    <h3>{prop.user}</h3>
+                    {
+                      popover === i + 1 &&
+                      <div className="row-direction"
+                        style={{position: 'absolute', top: 0, left: 0, display: 'flex', justifyContent: 'center', width: '100%'}}
+                      >   
+                        <div>
+                          <Link to="#" className="Link">
+                            <div className="Edit-icon" />
+                            <p className="profilecalltag">Edit</p>
+                          </Link> 
+                        </div>
+                        <div>
+                          <Link to="#" className="Link">
+                            <div className="Delete-icon" />
+                            <p className="profilecalltag2">Delete</p>
+                          </Link>
+                        </div>  
+                      </div>
+                    }
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </Overlay>
+    );
   }
 }
 
