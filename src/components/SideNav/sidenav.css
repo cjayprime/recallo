@@ -273,6 +273,10 @@
     background-image: url(../../assets/img/settingcall-icon.PNG);
   }
 
+  #settingContainer h4{
+      font-size: 18px;
+      color: #333333;
+  }
   .settingicon-personnel {
     position: absolute;
     right: -3px;
@@ -305,7 +309,20 @@
     background-image: url(../../assets/img/settingpower-icon.PNG);
   }
 
-  
+  #sidebussLogo{
+    width:230px;
+     height:260px;
+     border:1px solid #DDDDDD;
+     border-radius: 8px;
+     margin-right: 90px !important;
+     margin-top: 65px;
+  }
+
+  .upload-button:hover{
+    background-color: white !important;
+  }
+
+
 
 /*SETTING STYLE END*/
 

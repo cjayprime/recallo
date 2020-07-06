@@ -239,7 +239,7 @@ const AccountPlan = () => {
                           type="text"
                           placeholder="Enter Coupon"
                         />
-                        <Button className="planButton" padding="9px 12px">
+                        <Button className="planButton">
                             <h6>APPLY</h6>
                           </Button>
                   </div><br/><br/><br/>
