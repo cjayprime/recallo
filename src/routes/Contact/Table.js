@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import editPen from "../../assets/img/editPen.svg";
+import thrashPen from "../../assets/img/icons8-remove.svg";
+
 // import deletePen from "../../assets/img/"
 
 class Table extends Component {
@@ -34,7 +36,7 @@ class Table extends Component {
                   <img src={editPen} alt="pen" className="edit-pen" />
                 </div>
                 <div className="edit-circle">
-                  <img src={editPen} alt="pen" className="edit-pen" />
+                <img src={thrashPen} alt="thrash" className="thrash-pen" />
                 </div>
               </div>
             </td>
@@ -56,7 +58,7 @@ class Table extends Component {
                   <img src={editPen} alt="pen" className="edit-pen" />
                 </div>
                 <div className="edit-circle">
-                  <img src={editPen} alt="pen" className="edit-pen" />
+                  <img src={thrashPen} alt="thrash" className="thrash-pen" />
                 </div>
               </div>
             </td>

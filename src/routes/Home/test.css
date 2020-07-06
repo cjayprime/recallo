@@ -289,7 +289,37 @@
       }
 
 
+.thrash-pen{
+  width: 15px;
+  height: 15px;
+}
 
+.flag-icon{
+  width: 38px;
+  height: 50px;
+  margin-left:15px;
+margin-top: -5px;
+}
+
+#ContactFlagDiv{
+  background-color: #F9F9F9 !important;
+  border: 1px #DDDDDD;
+  position: absolute;
+  margin-top: 25px;
+  width: 90px;
+  height: 38px;
+}
+
+#contactArrowDown{
+ color: rgb(11, 148, 11);
+  margin-left: 15px;
+  margin-top: 14px;
+  position: absolute;
+}
+
+#phoneInput{
+  padding-left: 100px !important;
+}
      
       .table-body td{
         font-size: 14px;
@@ -327,12 +357,29 @@
       } 
 
       .voicenote {
+        background-color: #FFF9C4;
+        color:#333333;
+        font-size: 12px;
+        padding: 7px 15px;
+        text-align: center;
+      } 
+
+
+      .answered {
         background-color: #DAF7E8;
         color:#0B6437;
         font-size: 12px;
         padding: 7px 15px;
         text-align: center;
       } 
+
+      .dropped {
+        background-color: #E8E7FF;
+        color:#141A63;
+        font-size: 12px;
+        padding: 7px 15px;
+        text-align: center;
+      }
 
 
 
@@ -529,12 +576,96 @@
   border-top-left-radius: 8px;
 }
 
+
 .existing-category-card2{
   border: 1px solid #ddd;
   border-bottom-right-radius: 8px;
   border-top-right-radius: 8px;
   height: 10.3rem;
 }
+
+
+.existing-category-card2:hover{
+  cursor: pointer;
+  background-color: white;
+  color: transparent;
+
+}
+
+#deptOver{
+  position: fixed; /* Sit on top of the page content */
+  top: 0;
+  left: -20px;
+  right: 0;
+  bottom: 60px;
+  cursor: pointer; /* Add a pointer on hover */
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#deptOver1{
+  margin-top: 522px;
+  margin-left: 415px;
+      background-color: white;
+      width: 21.5%; /* Full width (cover the whole page) */
+      height: 17%; /* Full height (cover the whole page) */
+    }
+
+    #deptOver2{
+      margin-top: 665px;
+      margin-left: 415px;
+      background-color: white;
+          width: 21.5%; /* Full width (cover the whole page) */
+          height: 17%; /* Full height (cover the whole page) */
+        }
+    
+
+      #pfcategory{
+            position: fixed; /* Sit on top of the page content */
+            top: 0;
+            left: -20px;
+            right: 0;
+            bottom: 60px;
+            cursor: pointer; /* Add a pointer on hover */
+            border-bottom-right-radius: 8px;
+            border-top-right-radius: 8px;
+          }
+
+          
+         
+
+          #pfcategoryDiv1{
+            margin-top: 547px;
+            margin-left: 415px;
+                background-color: white;
+                width: 21.5%; /* Full width (cover the whole page) */
+                height: 17%; /* Full height (cover the whole page) */
+              }
+              
+              #pfcategoryDiv2{
+                margin-top: 690px !important;
+                margin-left: 415px;
+                background-color: white;
+                width: 21.5%; /* Full width (cover the whole page) */
+                height: 17%; /* Full height (cover the whole page) */
+             }
+
+             #pfcategoryDiv3{
+              margin-top: 835px !important;
+              margin-left: 415px;
+              background-color: white;
+              width: 21.5%; /* Full width (cover the whole page) */
+              height: 17%; /* Full height (cover the whole page) */
+           }
+
+           #pfcategoryDiv4{
+            margin-top: 977px !important;
+            margin-left: 415px;
+            background-color: white;
+            width: 21.5%; /* Full width (cover the whole page) */
+            height: 17%; /* Full height (cover the whole page) */
+         }
+                  
 /* End Profile Category Overlay */
 
 #as{
@@ -621,35 +752,65 @@
         /*TermsOfUse Page Style End*/
 
 
-           /*TermsOfUse Page Style Begining*/
-           #pfcat{
-            position: fixed; /* Sit on top of the page content */
-            width: 24.5%; /* Full width (cover the whole page) */
-            height: 12.5%; /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin-top: 555px !important;
-margin-left: 390px;
-            background-color:rgba(143, 18, 18, 0.5); /* Black background with opacity */
-            z-index: -20; /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer; /* Add a pointer on hover */
+            /*Forgot Password Page Style Begining*/
+            #Forgotpass{
+              position: fixed; /* Sit on top of the page content */
+              width: 100%; /* Full width (cover the whole page) */
+              height: 100%; /* Full height (cover the whole page) */
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+              z-index: 200; /* Specify a stack order in case you're using a different order for other elements */
+              cursor: pointer; /* Add a pointer on hover */
+            }
+  
+            #Forgotpass2{
+                  height:360px;
+                   margin-left:470px;
+                   width:390px;
+                   margin-top: 162px;
+                  position: absolute;
+            }
+          /*Forgot Password Page Style End*/
+
+
+           /*ProfileCategory Over Page Style Begining*/
+          .Edit-icon {
+            position: absolute;
+            margin-top: 17px;
+            width: 50px;
+             height: 45px;
+             margin-left: -7px;
+             background-repeat: no-repeat;
+            background-image: url(../../assets/img/editIcon.PNG);
+          }
+  
+          .Delete-icon {
+            position: absolute;
+            margin-top: 17px;
+            width: 50px;
+             height: 45px;
+             margin-left: 17px;
+             background-repeat: no-repeat;
+            background-image: url(../../assets/img/deleteIcon.PNG);
           }
 
-          #pfcat2{
-                height:90px;
-                position: absolute;
-          }
-        /*TermsOfUse Page Style End*/
-
-        .editLogo {
-          width: 42px;
-          height: 42px;
-          border-radius: 50%;
-          background: #336799;
-          margin-top: -10px;
+          
+        .profilecalltag{
+          color: #336799;
+          font-size: 13px;
+          margin-top: 52px;
         }
+
+        .profilecalltag2{
+          color: grey;
+          font-size: 13px;
+          margin-top: 52px;
+          margin-left: 20px;
+        }
+        /*ProfileCategory Over Page Style End*/
   }
 
   @media (min-width: 300px) and (max-width: 399px){

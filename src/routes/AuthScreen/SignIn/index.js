@@ -14,11 +14,16 @@ export default class SignIn extends Component {
     email: "",
     password: "",
     error: null,
+    popup: true,
   };
 
   handleChange = (value, name, error) => {
     this.setState({ [name]: value, error });
   };
+
+  hide = () =>{
+    this.setState({popup:false})
+  }
 
   signin = (e) => {
     e.preventDefault();
@@ -34,7 +39,7 @@ export default class SignIn extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, popup } = this.state;
     return (
       <Layout {...this.props}>
         <div className="signin">
@@ -87,6 +92,52 @@ export default class SignIn extends Component {
           </div>
           <div className="signin-icon" />
         </div>
+
+        {popup && 
+                    
+                    <div id="Forgotpass" >
+                    <div id="Forgotpass2" className="overview br-16 plr-32 mb-32">
+
+                          <div style={{marginTop:20}}>
+                          <div onClick={this.hide} style={{float:"right", fontSize:20, padding:"2px 7px"}}>x</div>
+                          <br/><br/><br/>
+                              <span style={{fontSize:30, color:"#2E384D", marginLeft:20, fontWeight:"bold"}}>Forgot password?</span>
+                              </div>
+                              <br/>
+                              <br/>
+                              
+                              <p style={{fontSize:16, marginLeft:20, color:"#777777"}}>
+                              Enter your email address and we'll send you a link to reset your password
+                              </p> 
+                              <form onSubmit={this.signin} style={{marginLeft:20, marginTop:60}}>
+                                <div className="field">
+                                  <AuthInput
+                                    type="email"
+                                    labelTitle="Email address"
+                                    name="email"
+                                    value={email}
+                                    onChange={this.handleChange}
+                                  />
+                                </div>
+                               
+                                <div className="mt-34">
+                                <Button
+                                        className="br-30 account-button orange-hover"
+                                        padding="10px 70px"
+                                        background="var(--text-color)"
+                                        text="#fff"
+                                      >
+                                      <h6 className="Bold">Send Me Email Link</h6> 
+                                  </Button>
+                                </div>
+                              </form>
+            
+                                
+                            </div> 
+                  
+                        </div>
+                   
+                         }
       </Layout>
     );
   }

@@ -23,6 +23,7 @@
 }
 .overlay .overlay-main::-webkit-scrollbar {
     display: none;
+    
 }
 .display-block {
     display: block;

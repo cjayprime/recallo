@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Overlay from "../../components/Overlay";
 import TextInput from "../../components/Form/TextInput";
 import Button from "../../components/Button/button";
+import flag from "../../assets/img/Artboard-6.svg";
+
 
 class NewContactOverlay extends Component {
   state = {
@@ -25,13 +27,20 @@ class NewContactOverlay extends Component {
           <h4 className="mb-40">Add new contact</h4>
           <form>
             <TextInput
+            
               labelTitle="Name"
               labelClass="profile-label"
               className="mb-24 br-8 profile-input p-12"
               onChange={this.handleChange}
               value={name}
             />
+          <div id="ContactFlagDiv">
+          <img src={flag} alt="thrash" className="flag-icon" />
+          <span id="contactArrowDown" class="arrow-down ml-5"></span>
+          </div>
+
             <TextInput
+            id="phoneInput"
               labelTitle="Phone number"
               labelClass="profile-label"
               className="mb-24 br-4 profile-input p-12"
