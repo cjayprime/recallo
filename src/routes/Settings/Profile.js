@@ -67,10 +67,15 @@ class Profile extends Component {
                       />
                     </div>
 
-                    <div className="col-7" style={{marginLeft:500, position:"absolute"}}>
+                    <div className="col-7" style={{marginLeft:505, marginTop:7, position:"absolute"}}>
                     
-                      <Button className="br-8 pass-btn" padding="12px 15px">
-                        <h6>Change password</h6>
+                      
+
+                      <Button
+                        padding="12px 17px"
+                        className="text-blue bc-blue br-8 upload-button"
+                      >
+                        <span> Change password</span>
                       </Button>
                     </div>
                   </div>
@@ -80,7 +85,7 @@ class Profile extends Component {
               <div className="pt-23">
                   <Button
                     className="br-30 save orange-hover"
-                    padding="12px 42px"
+                    padding="12px 50px"
                   >
                     <h6>Save</h6>
                   </Button>
@@ -94,7 +99,7 @@ class Profile extends Component {
 
           <form>
               <div className="row mb-23" id="settingContainer">
-                <h4 className="pt-32">Personal information</h4>
+                <h4 className="pt-32">Business information</h4>
            
               </div>
               <div className="row">
@@ -202,17 +207,20 @@ class Profile extends Component {
               <hr className="vertical-hr ml-35" />
              */}
 
-                <div className="col-9 column-direction align-center justify-center">
-                  <div className="business-logo mb-24">
+                <div id="sidebussLogo" className="col-9 column-direction background-grey align-center justify-center">
+                  <div className="business-logo mb-24" style={{marginTop:20}}>
                     <p className="logo-text">AM</p>
                   </div>
                   <h6 className="text-light mb-16">Upload business logo</h6>
                   <Button
+               
                     padding="12px"
                     className="text-blue bc-blue br-8 upload-button"
                   >
-                    Upload image
+                   <span> Upload image</span>
                   </Button>
+
+              
                 </div>
              </div>
             </form>
