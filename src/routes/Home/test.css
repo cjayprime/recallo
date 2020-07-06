@@ -526,7 +526,7 @@ margin-top: -5px;
        }
 
        .planInput{
-         width:145px;
+         width:158px;
          height: 36px;
          margin-top: 25px;
          margin-left: 18px;
@@ -542,8 +542,9 @@ margin-top: -5px;
         width: 65px;
         font-size: 14px;
         margin-right: 10px;
-        background-color: rgb(7, 7, 100) !important;
+        background-color:#336799 !important;
         color: white;
+        padding:9px 12px
        }
 #settingContainer{
   margin-top: 80px;
