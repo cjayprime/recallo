@@ -1,0 +1,6 @@
+/node_modules
+/.env.development
+/build
+/.idea
+/.eslintrc
+/yarn.lock

@@ -12,7 +12,7 @@ class Overlay extends Component {
 
     return (
       <div className={showHideClassName}>
-        <section
+        <section 
           className="overlay-main slideInRight"
           style={{ width: width || "57rem" }}
         >

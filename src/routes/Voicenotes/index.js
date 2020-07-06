@@ -10,7 +10,7 @@ import ProfileCall from "./../Calls/ProfileCall";
 
 
 class VoiceNotes extends Component {
-  state = { open: false, open2: false };
+  state = { open: false, open2: false};
 
   toggle = () => {
     const { open } = this.state;
@@ -20,6 +20,7 @@ class VoiceNotes extends Component {
   toggle2 = () => {
     this.setState({ open2: !this.state.open2 });
   };
+
 
   render() {
     const { open, open2 } = this.state;
@@ -114,7 +115,7 @@ class VoiceNotes extends Component {
                 <td style={{width:130}}>Grace Audu</td>
                 <td>03:20</td>
                 <td>
-                  <audio style={{width:250}} className="audioPlayer" autoPlay controls loop>
+                  <audio className="audioPlayer" autoPlay controls loop>
                     <source src="#" type="audio/mpeg" />
                   </audio>
                 </td>

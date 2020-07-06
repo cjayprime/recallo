@@ -1457,11 +1457,23 @@ text-align: center;
 /* End Account plan styles */
 
 /* Profile Category Overlay */
+/* Profile Category Overlay */
 .existing-category-card {
   border: 1px solid #ddd;
-  border-radius: 8px;
+  height: 10.3rem;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.existing-category-card2{
+  border: 1px solid #ddd;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
   height: 10.3rem;
 }
+/* End Profile Category Overlay */
+
+
 /* End Profile Category Overlay */
 
 /* Add View Profile Overlay */
@@ -1478,25 +1490,20 @@ text-align: center;
 
 /*  Profile Call Overlay */
 
-#radioInput{
-  margin-left: -30px;
-  margin-top: -4px;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-}
+
 .profile-call-label {
   display: block;
   position: relative;
   padding-left: 35px;
   padding-top: 3px;
   font-size: 14px;
-  color: var(--text-color);
+  color: #336799 !important;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
+
 /*
 .profile-call-label input {
   position: absolute;
@@ -1618,6 +1625,7 @@ text-align: center;
   margin: 0 auto;
   width: 210px !important;
 }
+
 
 /* End voicenotes style */
 
