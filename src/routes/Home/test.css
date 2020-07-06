@@ -751,6 +751,13 @@ margin-top: -5px;
           }
         /*TermsOfUse Page Style End*/
 
+        .label-style{
+          background-color:#33C53433;
+          border: 1px solid #33C53433;
+          color: #0E640F;
+          border-radius: 3px;
+          padding:6px 16px;
+        }
 
             /*Forgot Password Page Style Begining*/
             #Forgotpass{
