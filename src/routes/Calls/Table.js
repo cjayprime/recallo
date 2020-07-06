@@ -58,7 +58,7 @@ class Table extends Component {
                                       <p className="label-inactive"> Engine fault</p>
 
                    */}
-                  <span class="label fault">Engine fault</span>
+                  <span className="label fault">Engine fault</span>
 
                    
                   </td>

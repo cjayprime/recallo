@@ -6,7 +6,7 @@ import Button from "../../components/Button/button";
 import editPen from "../../assets/img/editPen.svg";
 
 
-class ProfileCategoryOverlay extends Component {
+class ProfileCategory extends Component {
 
 constructor(props){
   super(props);
@@ -261,4 +261,4 @@ popoverlay2 = (name) =>{
   }
 }
 
-export default ProfileCategoryOverlay;
+export default ProfileCategory;
