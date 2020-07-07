@@ -8,6 +8,7 @@
   }
 #profilecallContainer{
   width: 1000px;
+  margin-top: 25px;
 }
 #profilecalsubtext{
   padding: 0px 90px;
@@ -25,34 +26,19 @@
 
 
 
-.callviewHeader{
+#callviewHeader{
   font-size: 16px;
   text-decoration: none;
   color: black;
 }
 
-.callviewHeader:hover{
-  font-size: 17px;
-  text-decoration: none;
-  color: #FF6B00 !important;
-}
-
-
-
-.callviewHeader2{
+#callviewHeader:hover{
   font-size: 16px;
   text-decoration: none;
-  padding: 0px 12px;
-  color: black;
-
+  color: #336799;
+  font-weight: bold;
 }
 
-
-.callviewHeader2:hover{
-  font-size: 17px;
-  text-decoration: none;
-  color: #FF6B00 !important;
-}
 
   Button:hover{
     background-color: #FF6B00 !important;
@@ -287,6 +273,29 @@
       .horizontal-hr{
           margin-top: 100px;
       }
+
+      /*Tab style*/
+      .tab-list {
+       /* border-bottom: 1px solid #ccc;*/
+        padding-left: 0px;
+        margin-left: -10px;
+      }
+      
+      .tab-list-item {
+        display: inline-block;
+        list-style: none;
+        margin-bottom: -1px;
+        padding: 0.5rem 0.75rem;
+        
+      }
+      
+      .tab-list-active {
+        background-color: white;
+        /*border: solid #ccc;*/
+        border:solid #336799;
+        border-width: 0px 0px 3px 0px;
+      }
+      /*End tab style*/
 
 
 .thrash-pen{
