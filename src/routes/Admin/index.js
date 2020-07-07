@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from "react-router-dom";
-
 import Sidenav from "../../components/SideNav/sidenav";
 import Header from "../../components/Header/header";
 import SettingSideBar from "../../components/SideNav/settingsidebar";
@@ -10,7 +9,7 @@ import routes from "../routes";
 
 import * as Actions from "../../store/actions";
 
-import "./admin.css";
+
 
 class Admin extends Component {
   componentDidMount() {
