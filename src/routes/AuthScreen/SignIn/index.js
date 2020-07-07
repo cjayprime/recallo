@@ -4,22 +4,26 @@ import AuthInput from "../../../components/Form/AuthInput";
 import FormField from "../../../components/Form";
 import Button from "../../../components/Button/button";
 import Layout from "../../../components/AppHeader/Layout";
-
 import arrowright from "../../../assets/img/arrow-right-circle.png";
-
 import Notification from "../../../utils/notification";
+import sucessMark from "../../../assets/img/sucessmark.svg";
+
 
 export default class SignIn extends Component {
   state = {
     email: "",
     password: "",
     error: null,
-    popup: true,
+    popup: false,
   };
 
   handleChange = (value, name, error) => {
     this.setState({ [name]: value, error });
   };
+
+  show = () =>{
+    this.setState({popup:true})
+  }
 
   hide = () =>{
     this.setState({popup:false})
@@ -74,7 +78,7 @@ export default class SignIn extends Component {
                   checkboxTitle="Remember me"
                 />
                 <div>
-                  <h6 className="bold text-blue">Forgot your password?</h6>
+                  <h6 onClick={this.show} className="bold text-blue">Forgot your password?</h6>
                 </div>
               </div>
               <div className="mt-34">
@@ -92,52 +96,77 @@ export default class SignIn extends Component {
           </div>
           <div className="signin-icon" />
         </div>
+                 
+                 
+       {popup &&
+        <div id="Forgotpass" >
+        <div id="Forgotpass2" className="overview br-16 plr-32 mb-32">
 
-        {popup && 
-                    
-                    <div id="Forgotpass" >
-                    <div id="Forgotpass2" className="overview br-16 plr-32 mb-32">
-
-                          <div style={{marginTop:20}}>
-                          <div onClick={this.hide} style={{float:"right", fontSize:20, padding:"2px 7px"}}>x</div>
-                          <br/><br/><br/>
-                              <span style={{fontSize:30, color:"#2E384D", marginLeft:20, fontWeight:"bold"}}>Forgot password?</span>
-                              </div>
-                              <br/>
-                              <br/>
-                              
-                              <p style={{fontSize:16, marginLeft:20, color:"#777777"}}>
-                              Enter your email address and we'll send you a link to reset your password
-                              </p> 
-                              <form onSubmit={this.signin} style={{marginLeft:20, marginTop:60}}>
-                                <div className="field">
-                                  <AuthInput
-                                    type="email"
-                                    labelTitle="Email address"
-                                    name="email"
-                                    value={email}
-                                    onChange={this.handleChange}
-                                  />
-                                </div>
-                               
-                                <div className="mt-34">
-                                <Button
-                                        className="br-30 account-button orange-hover"
-                                        padding="10px 70px"
-                                        background="var(--text-color)"
-                                        text="#fff"
-                                      >
-                                      <h6 className="Bold">Send Me Email Link</h6> 
-                                  </Button>
-                                </div>
-                              </form>
-            
-                                
-                            </div> 
+              <div style={{marginTop:20}}>
+              <div onClick={this.hide} style={{float:"right", fontSize:20, padding:"2px 7px"}}>x</div>
+              <br/><br/><br/>
+                  <span style={{fontSize:30, color:"#2E384D", marginLeft:20, fontWeight:"bold"}}>Forgot password?</span>
+                  </div>
+                  <br/>
+                  <br/>
                   
-                        </div>
+                  <p style={{fontSize:16, marginLeft:20, color:"#777777"}}>
+                  Enter your email address and we'll send you a link to reset your password
+                  </p> 
+                  <form onSubmit={this.signin} style={{marginLeft:20, marginTop:60}}>
+                    <div className="field">
+                      <AuthInput
+                        type="email"
+                        labelTitle="Email address"
+                        name="email"
+                        value={email}
+                        onChange={this.handleChange}
+                      />
+                    </div>
                    
-                         }
+                    <div className="mt-34">
+                    <Button
+                            className="br-30 account-button orange-hover"
+                            padding="10px 70px"
+                            background="var(--text-color)"
+                            text="#fff"
+                          >
+                          <h6 className="Bold">Send Me Email Link</h6> 
+                      </Button>
+                    </div>
+                  </form>
+
+                    
+                </div> 
+      
+            </div> 
+       
+        /*
+         <div id="Forgotpass" >
+        <div id="EmailSentSuccess" className="overview br-16 plr-32 mb-32">
+
+              <div style={{marginTop:20}}>
+              <div onClick={this.hide} style={{float:"right", fontSize:20, padding:"2px 7px"}}>x</div>
+              <br/><br/><br/>
+              <div>
+              <img src={sucessMark} alt="mark" className="success-mark" />
+              </div> <br/><br/>
+                  <span style={{fontSize:30, color:"#2E384D", marginLeft:20, fontWeight:"bold"}}>Email Link Sent</span>
+                  </div>
+                  <br/>
+                  <p style={{fontSize:16, marginLeft:20, color:"#777777"}}>
+                      Please check the email address you provided to 
+                      follow the next steps in resetting your password
+                  </p> 
+              
+
+                    
+                </div> 
+      
+            </div> 
+        */
+            
+       }    
       </Layout>
     );
   }

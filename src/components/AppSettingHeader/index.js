@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
 //import logo from "../../assets/img/appLogo.png";
 import logo from "../../assets/img/logo2.png";
-import bell from "../../assets/img/bell.svg";
-
-
 import "./AppSettingHeader.css";
 
 class AppSettingHeader extends Component {

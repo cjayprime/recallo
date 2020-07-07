@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
-
 import "./test.css";
 import LayoutPage from "../../components/AppPageHeader/LayoutPage";
 import MenuItem from "../../components/MenuItem/menuItem";

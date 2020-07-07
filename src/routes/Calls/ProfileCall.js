@@ -12,6 +12,8 @@ class ProfileCall extends Component {
     };
   }
 
+ 
+
   show() {
     const { showMenuCard } = this.state;
     this.setState({
@@ -30,9 +32,9 @@ class ProfileCall extends Component {
           Call Profile
           </Link>
 
-          <Link to="#" className="callviewHeader2"> 
+          <span className="callviewHeader2"> 
           Call Event
-          </Link><br/><br/>
+          </span><br/><br/>
         <hr/>
         <br/><br/>
    
@@ -41,7 +43,7 @@ class ProfileCall extends Component {
           <div className="mb-32 flex">
             <div className="flex-1">
               <div className="background-grey flex view-profile-table">
-                <h6 className="text-light flex-1 light">Call ID</h6>
+                <h6 className="text-light flex-1 light">CallerID</h6>
                 <h6 className="flex-3" id="profilecalsubtext">+2348051113453</h6>
               </div>
               <div className="flex view-profile-table">

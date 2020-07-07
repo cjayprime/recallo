@@ -82,7 +82,7 @@ class ManageAccount extends Component {
         </div>
         */}
         
-        <div className="profile_tab" style={{marginTop:0}}>
+        <div className="profile_tab">
         <div style={{marginTop:140}}>         
              <h4 style={{marginLeft:40, color:"grey", fontSize:15, paddingBottom:15}}>SETTINGS</h4>
       </div>

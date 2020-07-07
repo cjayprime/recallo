@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Overlay from "../../components/Overlay";
 import FormField from "../../components/Form";
 import Button from "../../components/Button/button";
-import editPen from "../../assets/img/editPen.svg";
+//import editPen from "../../assets/img/editPen.svg";
 
 
 class ProfileCategoryOverlay extends Component {
@@ -38,6 +38,9 @@ popoverlay = (name) =>{
         this.setState({popover4: true})
         break;
 
+        default:
+          console.log("eror");
+
  }
 }
  
@@ -60,6 +63,8 @@ popoverlay2 = (name) =>{
       case "popover4":
         this.setState({popover4: false})
         break;
+        default:
+          console.log("eror");
  }
 }
   render() {

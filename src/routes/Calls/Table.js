@@ -19,7 +19,7 @@ class Table extends Component {
         <table className="mtb-15">
           <tbody>
             <tr id="callTableHeader" className="background-grey text-light table-head hover-grey" >
-              <td>Call ID</td>
+              <td>CallerID</td>
               <td>Call date & time</td>
               <td>Personnel</td>
               <td>Call duration</td>
