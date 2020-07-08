@@ -29,16 +29,16 @@ class Welcomemessage extends Component {
                     <div id="Forgotpass" >
                     <div id="resetPasswordDiv" className="overview br-16 plr-32 mb-32">
         
-                        <div style={{marginTop:20}}>
-                        <div onClick={this.hide} style={{float:"right", fontSize:20, padding:"2px 7px"}}>x</div>
+                        <div className=" style={{marginTop:20}}">
+                        <div className="modalHide" onClick={this.hide}>x</div>
                         <br/><br/><br/>
                         <div>
                         <img src={logo} alt="mark" className="" />
                         </div> <br/><br/>
-                            <span style={{fontSize:27, color:"#2E384D", marginLeft:20, fontWeight:"bold"}}>Welcome (registered first name)</span>
+                            <span className="modalTitle" >Welcome (registered first name)</span>
                             </div>
                             <br/>
-                            <p style={{fontSize:16, marginLeft:20, color:"#777777"}}>
+                            <p className="modalParatext">
                             A request has been made to reset your password. 
                             If you made this request, please click on the button below
                             </p> 

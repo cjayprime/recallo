@@ -29,13 +29,13 @@ class Passwordreset extends Component {
                     <div id="Forgotpass" >
                     <div id="resetPasswordDiv" className="overview br-16 plr-32 mb-32">
 
-                        <div style={{marginTop:20}}>
-                        <div onClick={this.hide} style={{float:"right", fontSize:20, padding:"2px 7px"}}>x</div>
+                        <div className="modalsDiv">
+                        <div onClick={this.hide} className="modalHide">x</div>
                         <br/><br/><br/>
                         <div>
-                        <img src={logo} alt="mark" className="" style={{marginLeft:20}} />
+                        <img src={logo} alt="mark" className="modalLogo"/>
                         </div> <br/><br/>
-                            <span style={{fontSize:27, color:"#2E384D", marginLeft:20, fontWeight:"bold"}}>Enter new password</span>
+                            <span className="modalTitle">Enter new password</span>
                             </div>
                             <br/>
                             <form onSubmit={this.signin} style={{marginLeft:20, marginTop:30}}>
@@ -67,23 +67,23 @@ class Passwordreset extends Component {
                 <div id="Forgotpass" >
                     <div id="EmailSentSuccess" className="overview br-16 plr-32 mb-32">
 
-                        <div style={{marginTop:20}}>
-                        <div onClick={this.hide} style={{float:"right", fontSize:20, padding:"2px 7px"}}>x</div>
+                        <div className="modalsDiv">
+                        <div onClick={this.hide} className="modalHide">x</div>
                         <br/><br/><br/>
                             <div>
                                 <div>
-                                <img src={logo} alt="mark" className="" style={{marginLeft:20}} />
+                                <img src={logo} alt="mark" className="modalLogo"/>
                                 </div> <br/><br/>
                             <img src={sucessMark} alt="mark" className="success-mark" />
                             </div> <br/><br/>
-                            <span style={{fontSize:30, color:"#2E384D", marginLeft:20, fontWeight:"bold"}}>Password reset successful</span>
+                            <span className="modalTitle">Password reset successful</span>
                             </div>
                             <br/>
-                            <p style={{fontSize:16, marginLeft:20, color:"#777777"}}>
+                            <p   className="modalParatext">
                                 Log in to your account with your new password now
                             </p> 
                             <div style={{marginTop:30}}>
-                                <Link to="/signin" style={{fontSize:15, marginLeft:20, fontWeight:"bold", textDecoration:"none", color:"#336799"}}>
+                                <Link to="/signin" className="modalLink">
                                     <span>Go to log in</span>
                                 </Link>
                             </div>

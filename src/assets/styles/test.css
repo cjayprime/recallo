@@ -702,8 +702,46 @@
            }
                     
   /* End Profile Category Overlay */
-  
-  #as{
+
+  /*PopUp and Modal Style*/
+    .modalHide{
+        float:right;
+        font-size:20px;
+        padding:2px 7px;
+    }
+
+    .modalTitle{
+            font-size:27px; 
+            color:#2E384D;
+             margin-left:20px;
+            font-weight:bold;
+    }
+
+    .modalParatext{
+        font-size:16px;
+         margin-left:20px;
+          color:#777777;
+    }
+
+    .modalLink{
+      font-size:15px;
+         margin-left:20px; 
+         font-weight:bold; 
+         text-decoration:none; 
+        color:#336799;
+    }
+
+    .modalLogo{
+      margin-left: 20px;
+    }
+
+    .modalsDiv{
+      margin-top: 20px;
+    }
+   /*Ending of PopUp and Modal Style*/
+ 
+ 
+   #as{
     background-color: red;
     position: absolute;
   }
