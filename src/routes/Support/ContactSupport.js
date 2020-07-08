@@ -67,7 +67,7 @@ class ContactSupport extends Component {
                 onChange={this.handleChange}
                 novalidate
               />
-              <Button className="br-8 signup-button" type="submit">
+              <Button id="createAccount" className="br-8 signup-button" type="submit">
                 <h6 className="bold">Send Message</h6>
               </Button>
             </form>

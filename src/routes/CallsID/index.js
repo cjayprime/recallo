@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-
+import Button from "../../components/Button/button";
 import MenuItem from "../../components/MenuItem/menuItem";
 import arrowLeft from "../../assets/img/arrow-left.png";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
+import NewContactOverlay from "../Contact/NewContactOverlay";
+
 
 class CallsID extends Component {
   state = {
-    open: false
+    open: false,
+    open2: false 
   };
 
   componentDidMount(){
@@ -23,13 +26,19 @@ class CallsID extends Component {
     this.setState({ open: this.state.open ? "" : open });
   };
 
+  toggle2 = () => {
+    const { open2 } = this.state;
+    this.setState({ open2: !open2 });
+  };
+
   render() {
+    const { open2 } = this.state;
     var { calls: { details, loading }, match: { params: {id: id} }  } = this.props;
     loading = loading.indexOf('calls/all?caller_id=' + id) >= 0;
     return (
       <>
         <div className="previous-header mb-0">
-          <div className="callID">
+          <div className="callIDNew">
             <p className="light mb-8">
               <span className="text-blue mr-8">Calls</span>
               <span className="ml-8">Caller ID</span>
@@ -37,6 +46,38 @@ class CallsID extends Component {
             <h2 id="profCallHeader"  className="bold text-main">{id}</h2>
           </div>
           <div className="callID-history">
+              <div className="row" id="callIDtopbutton">
+                <Button
+                  background="#336799"
+                  text="#fff"
+                  padding="12px 25px"
+                  className="mr-16 br-30"
+                  onClick={this.toggle2}
+                >
+                  Add new contact
+                </Button>
+              </div>
+            
+            <div style={{marginTop:-22}}>
+              <div
+                className="row-direction align-center cursor goback"
+                onClick={this.goBack}
+              >
+                <img src={arrowLeft} alt="arrow left" />
+                <h5 className="bold text-blue ml-8">Go back</h5>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <div className="screen-padding previous">
+        <div className="previous-header-new mb-0">
+
+        <div className="">
+            <h2 id="profCallHeader" className="bold text-main">Previous calls</h2><br/>
+          </div>
+          <div className="callID-history-New">
+          
             <div>
               <h3 id="profCallHeader" className="bold mb-4 text-main">{details.length}</h3>
               <p className="light text-light">Previous calls</p>
@@ -65,19 +106,8 @@ class CallsID extends Component {
               </h3>
               <p className="light text-light">Average wait time</p>
             </div>
-            <div>
-              <div
-                className="row-direction align-center cursor goback"
-                onClick={this.goBack}
-              >
-                <img src={arrowLeft} alt="arrow left" />
-                <h5 className="bold text-blue ml-8">Go back</h5>
-              </div>
-            </div>
           </div>
         </div>
-        <div className="screen-padding previous">
-          <h2 id="profCallHeader" className="bold text-main">Previous calls</h2><br/>
           <hr />
           <div className="menu-bar ptb-20">
             <div>
@@ -174,6 +204,7 @@ class CallsID extends Component {
                     ))
               }
             </tbody>
+            <NewContactOverlay open={open2} toggle={this.toggle2} />
           </table>
         </div>
       </>

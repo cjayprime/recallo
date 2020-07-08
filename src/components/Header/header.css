@@ -53,4 +53,33 @@
     height: 20px;
     margin-left: 240px;
   }
+
+  .businessnav-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #336799;
+    margin-top: 10px;
+  }
+
+  .logonav-text {
+    font: Bold 12px/40px Barlow;
+    color: #fff;
+    text-align: center;
+  }
+
+  .home-header-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #336799;
+    margin-left:1220px;
+      position:absolute;
+  }
+
+  #home-header-arrow{
+    margin-left:50px;
+     margin-top:-21px;
+      position:absolute;
+  }
 }

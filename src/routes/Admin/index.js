@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from "react-router-dom";
 import Sidenav from "../../components/SideNav/sidenav";
 import Header from "../../components/Header/header";
+import HomeHeader from "../../components/Header/HomeHeader";
 import SettingSideBar from "../../components/SideNav/settingsidebar";
 
 import routes from "../routes";
@@ -74,7 +75,7 @@ class Admin extends Component {
 
     return (
       <div className="grid">
-        <Header header={this.header(false)} className="main-header" />
+        <HomeHeader header={this.header(false)} className="main-header" />
         <Component
           header={this.header(true)}
           {...this.props}
