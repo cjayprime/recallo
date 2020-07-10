@@ -11,7 +11,7 @@ import Notification from "../../utils/notification";
 class ProfileCategory extends Component {
   constructor(props){
     super(props);
-    this.state={
+    this.state = {
       popover: null,
       name: '',
       description: '',
@@ -25,7 +25,7 @@ class ProfileCategory extends Component {
 
   componentDidUpdate(prevProps){
     const { getCategories, open } = this.props;
-    if(prevProps.open !== open){
+    if(open && prevProps.open !== open){
       getCategories();
     }
   };
