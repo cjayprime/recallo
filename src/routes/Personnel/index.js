@@ -62,6 +62,7 @@ class Personnel extends Component {
             </div>
           </div>
           <Department
+            {...this.props}
             open={open === "department"}
             toggle={() => {
               this.toggle('department');

@@ -21,7 +21,7 @@ function load(state, action) {
       }
     };
   }else if (status === false || (!data.me && !data.me.account)) {
-    Actions.token.remove();
+    // Actions.token.remove();
   }
 
   return newState;

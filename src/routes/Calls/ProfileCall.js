@@ -32,7 +32,7 @@ class ProfileCall extends Component {
           current: {
             category: data.category && data.category.length ? data.category[0].category_name : '',
             description: data.category && data.category.length ? data.category[0].category_description : '',
-            id: data.category && data.category.length ? data.category[0]._id : ''
+            id: data.category && data.category.length ? data.category[0]._id : 0
           }
         });
       });

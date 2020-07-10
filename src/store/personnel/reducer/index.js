@@ -37,6 +37,14 @@ const initialState = {
     // schedules	null
     // _id	97
     // }
+  },
+  department: {
+    all: [
+
+    ],
+    details: {
+
+    }
   }
 };
 
@@ -59,6 +67,19 @@ const personnel = (state = initialState, action) => {
     return {
       ...newState,
       details: data.call,
+    };
+  }else if (type === Actions.GETDEPARTMENT && status === true) {
+    return {
+      ...newState,
+      department: {
+        ...newState.department,
+        all: data.department,
+      }
+    };
+  }else if (type === Actions.CREATEDEPARTMENT && status === true) {
+    return {
+      ...newState,
+      // details: data.call,
     };
   }
   
