@@ -3,7 +3,7 @@ import Overlay from "../../components/Overlay";
 
 class ViewProfile extends Component {
   render() {
-    const { open, toggle } = this.props;
+    const { open, toggle, call } = this.props;
 
     return (
       <Overlay open={open} toggle={toggle}>
@@ -13,31 +13,31 @@ class ViewProfile extends Component {
           <div className="mb-32">
             <div className="background-grey flex view-profile-table">
               <h6 className="text-light flex-1 light">Call ID</h6>
-              <h6 className="flex-3">+2348051113453</h6>
+              <h6 className="flex-3">{call.caller_id}</h6>
             </div>
             <div className="flex view-profile-table">
               <h6 className="text-light flex-1 light">Personnel</h6>
-              <h6 className="flex-3">Grace Audu</h6>
+              <h6 className="flex-3">{call.personnel_name}</h6>
             </div>
             <div className="background-grey flex view-profile-table">
               <h6 className="text-light flex-1 light">Date Time</h6>
-              <h6 className="flex-3">22-01-2020 12:03:pm</h6>
+              <h6 className="flex-3">{call.end_time}</h6>
             </div>
             <div className="flex view-profile-table">
               <h6 className="text-light flex-1 light">Duration</h6>
-              <h6 className="flex-3">3mins 2secs</h6>
+              <h6 className="flex-3">{call.call_duration}</h6>
             </div>
             <div className="background-grey flex view-profile-table">
               <h6 className="text-light flex-1 light">Status</h6>
-              <h6 className="flex-3">Answered</h6>
+              <h6 className="flex-3">{call.call_status}</h6>
             </div>
             <div className="flex view-profile-table">
               <h6 className="text-light flex-1 light">Age group</h6>
-              <h6 className="flex-3">Youth</h6>
+              <h6 className="flex-3">{call.age}</h6>
             </div>
             <div className="background-grey flex view-profile-table">
               <h6 className="text-light flex-1 light">Gender</h6>
-              <h6 className="flex-3">Female</h6>
+              <h6 className="flex-3">{call.gender}</h6>
             </div>
           </div>
         </div>

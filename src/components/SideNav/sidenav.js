@@ -21,20 +21,26 @@ class Sidenav extends Component {
   };
 
   render() {
-    const { routes, header } = this.props;
-
+    const {account: {business}} = this.props;
     return (
-      
       <aside className="sidenav">
        {/* {header && <Header className="sidenav-header" />}*/}
          <Header className="sidenav-header" />
         <div className="sidenav-body">
           <div className="details">
             <div className="business-logo mb-23">
-              <h1 className="logo-text">AM</h1>
+              <h1 className="logo-text">
+                {
+                  business.name.substr(0, 1) + '' + 
+                  (
+                    business.name.split(' ')[1] ? 
+                    business.name.split(' ')[1].substr(0, 1) : ''
+                  )
+                }
+              </h1>
             </div>
             <h3 className="text-blue bold mb-8" id="sidebar-header">
-               AutoMedics Africa Limited 
+               {business.name}
             </h3>
             <p className="light text-light">2 agents license</p>
             <Link to="/admin/settings" className="mt-24">

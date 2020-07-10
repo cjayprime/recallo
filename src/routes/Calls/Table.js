@@ -1,25 +1,32 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ProfileCallOverlay from "./ProfileCall";
-import ViewProfileOverlay from "./ViewProfile";
+import ProfileCall from "./ProfileCall";
+import ViewProfile from "./ViewProfile";
 
 class Table extends Component {
   state = {
-    open: ""
+    open: "",
+    call: {},
+    index: 0
   };
 
-  toggle = (open) => {
-    this.setState({ open: this.state.open ? "" : open });
+  toggle = (open, call, index) => {
+    this.setState({
+      open: this.state.open ? "" : open,
+      call: call ? call : {},
+      index: typeof index !== 'undefined' ? index : 0
+    });
   };
 
   render() {
     const { all } = this.props;
+    const { call, open, index } = this.state;
     return (
       <>
         <table className="mtb-15">
           <tbody>
             <tr id="callTableHeader" className="background-grey text-light table-head hover-grey" >
-              <td>Call ID</td>
+              <td>CallerID</td>
               <td>Call date & time</td>
               <td>Personnel</td>
               <td>Call duration</td>
@@ -46,27 +53,20 @@ class Table extends Component {
                   <td>{call.personnel_name}</td>
                   <td>{call.call_duration}</td>
                   <td>
-                  {/* <label className="label yellow bold">Answered</label> */}
-                  <span className={"label " + (call.call_status === "answered" ? "voicenote" : "missed")}>
-                    {call.call_status.substr(0, 1).toUpperCase() + '' + call.call_status.substr(1)}
-                  </span>
+                    {/* <label className="label yellow bold">Answered</label> */}
+                    {call.final_state === 0 ? <>Has Events</> : ''}
+                    <span className={"label " + (call.call_status === "answered" ? "voicenote" : "missed")}>
+                      {call.call_status.substr(0, 1).toUpperCase() + '' + call.call_status.substr(1)}
+                    </span>
                   </td>
-                 
                   <td>
-                     {/*
-    
-                                      <p className="label-inactive"> Engine fault</p>
-
-                   */}
-                  <span class="label fault">Engine fault</span>
-
-                   
+                    {/*<p className="label-inactive"> Engine fault</p>*/}
+                    <span className="label fault">Engine fault</span>
                   </td>
-
                   <td className="text-blue bold cursor" onClick={() => {
                     call.call_status
-                    ? this.toggle('profile-call')
-                    : this.toggle('view-profile')
+                    ? this.toggle('profile-call', call, i)
+                    : this.toggle('view-profile', call, i)
                   }}>
                     {
                       call.call_status
@@ -77,111 +77,30 @@ class Table extends Component {
                 </tr>
               ))
             }
-            {/* <<tr className="table-body text-main hover-grey">
-              <td className="text-blue bold">
-                <Link to="/admin/previous">+2348103153845</Link>
-              </td>
-              <td>
-                Today<p className="text-light mt-5">12:03pm</p>
-              </td>
-              <td>Grace Audu</td>
-              <td>03:20</td>
-              <td>
-              {/* <label className="label yellow bold">Dropped</label> /}
-              <p className="label-dropped">Dropped</p>
-              </td>
-              <td>Not yet profiled</td>
-              <td className="text-blue bold cursor" onClick={() => this.toggle('view-profile')}>
-                View Profile
-              </td>
-            </tr>
-            tr className="table-body text-main hover-grey">
-              <td className="text-blue bold">
-                <Link to="/admin/profile-calls">+2348103153845</Link>
-              </td>
-              <td>
-                Today<p className="text-light mt-5">12:03pm</p>
-              </td>
-              <td>Grace Audu</td>
-              <td>03:20</td>
-              <td>
-              {/* <label className="label yellow bold">Answered</label> /}
-              <p className="label-active">Answered</p>
-
-              </td>
-              <td>
-              <p className="label-inactive"> Engine fault</p>
-              </td>
-              <td className="text-blue bold cursor" onClick={this.toggle}>
-                Profile call
-              </td>
-            </tr>
-            <tr className="table-body text-main hover-grey">
-              <td className="text-blue bold">
-                <Link to="/admin/previous">+2348103153845</Link>
-              </td>
-              <td>
-                Today<p className="text-light mt-5">12:03pm</p>
-              </td>
-              <td>Grace Audu</td>
-              <td>03:20</td>
-              <td>
-              {/* <label className="label yellow bold">Voicenote</label> /}
-              <p className="label-voicenote">Voicenote</p>
-              </td>
-              <td>Not yet profiled</td>
-              <td className="text-blue bold cursor" onClick={this.toggle2}>
-                View Profile
-              </td>
-            </tr>
-            <tr className="table-body text-main hover-grey">
-              <td className="text-blue bold">
-                <Link to="/admin/previous">+2348103153845</Link>
-              </td>
-              <td>
-                Today<p className="text-light mt-5">12:03pm</p>
-              </td>
-              <td>Grace Audu</td>
-              <td>03:20</td>
-              <td>
-              {/* <label className="label yellow bold">Missed</label> /}
-              <p className="label-missed">Missed</p>
-              </td>
-              <td>
-              <p className="label-inactive"> Break fault</p>
-              </td>
-              <td className="text-blue bold cursor" onClick={this.toggle2}>
-                View Profile
-              </td>
-            </tr>
-            <tr className="table-body text-main hover-grey">
-              <td className="text-blue bold">
-                <Link to="/admin/previous">+2348103153845</Link>
-              </td>
-              <td>
-                Today<p className="text-light mt-5">12:03pm</p>
-              </td>
-              <td>Grace Audu</td>
-              <td>03:20</td>
-              <td>
-              {/* <label className="label yellow bold">Dropped</label> /}
-              <p className="label-dropped">Dropped</p>
-              </td>
-              <td>Not yet profiled</td>
-              <td className="text-blue bold cursor" onClick={this.toggle2}>
-                View Profile
-              </td>
-            </tr> */}
           </tbody>
         </table>
-        <ProfileCallOverlay
-          open={this.state.open === "profile-call"}
+        <ProfileCall
+          {...this.props}
+          open={open === "profile-call"}
+          call={call}
+          next={() => {
+            this.setState({
+              open: '',
+            }, () => {
+              this.toggle(
+                'profile-call',
+                typeof all[index+1] !== 'undefined' ? all[index+1] : call,
+                index
+              );
+            });
+          }}
           toggle={() => {
             this.toggle('profile-call');
           }}
         />
-        <ViewProfileOverlay
-          open={this.state.open === "view-profile"}
+        <ViewProfile
+          open={open === "view-profile"}
+          call={call}
           toggle={() => {
             this.toggle('view-profile');
           }}
