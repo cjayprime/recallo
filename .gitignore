@@ -1,0 +1,9 @@
+/node_modules
+.env*
+/build
+/.idea
+/.eslintrc
+yarn.lock
+yarn-error.log
+package-lock.json
+.gitcommit
