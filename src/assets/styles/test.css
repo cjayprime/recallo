@@ -738,6 +738,39 @@
     .modalsDiv{
       margin-top: 20px;
     }
+
+    .faqStyletitle{
+      color: #333333;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .faqStyletext{
+      color: #777777;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+ 
+
+    .plus-icon {
+      position: absolute;
+      margin-top:-14px;
+      width: 50px;
+       height: 45px;
+      margin-left: 523px;       
+       background-repeat: no-repeat;
+      background-image: url(../../assets/img/plusIcon.svg);
+    }
+
+    .minus-icon {
+      position: absolute;
+      margin-top:-14px;
+      width: 50px;
+       height: 45px;
+      margin-left: 523px;       
+       background-repeat: no-repeat;
+      background-image: url(../../assets/img/minusIcon.svg);
+    }
    /*Ending of PopUp and Modal Style*/
  
  
