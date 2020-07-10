@@ -82,7 +82,7 @@ class Profile extends Component {
     return (
       <>
         <div id="settingscreenDiv" className="screen-padding container background-grey">
-          <div className="overview br-16 plr-32 mb-32" style={{height:400}} >
+          <div className="overview br-16 plr-32 mb-32" style={{height:635}} >
             <form>
               <div className="row mb-23" id="settingContainer">
                 <h4 className="pt-32">Personal information</h4>
@@ -136,7 +136,7 @@ class Profile extends Component {
                   </div>
                   <div className="row mb-16">
                     <div className="col-7">
-                      <p className="formLabel">Password</p>
+                      <p className="formLabel">Old Password</p>
                     </div>
                     <div className="col-7" style={{width:230}}>
                       <TextInput
@@ -146,10 +146,18 @@ class Profile extends Component {
                         onChange={(value, name, error) => handleChange(value, name, error, 'profile', 'user')}
                         labelClass="profile-label"
                         placeholder="******"
-                        labelTitle="Old"
+                        /*labelTitle="Old"*/
                         className="mb-16 br-8 profile-input p-12"
                       />
-                      <br/>
+             
+                    </div>
+                  </div>
+              
+                  <div className="row mb-16">
+                    <div className="col-7">
+                      <p className="formLabel">New Password</p>
+                    </div>
+                    <div className="col-7" style={{width:230}}>
                       <TextInput
                         type="password"
                         value={user.newPassword}
@@ -157,10 +165,20 @@ class Profile extends Component {
                         onChange={(value, name, error) => handleChange(value, name, error, 'profile', 'user')}
                         labelClass="profile-label"
                         placeholder="******"
-                        labelTitle="New"
+                        /*labelTitle="New"*/
                         className="mb-16 br-8 profile-input p-12"
                       />
-                      <br/>
+                   
+                    </div>
+                  
+                  </div>
+              
+               
+                  <div className="row mb-16">
+                    <div className="col-7">
+                      <p className="formLabel">Confirm New Password</p>
+                    </div>
+                    <div className="col-7" style={{width:230}}>
                       <TextInput
                         type="password"
                         value={user.password}
@@ -168,13 +186,14 @@ class Profile extends Component {
                         onChange={(value, name, error) => handleChange(value, name, error, 'profile', 'user')}
                         labelClass="profile-label"
                         placeholder="******"
-                        labelTitle="New (Repeat)"
+                       /* labelTitle="New (Repeat)"*/
                         className="mb-16 br-8 profile-input p-12"
                       />
+                   
                     </div>
-                    <div className="col-7" style={{marginLeft:505, marginTop:7, position:"absolute"}}>
+                    <div className="col-7" style={{marginLeft:515, marginTop:7, position:"absolute"}}>
                       <Button
-                        padding="12px 17px"
+                        padding="12px 25px"
                         className="text-blue bc-blue br-8 upload-button"
                         onClick={(e) => this.submit(e, 'password')}
                       >
@@ -182,11 +201,12 @@ class Profile extends Component {
                       </Button>
                     </div>
                   </div>
+              
               </div>
-              <hr/>
+              <hr style={{width:1045, marginLeft:-30}}/>
               <div className="pt-23">
                 <Button
-                  className="br-30 save orange-hover"
+                  className="br-30 save"
                   padding="12px 50px"
                   onClick={(e) => this.submit(e, 'user')}
                 >
@@ -195,7 +215,7 @@ class Profile extends Component {
               </div>
             </form>
           </div>
-          <div className="overview br-16 plr-32 mb-32" style={{height:530, marginTop: -40}}>
+          <div className="overview br-16 plr-32 mb-32" style={{height:595, marginTop: -40}}>
             <form>
               <div className="row mb-23" id="settingContainer">
                 <h4 className="pt-32">Business information</h4>
@@ -292,9 +312,10 @@ class Profile extends Component {
                       />
                     </div>
                   </div>
+                  <hr style={{width:1045, marginLeft:-30}}/>
                   <div className="pt-23">
                     <Button
-                      className="br-30 save orange-hover"
+                      className="br-30 save"
                       padding="12px 50px"
                       onClick={(e) => this.submit(e, 'business')}
                     >

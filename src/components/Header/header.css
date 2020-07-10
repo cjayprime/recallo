@@ -1,6 +1,8 @@
 .logo {
   width: 156px;
   height: 59px;
+      top: 11px;
+left: 28px;
 }
 
 .notification {
@@ -29,6 +31,8 @@
   .logo {
     width: 156px;
     height: 59px;
+    top: 11px;
+left: 28px;
   }
 
   .notification .message {
@@ -63,23 +67,24 @@
   }
 
   .logonav-text {
-    font: Bold 12px/40px Barlow;
+    font: Bold 17px/50px Barlow;
     color: #fff;
     text-align: center;
+    
   }
 
   .home-header-logo {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+height: 48px;
     border-radius: 50%;
     background: #336799;
-    margin-left:1220px;
+    margin-left:1200px;
       position:absolute;
   }
 
   #home-header-arrow{
-    margin-left:50px;
-     margin-top:-21px;
+    margin-left:70px;
+     margin-top:-28px;
       position:absolute;
   }
 }

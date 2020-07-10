@@ -16,7 +16,7 @@ class HomeHeader extends Component {
           <img className="logo" src={logo} alt="Recallo logo" />
         </div>
 
-        <div className="notification" style={{position:"absolute", marginLeft:930, marginTop:6}}>
+        <div className="notification" style={{position:"absolute", marginLeft:910, marginTop:6}}>
           <img className="bell" src={bell} alt="notification bell" />
           <span className="message">4</span>
         </div>
