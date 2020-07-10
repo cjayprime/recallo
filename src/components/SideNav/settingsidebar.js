@@ -17,13 +17,22 @@ class settingsidebar extends Component {
       };
     
       render() {
+        const {signout, history, account: {business}} = this.props;
         return (
           <aside className="sidenav" id="seetingsidebar">
            
             <div className="sidenav-body">
               <div className="details">
                 <div className="settingbusiness-logo mb-23">
-                  <h1 className="settinglogo-text">AM</h1>
+                  <h1 className="settinglogo-text">
+                  {
+                    business.name.substr(0, 1) + '' + 
+                    (
+                      business.name.split(' ')[1] ? 
+                      business.name.split(' ')[1].substr(0, 1) : ''
+                    )
+                  }
+                  </h1>
                 </div>
 
                 <Link to="/" className="Link">
@@ -50,8 +59,8 @@ class settingsidebar extends Component {
                   </Link> 
 
                   <hr style={{ marginLeft:-20, marginTop:240, width:100}}/>
-                  <Link to="/" className="Link">
-                      <div className="settingicon-power" />
+                  <Link to="/signin" className="Link">
+                    <div className="settingicon-power" onClick={signout} />
                   </Link> 
               </div>
             </div>
