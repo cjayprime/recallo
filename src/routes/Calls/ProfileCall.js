@@ -5,6 +5,8 @@ import FormField from "../../components/Form";
 import Overlay from "../../components/Overlay";
 import Button from "../../components/Button/button";
 
+import Notification from "../../utils/notification";
+
 
 class ProfileCall extends Component {
   constructor() {
@@ -13,19 +15,28 @@ class ProfileCall extends Component {
       gender: 'Male',
       age: 'Youth',
       comment: '',
-      currentCategory: '',
+      current: {
+        category: '',
+        description: '',
+        id: 0
+      },
       showMenuCard: false
     };
   };
 
   componentDidUpdate(prevProps){
-    const { getCategories, open } = this.props;
-    if(prevProps.open !== open){
+    const { getCategories, open, getVoiceNotes, call } = this.props;
+    if(open && prevProps.open !== open){
       getCategories(data => {
         this.setState({
-          currentCategory: data.category && data.category.length ? data.category[0].category_name : ''
+          current: {
+            category: data.category && data.category.length ? data.category[0].category_name : '',
+            description: data.category && data.category.length ? data.category[0].category_description : '',
+            id: data.category && data.category.length ? data.category[0]._id : ''
+          }
         });
       });
+      getVoiceNotes(call.reference_no);
     }
   };
 
@@ -45,12 +56,37 @@ class ProfileCall extends Component {
   };
 
   submit = () => {
-
+    const { profileVoiceNote, getCalls, call } = this.props;
+    const {gender, age, comment, current} = this.state;
+    const data = {gender, age, comment};
+    const { error } = data;
+    
+    const dataKeys = Object.keys(data);
+    if (
+      !error &&
+      dataKeys.filter((state) => state === "error" || !!data[state]).length === dataKeys.length
+    ) {
+      profileVoiceNote({
+        caller_id: call.caller_id,
+        // received_date:"2019-06-27",
+        // received_time:"08:12:06",
+        // voicenote_id:"13",
+        // account: call.account,
+        category: current.id,
+        sex: gender,
+        age_group:age,
+        comment: comment
+      }, () => getCalls('all'));
+    } else {
+      Notification.error(
+        error || "Please fill in the form correctly."
+      );
+    }
   }
 
   render() {
-    const { open, toggle, call, category } = this.props;
-    const { gender, age, comment, showMenuCard, currentCategory } = this.state;
+    const { open, toggle, call, category, next } = this.props;
+    const { gender, age, comment, showMenuCard, current } = this.state;
     return (
       <Overlay open={open} toggle={toggle} width="90rem">
         <div id="profilecallContainer">
@@ -133,7 +169,6 @@ class ProfileCall extends Component {
                     {/*<span className="checkmark" />*/}
                   </label>
                   <label htmlFor="elder" className="profile-call-label mt-16 cursor bold">
-                    
                     <input
                       type="radio"
                       id="radioInput"
@@ -148,7 +183,6 @@ class ProfileCall extends Component {
                 <div className="ml-35">
                   <h6 className="text-light flex-1 light">Select gender</h6>
                   <label htmlFor="male" className="profile-call-label mt-16 cursor bold">
-                    
                     <input
                       type="radio"
                       id="radioInput"
@@ -160,7 +194,6 @@ class ProfileCall extends Component {
                     {/*<span className="checkmark" />*/}
                   </label>
                   <label htmlFor="female" className="profile-call-label mt-16 cursor bold">
-
                     <input
                       type="radio"
                       id="radioInput"
@@ -184,7 +217,7 @@ class ProfileCall extends Component {
                     className="mb-8 cursor text-blue hover"
                     onClick={(e) => this.show(e)}
                   >
-                    {currentCategory}
+                    {current.category}
                     <span className="arrow-down ml-8" />
                   </h5>
                   <div className="menu-card" style={{ marginTop: 0 }}>
@@ -195,7 +228,14 @@ class ProfileCall extends Component {
                       <h6
                         key={i}
                         className="text-blue light cursor hover-grey"
-                        onClick={() => this.setState({showMenuCard: false, currentCategory: prop.category_name})}
+                        onClick={() => this.setState({
+                          showMenuCard: false,
+                          current: {
+                            category: prop.category_name,
+                            description: prop.category_description,
+                            id: prop._id
+                          },
+                        })}
                       >
                         {prop.category_name}
                       </h6>
@@ -203,7 +243,7 @@ class ProfileCall extends Component {
                   }) : null}
                   </div>
                   <h6 className="light text-light">
-                    Caller raised an issue about engine
+                    {current.description}
                   </h6>
                 </div>
               </div>
@@ -218,22 +258,18 @@ class ProfileCall extends Component {
           <div className="mb-32">
             <h6 className="light text-light mb-8">Add Comments</h6>
             <div className="row-direction profile-category-card mb-16 ">
-                <FormField
-                  labelTitle="Add a brief comment"
-                  labelClass="formSpan"
-                  type="textarea"
-                  className="profile-input br-8 p-12"
-                  style={{ overflow: "hidden", height: 100 }}
-                  name="comment"
-                  value={comment}
-                  onChange={this.handleChange}
-                />
-              <div className="p-16">
-                {/* <h6 className="light text-light">
-                  Caller mentioned a desire to be able to switch mechanics as
-                  often as possible
-                </h6> */}
-              </div>
+              <FormField
+                labelTitle="Add a brief comment"
+                labelClass="formSpan"
+                type="textarea"
+                placeholder="Caller mentioned a desire to be able to switch mechanics as
+                often as possible"
+                className="profile-input br-8 p-12"
+                style={{ overflow: "hidden", height: 100 }}
+                name="comment"
+                value={comment}
+                onChange={this.handleChange}
+              />
             </div>
           </div>
           <div className="mb-32 row pt-30">
@@ -247,14 +283,15 @@ class ProfileCall extends Component {
               >
                 <h6>Save Profile</h6>
               </Button>
-              {/* <Button
+              <Button
                 className="br-30"
                 padding="11px 32px"
                 background="background-grey"
                 text="var(--text-color)"
+                onClick={next}
               >
                 <h6>Profile Next Call</h6>
-              </Button> */}
+              </Button>
             </div>
             <h6 className="bold text-light cursor" onClick={toggle}>
               Close

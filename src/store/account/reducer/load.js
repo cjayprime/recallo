@@ -6,7 +6,7 @@ function load(state, action) {
     ...state
   };
 
-  if (status === true) {
+  if (status === true && (data.me && data.me.account)) {
     return {
       ...newState,
       user: {
@@ -15,8 +15,12 @@ function load(state, action) {
         email: data.me.email,
         mobile: data.me.mobile,
       },
+      business: {
+        name: data.me.account.business_name,
+        email: data.me.account.business_email
+      }
     };
-  }else if (status === false) {
+  }else if (status === false || (!data.me && !data.me.account)) {
     Actions.token.remove();
   }
 

@@ -57,7 +57,8 @@ export default class FormField extends Component {
       checkboxTitle,
       checkboxClass,
       required,
-      style
+      style,
+      placeholder
     } = this.props;
 
     const { error } = this.state;
@@ -88,6 +89,7 @@ export default class FormField extends Component {
                 name={name}
                 className={className}
                 type={type}
+                placeholder={placeholder}
                 onChange={this.handleChange}
               />
             : <input

@@ -8,6 +8,7 @@ import { LOADING as ACCOUNT_LOADING, REQUEST as ACCOUNT_REQUEST } from "./accoun
 import { LOADING as CALLS_LOADING, REQUEST as CALLS_REQUEST } from "./calls/actions";
 import { LOADING as PERSONNEL_LOADING, REQUEST as PERSONNEL_REQUEST } from "./personnel/actions";
 import { LOADING as CATEGORY_LOADING, REQUEST as CATEGORY_REQUEST } from "./category/actions";
+import { LOADING as VOICENOTE_LOADING, REQUEST as VOICENOTE_REQUEST } from "./voicenote/actions";
 
 import Notification from "../utils/notification";
 
@@ -17,18 +18,20 @@ export default class Saga {
   constructor(loading) {
     this.loading = loading;
     this.request = this.request.bind(this);
-    this.root = this.root.bind(this);
   }
 
-  listener = function* () {
+  root = function* root() {
+    // [
+    //   {request: ACCOUNT_REQUEST, loading: ACCOUNT_LOADING}
+    // ].map(prop => {
+    //   yield takeEvery(prop.request, new Saga(prop.loading).request);
+    // });
+
     yield takeEvery(ACCOUNT_REQUEST, new Saga(ACCOUNT_LOADING).request);
     yield takeEvery(CALLS_REQUEST, new Saga(CALLS_LOADING).request);
     yield takeEvery(PERSONNEL_REQUEST, new Saga(PERSONNEL_LOADING).request);
     yield takeEvery(CATEGORY_REQUEST, new Saga(CATEGORY_LOADING).request);
-  };
-
-  root = function* root() {
-    yield this.listener();
+    yield takeEvery(VOICENOTE_REQUEST, new Saga(VOICENOTE_LOADING).request);
   };
 
   request = function* request(action) {

@@ -17,10 +17,7 @@ class settingsidebar extends Component {
       };
     
       render() {
-        const { routes, header } = this.props;
-    
         return (
-          
           <aside className="sidenav" id="seetingsidebar">
            
             <div className="sidenav-body">

@@ -17,6 +17,7 @@ class ManageAccount extends Component {
         name: "",
         email: "",
         password: "",
+
       },
       business: {
         name: "",
@@ -63,6 +64,7 @@ class ManageAccount extends Component {
   };
 
   render() {
+    console.log(this.props)
     const tabs = [
       { tab: "Profile" },
       { tab: "Account Plan" },

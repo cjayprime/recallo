@@ -6,8 +6,6 @@ import FormField from "../../components/Form";
 import Button from "../../components/Button/button";
 
 import Notification from "../../utils/notification";
-// TODO: Implement an util method to be re-used
-// import { Form, Notification } from "../../utils";
 
 
 class ProfileCategory extends Component {
@@ -49,7 +47,7 @@ class ProfileCategory extends Component {
     const dataKeys = Object.keys(data);
     if (
       !error &&
-      dataKeys.filter((state) => state == "error" || !!data[state]).length === dataKeys.length
+      dataKeys.filter((state) => state === "error" || !!data[state]).length === dataKeys.length
     ) {
       addCategory({
         category: name,
@@ -64,7 +62,7 @@ class ProfileCategory extends Component {
 
   render() {
     const { open, toggle, category } = this.props;
-    const { popover1, popover2, popover3, popover4, popover, name, description} = this.state;
+    const { popover, name, description} = this.state;
     return (
       <Overlay open={open} toggle={toggle}>
         <div>

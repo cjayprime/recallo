@@ -22,6 +22,10 @@ class Calls extends Component {
     getCalls('all');
   }
 
+  search = () => {
+
+  };
+
   render() {
     const { open } = this.state;
     const { calls } = this.props;
@@ -83,7 +87,7 @@ class Calls extends Component {
               />
               <div className="search-form">
                 <SearchIcon className="search-icon" />
-                <input id="input" className="br-3 search bc-blue hover" />
+                <input id="input" className="br-3 search bc-blue hover" onChange={this.search} />
               </div>
             </div>
             <div className="menu-bar-right">
