@@ -13,6 +13,15 @@
     border-bottom: 1px solid rgb(236, 231, 231) !important;
     
   }
+
+  .settingProfile span{
+    padding: 0px 10px;
+  }
+
+  .settingProfile{
+   margin-left: -100px;
+  }
+  
   
   .app-header .logo {
     width: 143px;
@@ -38,6 +47,8 @@
     position: absolute;
     margin-top: 0px;
   }
+
+
   
   /* .app-header .header-menu div.active > a:not([data-toggle="collapse"]):before {
     content: " ";
@@ -71,9 +82,10 @@
 
     .settinglogo{
 
-        margin-left: -80px;
-        width: 45px;
-        height: 30px;
+        margin-left: -90px;
+        width: 46px;
+        height: 46px;
+        
       }
   
   }

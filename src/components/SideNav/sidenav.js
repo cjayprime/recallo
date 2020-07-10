@@ -45,7 +45,8 @@ class Sidenav extends Component {
             <p className="light text-light">2 agents license</p>
             <Link to="/admin/settings" className="mt-24">
               <Button
-                className="br-30 account-button orange-hover"
+               
+                className="br-30 account-button"
                 padding="12px 20px"
               >
                 <h6 className="bold">Manage your Recallo Account</h6>

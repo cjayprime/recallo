@@ -13,15 +13,10 @@ class BusinessInformation extends Component {
 
   render() {
     const { form, handleChange } = this.props;
-    const {
-      name,
-      email,
-      address,
-      people,
-      rc,
-    } = form;
+      const {name, email, address, people, rc} = form;
+
     return (
-      <div>
+      <>
         <header>
           <div className="app-header">
             <div>
@@ -31,15 +26,15 @@ class BusinessInformation extends Component {
         </header>
         <div className="onboard">
           <div className="onboard-welcome">
-            <h1 className="bold mb-24">Welcome to Recallo</h1>
-            <h5 className="light text-light">
+            <h1 className="p-40 mb-24">Welcome to Recallo</h1>
+            <h5 id="hText"  className="light text-light">
               In a few steps, your account will be up and running. <br /> <br />
               Let's get started.
             </h5>
           </div>
           <div className="onboard-info">
             <div className="onboard-title">
-              <h2 className="light text-main">Business Information</h2>
+              <h2 style={{marginTop:10, fontSize:20, color:"#333333"}} className="light text-main">Business Information</h2>
               <div className="row-direction align-center">
                 <p className="text-main bold mr-8">2 of 3</p>
                 <div className="row-direction">
@@ -49,7 +44,7 @@ class BusinessInformation extends Component {
                 </div>
               </div>
             </div>
-            <hr />
+            <hr style={{marginTop:-10}} />
             <form>
               <div className="business-info">
                 <div className="business-info-1">
@@ -61,7 +56,6 @@ class BusinessInformation extends Component {
                       type="text"
                       name="name"
                       value={name}
-                      form={form}
                       onChange={handleChange}
                     />
                     <TextInput
@@ -115,14 +109,14 @@ class BusinessInformation extends Component {
                     type="submit"
                     padding="10px 32px"
                   >
-                    <h5 className="bold text-white">Save and Continue</h5>
+                    <h5 id="createAccount" className="bold text-white">Save and Continue</h5>
                   </Button>
                 </div>
               </div>
             </form>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

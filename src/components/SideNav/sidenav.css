@@ -1,11 +1,15 @@
 .sidenav-body {
   padding: 104px 32.5px 0;
-  overflow-y: scroll;
+  overflow-y: hidden;
   width: 100%;
 }
 
 
 .sidenav-body::-webkit-scrollbar {
+  display: none;
+}
+
+.sidenav-body::-moz-scrollbar {
   display: none;
 }
 
@@ -107,13 +111,13 @@
   .sidenav-body {
     padding: 104px 32.5px 0;
     margin-top: 110px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     width: 100%;
   }
 
   .sidebar-body {
     padding: 104px 32.5px 0;
-    overflow-y: scroll;
+    overflow-y: hidden;
     width: 100%;
   }
   
@@ -222,32 +226,37 @@
   }
 
 
-  /*SETTING STYLE BEGINING*/
+  /*SETTING Ssidenav-bodyTYLE BEGINING*/
   .settingbusiness-logo {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background: #336799;
-    margin-top: -100px;
+    position: absolute;
+    margin-top: -125px;
+    margin-left: -7px;
   }
   
   .settinglogo-text {
-    font: Bold 20px/50px Barlow;
+    font: Bold 14px/45px Barlow;
     color: #fff;
     text-align: center;
     font-family: sans-serif;
   }
 
   #seetingsidebar{
-    width: 65px;
+    width: 55px;
     background-color: #2C405A;
+   height: 100%;
+overflow-y: hidden;
+
   }
 
   .setting-icon {
     position: absolute;
     right: -3px;
    width: 50px;
-   margin-top: -10px;
+   margin-top: -60px;
     height: 45px;
     background-repeat: no-repeat;
     background-image: url(../../assets/img/setting-icon.PNG);
@@ -255,18 +264,18 @@
 
   .settingicon-home {
     position: absolute;
-    right: -3px;
+    right: -7px;
     width: 50px;
      height: 45px;
+     margin-top: -10px;
      background-repeat: no-repeat;
     background-image: url(../../assets/img/settinghome-icon.PNG);
   }
 
   .settingicon-call {
     position: absolute;
-    right: -3px;
-    margin-top: 40px;
-
+    right: -7px;
+    margin-top: 35px;
     width: 50px;
      height: 45px;
      background-repeat: no-repeat;
@@ -279,19 +288,19 @@
   }
   .settingicon-personnel {
     position: absolute;
-    right: -3px;
+    right: -7px;
     width: 50px;
     margin-top: 75px;
 
-     height: 45px;
+     height: 40px;
      background-repeat: no-repeat;
     background-image: url(../../assets/img/settingpersonnel-icon.PNG);
   }
 
   .settingicon-analytics {
     position: absolute;
-    right: -3px;
-    margin-top: 110px;
+    right: -9px;
+    margin-top: 115px;
 
     width: 50px;
      height: 45px;
@@ -301,8 +310,8 @@
 
   .settingicon-power {
     position: absolute;
-    right: -3px;
-    margin-top: -30px;
+    right: -8px;
+    margin-top: -20px;
     width: 50px;
      height: 45px;
      background-repeat: no-repeat;

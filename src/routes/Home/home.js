@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 
-import "./test.css";
-import LayoutPage from "../../components/AppPageHeader/LayoutPage";
+//import LayoutPage from "../../components/AppPageHeader/LayoutPage";
 import MenuItem from "../../components/MenuItem/menuItem";
 //import SideBar from "../../components/SideNav/sidebar";
 import TotalCalls from "./TotalCalls";
@@ -38,10 +37,8 @@ class Home extends Component {
     const { active } = this.state;
 
     return (
-      <LayoutPage {...this.props}>
-       {/* <div>
-           <SideBar />
-        </div>*/}
+      <>
+      
         <div className="screen-padding container background-grey height mt-80">
         
         <div className="row">
@@ -177,7 +174,7 @@ class Home extends Component {
 
           </div>
         </div>
-      </LayoutPage>
+      </>
     );
   }
 }

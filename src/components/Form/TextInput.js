@@ -6,10 +6,12 @@ export default class TextInput extends Component {
     error: "",
   };
 
+
   componentDidMount() {
     const { onChange } = this.props;
     onChange("", "", "Please fill in the form correctly.");
   }
+
 
   handleChange = (e) => {
     e.preventDefault();
@@ -58,7 +60,7 @@ export default class TextInput extends Component {
     return (
       <div>
         <h6 className={error ? "red" : classNames("mb-8", "light", labelClass)}>
-          <label style={{position: "static"}} htmlFor="label">{error || labelTitle}</label>
+          <label style={{position: "static", fontWeight:"bold"}} htmlFor="label">{error || labelTitle}</label>
         </h6>
         <input
           id={id}

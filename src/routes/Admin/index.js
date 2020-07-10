@@ -4,13 +4,14 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import SideNav from "../../components/SideNav/sidenav";
 import Header from "../../components/Header/header";
+import HomeHeader from "../../components/Header/HomeHeader";
 import SettingSideBar from "../../components/SideNav/settingsidebar";
 
 import routes from "../routes";
 
 import * as Actions from "../../store/actions";
 
-import "./admin.css";
+
 
 class Admin extends Component {
   componentDidMount() {
@@ -77,7 +78,7 @@ class Admin extends Component {
 
     return (
       <div className="grid">
-        <Header header={this.header(false)} className="main-header" />
+        <HomeHeader header={this.header(false)} className="main-header" />
         <Component
           header={this.header(true)}
         />

@@ -27,13 +27,15 @@ class NewContactOverlay extends Component {
           <h4 className="mb-40">Add new contact</h4>
           <form>
             <TextInput
-            
+              name="name"
               labelTitle="Name"
               labelClass="profile-label"
               className="mb-24 br-8 profile-input p-12"
               onChange={this.handleChange}
               value={name}
             />
+
+          
           <div id="ContactFlagDiv">
           <img src={flag} alt="thrash" className="flag-icon" />
           <span id="contactArrowDown" class="arrow-down ml-5"></span>
@@ -41,6 +43,7 @@ class NewContactOverlay extends Component {
 
             <TextInput
             id="phoneInput"
+             name="mobile"
               labelTitle="Phone number"
               labelClass="profile-label"
               className="mb-24 br-4 profile-input p-12"
@@ -50,6 +53,7 @@ class NewContactOverlay extends Component {
             <TextInput
               labelTitle="Email address"
               type="email"
+              name="email"
               labelClass="profile-label"
               className="mb-24 br-8 profile-input p-12"
               onChange={this.handleChange}
@@ -57,6 +61,7 @@ class NewContactOverlay extends Component {
             />
             <TextInput
               labelTitle="Company name"
+              name="company"
               labelClass="profile-label"
               className="br-8 profile-input p-12"
               onChange={this.handleChange}

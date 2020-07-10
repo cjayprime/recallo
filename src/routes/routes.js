@@ -5,6 +5,11 @@ import { Redirect } from "react-router-dom";
 import Signin from "./AuthScreen/SignIn";
 import SignUp from "./AuthScreen/Signup";
 import Support from "./Support";
+import Business from "./AuthScreen/Signup/Business"
+import Plan from "./AuthScreen/Signup/Plans"
+import Passwordreset from "./AuthScreen/SignIn/Passwordreset"
+import Welcomemessage from "./AuthScreen/SignIn/Welcomemessage"
+
 
 // Private routes components
 import Admin from "./Admin";
@@ -31,6 +36,22 @@ const routes = {
     {
       path: "/signup",
       component: SignUp,
+    },
+    {
+      path: "/business",
+      component: Business,
+    },
+    {
+      path: "/plans",
+      component: Plan,
+    },
+    {
+      path: "/passreset",
+      component: Passwordreset,
+    },
+    {
+      path: "/welcomemsg",
+      component: Welcomemessage,
     },
     {
       path: "/support",

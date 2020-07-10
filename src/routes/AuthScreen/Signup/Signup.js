@@ -135,7 +135,7 @@ class SignUp extends Component {
            <div id="FaqAndTermsDiv2" className="overview br-16 plr-32 mb-32">
                      <div style={{marginTop:40}}>
                      <span style={{fontSize:20, color:"black", fontWeight:"bold"}}>Terms of Service</span>
-                     <span onClick={this.hide} style={{float:"right", fontSize:20, padding:"2px 7px"}}>x</span>
+                     <span onClick={this.hide} className="modalHide">x</span>
                      </div>
                      <br/>
                      <hr/><br/>

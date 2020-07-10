@@ -4,6 +4,8 @@ import { SnackbarProvider } from "notistack";
 import Button from "@material-ui/core/Button";
 
 import "./assets/styles/main.css";
+import "./assets/styles/test.css";
+import "./assets/styles/admin.css";
 import Routes from "./routes";
 
 import store from "./store";

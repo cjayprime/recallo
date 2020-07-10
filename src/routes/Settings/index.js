@@ -122,8 +122,8 @@ class ManageAccount extends Component {
     return (
       <SettingLayoutPage {...this.props}>
         <div className="profile_tab" style={{marginTop:0}}>
-          <div style={{marginTop:140}}>         
-            <h4 style={{marginLeft:40, color:"grey", fontSize:15, paddingBottom:15}}>SETTINGS</h4>
+          <div style={{marginTop:110}}>         
+            <h4 className="profile_tab_header">SETTINGS</h4>
           </div>
           {tabs.map((tab) => (
             <div key={tab.tab}>
