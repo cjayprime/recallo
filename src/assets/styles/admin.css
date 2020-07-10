@@ -1382,18 +1382,28 @@
   .profile_tab {
     display: inline-block;
     flex-direction: row;
-    top: 0;
-    width: 20%;
-    margin-left: 30px;
     position: absolute;
-    margin-top: 2000px;
+    top: 0;
+    margin-left: -300px;
+    width: 30%;
     padding-left: 40px;
+    background-color: white; 
     margin-top: 0px;
-   /* background-color: #fff; 
-     z-index: 101;
+    
+   
+   /*  z-index: 101;
     box-shadow: 0px 3px 6px #00000014;
   
    */
+  }
+
+  .profile_tab_header{
+    margin-left: 25px;
+    color:#6b8296;
+    font-size: 13px;
+    padding-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 1px;
   }
   
   #xz:hover{
@@ -1405,14 +1415,17 @@
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 10px 40px 0px;
+    padding: 15px 30px 0px;
     line-height: 25px;
     display: block;
+    
   }
   
   .tabText{
-    font-size: 14px;
+    font-size: 12px;
     float: left;
+    color: #545f79;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   

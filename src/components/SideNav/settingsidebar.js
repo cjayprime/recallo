@@ -26,31 +26,31 @@ class settingsidebar extends Component {
                   <h1 className="settinglogo-text">AM</h1>
                 </div>
 
-                <Link to="/" className="Link">
+                <Link to="/admin/settings" className="Link">
                       <div className="setting-icon" />
                   </Link> 
 
-                  <hr style={{ marginLeft:-20, marginTop:55, width:100}}/>
+                  <hr style={{ marginLeft:-20, marginTop:1, width:100}}/>
 
-                  <Link to="/" className="Link">
+                  <Link to="/admin/home" className="Link">
                       <div className="settingicon-home" />
                   </Link> 
 
-                  <Link to="/" className="Link">
+                  <Link to="/admin/calls" className="Link">
                       <div className="settingicon-call" />
                   </Link> 
     
-                  <Link to="/" className="Link">
+                  <Link to="/admin/personnel" className="Link">
                       <div className="settingicon-personnel" />
                   </Link> 
                   
     
-                  <Link to="/" className="Link">
+                  <Link to="/admin/analytics" className="Link">
                       <div className="settingicon-analytics" />
                   </Link> 
 
-                  <hr style={{ marginLeft:-20, marginTop:240, width:100}}/>
-                  <Link to="/" className="Link">
+                  <hr style={{ marginLeft:-20, marginTop:250, width:100}}/>
+                  <Link to="/admin/home" className="Link">
                       <div className="settingicon-power" />
                   </Link> 
               </div>

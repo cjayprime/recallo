@@ -582,16 +582,15 @@
   #settingContainer{
     margin-top: 80px;
   }
-         .profile_tab {
+  .profile_tab {
     display: inline-block;
     flex-direction: row;
     top: 0;
+    position: absolute;
     margin-left: -300px;
     width: 30%;
-    position: absolute;
-    margin-top: 2000px;
     padding-left: 40px;
-    background-color: #fff; 
+    background-color: white; 
     margin-top: 0px;
    
    /*  z-index: 101;
@@ -599,6 +598,16 @@
   
    */
   }
+
+  .profile_tab_header{
+    margin-left: 25px;
+    color:#53687a;
+    font-size: 13px;
+    padding-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 1px;
+  }
+  
   .row-direction{
     padding: 12px 0px;
   }
@@ -794,7 +803,7 @@
   }
   
   .formLabel{
-    font-size: 16px;
+    font-size: 15px;
     padding: 18px 0px;
     color: #777777;
   }
@@ -813,7 +822,6 @@
     color: white;
   }
   
-  
   #xz:hover{
     background-color: white !important;
   }
@@ -823,14 +831,18 @@
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 10px 40px 0px;
+    padding: 15px 30px 0px;
     line-height: 25px;
     display: block;
+    
   }
   
   .tabText{
     font-size: 12px;
     float: left;
+    color: #545f79;
+    opacity: 1px;
+    font-family: Arial, Helvetica, sans-serif;
   }
           /*Settings Module End*/
   

@@ -23,8 +23,8 @@ class AppSettingHeader extends Component {
             
           </div>
           <div className="settingProfile">
-          <span style={{color:"#2E384D", fontSize:16}}>Settings </span> <span style={{marginLeft:-17, fontSize:16, color:"#000000"}}> > </span>
-          <span style={{color:"#2E384D", fontSize:16}}>profile</span>
+          <span style={{color:"#545f79", fontSize:15}}>Settings </span> <span style={{marginLeft:-17, fontSize:15, color:"#545f79"}}> > </span>
+          <span style={{color:"#545f79", fontSize:15}}>profile</span>
           </div>
           
           <h3 className="text-blue bold mb-8" id="settingside-header">
