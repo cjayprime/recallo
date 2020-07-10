@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from "react-router-dom";
-import Sidenav from "../../components/SideNav/sidenav";
+
+import SideNav from "../../components/SideNav/sidenav";
 import Header from "../../components/Header/header";
 import HomeHeader from "../../components/Header/HomeHeader";
 import SettingSideBar from "../../components/SideNav/settingsidebar";
@@ -71,22 +72,24 @@ class Admin extends Component {
 
   render() {
     const { account, location } = this.props;
-    const Component = location.pathname === "/admin/settings" ? SettingSideBar : Sidenav;
+    const Component = this.component({
+      component: location.pathname === "/admin/settings" ? SettingSideBar : SideNav
+    });
 
     return (
       <div className="grid">
         <HomeHeader header={this.header(false)} className="main-header" />
         <Component
           header={this.header(true)}
-          {...this.props}
-          routes={routes}
-          account={account}
         />
         <main className="main">
           <Switch>
             {this.getRoutes(routes)}
             {this.getSettings(routes)}
             <Route exact path="/admin">
+              <Redirect to="/admin/home" />
+            </Route>
+            <Route exact path="/admin/*">
               <Redirect to="/admin/home" />
             </Route>
           </Switch>

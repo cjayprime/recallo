@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import Configuration from "./config";
-import * as Actions from "./actions";
+import { token } from "./account/actions";
 
 export default class Request {
   api = async (endpoint, method, body, success, error) => {
@@ -12,7 +12,7 @@ export default class Request {
       processData: false,
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${await Actions.token.get()}`,
+        Authorization: `Bearer ${await token.get()}`,
       },
     })
       .then((response) => {

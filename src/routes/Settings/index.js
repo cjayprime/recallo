@@ -4,10 +4,10 @@ import Profile from "./Profile";
 import AccountPlan from "./AccountPlan";
 import IvrMenu from "./IvrMenu";
 import ServiceLevel from "./ServiceLevel";
-//import Greetings from "./Greetings";
 import BusinessHours from "./BusinessHours";
+import Greetings from "./Greetings";
+
 import SettingLayoutPage from "../../components/AppSettingHeader/SettingLayoutPage";
-//import SettingSideBar from "../../components/SideNav/settingsidebar";
 
 class ManageAccount extends Component {
   state = {
@@ -17,6 +17,7 @@ class ManageAccount extends Component {
         name: "",
         email: "",
         password: "",
+
       },
       business: {
         name: "",
@@ -63,6 +64,7 @@ class ManageAccount extends Component {
   };
 
   render() {
+    console.log(this.props)
     const tabs = [
       { tab: "Profile" },
       { tab: "Account Plan" },
@@ -71,22 +73,14 @@ class ManageAccount extends Component {
       { tab: "IVR Menu" },
       { tab: "Service Level" },
     ];
-
     const { active } = this.state;
 
     return (
       <SettingLayoutPage>
-        {/*
-        <div>
-           <SettingSideBar />
-        </div>
-        */}
-        
-        <div className="profile_tab">
-        <div style={{marginTop:140}}>         
-             <h4 style={{marginLeft:40, color:"grey", fontSize:15, paddingBottom:15}}>SETTINGS</h4>
-      </div>
-        
+        <div className="profile_tab" style={{marginTop:0}}>
+          <div style={{marginTop:140}}>         
+            <h4 style={{marginLeft:40, color:"grey", fontSize:15, paddingBottom:15}}>SETTINGS</h4>
+          </div>
           {tabs.map((tab) => (
             <div key={tab.tab}>
               <button id="xz"
@@ -97,12 +91,10 @@ class ManageAccount extends Component {
               >
                 <h5 className="tabText">{tab.tab}</h5>
               </button>
-
               {/* <div style={this.styles.tabs(active === tab.tab)} />*/}
             </div>
           ))}
         </div>
-
         <div className="settings">
           {active === "Profile" && (
             <Profile

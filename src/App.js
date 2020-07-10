@@ -19,7 +19,7 @@ function App() {
         <SnackbarProvider
           anchorOrigin={{
             vertical: "top",
-            horizontal: "right",
+            horizontal: "left",
           }}
           ref={Notification.reference}
           action={(key) => <Button onClick={() => Notification.close(key)}>dismiss</Button>}

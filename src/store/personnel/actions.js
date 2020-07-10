@@ -5,6 +5,9 @@ export const EACHPERSONNEL = "EACHPERSONNEL";
 export const CREATEPERSONNEL = "CREATEPERSONNEL";
 export const UPDATEPERSONNEL = "UPDATEPERSONNEL";
 export const STATUSANDSKILLS = "STATUSANDSKILLS";
+export const GETDEPARTMENT = "GETDEPARTMENT";
+export const CREATEDEPARTMENT = "CREATEDEPARTMENT";
+export const UPDATEDEPARTMENT = "UPDATEDEPARTMENT";
 
 export const getPersonnels = (id, success) => ({
   type: REQUEST,
@@ -46,3 +49,30 @@ export const statusAndSkills = () => ({
   method: "DELETE",
   endpoint: 'personnel'
 });
+
+export const getDepartments = (success) => ({
+  type: REQUEST,
+  responder: GETDEPARTMENT,
+  method: "GET",
+  endpoint: 'department',
+  success
+});
+
+export const createDepartment = (data, success) => ({
+  type: REQUEST,
+  responder: CREATEDEPARTMENT,
+  method: "POST",
+  endpoint: 'department',
+  data,
+  success
+});
+
+export const updateDepartment = (data, success, id) => ({
+  type: REQUEST,
+  responder: UPDATEDEPARTMENT,
+  method: "PUT",
+  endpoint: 'department/' + id,
+  data,
+  success
+});
+
