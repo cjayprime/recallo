@@ -54,12 +54,12 @@ export const signin = (data, success) => ({
   success,
 });
 
-export const signout = (data) => ({
+export const signout = (success) => ({
   type: REQUEST,
   responder: SIGNOUT,
   endpoint: "account/logout",
-  method: "POST",
-  data,
+  method: "GET",
+  success
 });
 
 export const load = (data) => ({
@@ -102,3 +102,20 @@ export const token = {
     return item;
   },
 };
+
+export const update = (path, data) => ({
+  type: REQUEST,
+  responder: SIGNOUT,
+  endpoint: "account/" + path,
+  method: "PUT",
+  data,
+});
+
+export const changePassword = data => ({
+  type: REQUEST,
+  responder: SIGNOUT,
+  endpoint: "account/changepassword",
+  method: "POST",
+  data,
+});
+

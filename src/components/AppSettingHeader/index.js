@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-//import logo from "../../assets/img/appLogo.png";
+
 import logo from "../../assets/img/logo2.png";
+
 import "./AppSettingHeader.css";
 
 class AppSettingHeader extends Component {
@@ -14,7 +15,7 @@ class AppSettingHeader extends Component {
   };
 
   render() {
-    const { routes } = this.props;
+    const { account: { business } } = this.props;
     return (
       <header>
         <div className="settingheader">
@@ -28,12 +29,22 @@ class AppSettingHeader extends Component {
           </div>
           
           <h3 className="text-blue bold mb-8" id="settingside-header">
-               AutoMedics Africa Limited 
+                {
+                  business.name
+                }
                <span  className="arrow-down ml-5" />
-               <p className="light text-light" style={{marginLeft:70}}>2 agents license</p>
+               {/* <p className="light text-light" style={{marginLeft:70}}>2 agents license</p> */}
             </h3>
             <div className="businessnav-logo mb-23">
-              <h1 className="logonav-text">AM</h1>
+              <h1 className="logonav-text">
+                {
+                  business.name.substr(0, 1) + '' + 
+                  (
+                    business.name.split(' ')[1] ? 
+                    business.name.split(' ')[1].substr(0, 1) : ''
+                  )
+                }
+              </h1>
             </div>
         </div>
       </header>
