@@ -5,7 +5,6 @@ import AccountPlan from "./AccountPlan";
 import IvrMenu from "./IvrMenu";
 import ServiceLevel from "./ServiceLevel";
 import BusinessHours from "./BusinessHours";
-import Greetings from "./Greetings";
 
 import SettingLayoutPage from "../../components/AppSettingHeader/SettingLayoutPage";
 
@@ -14,10 +13,13 @@ class ManageAccount extends Component {
     active: "Profile",
     profile: {
       user: {
-        name: "",
+        firstname: "",
+        lastname: "",
         email: "",
+        oldPassword: "",
+        newPassword: "",
         password: "",
-
+        error: ''
       },
       business: {
         name: "",
@@ -26,6 +28,7 @@ class ManageAccount extends Component {
         address: "",
         website: "",
         rc: "",
+        error: ''
       },
     },
   };
@@ -52,9 +55,20 @@ class ManageAccount extends Component {
       };
     },
   };
-
-  handleChange = (value, name, error) => {
-    this.setState({ [name]: value, error });
+  
+  handleChange = (value, name, error, section, subSection) => {
+    if(!name) return;
+    const state = this.state;
+    this.setState({
+      [section]: {
+        ...state[section],
+        [subSection]: {
+          ...state[section][subSection],
+          [name]: value,
+          error,
+        }
+      }
+    });
   };
 
   setActiveTabs = (tab) => {
@@ -63,20 +77,50 @@ class ManageAccount extends Component {
     });
   };
 
+  componentDidUpdate(prevProps){
+    const {
+      account: {
+        user: { firstname, lastname, email },
+        business: { name, did, email: mail, address, website, rc }
+      } 
+    } = this.props;
+    if(prevProps.account.user.firstname !== firstname){
+      this.setState({
+        profile: {
+          user: {
+            firstname,
+            lastname,
+            email,
+            oldPassword: "",
+            newPassword: "",
+            password: "",
+          },
+          business: {
+            name,
+            mobile: did,
+            email: mail,
+            address,
+            website,
+            rc,
+          },
+        },
+      });
+    }
+  }
+
   render() {
-    console.log(this.props)
     const tabs = [
       { tab: "Profile" },
       { tab: "Account Plan" },
-    //  { tab: "Greetings" },
+      // { tab: "Greetings" },
       { tab: "Business Hours" },
       { tab: "IVR Menu" },
       { tab: "Service Level" },
     ];
-    const { active } = this.state;
+    const { active, profile } = this.state;
 
     return (
-      <SettingLayoutPage>
+      <SettingLayoutPage {...this.props}>
         <div className="profile_tab" style={{marginTop:0}}>
           <div style={{marginTop:140}}>         
             <h4 style={{marginLeft:40, color:"grey", fontSize:15, paddingBottom:15}}>SETTINGS</h4>
@@ -98,7 +142,8 @@ class ManageAccount extends Component {
         <div className="settings">
           {active === "Profile" && (
             <Profile
-              form={this.state.profile}
+              {...this.props}
+              form={profile}
               handleChange={this.handleChange}
             />
           )}

@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
-//import logo from "../../assets/img/appLogo.png";
 import logo from "../../assets/img/logo2.png";
-import bell from "../../assets/img/bell.svg";
-
 
 import "./AppSettingHeader.css";
 
@@ -19,7 +15,7 @@ class AppSettingHeader extends Component {
   };
 
   render() {
-    const { routes } = this.props;
+    const { account: { business } } = this.props;
     return (
       <header>
         <div className="settingheader">
@@ -28,17 +24,27 @@ class AppSettingHeader extends Component {
             
           </div>
           <div className="settingProfile">
-          <span style={{color:"#2E384D", fontSize:16}}>Settings </span> <span style={{marginLeft:-17, fontSize:16, color:"#000000"}}> > </span>
-          <span style={{color:"#2E384D", fontSize:16}}>profile</span>
+          <span style={{color:"#2E384D", fontSize:16}}>Settings </span> <span style={{marginLeft:-17, fontSize:16, color:"#000000"}}> &gt; </span>
+          <span style={{color:"#2E384D", fontSize:16}}>Profile</span>
           </div>
           
           <h3 className="text-blue bold mb-8" id="settingside-header">
-               AutoMedics Africa Limited 
+                {
+                  business.name
+                }
                <span  className="arrow-down ml-5" />
-               <p className="light text-light" style={{marginLeft:70}}>2 agents license</p>
+               {/* <p className="light text-light" style={{marginLeft:70}}>2 agents license</p> */}
             </h3>
             <div className="businessnav-logo mb-23">
-              <h1 className="logonav-text">AM</h1>
+              <h1 className="logonav-text">
+                {
+                  business.name.substr(0, 1) + '' + 
+                  (
+                    business.name.split(' ')[1] ? 
+                    business.name.split(' ')[1].substr(0, 1) : ''
+                  )
+                }
+              </h1>
             </div>
         </div>
       </header>

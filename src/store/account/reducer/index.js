@@ -59,6 +59,9 @@ const account = (state = initialState, action) => {
     return newState;
   }else if (type === Actions.LOAD && (newState = load(newState, action))) {
     return newState;
+  }else if (type === Actions.SIGNOUT) {
+    Actions.token.remove();
+    return newState;
   }else if (
     (
       type === Actions.ADDPAYMENT   ||
