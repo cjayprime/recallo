@@ -1464,8 +1464,20 @@
   
   .upload-button:hover {
     background-color: var(--text-color);
+
     color: var(--text-white);
   }
+
+  .bc-blue{
+    background-color: var(--text-white) !important;
+    color: #336799;
+  }
+  .bc-blue:hover{
+    background-color: #336799 !important;
+    color: var(--text-white);
+  }
+
+  
   /* End Profile styles */
   
   /* Account plan styles */

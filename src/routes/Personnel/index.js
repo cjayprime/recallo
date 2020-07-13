@@ -47,7 +47,7 @@ class Personnel extends Component {
               />
               <div className="search-form">
                 <SearchIcon className="search-icon" />
-                <input id="input" className="br-3 search bc-blue hover" />
+                <input id="input" className="br-3 search hover" />
               </div>
             </div>
             <div className="menu-bar-right">

@@ -194,7 +194,7 @@ class Profile extends Component {
                     <div className="col-7" style={{marginLeft:515, marginTop:7, position:"absolute"}}>
                       <Button
                         padding="12px 25px"
-                        className="text-blue bc-blue br-8 upload-button"
+                        className="bc-blue br-8"
                         onClick={(e) => this.submit(e, 'password')}
                       >
                         <span>Change password</span>
@@ -330,8 +330,8 @@ class Profile extends Component {
                   <h6 className="text-light mb-16">Upload business logo</h6>
                   <Button
                     padding="12px"
-                    className="text-blue bc-blue br-8 upload-button"
-                  >
+                    className="bc-blue br-8"
+                    >
                     <span> Upload image</span>
                   </Button>
                 </div>

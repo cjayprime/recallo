@@ -45,12 +45,13 @@ class Sidenav extends Component {
             <p className="light text-light">2 agents license</p>
             <Link to="/admin/settings" className="mt-24">
               <Button
-               
-                className="br-30 account-button"
-                padding="12px 20px"
-              >
-                <h6 className="bold">Manage your Recallo Account</h6>
-              </Button>
+                  background="#FFF"
+                  text="#000000"
+                  padding="12px 25px"
+                  className="mr-16 br-30"
+                >
+                  Manage your Recallo Account
+                </Button>
             </Link>
           </div>
           <ul className="sidenav-list">
@@ -78,40 +79,51 @@ class Sidenav extends Component {
             })} 
             */}
           </ul>
-          <Link to="/Home" className="Link">
+          <div className="sidenavDiv">
+
+          <Link to="/Home" className="sidenavLink">
                 <h5 className="sidebar-text">
                   <div className="icon-home" />
                     Home
                 </h5>
-              </Link> 
+           </Link>
+           </div> 
 
-              <Link to="/admin/calls" className="Link">
+             <div className="sidenavDiv">
+             <Link to="/admin/calls" className="sidenavLink">
                 <h5 className="sidebar-text">
                   <div className="icon-call" />
                     Calls
                 </h5>
               </Link> 
+               </div>
 
-              <Link to="/admin/contacts" className="Link">
-                <h5 className="sidebar-text">
-                  <div className="icon-contact" />
-                    Contact
-                </h5>
-              </Link> 
+               <div className="sidenavDiv">
+                <Link to="/admin/contacts" className="sidenavLink">
+                  <h5 className="sidebar-text">
+                    <div className="icon-contact" />
+                      Contact
+                  </h5>
+                </Link> 
+              </div>
 
-              <Link to="/admin/personnel" className="Link">
-                <h5 className="sidebar-text">
-                  <div className="icon-personnel" />
-                    Personnel
-                </h5>
-              </Link> 
+              <div className="sidenavDiv">
+                <Link to="/admin/personnel" className="sidenavLink">
+                  <h5 className="sidebar-text">
+                    <div className="icon-personnel" />
+                      Personnel
+                  </h5>
+                </Link> 
+              </div>
 
-              <Link to="/admin/analytics" className="Link">
-                <h5 className="sidebar-text">
-                  <div className="icon-analytics" />
-                    Analytics
-                </h5>
-              </Link>
+              <div className="sidenavDiv">
+                <Link to="/admin/analytics" className="sidenavLink">
+                  <h5 className="sidebar-text">
+                    <div className="icon-analytics" />
+                      Analytics
+                  </h5>
+                </Link>
+              </div>
           <hr id="sidebarHr" />
           <h6 className="logout text-blue light" onClick={this.signout}>
             Logout

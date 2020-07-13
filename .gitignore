@@ -3,7 +3,7 @@
 /build
 /.idea
 /.eslintrc
-yarn.lock
 yarn-error.log
 package-lock.json
+.gitignore
 .gitcommit
