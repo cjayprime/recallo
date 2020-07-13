@@ -92,13 +92,13 @@ class ProfileCategory extends Component {
             />
             <br/><br/><br/>
             <Button
-              className="br-30"
-              padding="12px 60px"
+                className="blue-hover br-30"
+                padding="12px 60px"
               background="var(--text-color)"
               text="#fff"
               onClick={this.submit}
             >
-              Save
+             <span>Save</span> 
             </Button>
           </div>
         </div>

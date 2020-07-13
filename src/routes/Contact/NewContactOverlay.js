@@ -69,8 +69,8 @@ class NewContactOverlay extends Component {
             />
             <div style={{marginTop:100}}>
             <Button
-              className="br-30 account-button orange-hover"
-              padding="12px 220px"
+                      className="br-30 save"
+                      padding="12px 220px"
               background="var(--text-color)"
               text="#fff"
             >

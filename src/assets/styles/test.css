@@ -42,12 +42,14 @@
     font-weight: bold;
   }
   
-  
-    Button:hover{
-      background-color: #336799 !important;
-      border: 1px solid #336799;
-    }
+ /*
+  .text-blue span:hover{
+    color: white;
+  }
+*/
 
+
+ 
     
   #buttonText{
     color: white;
@@ -160,16 +162,7 @@
           background-image: url(../../assets/img/iconContact.PNG);
         }
   
-        .icon-call {
-          position: absolute;
-          right: 0px;
-        left: 80px;
-         width: 50px;
-          height: 32px;
-          background-repeat: no-repeat;
-          background-image: url(../../assets/img/iconCall.PNG);
-        }
-  
+       
         .icon-personnel {
           position: absolute;
           right: 0px;
@@ -191,20 +184,49 @@
         }
   
         .sidebar-text{
-          margin-top: 25px;
-          margin-left: 100px;
+          margin-left: 70px;
           font-size: 14px;
             font: Bold 12px/28px;
             color: #384364;
       }
-  
-      .sidebar-text:hover{
-        margin-top: 25px;
-        margin-left: 100px;
-        font-size: 14px;
-          font: Bold 14px/20px;
-          color: #FF6B00;
-    }
+
+
+
+    .sidenavLink{
+      text-decoration: none;
+      
+  }
+
+  .sidenavDiv{
+    margin-left: 30px;
+    padding: 12px 3px;
+    width: 210px;
+    border-radius: 30px;
+    margin-top: 2px;
+    
+  }
+
+  .sidenavDiv:hover{
+    background: #EEEEEE;
+    margin-left: 25px;
+    padding: 12px 3px;
+    width: 210px;
+    border-radius: 30px;
+    margin-top: 2px;
+    
+  }
+
+  .icon-call {
+    position: absolute;
+    right: 0px;
+  left: 80px;
+   width: 50px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/img/iconCall.PNG);
+  }
+
+
   
     #radioInput{
       margin-left: -30px;
@@ -819,6 +841,11 @@
   .br-30{
     color: white;
   }
+
+  .br-30 span:hover{
+    color: white !important;
+  }
+  
   
   #xz:hover{
     background-color: white !important;

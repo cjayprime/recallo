@@ -44,7 +44,7 @@ class Calls extends Component {
                   text="var(--text-color)"
                   padding="12px 25px"
                   className="mr-16 br-30"
-                >
+                  >
                   View voicenotes
                 </Button>
               </Link>
@@ -52,7 +52,7 @@ class Calls extends Component {
                 background="var(--text-color)"
                 text="#fff"
                 padding="12px 25px"
-                className="br-30"
+                className="blue-hover br-30"
                 onClick={this.toggle}
               >
                 Profile category
@@ -87,7 +87,7 @@ class Calls extends Component {
               />
               <div className="search-form">
                 <SearchIcon className="search-icon" />
-                <input id="input" className="br-3 search bc-blue hover" onChange={this.search} />
+                <input id="input" className="br-3 search hover" onChange={this.search} />
               </div>
             </div>
             <div className="menu-bar-right">

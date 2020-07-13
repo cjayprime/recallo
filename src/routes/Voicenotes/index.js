@@ -58,7 +58,7 @@ class VoiceNotes extends Component {
                 background="var(--text-color)"
                 text="#fff"
                 padding="12px 25px"
-                className="br-30"
+                className="blue-hover br-30"
                 onClick={() => this.toggle('profile-category')}
               >
                 Profile category

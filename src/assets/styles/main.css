@@ -124,6 +124,11 @@ textarea {
 .text-main {
   color: var(--main-color);
 }
+
+.hover{
+  border-color: #336799;
+  opacity: 1;
+}
 .hover:hover {
   color: var(--hover-color);
   border-color: var(--hover-color);
@@ -163,12 +168,26 @@ textarea {
 .bc-blue {
   border-color: var(--text-color);
 }
+
+.div-hover {
+  border: 1px solid var(--text-white);
+  transition: 0.3s all ease-in-out;
+}
+
+
 .blue-hover {
   border: 1px solid var(--text-white);
   transition: 0.3s all ease-in-out;
 }
 .blue-hover:hover {
-  border: 1px solid var(--text-color);
+  border: 1px solid #ff6501;
+  background-color: #ff6501 !important;
+}
+
+.mr-16:hover {
+  border: 1px solid #ff6501;
+  background-color: #ff6501 !important;
+  color: white !important;
 }
 .bd-grey {
   border: 1px solid #dddddd;

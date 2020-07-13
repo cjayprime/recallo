@@ -66,11 +66,11 @@ const AccountPlan = () => {
                 </div>
                 <div>
                   <Button
-                    className="br-30 bc-blue"
-                    padding="12px 34px"
+                        className="bc-blue br-30"
+                        padding="12px 34px"
                     background="#fff"
                   >
-                    <h6 className="bold text-blue">Buy more minutes</h6>
+                    <span>Buy more minutes</span>
                   </Button>
                 </div>
               </div>
@@ -227,7 +227,7 @@ const AccountPlan = () => {
           </div>
           
           <div className="col-28">
-            <div className="overview blue-hover text-center br-8">
+            <div className="overview div-hover text-center br-8">
               <div>
               
                 <h6 className="planCoupon">Got Coupons?</h6>
