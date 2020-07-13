@@ -13,7 +13,7 @@ class CallsID extends Component {
   };
 
   componentDidMount(){
-    const { getCalls, match: { params: {id: id} } } = this.props;
+    const { getCalls, match: { params: {id} } } = this.props;
     getCalls('all?caller_id=' + id);
   }
 
@@ -33,7 +33,7 @@ class CallsID extends Component {
 
   render() {
     const { open2 } = this.state;
-    var { calls: { details, loading }, match: { params: {id: id} }  } = this.props;
+    var { calls: { details, loading }, match: { params: {id} }  } = this.props;
     loading = loading.indexOf('calls/all?caller_id=' + id) >= 0;
     return (
       <>
