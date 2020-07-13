@@ -125,6 +125,19 @@ textarea {
   color: var(--main-color);
 }
 
+.text-main:hover {
+  color: var(--main-color) !important;
+}
+
+.text-grey {
+  color: #777777;
+}
+
+.text-grey:hover {
+  color: #777777 !important;
+}
+
+
 .hover{
   border-color: #336799;
   opacity: 1;

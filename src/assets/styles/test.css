@@ -70,6 +70,11 @@
     #profCallHeader{
       font-size: 18px;
     }
+
+    #profCallHeader2{
+      font-size: 18px;
+      color: #777777;
+    }
   
     .callID{
       margin-top: 30px;
@@ -357,6 +362,22 @@
     height: 50px;
     margin-left:15px;
   margin-top: -5px;
+  }
+
+  .callidHeaderParagraph{
+    color:#777777;
+    font-size: 13px;
+
+  }
+
+  .callidHeaderDiv{
+    margin-right: 60px;
+  }
+
+  .callidHeaderTag{
+    color: #333333;
+    margin-top: 5px;
+    font-size: 15px;
   }
   
   #ContactFlagDiv{

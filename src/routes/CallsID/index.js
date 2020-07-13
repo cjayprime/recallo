@@ -3,13 +3,13 @@ import Button from "../../components/Button/button";
 import MenuItem from "../../components/MenuItem/menuItem";
 import arrowLeft from "../../assets/img/arrow-left.png";
 import { ReactComponent as SearchIcon } from "../../assets/img/search.svg";
-import NewContactOverlay from "../Contact/NewContactOverlay";
+import editPen from "../../assets/img/editPen.svg";
+
 
 
 class CallsID extends Component {
   state = {
     open: false,
-    open2: false 
   };
 
   componentDidMount(){
@@ -26,13 +26,8 @@ class CallsID extends Component {
     this.setState({ open: this.state.open ? "" : open });
   };
 
-  toggle2 = () => {
-    const { open2 } = this.state;
-    this.setState({ open2: !open2 });
-  };
 
   render() {
-    const { open2 } = this.state;
     var { calls: { details, loading }, match: { params: {id} }  } = this.props;
     loading = loading.indexOf('calls/all?caller_id=' + id) >= 0;
     return (
@@ -44,19 +39,31 @@ class CallsID extends Component {
               <span className="ml-8">Caller ID</span>
             </p>
             <h2 id="profCallHeader"  className="bold text-main">{id}</h2>
+            
           </div>
           <div className="callID-history">
               <div className="row" id="callIDtopbutton">
-                <Button
-                  background="#336799"
-                  text="#fff"
-                  padding="12px 25px"
-                  className="mr-16 br-30"
-                  onClick={this.toggle2}
-                >
-                  Add new contact
-                </Button>
+
+              <div className="callidHeaderDiv">
+               <p className="callidHeaderParagraph">Contact name</p>
+               <h4 className="callidHeaderTag">Mya Willms</h4>
+               </div>
+
+               <div className="callidHeaderDiv">
+               <p className="callidHeaderParagraph">Email address</p>
+               <h4 className="callidHeaderTag">myawillms@yahoo.co.uk</h4>
+               </div>
+
+               <div className="callidHeaderDiv">
+               <p className="callidHeaderParagraph">Company</p>
+               <h4 className="callidHeaderTag">Thobatech Ltd</h4>
+               </div>
+
+                <div className="edit-circle mr-16">
+                  <img src={editPen} alt="pen" className="edit-pen" />
+                </div>
               </div>
+
             
             <div style={{marginTop:-22}}>
               <div
@@ -79,11 +86,11 @@ class CallsID extends Component {
           <div className="callID-history-New">
           
             <div>
-              <h3 id="profCallHeader" className="bold mb-4 text-main">{details.length}</h3>
+              <h3 id="profCallHeader2" className="bold mb-4 text-main">{details.length}</h3>
               <p className="light text-light">Previous calls</p>
             </div>
             <div>
-              <h3 id="profCallHeader" className="bold mb-4 text-main">
+              <h3 id="profCallHeader2" className="bold mb-4 text-grey">
                 {
                   details.length
                   ? details.reduce((old, prop) => {
@@ -95,7 +102,7 @@ class CallsID extends Component {
               <p className="light text-light">Average call time</p>
             </div>
             <div>
-              <h3 id="profCallHeader" className="bold mb-4 text-main">
+              <h3 id="profCallHeader2" className="bold mb-4 text-grey">
                 {
                   details.length
                   ? details.reduce((old, prop) => {
@@ -204,7 +211,6 @@ class CallsID extends Component {
                     ))
               }
             </tbody>
-            <NewContactOverlay open={open2} toggle={this.toggle2} />
           </table>
         </div>
       </>
