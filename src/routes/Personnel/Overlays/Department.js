@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import Overlay from "../../../components/Overlay";
 import FormField from "../../../components/Form";
@@ -7,7 +7,7 @@ import Button from "../../../components/Button/button";
 
 import Notification from "../../../utils/notification";
 
-
+const overlay = React.createRef();
 class Department extends Component {
   constructor(props){
     super(props);
@@ -15,12 +15,37 @@ class Department extends Component {
       popover: null,
       name: '',
       description: '',
-      error: ''
+      error: '',
+      edit: -1,
+      delete: -1
     };
   }
 
   toggle = (popover) => {
     this.setState({ popover });
+  };
+
+  edit = prop => {
+    this.setState({
+      edit: prop._id,
+      name: prop.department ? prop.department : '',
+      description: prop.description ? prop.description : ''
+    }, () => {
+      if(overlay.current){
+        overlay.current.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      }
+    });
+  };
+
+  delete = prop => {
+    if(window.confirm('Are you sure you want to delete the "' + prop.department.trim() + '" department?')){
+      const { deleteDepartment } = this.props;
+      deleteDepartment(prop._id);
+    }
   };
 
   componentDidUpdate(prevProps){
@@ -39,8 +64,8 @@ class Department extends Component {
   };
 
   submit = () => {
-    const { createDepartment } = this.props;
-    const {name, description} = this.state;
+    const { createDepartment, updateDepartment, getDepartments } = this.props;
+    const {name, description, edit} = this.state;
     const data = {name, description};
     const { error } = data;
     
@@ -49,10 +74,28 @@ class Department extends Component {
       !error &&
       dataKeys.filter((state) => state === "error" || !!data[state]).length === dataKeys.length
     ) {
-      createDepartment({
-        department: name,
-        description
-      });
+      if(edit > -1){
+        updateDepartment({
+          department: name,
+          description
+        }, () => {
+          overlay.current.scrollTo({
+            top: 300,
+            left: 0,
+            behavior: 'smooth'
+          });
+          this.setState({
+            edit: -1,
+            name: '',
+            description: ''
+          }, getDepartments);
+        }, edit);
+      }else{
+        createDepartment({
+          department: name,
+          description
+        }, getDepartments);
+      }
     } else {
       Notification.error(
         error || "Please fill in the form correctly."
@@ -62,12 +105,11 @@ class Department extends Component {
 
   render() {
     const { open, toggle, personnel } = this.props;
-    const { popover, name, description} = this.state;
-
+    const { popover, name, description, edit} = this.state;
     return (
-      <Overlay open={open} toggle={toggle}> 
+      <Overlay open={open} toggle={toggle} overlay={overlay}>
         <div className="departmentContainer">
-          <h4 className="mb-8">Add Department</h4>
+          <h4 className="mb-8">{edit > -1 ? 'Edit' : 'Add'} Department</h4>
           <br/><br/><br/>
           <div>
             <FormField
@@ -97,7 +139,7 @@ class Department extends Component {
               text="#fff"
               onClick={this.submit}
             >
-              Add department
+              {edit > -1 ? 'Edit' : 'Add'} department
             </Button>
           </div>
           <br/><br/>
@@ -117,7 +159,7 @@ class Department extends Component {
                       <div className="flex-3 p-16 existing-category-card background-darkgrey">
                         <h5 className="mb-8">{prop.department}</h5>
                         <h6 className="light text-light">
-                          {prop.category_description}
+                          {prop.description}
                         </h6>
                       </div>
                       <div
@@ -134,17 +176,17 @@ class Department extends Component {
                           <div className="row-direction"
                             style={{position: 'absolute', top: 0, left: 0, display: 'flex', justifyContent: 'center', width: '100%'}}
                           >   
-                            <div>
-                              <Link to="#" className="Link">
+                            <div onClick={() => this.edit(prop)}>
+                              {/* <Link to="#" className="Link"> */}
                                 <div className="Edit-icon" />
                                 <p className="profilecalltag">Edit</p>
-                              </Link> 
+                              {/* </Link>  */}
                             </div>
-                            <div>
-                              <Link to="#" className="Link">
+                            <div onClick={() => this.delete(prop)}>
+                              {/* <Link to="#" className="Link"> */}
                                 <div className="Delete-icon" />
                                 <p className="profilecalltag2">Delete</p>
-                              </Link>
+                              {/* </Link> */}
                             </div>  
                           </div>
                         }
