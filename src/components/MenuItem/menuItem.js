@@ -11,8 +11,8 @@ class MenuItem extends Component {
     };
   }
 
-  show(e) {
-    e.preventDefault()
+  show = (e) => {
+    e.preventDefault();
     const { showMenuCard } = this.state;
     this.setState({
       showMenuCard: !showMenuCard,
@@ -24,7 +24,7 @@ class MenuItem extends Component {
     const { showMenuCard } = this.state;
     return (
       <div className="menu-item mr-25">
-        <h6 className="text-blue hover cursor" onClick={() => this.show()}>
+        <h6 className="text-blue hover cursor" onClick={this.show}>
           {item.title}
           <span className="arrow-down ml-5" />
         </h6>

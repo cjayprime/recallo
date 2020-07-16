@@ -8,6 +8,7 @@ export const STATUSANDSKILLS = "STATUSANDSKILLS";
 export const GETDEPARTMENT = "GETDEPARTMENT";
 export const CREATEDEPARTMENT = "CREATEDEPARTMENT";
 export const UPDATEDEPARTMENT = "UPDATEDEPARTMENT";
+export const DELETEDEPARTMENT = "DELETEDEPARTMENT";
 
 export const getPersonnels = (id, success) => ({
   type: REQUEST,
@@ -74,5 +75,12 @@ export const updateDepartment = (data, success, id) => ({
   endpoint: 'department/' + id,
   data,
   success
+});
+
+export const deleteDepartment = (id) => ({
+  type: REQUEST,
+  responder: DELETEDEPARTMENT,
+  method: "DEL",
+  endpoint: 'department/' + id,
 });
 

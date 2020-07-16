@@ -35,7 +35,7 @@ class Table extends Component {
                   <td>{/*<div className="tableIcon" />*/}{personnel.name.split(' ')[0]}</td>
                   <td>{personnel.name.split(' ')[1]}</td>
                   <td>{personnel.email}</td>
-                  <td>{personnel.department ? personnel.department : 'Unspecified'}</td>
+                  <td>{personnel.department ? personnel.department.department : 'Unspecified'}</td>
                   
                   {/* <td>{personnel.mobile}</td> */}
 

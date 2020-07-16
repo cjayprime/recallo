@@ -6,12 +6,6 @@ import Button from "../../../components/Button/button";
 
 import Notification from "../../../utils/notification";
 
-const statuses = ["Active", "Inactive"];
-
-const departments = ["some department"];
-
-const skills = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"];
-
 class Add extends Component {
   state = {
     firstname: "",
@@ -19,13 +13,13 @@ class Add extends Component {
     email: "",
     status: 1,
     skill: 1,
-    department: 'Marketing',
+    department: 0,
     schedule: [],
     error: ''
   };
 
   componentDidUpdate(prevProps){
-    const { open, getPersonnels, edit, id } = this.props;
+    const { open, getPersonnels, edit, id, getDepartments } = this.props;
     if(edit && open && prevProps.open !== open){
       getPersonnels(id, data => {
         const personnel = data.personnel;
@@ -36,10 +30,17 @@ class Add extends Component {
             email: personnel.email,
             status: personnel.status,
             skill: personnel.skill_level,
-            department: personnel.department ? personnel.department : '',
             schedule: personnel.schedules.map(sched => parseInt(sched.day, 10)),
           });
         }
+      });
+    }
+    
+    if(open && prevProps.open !== open){
+      getDepartments((data) => {
+        this.setState({
+          department: data.department[0]._id
+        });
       });
     }
   };
@@ -103,20 +104,7 @@ class Add extends Component {
       department,
       schedule
     } = this.state;
-    const { open, toggle, edit } = this.props;
-
-    const statusItem = statuses.map((status) => (
-      <option key={status}>{status}</option>
-    ));
-
-    const departmentItem = departments.map((department) => (
-      <option key={department}>{department}</option>
-    ));
-
-    const skillItem = skills.map((skill) => (
-      <option key={skill}>{skill}</option>
-    ));
-
+    const { open, toggle, edit, personnel } = this.props;
     return (
       <Overlay open={open} toggle={toggle}> 
 
@@ -170,7 +158,6 @@ class Add extends Component {
                   labelTitle="Status"
                   labelClass="profile-label"
                   selectClass="custom-select"
-                  options={statusItem}
                   className="br-8 profile-input p-12"
                   name='status'
                   value={status}
@@ -178,19 +165,21 @@ class Add extends Component {
                 />
               </div>
               <div className="col-7">
-              {/*<span className="formSpan">Department</span>*/}
-                <FormField
-									required={true}
-                  type="select"
-                  labelTitle="Department"
-                  labelClass="profile-label"
-                  selectClass="custom-select"
-                  options={departmentItem}
-                  className="br-8 profile-input p-12"
+              <span className="formSpan">Department</span>
+                <select
                   name='department'
                   value={department}
-                  onChange={this.handleChange}
-                />
+                  onChange={e => this.setState({department: e.target.value})}
+                  className="br-8 profile-input p-12"
+                >
+                  {
+                    personnel.department.all.map((prop, i) => (
+                      <option className="br-8 profile-input p-12" key={i} value={prop._id}>
+                        {prop.department}
+                      </option>
+                    ))
+                  }
+                </select>
               </div>
             </div>
             <div className="row mb-24">
@@ -202,7 +191,6 @@ class Add extends Component {
                   labelTitle="Skill level"
                   labelClass="profile-label"
                   selectClass="custom-select"
-                  options={skillItem}
                   className="br-8 profile-input p-12"
                   name='skill'
                   value={skill}

@@ -4,7 +4,7 @@ import { ReactComponent as CloseIcon } from "../../assets/img/close.svg";
 
 class Overlay extends Component {
   render() {
-    const { toggle, open, children, width } = this.props;
+    const { toggle, open, children, width, overlay } = this.props;
 
     const showHideClassName = open
       ? "overlay display-block"
@@ -15,6 +15,7 @@ class Overlay extends Component {
         <section 
           className="overlay-main slideInRight"
           style={{ width: width || "57rem" }}
+          ref={overlay}
         >
           {children}
           <div className="circle cursor" onClick={toggle}>
